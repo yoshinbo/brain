@@ -11,7 +11,7 @@ import UIKit
 class TopViewController: BaseViewController {
     
     class func build() -> (UINavigationController, TopViewController) {
-        var storyboad: UIStoryboard = UIStoryboard(name: "TopViewController", bundle: nil)
+        var storyboad: UIStoryboard = UIStoryboard(name: "Top", bundle: nil)
         var navigationController = storyboad.instantiateViewControllerWithIdentifier("TopViewController") as UINavigationController
         return (navigationController, navigationController.topViewController as TopViewController)
     }
@@ -37,5 +37,11 @@ class TopViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension TopViewController {
+    @IBAction func moveGameSelect(sender: UIButton) {
+        var gameSelectViewController = GameSelectViewController.build()
+        self.navigationController?.pushViewController(gameSelectViewController, animated: true)
+    }
 }

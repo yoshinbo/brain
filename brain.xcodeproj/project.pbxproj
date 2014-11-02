@@ -13,6 +13,11 @@
 		B82F58821A04D09F005B68C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82F58811A04D09F005B68C6 /* Images.xcassets */; };
 		B82F58851A04D09F005B68C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82F58831A04D09F005B68C6 /* LaunchScreen.xib */; };
 		B82F58911A04D09F005B68C6 /* brainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F58901A04D09F005B68C6 /* brainTests.swift */; };
+		B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */; };
+		B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */; };
+		B88C20811A0623AC000DC4E7 /* GameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */; };
+		B88C20831A063262000DC4E7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20821A063262000DC4E7 /* Config.swift */; };
+		B88C20861A063450000DC4E7 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20851A063450000DC4E7 /* Games.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
 		B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56AE01A050B5000024E00 /* Accelerate.framework */; };
@@ -20,7 +25,7 @@
 		B8E56AE51A050B6500024E00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56AE41A050B6500024E00 /* CoreGraphics.framework */; };
 		B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E56AF71A05185C00024E00 /* UIImage+ImageEffects.m */; };
 		B8E56AFD1A0522BF00024E00 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56AFC1A0522BF00024E00 /* TopViewController.swift */; };
-		B8E56AFF1A0522E800024E00 /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E56AFE1A0522E800024E00 /* TopViewController.storyboard */; };
+		B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E56AFE1A0522E800024E00 /* Top.storyboard */; };
 		F7A781A448062BA80F699AA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F42EA6E252A99E85BAB868 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +52,11 @@
 		B82F588A1A04D09F005B68C6 /* brainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F588F1A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F58901A04D09F005B68C6 /* brainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brainTests.swift; sourceTree = "<group>"; };
+		B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameSelect.storyboard; sourceTree = "<group>"; };
+		B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectContentCell.swift; sourceTree = "<group>"; };
+		B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectViewController.swift; sourceTree = "<group>"; };
+		B88C20821A063262000DC4E7 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		B88C20851A063450000DC4E7 /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8E56AE01A050B5000024E00 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -56,7 +66,7 @@
 		B8E56AF71A05185C00024E00 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		B8E56AF91A0518CC00024E00 /* brain-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "brain-Bridging-Header.h"; sourceTree = "<group>"; };
 		B8E56AFC1A0522BF00024E00 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
-		B8E56AFE1A0522E800024E00 /* TopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		B8E56AFE1A0522E800024E00 /* Top.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Top.storyboard; path = brain/storyboards/Top.storyboard; sourceTree = SOURCE_ROOT; };
 		E6F4F9CDD02E51D342B7D82C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,9 +165,11 @@
 			isa = PBXGroup;
 			children = (
 				B82F587A1A04D09F005B68C6 /* AppDelegate.swift */,
+				B88C20821A063262000DC4E7 /* Config.swift */,
 				B8E56AF31A05177300024E00 /* vender */,
 				B8E56AD81A04DC8500024E00 /* extensions */,
 				B82F589C1A04D219005B68C6 /* view_controllers */,
+				B88C20841A063410000DC4E7 /* models */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -165,10 +177,10 @@
 		B82F589B1A04D18D005B68C6 /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B8E56AFE1A0522E800024E00 /* TopViewController.storyboard */,
+				B8E56AFE1A0522E800024E00 /* Top.storyboard */,
+				B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */,
 			);
-			name = storyboards;
-			path = storyboads;
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 		B82F589C1A04D219005B68C6 /* view_controllers */ = {
@@ -176,8 +188,18 @@
 			children = (
 				B82F587C1A04D09F005B68C6 /* BaseViewController.swift */,
 				B8E56AFC1A0522BF00024E00 /* TopViewController.swift */,
+				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
+				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
 			);
 			path = view_controllers;
+			sourceTree = "<group>";
+		};
+		B88C20841A063410000DC4E7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				B88C20851A063450000DC4E7 /* Games.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		B8E56AD81A04DC8500024E00 /* extensions */ = {
@@ -291,7 +313,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
-				B8E56AFF1A0522E800024E00 /* TopViewController.storyboard in Resources */,
+				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
+				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
 				B82F58851A04D09F005B68C6 /* LaunchScreen.xib in Resources */,
 				B82F58821A04D09F005B68C6 /* Images.xcassets in Resources */,
 			);
@@ -346,7 +369,11 @@
 			files = (
 				B8E56AFD1A0522BF00024E00 /* TopViewController.swift in Sources */,
 				B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */,
+				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
+				B88C20861A063450000DC4E7 /* Games.swift in Sources */,
+				B88C20811A0623AC000DC4E7 /* GameSelectViewController.swift in Sources */,
 				B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */,
+				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
