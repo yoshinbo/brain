@@ -19,6 +19,14 @@ class Game {
         self.title = title
         self.bestScore = bestScore
     }
+    
+    func isSpeedMatch() -> Bool {
+        return self.id == 1
+    }
+    
+    func isColorMatch() -> Bool {
+        return self.id == 2
+    }
 }
 
 class Games: NSObject {

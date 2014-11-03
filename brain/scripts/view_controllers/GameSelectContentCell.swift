@@ -13,6 +13,8 @@ class GameSelectContentCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var helpButton: UIButton!
+    var game: Game?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,9 +31,8 @@ class GameSelectContentCell: UITableViewCell {
 
 extension GameSelectContentCell {
     func setParams(game: Game) {
+        self.game = game
         self.titleLabel.text = game.title
         self.infoLabel.text = "BestScore \(game.bestScore)"
     }
 }
-
-

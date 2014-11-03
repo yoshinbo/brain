@@ -21,13 +21,17 @@ class GameSelectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addBackButton()
-
         // Do any additional setup after loading the view.
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.gameModel = Games()
+        
+        self.addBackButton()
+        self.navigationItem.title = "Game Select"
+        // For removing misterious space on table view header
+        //self.automaticallyAdjustsScrollViewInsets = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,14 +52,36 @@ class GameSelectViewController: BaseViewController {
 }
 
 extension GameSelectViewController {
+    
     private func aduptCell(cell:GameSelectContentCell, indexPath:NSIndexPath) {
         var game = self.gameModel.getById(indexPath.row)
         cell.setParams(game);
+    }
+    
+    // タッチした座興からNSIndexPathを返す
+    func indexPathForControlEvent(event: UIEvent) -> NSIndexPath {
+        var point = event.allTouches()?.anyObject()?.locationInView(self.tableView)
+        return self.tableView.indexPathForRowAtPoint(point!)!
+    }
+    
+    func onClickHelpButton(sender: UIButton, event: UIEvent) {
+        var indexPath = self.indexPathForControlEvent(event)
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
+        println("helpbutton touch in \(cell.game?.title)")
     }
 }
 
 extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     // for UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
+        if cell.game!.isSpeedMatch() {
+            println("speed")
+        } else
+        if cell.game!.isColorMatch() {
+            println("color")
+        }
+    }
     
     
     // for UITableViewDataSource
@@ -66,6 +92,7 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as GameSelectContentCell
         self.aduptCell(cell, indexPath: indexPath)
+        cell.helpButton.addTarget(self, action: "onClickHelpButton:event:", forControlEvents: UIControlEvents.TouchUpInside)
         return cell
     }
 }

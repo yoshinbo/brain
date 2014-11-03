@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UT4-6b-nQ1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UT4-6b-nQ1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContentCell" rowHeight="130" id="ruR-2e-aWm" customClass="GameSelectContentCell" customModule="brain" customModuleProvider="target">
@@ -41,6 +41,12 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07P-9H-MlP">
+                                                            <rect key="frame" x="534" y="19" width="30" height="34"/>
+                                                            <state key="normal" title="?">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -50,8 +56,22 @@
                                                         <constraint firstAttribute="trailing" secondItem="zJt-3z-yot" secondAttribute="trailing" id="MSr-j9-CfL"/>
                                                         <constraint firstAttribute="trailing" secondItem="CXQ-tV-x80" secondAttribute="trailing" constant="5" id="W01-Bc-ok0"/>
                                                         <constraint firstItem="CXQ-tV-x80" firstAttribute="top" secondItem="zs1-g9-AhK" secondAttribute="top" constant="15" id="XdW-zF-lBQ"/>
+                                                        <constraint firstItem="07P-9H-MlP" firstAttribute="bottom" secondItem="CXQ-tV-x80" secondAttribute="bottom" id="Xv4-Xx-F7g"/>
                                                         <constraint firstItem="zJt-3z-yot" firstAttribute="top" secondItem="CXQ-tV-x80" secondAttribute="bottom" constant="15" id="eXs-0W-N18"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CXQ-tV-x80" secondAttribute="trailing" constant="10" id="knJ-tQ-ikf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="07P-9H-MlP" secondAttribute="trailing" constant="10" id="mPj-Ji-IKn"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="knJ-tQ-ikf"/>
+                                                        </mask>
+                                                    </variation>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -62,6 +82,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="helpButton" destination="07P-9H-MlP" id="TzF-mD-TWk"/>
                                             <outlet property="infoLabel" destination="zJt-3z-yot" id="983-1p-XKT"/>
                                             <outlet property="titleLabel" destination="CXQ-tV-x80" id="i8y-8n-idA"/>
                                         </connections>
@@ -69,13 +90,23 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gET-z0-hjo">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="rlc-DR-WeX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="right" secondItem="gET-z0-hjo" secondAttribute="right" id="6CL-fD-4r5"/>
                             <constraint firstItem="UT4-6b-nQ1" firstAttribute="top" secondItem="zRZ-SS-Bvx" secondAttribute="top" id="9uw-OE-4fk"/>
                             <constraint firstItem="UT4-6b-nQ1" firstAttribute="left" secondItem="zRZ-SS-Bvx" secondAttribute="left" id="aaw-GB-KOm"/>
-                            <constraint firstItem="U8l-Yf-FMq" firstAttribute="top" secondItem="UT4-6b-nQ1" secondAttribute="bottom" id="kPh-zP-3tg"/>
                             <constraint firstAttribute="right" secondItem="UT4-6b-nQ1" secondAttribute="right" id="pny-nH-LSE"/>
+                            <constraint firstItem="U8l-Yf-FMq" firstAttribute="top" secondItem="gET-z0-hjo" secondAttribute="bottom" id="rdK-ma-dXt"/>
+                            <constraint firstItem="gET-z0-hjo" firstAttribute="left" secondItem="zRZ-SS-Bvx" secondAttribute="left" id="sJd-mf-bR3"/>
+                            <constraint firstItem="gET-z0-hjo" firstAttribute="top" secondItem="UT4-6b-nQ1" secondAttribute="bottom" id="uWw-vU-PmP"/>
                         </constraints>
                     </view>
                     <connections>

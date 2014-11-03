@@ -20,6 +20,7 @@ class TopViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "brain"
     }
 
     override func didReceiveMemoryWarning() {
