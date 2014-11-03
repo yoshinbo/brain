@@ -10,8 +10,20 @@ import UIKit
 
 extension UIViewController {
     
+    func moveTo(viewController: UIViewController) {
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    func moveToInNavigationController(viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+
     func backPrevViewController() {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func closeViewController() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func addBackButton() {
@@ -22,6 +34,20 @@ extension UIViewController {
                 target: self,
                 action: Selector("backPrevViewController")
             )
+            self.navigationItem.leftBarButtonItem = buttonItem
+            self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        }
+    }
+    
+    func addCloseButton() {
+        if let navigationController = self.navigationController {
+            var buttonItem = UIBarButtonItem(
+                image: UIImage(named: ""),
+                style: .Plain,
+                target: self,
+                action: Selector("closeViewController")
+            )
+            buttonItem.title = "Close"
             self.navigationItem.leftBarButtonItem = buttonItem
             self.navigationController?.interactivePopGestureRecognizer.delegate = self
         }

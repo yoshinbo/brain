@@ -31,3 +31,12 @@ class BaseViewController: UIViewController {
     }
 }
 
+class ModalBaseViewController: BaseViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let navigationController = self.navigationController {
+            self.addCloseButton()
+        }
+    }
+}

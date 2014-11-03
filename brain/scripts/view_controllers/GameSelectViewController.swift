@@ -28,7 +28,7 @@ class GameSelectViewController: BaseViewController {
         
         self.gameModel = Games()
         
-        self.addBackButton()
+        //self.addBackButton()
         self.navigationItem.title = "Game Select"
         // For removing misterious space on table view header
         //self.automaticallyAdjustsScrollViewInsets = false
@@ -59,7 +59,7 @@ extension GameSelectViewController {
     }
     
     // タッチした座興からNSIndexPathを返す
-    func indexPathForControlEvent(event: UIEvent) -> NSIndexPath {
+    private func indexPathForControlEvent(event: UIEvent) -> NSIndexPath {
         var point = event.allTouches()?.anyObject()?.locationInView(self.tableView)
         return self.tableView.indexPathForRowAtPoint(point!)!
     }
@@ -68,6 +68,14 @@ extension GameSelectViewController {
         var indexPath = self.indexPathForControlEvent(event)
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
         println("helpbutton touch in \(cell.game?.title)")
+        if cell.game!.isSpeedMatch() {
+            var (navigationController, viewController) = HelpViewController.build()
+            self.moveTo(navigationController)
+        } else
+        if cell.game!.isColorMatch() {
+            println("color")
+        }
+
     }
 }
 
@@ -76,13 +84,12 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
         if cell.game!.isSpeedMatch() {
-            println("speed")
+            self.moveToInNavigationController(SpeedGameViewController.build())
         } else
         if cell.game!.isColorMatch() {
             println("color")
         }
     }
-    
     
     // for UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
