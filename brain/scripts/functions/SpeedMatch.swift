@@ -8,8 +8,6 @@
 
 import Foundation
 
-let PANEL_STOCK_NUM = 3
-
 protocol SpeedMatchProtocol {
     func renderPanel(name: String)
 }
@@ -103,7 +101,7 @@ extension SpeedMatch {
     }
 
     private func dumpPanels() {
-        println("dump panels of speed game --->");
+        println("dump panels of speed match --->");
         for panel in self.panels {
             println("id:\(panel.id), name:\(panel.name)");
         }

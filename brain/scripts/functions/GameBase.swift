@@ -8,6 +8,8 @@
 
 import Foundation
 
+let PANEL_STOCK_NUM = 3
+
 protocol GameBaseProtocol {
     func start()
     func renderCount(sec: Int)

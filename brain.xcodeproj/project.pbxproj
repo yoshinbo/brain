@@ -10,6 +10,8 @@
 		B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61281A07BDF500BD10E8 /* GameBase.swift */; };
 		B82D612B1A07C41200BD10E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612A1A07C41200BD10E8 /* Util.swift */; };
 		B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */; };
+		B82D612F1A07CCEF00BD10E8 /* ColorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612E1A07CCEF00BD10E8 /* ColorMatch.swift */; };
+		B82D61311A07CFD300BD10E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61301A07CFD300BD10E8 /* User.swift */; };
 		B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587A1A04D09F005B68C6 /* AppDelegate.swift */; };
 		B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587C1A04D09F005B68C6 /* BaseViewController.swift */; };
 		B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82F587E1A04D09F005B68C6 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		B82D61281A07BDF500BD10E8 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
 		B82D612A1A07C41200BD10E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatch.swift; sourceTree = "<group>"; };
+		B82D612E1A07CCEF00BD10E8 /* ColorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMatch.swift; sourceTree = "<group>"; };
+		B82D61301A07CFD300BD10E8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B82F58751A04D09F005B68C6 /* brain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F58791A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F587A1A04D09F005B68C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				B82D612A1A07C41200BD10E8 /* Util.swift */,
 				B82D61281A07BDF500BD10E8 /* GameBase.swift */,
 				B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */,
+				B82D612E1A07CCEF00BD10E8 /* ColorMatch.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B88C20851A063450000DC4E7 /* Games.swift */,
+				B82D61301A07CFD300BD10E8 /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -405,6 +411,8 @@
 				B88C20811A0623AC000DC4E7 /* GameSelectViewController.swift in Sources */,
 				B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */,
 				B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */,
+				B82D61311A07CFD300BD10E8 /* User.swift in Sources */,
+				B82D612F1A07CCEF00BD10E8 /* ColorMatch.swift in Sources */,
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
 				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,

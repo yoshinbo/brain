@@ -8,7 +8,14 @@
 
 import Foundation
 
-let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] = [
+// for User
+let REAL_MAX_ENERGY: Int = 10
+let ENERGY_RECOVERY_TIME: Double = 60 * 3 // 3分で1回復
+let REQUIRED_EXP_BASE: Int = 1000 // この値×levelが必要経験値
+
+// for general game setting
+let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] =
+[
     (
         id: 1,
         title: "Speed Match",
@@ -39,4 +46,9 @@ let SPEED_MATCH_PANELS: [(id: Int, name: String)] = [
         id: 3,
         name: "panel3.png"
     )
+]
+
+// for Color Match
+let COLOR_MATCH_COLORS: [String] = [
+    "Red", "Blue", "Green", "Yellow"
 ]

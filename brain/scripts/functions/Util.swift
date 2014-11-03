@@ -15,4 +15,9 @@ class Util {
         var rand: Int = Int(arc4random_uniform(10))
         return (rand % 2) == 0
     }
+    
+    class func now() -> Double {
+        let date: NSDate = NSDate()
+        return date.timeIntervalSince1970
+    }
 }
