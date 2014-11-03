@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGg-eX-52Y">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top View Controller-->
+        <scene sceneID="kQ6-FZ-bSF">
+            <objects>
+                <viewController id="YMR-f4-zFS" customClass="TopViewController" customModule="brain" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zg8-MG-BKU"/>
+                        <viewControllerLayoutGuide type="bottom" id="QUK-r0-ZfF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T4Q-Ji-D8L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpg-tW-qUE">
+                                <rect key="frame" x="16" y="510" width="568" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-Tl-Ovq">
+                                        <rect key="frame" x="0.0" y="5" width="568" height="30"/>
+                                        <state key="normal" title="GameSelect">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moveGameSelect:" destination="YMR-f4-zFS" eventType="touchUpInside" id="qBG-7M-WKD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Ww2-Tl-Ovq" secondAttribute="bottom" constant="5" id="IGg-vu-jgR"/>
+                                    <constraint firstItem="Ww2-Tl-Ovq" firstAttribute="top" secondItem="Hpg-tW-qUE" secondAttribute="top" constant="5" id="R29-LQ-zKk"/>
+                                    <constraint firstItem="Ww2-Tl-Ovq" firstAttribute="leading" secondItem="Hpg-tW-qUE" secondAttribute="leading" id="dd6-wy-wKO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ww2-Tl-Ovq" secondAttribute="trailing" id="uVx-Fr-4tt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QUK-r0-ZfF" firstAttribute="top" secondItem="Hpg-tW-qUE" secondAttribute="bottom" constant="50" id="aNu-gf-9II"/>
+                            <constraint firstItem="Hpg-tW-qUE" firstAttribute="trailing" secondItem="T4Q-Ji-D8L" secondAttribute="trailingMargin" id="kfo-ui-AeL"/>
+                            <constraint firstItem="Hpg-tW-qUE" firstAttribute="leading" secondItem="T4Q-Ji-D8L" secondAttribute="leadingMargin" id="xkN-uB-C43"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2sZ-wL-xnS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nra-vd-2Qd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="344"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="at8-pP-nDR">
+            <objects>
+                <navigationController storyboardIdentifier="TopViewController" automaticallyAdjustsScrollViewInsets="NO" id="eGg-eX-52Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H4J-Ly-gNG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YMR-f4-zFS" kind="relationship" relationship="rootViewController" id="TUX-Yi-kxv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXA-KX-yRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="344"/>
+        </scene>
+    </scenes>
+</document>
