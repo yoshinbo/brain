@@ -10,14 +10,18 @@ import Foundation
 
 class Game {
     
-    var id: Int = 0
-    var title: String = ""
-    var bestScore: Int = 0
+    var id: Int
+    var title: String
+    var bestScore: Int
+    var timeLimitSec: Int
+    var setUpTimeSec: Int
     
-    init(id: Int, title: String, bestScore: Int) {
+    init(id: Int, title: String, bestScore: Int, timeLimitSec: Int, setUpTimeSec: Int) {
         self.id = id
         self.title = title
         self.bestScore = bestScore
+        self.timeLimitSec = timeLimitSec
+        self.setUpTimeSec = setUpTimeSec
     }
     
     func isSpeedMatch() -> Bool {
@@ -39,7 +43,9 @@ class Games: NSObject {
             var game = Game(
                 id: gameKind.id,
                 title: gameKind.title,
-                bestScore: 0
+                bestScore: 0,
+                timeLimitSec: gameKind.timeLimitSec,
+                setUpTimeSec: gameKind.setUpTimeSec
             )
             self.games.append([game][0])
         }

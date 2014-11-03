@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61281A07BDF500BD10E8 /* GameBase.swift */; };
+		B82D612B1A07C41200BD10E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612A1A07C41200BD10E8 /* Util.swift */; };
+		B82D612D1A07C69C00BD10E8 /* SpeedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedGame.swift */; };
 		B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587A1A04D09F005B68C6 /* AppDelegate.swift */; };
 		B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587C1A04D09F005B68C6 /* BaseViewController.swift */; };
 		B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82F587E1A04D09F005B68C6 /* Main.storyboard */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		46F42EA6E252A99E85BAB868 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B82D61281A07BDF500BD10E8 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
+		B82D612A1A07C41200BD10E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		B82D612C1A07C69C00BD10E8 /* SpeedGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedGame.swift; sourceTree = "<group>"; };
 		B82F58751A04D09F005B68C6 /* brain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F58791A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F587A1A04D09F005B68C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 				46F42EA6E252A99E85BAB868 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B82D61271A07BD5D00BD10E8 /* functions */ = {
+			isa = PBXGroup;
+			children = (
+				B82D612A1A07C41200BD10E8 /* Util.swift */,
+				B82D61281A07BDF500BD10E8 /* GameBase.swift */,
+				B82D612C1A07C69C00BD10E8 /* SpeedGame.swift */,
+			);
+			path = functions;
 			sourceTree = "<group>";
 		};
 		B82F586C1A04D09F005B68C6 = {
@@ -177,6 +193,7 @@
 				B8E56AF31A05177300024E00 /* vender */,
 				B8E56AD81A04DC8500024E00 /* extensions */,
 				B82F589C1A04D219005B68C6 /* view_controllers */,
+				B82D61271A07BD5D00BD10E8 /* functions */,
 				B88C20841A063410000DC4E7 /* models */,
 			);
 			path = scripts;
@@ -386,11 +403,14 @@
 				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
 				B88C20861A063450000DC4E7 /* Games.swift in Sources */,
 				B88C20811A0623AC000DC4E7 /* GameSelectViewController.swift in Sources */,
+				B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */,
 				B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */,
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
+				B82D612D1A07C69C00BD10E8 /* SpeedGame.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
+				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
 				B88C208A1A073085000DC4E7 /* SpeedGameViewController.swift in Sources */,
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
 			);
