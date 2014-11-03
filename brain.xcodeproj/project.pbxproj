@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61281A07BDF500BD10E8 /* GameBase.swift */; };
 		B82D612B1A07C41200BD10E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612A1A07C41200BD10E8 /* Util.swift */; };
-		B82D612D1A07C69C00BD10E8 /* SpeedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedGame.swift */; };
+		B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */; };
 		B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587A1A04D09F005B68C6 /* AppDelegate.swift */; };
 		B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587C1A04D09F005B68C6 /* BaseViewController.swift */; };
 		B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82F587E1A04D09F005B68C6 /* Main.storyboard */; };
@@ -21,8 +21,8 @@
 		B88C20811A0623AC000DC4E7 /* GameSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */; };
 		B88C20831A063262000DC4E7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20821A063262000DC4E7 /* Config.swift */; };
 		B88C20861A063450000DC4E7 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20851A063450000DC4E7 /* Games.swift */; };
-		B88C20881A073054000DC4E7 /* SpeedGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C20871A073054000DC4E7 /* SpeedGame.storyboard */; };
-		B88C208A1A073085000DC4E7 /* SpeedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20891A073085000DC4E7 /* SpeedGameViewController.swift */; };
+		B88C20881A073054000DC4E7 /* SpeedMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */; };
+		B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */; };
 		B88C208E1A0752A9000DC4E7 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C208D1A0752A9000DC4E7 /* Help.storyboard */; };
 		B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C208F1A075334000DC4E7 /* HelpViewController.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
@@ -51,7 +51,7 @@
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B82D61281A07BDF500BD10E8 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
 		B82D612A1A07C41200BD10E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		B82D612C1A07C69C00BD10E8 /* SpeedGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedGame.swift; sourceTree = "<group>"; };
+		B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatch.swift; sourceTree = "<group>"; };
 		B82F58751A04D09F005B68C6 /* brain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F58791A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F587A1A04D09F005B68C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 		B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectViewController.swift; sourceTree = "<group>"; };
 		B88C20821A063262000DC4E7 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B88C20851A063450000DC4E7 /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
-		B88C20871A073054000DC4E7 /* SpeedGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpeedGame.storyboard; sourceTree = "<group>"; };
-		B88C20891A073085000DC4E7 /* SpeedGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedGameViewController.swift; sourceTree = "<group>"; };
+		B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SpeedMatch.storyboard; sourceTree = "<group>"; };
+		B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatchViewController.swift; sourceTree = "<group>"; };
 		B88C208D1A0752A9000DC4E7 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		B88C208F1A075334000DC4E7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			children = (
 				B82D612A1A07C41200BD10E8 /* Util.swift */,
 				B82D61281A07BDF500BD10E8 /* GameBase.swift */,
-				B82D612C1A07C69C00BD10E8 /* SpeedGame.swift */,
+				B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */,
 			);
 			path = functions;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			children = (
 				B8E56AFE1A0522E800024E00 /* Top.storyboard */,
 				B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */,
-				B88C20871A073054000DC4E7 /* SpeedGame.storyboard */,
+				B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */,
 				B88C208D1A0752A9000DC4E7 /* Help.storyboard */,
 			);
 			path = storyboards;
@@ -217,7 +217,7 @@
 				B8E56AFC1A0522BF00024E00 /* TopViewController.swift */,
 				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
 				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
-				B88C20891A073085000DC4E7 /* SpeedGameViewController.swift */,
+				B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */,
 				B88C208F1A075334000DC4E7 /* HelpViewController.swift */,
 			);
 			path = view_controllers;
@@ -341,7 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88C20881A073054000DC4E7 /* SpeedGame.storyboard in Resources */,
+				B88C20881A073054000DC4E7 /* SpeedMatch.storyboard in Resources */,
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
 				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
@@ -407,11 +407,11 @@
 				B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */,
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
-				B82D612D1A07C69C00BD10E8 /* SpeedGame.swift in Sources */,
+				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
-				B88C208A1A073085000DC4E7 /* SpeedGameViewController.swift in Sources */,
+				B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */,
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

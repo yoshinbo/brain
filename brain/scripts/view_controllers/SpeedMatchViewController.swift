@@ -1,5 +1,5 @@
 //
-//  SpeedGameViewController.swift
+//  SpeedMatchViewController.swift
 //  brain
 //
 //  Created by Yoshikazu Oda on 2014/11/03.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SpeedGameViewController: BaseViewController {
+class SpeedMatchViewController: BaseViewController {
     
-    class func build() -> SpeedGameViewController {
-        var storyboad: UIStoryboard = UIStoryboard(name: "SpeedGame", bundle: nil)
-        var viewController = storyboad.instantiateInitialViewController() as SpeedGameViewController
+    class func build() -> SpeedMatchViewController {
+        var storyboad: UIStoryboard = UIStoryboard(name: "SpeedMatch", bundle: nil)
+        var viewController = storyboad.instantiateInitialViewController() as SpeedMatchViewController
         return viewController
     }
 

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Speed Game View Controller-->
+        <!--Speed Match View Controller-->
         <scene sceneID="erJ-IP-hMI">
             <objects>
-                <viewController id="FR0-Qe-Qm6" customClass="SpeedGameViewController" customModule="brain" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FR0-Qe-Qm6" customClass="SpeedMatchViewController" customModule="brain" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TBC-pu-bkx"/>
                         <viewControllerLayoutGuide type="bottom" id="f82-NE-V8Z"/>

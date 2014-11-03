@@ -1,5 +1,5 @@
 //
-//  SpeedGame.swift
+//  SpeedMatch.swift
 //  brain
 //
 //  Created by Yoshikazu Oda on 2014/11/03.
@@ -10,13 +10,13 @@ import Foundation
 
 let PANEL_STOCK_NUM = 3
 
-protocol SpeedGameProtocol {
+protocol SpeedMatchProtocol {
     func renderPanel(name: String)
 }
 
-class SpeedGame: GameBase {
+class SpeedMatch: GameBase {
     
-    var speedGameDelegate: SpeedGameProtocol!
+    var SpeedMatchDelegate: SpeedMatchProtocol!
 
     var panels: [(id: Int, name: String)] = []
     var previousId: Int = 0
@@ -32,7 +32,7 @@ class SpeedGame: GameBase {
     
     func addAndRenderPanel() {
         self.addPanel()
-        self.speedGameDelegate.renderPanel(self.currentPanelName())
+        self.SpeedMatchDelegate.renderPanel(self.currentPanelName())
     }
     
     func isCollectAnswer(ans: Bool) -> Bool {
@@ -47,7 +47,7 @@ class SpeedGame: GameBase {
     }
 }
 
-extension SpeedGame {
+extension SpeedMatch {
     
     private func currentPanelId() -> Int {
         return self.panels[0].id
@@ -74,7 +74,7 @@ extension SpeedGame {
     }
     
     private func addPanel() {
-        var panels = SPEED_GAME_PANELS
+        var panels = SPEED_MATCH_PANELS
         let isOneTwo: Bool = Util.oneTwo()
         if (self.panels.count > 0 && isOneTwo) {
             self.panels.append([(
@@ -89,7 +89,7 @@ extension SpeedGame {
     
     private func appendFromExceptPanels(id: Int) {
         var panels: [(id: Int, name: String)] = []
-        for tmpPanel in SPEED_GAME_PANELS {
+        for tmpPanel in SPEED_MATCH_PANELS {
             if tmpPanel.id != id {
                 panels.append(tmpPanel)
             }

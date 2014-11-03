@@ -84,7 +84,7 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
         if cell.game!.isSpeedMatch() {
-            self.moveToInNavigationController(SpeedGameViewController.build())
+            self.moveToInNavigationController(SpeedMatchViewController.build())
         } else
         if cell.game!.isColorMatch() {
             println("color")

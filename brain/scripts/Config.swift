@@ -25,8 +25,8 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
 
 let CONTINUOUS_COLLECT_ANS_BONUS_COEF: Int = 5 // 連続正解の場合のボーナス係数
 
-// for SpeedGame
-let SPEED_GAME_PANELS: [(id: Int, name: String)] = [
+// for Speed Match
+let SPEED_MATCH_PANELS: [(id: Int, name: String)] = [
     (
         id: 1,
         name: "panel1.png"
