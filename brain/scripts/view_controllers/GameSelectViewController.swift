@@ -67,9 +67,9 @@ extension GameSelectViewController {
     func onClickHelpButton(sender: UIButton, event: UIEvent) {
         var indexPath = self.indexPathForControlEvent(event)
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
-        println("helpbutton touch in \(cell.game?.title)")
         if cell.game!.isSpeedMatch() {
             var (navigationController, viewController) = HelpViewController.build()
+            viewController.gameTitle = cell.game!.title
             self.moveTo(navigationController)
         } else
         if cell.game!.isColorMatch() {

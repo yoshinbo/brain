@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cTw-iq-9bc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Help View Controller-->
@@ -18,25 +17,84 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-ku-a5N">
-                                <rect key="frame" x="36" y="100" width="528" height="450"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="50" y="164" width="500" height="336"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" restorationIdentifier="HelpHeader" translatesAutoresizingMaskIntoConstraints="NO" id="RJi-Zs-If2">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akV-T0-4bp">
+                                                <rect key="frame" x="0.0" y="15" width="500" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerX" secondItem="akV-T0-4bp" secondAttribute="centerX" id="8S1-nV-Y2o"/>
+                                            <constraint firstItem="akV-T0-4bp" firstAttribute="leading" secondItem="RJi-Zs-If2" secondAttribute="leading" id="d1U-ds-x5K"/>
+                                            <constraint firstAttribute="trailing" secondItem="akV-T0-4bp" secondAttribute="trailing" id="kWc-2F-Kcb"/>
+                                            <constraint firstAttribute="height" constant="50" id="q0S-07-QvK"/>
+                                            <constraint firstAttribute="centerY" secondItem="akV-T0-4bp" secondAttribute="centerY" id="x8g-U5-Af5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-JZ-uPf">
+                                        <rect key="frame" x="20" y="60" width="460" height="256"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ahN-JZ-uPf" secondAttribute="bottom" constant="20" id="44S-5V-EG4"/>
+                                    <constraint firstAttribute="trailing" secondItem="ahN-JZ-uPf" secondAttribute="trailing" constant="20" id="6DS-WX-XSn"/>
+                                    <constraint firstItem="RJi-Zs-If2" firstAttribute="leading" secondItem="QbF-ku-a5N" secondAttribute="leading" id="AeN-Dl-gUk"/>
+                                    <constraint firstItem="RJi-Zs-If2" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="top" id="IUZ-hg-Rb2"/>
+                                    <constraint firstAttribute="trailing" secondItem="RJi-Zs-If2" secondAttribute="trailing" id="VGW-Ti-bW8"/>
+                                    <constraint firstItem="ahN-JZ-uPf" firstAttribute="leading" secondItem="QbF-ku-a5N" secondAttribute="leading" constant="20" id="dfv-TP-SzW"/>
+                                    <constraint firstAttribute="bottom" secondItem="RJi-Zs-If2" secondAttribute="bottom" constant="385" id="fFY-HD-z64"/>
+                                    <constraint firstItem="ahN-JZ-uPf" firstAttribute="top" secondItem="RJi-Zs-If2" secondAttribute="bottom" constant="10" id="gsa-fq-xuR"/>
+                                    <constraint firstItem="RJi-Zs-If2" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="top" id="scX-ht-hab"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IUZ-hg-Rb2"/>
+                                        <exclude reference="fFY-HD-z64"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QbF-ku-a5N" firstAttribute="leading" secondItem="Ty8-Zs-7b2" secondAttribute="leadingMargin" constant="20" id="2dK-PW-Ybx"/>
-                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="Ty8-Zs-7b2" secondAttribute="topMargin" constant="100" id="X3E-Wk-W07"/>
+                            <constraint firstItem="QbF-ku-a5N" firstAttribute="left" secondItem="Ty8-Zs-7b2" secondAttribute="left" constant="50" id="2dK-PW-Ybx"/>
+                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="36" id="4Xr-MA-VJZ"/>
                             <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="50" id="fmg-dU-D2B"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QbF-ku-a5N" secondAttribute="trailing" constant="20" id="rN5-8n-dZi"/>
+                            <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="100" id="q4w-9o-GmI"/>
+                            <constraint firstAttribute="right" secondItem="QbF-ku-a5N" secondAttribute="right" constant="50" id="rN5-8n-dZi"/>
+                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="100" id="yXI-xM-Viw"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Xr-MA-VJZ"/>
+                                <exclude reference="fmg-dU-D2B"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="dfq-9w-BWF"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="akV-T0-4bp" id="eT7-Od-1oe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zY-oz-uxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +103,7 @@
         <!--Navigation Controller-->
         <scene sceneID="GCT-J9-jQo">
             <objects>
-                <navigationController storyboardIdentifier="HelpViewController" automaticallyAdjustsScrollViewInsets="NO" id="cTw-iq-9bc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HelpViewController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="cTw-iq-9bc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OfJ-Il-mhF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

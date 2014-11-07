@@ -10,6 +10,9 @@ import UIKit
 
 class HelpViewController: ModalBaseViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    var gameTitle: String = ""
+    
     class func build() -> (UINavigationController, HelpViewController) {
         var storyboad: UIStoryboard = UIStoryboard(name: "Help", bundle: nil)
         var navigationController = storyboad.instantiateViewControllerWithIdentifier("HelpViewController") as UINavigationController
@@ -20,6 +23,8 @@ class HelpViewController: ModalBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.titleLabel.text = self.gameTitle
+        self.setBlurBackground()
     }
 
     override func didReceiveMemoryWarning() {
