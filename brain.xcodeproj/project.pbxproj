@@ -12,6 +12,8 @@
 		B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */; };
 		B82D612F1A07CCEF00BD10E8 /* ColorMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612E1A07CCEF00BD10E8 /* ColorMatch.swift */; };
 		B82D61311A07CFD300BD10E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61301A07CFD300BD10E8 /* User.swift */; };
+		B82D61391A0DC8D400BD10E8 /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61381A0DC8D400BD10E8 /* PanelView.swift */; };
+		B82D613B1A0DCAA500BD10E8 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82D613A1A0DCAA500BD10E8 /* Common.storyboard */; };
 		B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587A1A04D09F005B68C6 /* AppDelegate.swift */; };
 		B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F587C1A04D09F005B68C6 /* BaseViewController.swift */; };
 		B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82F587E1A04D09F005B68C6 /* Main.storyboard */; };
@@ -27,6 +29,7 @@
 		B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */; };
 		B88C208E1A0752A9000DC4E7 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C208D1A0752A9000DC4E7 /* Help.storyboard */; };
 		B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C208F1A075334000DC4E7 /* HelpViewController.swift */; };
+		B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
 		B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56AE01A050B5000024E00 /* Accelerate.framework */; };
@@ -56,6 +59,8 @@
 		B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatch.swift; sourceTree = "<group>"; };
 		B82D612E1A07CCEF00BD10E8 /* ColorMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMatch.swift; sourceTree = "<group>"; };
 		B82D61301A07CFD300BD10E8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B82D61381A0DC8D400BD10E8 /* PanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		B82D613A1A0DCAA500BD10E8 /* Common.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
 		B82F58751A04D09F005B68C6 /* brain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = brain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F58791A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F587A1A04D09F005B68C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatchViewController.swift; sourceTree = "<group>"; };
 		B88C208D1A0752A9000DC4E7 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		B88C208F1A075334000DC4E7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8E56AE01A050B5000024E00 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -130,6 +136,15 @@
 				B82D612E1A07CCEF00BD10E8 /* ColorMatch.swift */,
 			);
 			path = functions;
+			sourceTree = "<group>";
+		};
+		B82D61371A0DC8A200BD10E8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B82D61381A0DC8D400BD10E8 /* PanelView.swift */,
+				B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		B82F586C1A04D09F005B68C6 = {
@@ -198,6 +213,7 @@
 				B8E56AF31A05177300024E00 /* vender */,
 				B8E56AD81A04DC8500024E00 /* extensions */,
 				B82F589C1A04D219005B68C6 /* view_controllers */,
+				B82D61371A0DC8A200BD10E8 /* views */,
 				B82D61271A07BD5D00BD10E8 /* functions */,
 				B88C20841A063410000DC4E7 /* models */,
 			);
@@ -211,6 +227,7 @@
 				B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */,
 				B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */,
 				B88C208D1A0752A9000DC4E7 /* Help.storyboard */,
+				B82D613A1A0DCAA500BD10E8 /* Common.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -348,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B88C20881A073054000DC4E7 /* SpeedMatch.storyboard in Resources */,
+				B82D613B1A0DCAA500BD10E8 /* Common.storyboard in Resources */,
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
 				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
@@ -407,6 +425,7 @@
 				B8E56AFD1A0522BF00024E00 /* TopViewController.swift in Sources */,
 				B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */,
 				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
+				B82D61391A0DC8D400BD10E8 /* PanelView.swift in Sources */,
 				B88C20861A063450000DC4E7 /* Games.swift in Sources */,
 				B88C20811A0623AC000DC4E7 /* GameSelectViewController.swift in Sources */,
 				B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */,
@@ -417,6 +436,7 @@
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
 				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
+				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
 				B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class User {
     
     func currentEnergy() -> Int {
         var time_to_recovery = max((self.energyRecoveryAt - Util.now()), 0)
-        var currentEnergy = max((Double(self.maxEnergy) - ceil(time_to_recovery / ENERGY_RECOVERY_TIME)),0)
+        var currentEnergy = max((Double(self.maxEnergy) - ceil(time_to_recovery / energyRecoveryTime)),0)
         return Int(currentEnergy)
     }
     
@@ -37,7 +37,7 @@ class User {
     func useEnergy(useNum: Int) {
         if (self.currentEnergy() >= useNum) {
             var energyRecoveryAt = max(self.energyRecoveryAt, Util.now())
-            self.energyRecoveryAt = energyRecoveryAt + Double(useNum) * ENERGY_RECOVERY_TIME
+            self.energyRecoveryAt = energyRecoveryAt + Double(useNum) * energyRecoveryTime
         } else {
             // ここには来ない想定
         }
@@ -62,7 +62,7 @@ class User {
     }
     
     func requiredExpForNextLevel() -> Int {
-        return (self.level + 1) * REQUIRED_EXP_BASE
+        return (self.level + 1) * requiredExpBase
     }
 }
 

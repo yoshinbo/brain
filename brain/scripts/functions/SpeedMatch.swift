@@ -22,7 +22,7 @@ class SpeedMatch: GameBase {
     override init(game: Game) {
         super.init(game: game)
         
-        for i in 0..<PANEL_STOCK_NUM {
+        for i in 0..<panelStockNum {
             self.addPanel()
         }
         self.previousId = self.currentPanelId()
@@ -40,7 +40,7 @@ class SpeedMatch: GameBase {
         return isSame == ans
     }
     
-    override func gameOver() {
+    override func over() {
         self.delegate.renderResultView()
     }
 }
@@ -72,7 +72,7 @@ extension SpeedMatch {
     }
     
     private func addPanel() {
-        var panels = SPEED_MATCH_PANELS
+        var panels = speedMatchPanels
         let isOneTwo: Bool = Util.oneTwo()
         if (self.panels.count > 0 && isOneTwo) {
             self.panels.append([(
@@ -87,7 +87,7 @@ extension SpeedMatch {
     
     private func appendFromExceptPanels(id: Int) {
         var panels: [(id: Int, name: String)] = []
-        for tmpPanel in SPEED_MATCH_PANELS {
+        for tmpPanel in speedMatchPanels {
             if tmpPanel.id != id {
                 panels.append(tmpPanel)
             }

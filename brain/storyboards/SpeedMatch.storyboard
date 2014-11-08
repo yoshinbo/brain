@@ -171,17 +171,45 @@
                                     <constraint firstAttribute="bottom" secondItem="cFM-kA-32J" secondAttribute="bottom" constant="10" id="zA9-lA-6jF"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.19999999999999968" contentMode="scaleToFill" restorationIdentifier="MainView" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-Fa-vw1">
+                                <rect key="frame" x="0.0" y="70" width="600" height="470"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" restorationIdentifier="InfomationView" translatesAutoresizingMaskIntoConstraints="NO" id="INW-22-InZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="56Z-OG-eI4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="INW-22-InZ" firstAttribute="top" secondItem="eIS-Fa-vw1" secondAttribute="top" id="2CL-jn-qUm"/>
+                                    <constraint firstAttribute="trailing" secondItem="INW-22-InZ" secondAttribute="trailing" id="8Zz-NS-nTT"/>
+                                    <constraint firstItem="INW-22-InZ" firstAttribute="leading" secondItem="eIS-Fa-vw1" secondAttribute="leading" id="XKa-b1-BaR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7jS-lw-krc" firstAttribute="top" secondItem="TBC-pu-bkx" secondAttribute="bottom" constant="-20" id="0ZV-a3-LpC"/>
+                            <constraint firstItem="eIS-Fa-vw1" firstAttribute="left" secondItem="wRC-YZ-e8Z" secondAttribute="left" id="B9T-g2-8Ja"/>
                             <constraint firstItem="7jS-lw-krc" firstAttribute="left" secondItem="wRC-YZ-e8Z" secondAttribute="left" id="K7U-Rx-KfT"/>
                             <constraint firstAttribute="right" secondItem="EqN-7G-Ir3" secondAttribute="right" id="WXt-y2-khP"/>
                             <constraint firstItem="EqN-7G-Ir3" firstAttribute="left" secondItem="wRC-YZ-e8Z" secondAttribute="left" id="YlW-pf-lRW"/>
+                            <constraint firstItem="eIS-Fa-vw1" firstAttribute="top" secondItem="7jS-lw-krc" secondAttribute="bottom" id="bzy-dI-frq"/>
                             <constraint firstItem="f82-NE-V8Z" firstAttribute="top" secondItem="EqN-7G-Ir3" secondAttribute="bottom" id="f4r-dF-cEl"/>
+                            <constraint firstAttribute="right" secondItem="eIS-Fa-vw1" secondAttribute="right" id="fgD-TI-yJ2"/>
+                            <constraint firstItem="EqN-7G-Ir3" firstAttribute="top" secondItem="eIS-Fa-vw1" secondAttribute="bottom" id="gAn-Zt-RBW"/>
                             <constraint firstAttribute="right" secondItem="7jS-lw-krc" secondAttribute="right" id="kV3-SJ-NzD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infomationView" destination="INW-22-InZ" id="PKw-tf-HQk"/>
+                        <outlet property="mainView" destination="eIS-Fa-vw1" id="hGI-UX-Kcy"/>
+                        <outlet property="scoreLabel" destination="cx4-Yo-U7Y" id="pWT-N4-bcU"/>
+                        <outlet property="timeLabel" destination="X9h-LU-RQS" id="VIW-ap-FHp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCE-2D-jAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
