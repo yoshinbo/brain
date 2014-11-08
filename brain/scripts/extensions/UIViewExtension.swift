@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    
+
     func convertToImage() -> UIImage {
         UIGraphicsBeginImageContext(self.bounds.size)
         self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)
@@ -17,5 +17,15 @@ extension UIView {
         UIGraphicsEndImageContext()
         return image
     }
-    
+
+    func addSubviewOnCenter(view: UIView) {
+        view.frame = ViewUtil.centerFrameInUIView(view, superView: self)
+        self.addSubview(view)
+    }
+
+    func addImageviewOnCenterByName(name: String) {
+        var label = UILabel(frame: self.frame)
+        label.text = name
+        self.addSubviewOnCenter(label)
+    }
 }

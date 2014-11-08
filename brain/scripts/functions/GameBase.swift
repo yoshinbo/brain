@@ -9,6 +9,10 @@
 import Foundation
 
 let panelStockNum = 3
+let directionToAns = [ // フリックの正当判定用
+    "right" : true,
+    "left"  : false
+]
 
 protocol GameBaseProtocol {
     func start()
@@ -97,7 +101,7 @@ extension GameBase {
 
     private func countDown() {
         self.timeLimitSec -= 1
-        if (self.timeLimitSec < 0) {
+        if (self.timeLimitSec <= 0) {
             self.timeLimitSec = 0
             self.hasStarted = false
             self.isGameOver = true

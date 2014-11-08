@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SpeedMatchViewController: BaseViewController {
+class SpeedMatchViewController: GameBaseViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var mainView: UIView!        // GameのメインView
     @IBOutlet weak var infomationView: UIView!  // 情報を表示するView(コンボ数など)
 
-    let imageTag = 100
+    let panelTag = 100
     let gameId = 1
     var game: SpeedMatch!
     var interfaceView: InterfaceView!
@@ -30,16 +30,17 @@ class SpeedMatchViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
-        self.game = SpeedMatch(game: Games().getById(gameId))
+        self.game = SpeedMatch(game: Games().getById(gameId)!)
         self.game.delegate = self
         self.game.SpeedMatchDelegate = self
+    }
 
+    override func viewDidAppear(animated: Bool) {
         self.setInterfaceView()
         self.interfaceView.delegate = self
         self.interfaceView.hidden = true
 
-        self.game.start()
+        self.matchGameStart()
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,20 +59,36 @@ class SpeedMatchViewController: BaseViewController {
     }
     */
 
+    @IBAction func onClickTrueButton(sender: AnyObject) {
+        self.onClickAns("right")
+    }
+
+    @IBAction func onClickFalseButton(sender: AnyObject) {
+        self.onClickAns("left")
+    }
 }
 
 extension SpeedMatchViewController {
-    func setInterfaceView() {
-        self.interfaceView = InterfaceView(frame: self.mainView.frame)
-        self.interfaceView.center = self.mainView.center
-        self.view.addSubview(interfaceView)
+    private func matchGameStart() {
+        self.game.start()
+        self.renderPanel(self.game.currentPanelName())
     }
 
+    private func onClickAns(direction: String) {
+        if !self.interfaceView.hidden {
+            self.judge(direction)
+        }
+    }
+
+    private func setInterfaceView() {
+        self.interfaceView = InterfaceView(frame: self.mainView.frame)
+        self.mainView.addSubviewOnCenter(interfaceView)
+    }
 }
 
 extension SpeedMatchViewController: GameBaseProtocol {
     func start() {
-        println("start")
+        self.judge("")
     }
 
     func renderTime(sec: Int) {
@@ -85,17 +102,56 @@ extension SpeedMatchViewController: GameBaseProtocol {
 
     func renderResultView() {
         println("game over")
+        self.interfaceView.hidden = true
     }
 }
 
 extension SpeedMatchViewController: SpeedMatchProtocol {
     func renderPanel(name: String) {
-        println("panel")
+        var panelView = PanelView.build()
+        panelView.addImageViewByName(name)
+        panelView.tag = self.panelTag
+        self.mainView.addSubviewOnCenter(panelView)
+        self.mainView.bringSubviewToFront(self.interfaceView)
     }
 }
 
 extension SpeedMatchViewController: InterfaceProtocal {
     func judge(direction: String) {
-        println("OK")
+
+        // 判定とアニメーション中は入力禁止
+        self.interfaceView.hidden = true
+
+        var panelView = self.mainView.viewWithTag(self.panelTag) as PanelView
+        if (direction == "right" || direction == "left") {
+            let isCollect = self.game.isCollectAnswer(directionToAns[direction]!)
+            isCollect
+                ? self.game.collect()
+                : self.game.incollect()
+            self.renderAnswerEffect(
+                self.infomationView,
+                isCollect: isCollect,
+                bonusCoef: self.game.continuousCollectBonusCoef
+            )
+        }
+
+        var animationAfterCondition: (() -> Void) = {
+            [weak self] in
+            panelView.removeFromSuperview()
+            self!.game.addAndRenderPanel()
+            self!.interfaceView.hidden = false
+        }
+
+        switch direction {
+        case "right":
+            panelView.animationRightPlay(self.mainView, condition: animationAfterCondition)
+            break
+        case "left":
+            panelView.animationLeftPlay(self.mainView, condition: animationAfterCondition)
+            break
+        default:
+            panelView.animationDownPlay(self.mainView, condition: animationAfterCondition)
+            break
+        }
     }
 }

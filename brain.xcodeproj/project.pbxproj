@@ -30,6 +30,8 @@
 		B88C208E1A0752A9000DC4E7 /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C208D1A0752A9000DC4E7 /* Help.storyboard */; };
 		B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C208F1A075334000DC4E7 /* HelpViewController.swift */; };
 		B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */; };
+		B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5FE721A0E035600F96DC8 /* Panel.xib */; };
+		B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
 		B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56AE01A050B5000024E00 /* Accelerate.framework */; };
@@ -81,6 +83,8 @@
 		B88C208D1A0752A9000DC4E7 /* Help.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
 		B88C208F1A075334000DC4E7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
+		B8A5FE721A0E035600F96DC8 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
+		B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8E56AE01A050B5000024E00 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -208,6 +212,7 @@
 		B82F589A1A04D112005B68C6 /* scripts */ = {
 			isa = PBXGroup;
 			children = (
+				B8A5FE791A0E0E8800F96DC8 /* util */,
 				B82F587A1A04D09F005B68C6 /* AppDelegate.swift */,
 				B88C20821A063262000DC4E7 /* Config.swift */,
 				B8E56AF31A05177300024E00 /* vender */,
@@ -228,6 +233,7 @@
 				B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */,
 				B88C208D1A0752A9000DC4E7 /* Help.storyboard */,
 				B82D613A1A0DCAA500BD10E8 /* Common.storyboard */,
+				B8A5FE721A0E035600F96DC8 /* Panel.xib */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -252,6 +258,14 @@
 				B82D61301A07CFD300BD10E8 /* User.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		B8A5FE791A0E0E8800F96DC8 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		B8E56AD81A04DC8500024E00 /* extensions */ = {
@@ -367,6 +381,7 @@
 				B88C20881A073054000DC4E7 /* SpeedMatch.storyboard in Resources */,
 				B82D613B1A0DCAA500BD10E8 /* Common.storyboard in Resources */,
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
+				B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */,
 				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
 				B88C208E1A0752A9000DC4E7 /* Help.storyboard in Resources */,
@@ -436,6 +451,7 @@
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
 				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
+				B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */,
 				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,

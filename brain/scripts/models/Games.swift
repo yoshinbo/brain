@@ -9,13 +9,13 @@
 import Foundation
 
 class Game {
-    
+
     var id: Int
     var title: String
     var bestScore: Int
     var timeLimitSec: Int
     var setUpTimeSec: Int
-    
+
     init(id: Int, title: String, bestScore: Int, timeLimitSec: Int, setUpTimeSec: Int) {
         self.id = id
         self.title = title
@@ -23,20 +23,20 @@ class Game {
         self.timeLimitSec = timeLimitSec
         self.setUpTimeSec = setUpTimeSec
     }
-    
+
     func isSpeedMatch() -> Bool {
         return self.id == 1
     }
-    
+
     func isColorMatch() -> Bool {
         return self.id == 2
     }
 }
 
 class Games: NSObject {
-    
+
     var games:[Game] = []
-    
+
     override init() {
         super.init()
         for gameKind in gameKinds {
@@ -50,12 +50,21 @@ class Games: NSObject {
             self.games.append([game][0])
         }
     }
-    
+
     func totalGameNum() -> Int {
         return self.games.count
     }
-    
-    func getById(index: Int) -> Game {
-        return self.games[index]
+
+    func getByIndex(indexId: Int) -> Game {
+        return self.games[indexId]
+    }
+
+    func getById(id: Int) -> Game? {
+        for game in self.games {
+            if game.id == id {
+                return game
+            }
+        }
+        return nil
     }
 }

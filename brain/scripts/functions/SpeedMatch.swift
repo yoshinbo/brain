@@ -40,21 +40,20 @@ class SpeedMatch: GameBase {
         return isSame == ans
     }
     
+    func currentPanelId() -> Int {
+        return self.panels[0].id
+    }
+    
+    func currentPanelName() -> String {
+        return self.panels[0].name
+    }
+    
     override func over() {
         self.delegate.renderResultView()
     }
 }
 
 extension SpeedMatch {
-    
-    private func currentPanelId() -> Int {
-        return self.panels[0].id
-    }
-    
-    private func currentPanelName() -> String {
-        return self.panels[0].name
-    }
-    
     private func lastPanelId() -> Int {
         var id: Int = 0
         if (self.panels.count > 0) {

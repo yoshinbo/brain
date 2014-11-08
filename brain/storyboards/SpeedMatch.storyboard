@@ -118,6 +118,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickFalseButton:" destination="FR0-Qe-Qm6" eventType="touchUpInside" id="j4L-Tn-b5X"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.5883020913" green="0.71779312910000004" blue="0.89302394699999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -137,6 +140,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onClickTrueButton:" destination="FR0-Qe-Qm6" eventType="touchUpInside" id="soi-fY-64e"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.48592626674100903" green="0.79208096590909094" blue="0.47866793255675466" alpha="1" colorSpace="calibratedRGB"/>

@@ -54,8 +54,8 @@ class GameSelectViewController: BaseViewController {
 extension GameSelectViewController {
     
     private func aduptCell(cell:GameSelectContentCell, indexPath:NSIndexPath) {
-        var game = self.gameModel.getById(indexPath.row)
-        cell.setParams(game);
+        var game = self.gameModel.getByIndex(indexPath.row)
+        cell.setParams(game)
     }
     
     // タッチした座興からNSIndexPathを返す

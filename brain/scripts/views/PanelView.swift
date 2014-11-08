@@ -10,26 +10,43 @@ import UIKit
 
 class PanelView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-    func build() {
-        self.backgroundColor = UIColor.blackColor()
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.build()
-    }
-    
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.build()
+    class func build() -> PanelView {
+        return NSBundle.mainBundle().loadNibNamed("Panel", owner: nil, options: nil)[0] as PanelView
     }
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    func addImageViewByName(name: String) {
+        self.addImageviewOnCenterByName(name)
+    }
+
+    func animationDownPlay(superView: UIView, condition: () -> Void) {
+        UIView.animateWithDuration(0.5, animations: {() -> Void in
+            self.frame.origin.y = superView.frame.size.height + (self.frame.origin.y / 2)
+        }, completion: {(Bool) -> Void in
+            condition()
+        })
+    }
+
+    func animationRightPlay(superView: UIView, condition: () -> Void) {
+        UIView.animateWithDuration(0.5, animations: {() -> Void in
+            self.frame.origin.x = superView.frame.size.width + (self.frame.origin.x / 2)
+            }, completion: {(Bool) -> Void in
+                condition()
+        })
+    }
+
+    func animationLeftPlay(superView: UIView, condition: () -> Void) {
+        UIView.animateWithDuration(0.5, animations: {() -> Void in
+            self.frame.origin.x -= superView.frame.size.width + (self.frame.origin.x / 2)
+            }, completion: {(Bool) -> Void in
+                condition()
+        })
+    }
 }
