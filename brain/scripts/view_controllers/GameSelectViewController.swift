@@ -54,8 +54,8 @@ class GameSelectViewController: BaseViewController {
 extension GameSelectViewController {
     
     private func aduptCell(cell:GameSelectContentCell, indexPath:NSIndexPath) {
-        var game = self.gameModel.getById(indexPath.row)
-        cell.setParams(game);
+        var game = self.gameModel.getByIndex(indexPath.row)
+        cell.setParams(game)
     }
     
     // タッチした座興からNSIndexPathを返す
@@ -67,9 +67,9 @@ extension GameSelectViewController {
     func onClickHelpButton(sender: UIButton, event: UIEvent) {
         var indexPath = self.indexPathForControlEvent(event)
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
-        println("helpbutton touch in \(cell.game?.title)")
         if cell.game!.isSpeedMatch() {
             var (navigationController, viewController) = HelpViewController.build()
+            viewController.gameTitle = cell.game!.title
             self.moveTo(navigationController)
         } else
         if cell.game!.isColorMatch() {

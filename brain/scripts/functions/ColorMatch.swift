@@ -22,7 +22,7 @@ class ColorMatch: GameBase {
     override init(game: Game) {
         super.init(game: game)
         
-        for i in 0..<PANEL_STOCK_NUM {
+        for i in 0..<panelStockNum {
             self.addPanel()
         }
         self.previousName = self.currentPanelName()
@@ -45,7 +45,7 @@ class ColorMatch: GameBase {
         self.previousName = removedPanel.name
     }
     
-    override func gameOver() {
+    override func over() {
         self.delegate.renderResultView()
     }
 }
@@ -61,15 +61,15 @@ extension ColorMatch {
     }
     
     private func addPanel() {
-        var seed: UInt32 = UInt32(COLOR_MATCH_COLORS.count);
-        var nameString: String = COLOR_MATCH_COLORS[Int(arc4random_uniform(seed))]
+        var seed: UInt32 = UInt32(colorMatchColors.count);
+        var nameString: String = colorMatchColors[Int(arc4random_uniform(seed))]
         var colorString: String = ""
         let isOneTwo: Bool = Util.oneTwo()
         if (self.panels.count > 0 && isOneTwo) {
             var lastPanel = self.panels[self.panels.endIndex-1]
             colorString = lastPanel.name
         } else {
-            colorString = COLOR_MATCH_COLORS[Int(arc4random_uniform(seed))]
+            colorString = colorMatchColors[Int(arc4random_uniform(seed))]
         }
         self.panels.append([(
             name: nameString,

@@ -9,9 +9,9 @@
 import Foundation
 
 // for User
-let REAL_MAX_ENERGY: Int = 10
-let ENERGY_RECOVERY_TIME: Double = 60 * 3 // 3分で1回復
-let REQUIRED_EXP_BASE: Int = 1000 // この値×levelが必要経験値
+let realStockNum: Int = 10
+let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
+let requiredExpBase: Int = 1000 // この値×levelが必要経験値
 
 // for general game setting
 let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] =
@@ -30,10 +30,10 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
     )
 ]
 
-let CONTINUOUS_COLLECT_ANS_BONUS_COEF: Int = 5 // 連続正解の場合のボーナス係数
+let continuousCollectAnsBonusCoef: Int = 5 // 連続正解の場合のボーナス係数
 
 // for Speed Match
-let SPEED_MATCH_PANELS: [(id: Int, name: String)] = [
+let speedMatchPanels: [(id: Int, name: String)] = [
     (
         id: 1,
         name: "panel1.png"
@@ -49,6 +49,6 @@ let SPEED_MATCH_PANELS: [(id: Int, name: String)] = [
 ]
 
 // for Color Match
-let COLOR_MATCH_COLORS: [String] = [
+let colorMatchColors: [String] = [
     "Red", "Blue", "Green", "Yellow"
 ]

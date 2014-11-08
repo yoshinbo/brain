@@ -40,3 +40,10 @@ class ModalBaseViewController: BaseViewController {
         }
     }
 }
+
+class GameBaseViewController: BaseViewController {
+    func renderAnswerEffect(view: UIView, isCollect: Bool, bonusCoef: Int) {
+        let imageName = isCollect ? "ok.png" : "ng.png"
+        println(imageName)
+    }
+}
