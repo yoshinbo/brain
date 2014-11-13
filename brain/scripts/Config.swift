@@ -19,7 +19,7 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
     (
         id: 1,
         title: "Speed Match",
-        timeLimitSec: 60,
+        timeLimitSec: 6,
         setUpTimeSec: 3
     ),
     (

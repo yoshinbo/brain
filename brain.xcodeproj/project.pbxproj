@@ -32,6 +32,8 @@
 		B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */; };
 		B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5FE721A0E035600F96DC8 /* Panel.xib */; };
 		B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */; };
+		B8C12A671A0EF72B00276AEE /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C12A661A0EF72B00276AEE /* Result.storyboard */; };
+		B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C12A681A0F0E6200276AEE /* ResultViewController.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
 		B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56AE01A050B5000024E00 /* Accelerate.framework */; };
@@ -85,6 +87,8 @@
 		B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		B8A5FE721A0E035600F96DC8 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
 		B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
+		B8C12A661A0EF72B00276AEE /* Result.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		B8C12A681A0F0E6200276AEE /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8E56AE01A050B5000024E00 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -234,6 +238,7 @@
 				B88C208D1A0752A9000DC4E7 /* Help.storyboard */,
 				B82D613A1A0DCAA500BD10E8 /* Common.storyboard */,
 				B8A5FE721A0E035600F96DC8 /* Panel.xib */,
+				B8C12A661A0EF72B00276AEE /* Result.storyboard */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
 				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
 				B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */,
+				B8C12A681A0F0E6200276AEE /* ResultViewController.swift */,
 				B88C208F1A075334000DC4E7 /* HelpViewController.swift */,
 			);
 			path = view_controllers;
@@ -383,6 +389,7 @@
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
 				B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */,
 				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
+				B8C12A671A0EF72B00276AEE /* Result.storyboard in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
 				B88C208E1A0752A9000DC4E7 /* Help.storyboard in Resources */,
 				B82F58851A04D09F005B68C6 /* LaunchScreen.xib in Resources */,
@@ -439,6 +446,7 @@
 			files = (
 				B8E56AFD1A0522BF00024E00 /* TopViewController.swift in Sources */,
 				B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */,
+				B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */,
 				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
 				B82D61391A0DC8D400BD10E8 /* PanelView.swift in Sources */,
 				B88C20861A063450000DC4E7 /* Games.swift in Sources */,

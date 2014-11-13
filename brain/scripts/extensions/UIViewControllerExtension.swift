@@ -56,14 +56,7 @@ extension UIViewController {
     func setBlurBackground() {
         if let parentViewController = self.presentingViewController? {
             var image:UIImage = parentViewController.view.convertToImage()
-            image = image.applyBlurWithRadius(
-                10,
-                tintColor: UIColor(white: 1.0, alpha: 0.2),
-                saturationDeltaFactor:1.3,
-                maskImage: nil
-            )
-            self.view.backgroundColor = UIColor(patternImage: image)
-            
+            self.view.backgroundColor = UIColor(patternImage: ViewUtil.applyBlurWithRadius(image))
         }
     }
 }

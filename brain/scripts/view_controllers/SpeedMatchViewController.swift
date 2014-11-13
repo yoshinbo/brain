@@ -101,8 +101,10 @@ extension SpeedMatchViewController: GameBaseProtocol {
     }
 
     func renderResultView() {
-        println("game over")
         self.interfaceView.hidden = true
+        var resultViewController = ResultViewController.build()
+        resultViewController.backGroundImage = self.view.convertToImage()
+        self.presentViewController(resultViewController, animated: true, completion: nil)
     }
 }
 
