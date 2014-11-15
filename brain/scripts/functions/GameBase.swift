@@ -88,7 +88,7 @@ extension GameBase {
 
     private func setUpTimeSecCountDown() {
         self.setUpTimeSec -= 1
-        if (self.setUpTimeSec < 0) {
+        if (self.setUpTimeSec <= 0) {
             self.setUpTimeSec = self.game.setUpTimeSec
             self.hasStarted = true
             self.delegate.start()

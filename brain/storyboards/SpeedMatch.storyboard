@@ -211,7 +211,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="infomationView" destination="INW-22-InZ" id="PKw-tf-HQk"/>
+                        <outlet property="informationBaseView" destination="INW-22-InZ" id="JHk-AR-hx2"/>
                         <outlet property="mainView" destination="eIS-Fa-vw1" id="hGI-UX-Kcy"/>
                         <outlet property="scoreLabel" destination="cx4-Yo-U7Y" id="pWT-N4-bcU"/>
                         <outlet property="timeLabel" destination="X9h-LU-RQS" id="VIW-ap-FHp"/>

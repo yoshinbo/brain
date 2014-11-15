@@ -42,8 +42,11 @@ class ModalBaseViewController: BaseViewController {
 }
 
 class GameBaseViewController: BaseViewController {
-    func renderAnswerEffect(view: UIView, isCollect: Bool, bonusCoef: Int) {
-        let imageName = isCollect ? "ok.png" : "ng.png"
-        println(imageName)
+    func renderAnswerEffect(informationView: InformationView, isCollect: Bool, bonusCoef: Int) {
+        if isCollect {
+            informationView.addOKImageWithBonusRate(bonusCoef)
+        } else {
+            informationView.addNGImage()
+        }
     }
 }

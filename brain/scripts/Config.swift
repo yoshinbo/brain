@@ -36,15 +36,15 @@ let continuousCollectAnsBonusCoef: Int = 5 // 連続正解の場合のボーナ�
 let speedMatchPanels: [(id: Int, name: String)] = [
     (
         id: 1,
-        name: "panel1.png"
+        name: "panel1"
     ),
     (
         id: 2,
-        name: "panel2.png"
+        name: "panel2"
     ),
     (
         id: 3,
-        name: "panel3.png"
+        name: "panel3"
     )
 ]
 
