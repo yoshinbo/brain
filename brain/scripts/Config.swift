@@ -11,7 +11,8 @@ import Foundation
 // for User
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
-let requiredExpBase: Int = 1000 // この値×levelが必要経験値
+let requiredExpBase: Int = 500 // この値×levelが必要経験値
+let expAndRequiredExpFormat: String = "%d/%d"
 
 // for general game setting
 let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] =
@@ -19,13 +20,13 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
     (
         id: 1,
         title: "Speed Match",
-        timeLimitSec: 60,
+        timeLimitSec: 30,
         setUpTimeSec: 3
     ),
     (
         id: 2,
         title: "Color Match",
-        timeLimitSec: 60,
+        timeLimitSec: 30,
         setUpTimeSec: 3
     )
 ]
@@ -36,15 +37,15 @@ let continuousCollectAnsBonusCoef: Int = 5 // 連続正解の場合のボーナ�
 let speedMatchPanels: [(id: Int, name: String)] = [
     (
         id: 1,
-        name: "panel1.png"
+        name: "panel1"
     ),
     (
         id: 2,
-        name: "panel2.png"
+        name: "panel2"
     ),
     (
         id: 3,
-        name: "panel3.png"
+        name: "panel3"
     )
 ]
 

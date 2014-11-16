@@ -13,7 +13,9 @@ class SpeedMatchViewController: GameBaseViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var mainView: UIView!        // GameのメインView
-    @IBOutlet weak var infomationView: UIView!  // 情報を表示するView(コンボ数など)
+    @IBOutlet weak var informationBaseView: UIView!
+    
+    var informationView: InformationView!  // 情報を表示するView(コンボ数など)
 
     let panelTag = 100
     let gameId = 1
@@ -36,6 +38,9 @@ class SpeedMatchViewController: GameBaseViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
+        self.informationView = InformationView.build()
+        self.informationBaseView.addSubviewOnCenter(informationView)
+        
         self.setInterfaceView()
         self.interfaceView.delegate = self
         self.interfaceView.hidden = true
@@ -93,6 +98,11 @@ extension SpeedMatchViewController: GameBaseProtocol {
 
     func renderTime(sec: Int) {
         self.timeLabel.text = NSString(format: "%d", sec)
+        if !self.game.hasStarted {
+            if 0 < sec && sec <= 3 {
+                self.informationView.addReadySecImage(sec)
+            }
+        }
     }
 
     func renderScore(score: Int)
@@ -100,9 +110,13 @@ extension SpeedMatchViewController: GameBaseProtocol {
         self.scoreLabel.text = NSString(format: "%d", score)
     }
 
-    func renderResultView() {
-        println("game over")
+    func renderResultView(result:[String:Int]) {
         self.interfaceView.hidden = true
+        var resultViewController = ResultViewController.build()
+        resultViewController.backGroundImage = self.view.convertToImage()
+        resultViewController.setResult(result)
+        resultViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.presentViewController(resultViewController, animated: true, completion: nil)
     }
 }
 
@@ -129,7 +143,7 @@ extension SpeedMatchViewController: InterfaceProtocal {
                 ? self.game.collect()
                 : self.game.incollect()
             self.renderAnswerEffect(
-                self.infomationView,
+                self.informationView,
                 isCollect: isCollect,
                 bonusCoef: self.game.continuousCollectBonusCoef
             )

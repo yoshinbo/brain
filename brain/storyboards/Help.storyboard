@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-ku-a5N">
-                                <rect key="frame" x="50" y="164" width="500" height="336"/>
+                                <rect key="frame" x="10" y="84" width="580" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" restorationIdentifier="HelpHeader" translatesAutoresizingMaskIntoConstraints="NO" id="RJi-Zs-If2">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="580" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akV-T0-4bp">
-                                                <rect key="frame" x="0.0" y="15" width="500" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="15" width="580" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-JZ-uPf">
-                                        <rect key="frame" x="20" y="60" width="460" height="256"/>
+                                        <rect key="frame" x="20" y="60" width="540" height="416"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -77,12 +77,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QbF-ku-a5N" firstAttribute="left" secondItem="Ty8-Zs-7b2" secondAttribute="left" constant="50" id="2dK-PW-Ybx"/>
+                            <constraint firstItem="QbF-ku-a5N" firstAttribute="left" secondItem="Ty8-Zs-7b2" secondAttribute="left" constant="10" id="2dK-PW-Ybx"/>
                             <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="36" id="4Xr-MA-VJZ"/>
                             <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="50" id="fmg-dU-D2B"/>
-                            <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="100" id="q4w-9o-GmI"/>
-                            <constraint firstAttribute="right" secondItem="QbF-ku-a5N" secondAttribute="right" constant="50" id="rN5-8n-dZi"/>
-                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="100" id="yXI-xM-Viw"/>
+                            <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="20" id="q4w-9o-GmI"/>
+                            <constraint firstAttribute="right" secondItem="QbF-ku-a5N" secondAttribute="right" constant="10" id="rN5-8n-dZi"/>
+                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="20" id="yXI-xM-Viw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

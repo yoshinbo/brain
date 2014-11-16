@@ -9,7 +9,14 @@
 import UIKit
 
 class TopViewController: BaseViewController {
-    
+
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var expLabel: UILabel!
+    @IBOutlet weak var energyLabel: UILabel!
+    @IBOutlet weak var recoveryInfoLabel: UILabel!
+
+    var user: User!
+
     class func build() -> (UINavigationController, TopViewController) {
         var storyboad: UIStoryboard = UIStoryboard(name: "Top", bundle: nil)
         var navigationController = storyboad.instantiateViewControllerWithIdentifier("TopViewController") as UINavigationController
@@ -21,13 +28,19 @@ class TopViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "brain"
+
+        self.user = User()
+        self.levelLabel.text = NSString(format: "%d", user.level)
+        self.expLabel.text = user.expAndRequiredExpWithFormat()
+        self.energyLabel.text = user.energyAndMaxEnergyWithFormat()
+        self.recoveryInfoLabel.text = NSString(format: "%d", user.energyRecoveryAt)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

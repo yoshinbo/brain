@@ -116,14 +116,13 @@
                                                 <color key="backgroundColor" red="0.89302394699999998" green="0.4366718069015556" blue="0.43060541196446911" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="FALSE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="onClickFalseButton:" destination="FR0-Qe-Qm6" eventType="touchUpInside" id="j4L-Tn-b5X"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.5883020913" green="0.71779312910000004" blue="0.89302394699999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.26274509800000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="awu-MU-JeW" firstAttribute="leading" secondItem="cFM-kA-32J" secondAttribute="leading" id="4tp-Un-4eh"/>
                                             <constraint firstItem="awu-MU-JeW" firstAttribute="top" secondItem="cFM-kA-32J" secondAttribute="top" id="I6f-hl-pSG"/>
@@ -145,7 +144,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.48592626674100903" green="0.79208096590909094" blue="0.47866793255675466" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.60784313729999995" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="ZLw-3N-KBI" secondAttribute="trailing" id="Ej9-bJ-six"/>
                                             <constraint firstItem="ZLw-3N-KBI" firstAttribute="left" secondItem="wBz-2A-pp0" secondAttribute="left" constant="-10" id="Idx-CI-Tri"/>
@@ -162,7 +161,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="BPH-YQ-waB" firstAttribute="leading" secondItem="awu-MU-JeW" secondAttribute="trailing" constant="5" id="2DJ-vP-Cjz"/>
                                     <constraint firstAttribute="height" constant="60" id="2IM-6g-IsB"/>
@@ -177,7 +176,7 @@
                                     <constraint firstAttribute="bottom" secondItem="cFM-kA-32J" secondAttribute="bottom" constant="10" id="zA9-lA-6jF"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.19999999999999968" contentMode="scaleToFill" restorationIdentifier="MainView" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-Fa-vw1">
+                            <view contentMode="scaleToFill" restorationIdentifier="MainView" translatesAutoresizingMaskIntoConstraints="NO" id="eIS-Fa-vw1">
                                 <rect key="frame" x="0.0" y="70" width="600" height="470"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" restorationIdentifier="InfomationView" translatesAutoresizingMaskIntoConstraints="NO" id="INW-22-InZ">
@@ -188,7 +187,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="INW-22-InZ" firstAttribute="top" secondItem="eIS-Fa-vw1" secondAttribute="top" id="2CL-jn-qUm"/>
                                     <constraint firstAttribute="trailing" secondItem="INW-22-InZ" secondAttribute="trailing" id="8Zz-NS-nTT"/>
@@ -211,7 +210,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="infomationView" destination="INW-22-InZ" id="PKw-tf-HQk"/>
+                        <outlet property="informationBaseView" destination="INW-22-InZ" id="JHk-AR-hx2"/>
                         <outlet property="mainView" destination="eIS-Fa-vw1" id="hGI-UX-Kcy"/>
                         <outlet property="scoreLabel" destination="cx4-Yo-U7Y" id="pWT-N4-bcU"/>
                         <outlet property="timeLabel" destination="X9h-LU-RQS" id="VIW-ap-FHp"/>

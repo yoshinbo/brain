@@ -23,9 +23,12 @@ extension UIView {
         self.addSubview(view)
     }
 
-    func addImageviewOnCenterByName(name: String) {
-        var label = UILabel(frame: self.frame)
-        label.text = name
-        self.addSubviewOnCenter(label)
+    func addImageviewOnCenterByName(name: String) -> UIImageView {
+        var image: UIImage = UIImage(named: name)!
+        var imageView = UIImageView(frame: self.bounds)
+        imageView.image = image
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.addSubviewOnCenter(imageView)
+        return imageView
     }
 }

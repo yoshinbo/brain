@@ -9,22 +9,22 @@
 import Foundation
 
 class User {
-    
+
     var level: Int = 1 // initial level
     var exp: Int = 0
     var maxEnergy: Int = 1 // initial max energy for using skill
     var energyRecoveryAt: Double = Util.now()
-    
+
     init() {
         self.loadData()
     }
-    
+
     func currentEnergy() -> Int {
         var time_to_recovery = max((self.energyRecoveryAt - Util.now()), 0)
         var currentEnergy = max((Double(self.maxEnergy) - ceil(time_to_recovery / energyRecoveryTime)),0)
         return Int(currentEnergy)
     }
-    
+
     func energyRecoveryRemainTime() -> Double {
         var currentEnergy = self.currentEnergy()
         if (currentEnergy == self.maxEnergy) {
@@ -33,7 +33,7 @@ class User {
         var energyRecoveryRemainTime = max((self.energyRecoveryAt - Util.now()), 0)
         return energyRecoveryRemainTime
     }
-    
+
     func useEnergy(useNum: Int) {
         if (self.currentEnergy() >= useNum) {
             var energyRecoveryAt = max(self.energyRecoveryAt, Util.now())
@@ -43,12 +43,12 @@ class User {
         }
         self.updateData()
     }
-    
+
     func recoverEnergy() {
         self.energyRecoveryAt = Util.now()
         self.updateData()
     }
-    
+
     func addExp(exp: Int) -> Int {
         var levelUpNum = 0
         self.exp += exp
@@ -60,14 +60,22 @@ class User {
         self.updateData()
         return levelUpNum
     }
-    
+
     func requiredExpForNextLevel() -> Int {
         return (self.level + 1) * requiredExpBase
+    }
+
+    func expAndRequiredExpWithFormat() -> String {
+        return NSString(format: expAndRequiredExpFormat, self.exp, self.requiredExpForNextLevel())
+    }
+
+    func energyAndMaxEnergyWithFormat() -> String {
+        return NSString(format: expAndRequiredExpFormat, self.currentEnergy(), self.maxEnergy)
     }
 }
 
 extension User {
-    
+
     // NSKeyedArchiverからデータロード
     private func loadData() {
         let data:AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(self.path())
@@ -78,7 +86,7 @@ extension User {
             self.energyRecoveryAt = unwrapData["energyRecoveryAt"] as Double
         }
     }
-    
+
     // NSKeyedArchiverにデータセーブ
     private func updateData() {
         let success = NSKeyedArchiver.archiveRootObject([
@@ -89,7 +97,7 @@ extension User {
             ], toFile: self.path())
         if success { NSLog("-> update data") }
     }
-    
+
     private func path() -> String {
         // /Documentsまでのパス取得
         let paths = NSSearchPathForDirectoriesInDomains(

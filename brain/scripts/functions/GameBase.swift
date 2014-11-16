@@ -18,13 +18,14 @@ protocol GameBaseProtocol {
     func start()
     func renderTime(sec: Int)
     func renderScore(score: Int)
-    func renderResultView()
+    func renderResultView(result:[String:Int])
 }
 
 class GameBase: NSObject {
 
     var delegate: GameBaseProtocol!
 
+    var user: User
     var game: Game
     var score: Int = 0
     var timeLimitSec: Int
@@ -36,6 +37,8 @@ class GameBase: NSObject {
     var continuousCollectBonusCoef: Int = 1 // 連続正解得点ボーナスの実数値
 
     init(game: Game) {
+        self.user = User()
+
         self.game = game
         self.hasStarted = false
         self.isGameOver = false
@@ -54,7 +57,15 @@ class GameBase: NSObject {
     }
 
     func over() {
-        // need to override
+        var result: [String:Int] = [
+            "score": self.score,
+            "beforeExp" : user.exp,
+            "beforeLevel" : user.level
+        ]
+        result["levelUpNum"] = user.addExp(self.score)
+        result["afterExp"] = user.exp
+        result["afterLevel"] = user.level
+        self.delegate.renderResultView(result)
     }
 
     func update() {
@@ -88,7 +99,7 @@ extension GameBase {
 
     private func setUpTimeSecCountDown() {
         self.setUpTimeSec -= 1
-        if (self.setUpTimeSec < 0) {
+        if (self.setUpTimeSec <= 0) {
             self.setUpTimeSec = self.game.setUpTimeSec
             self.hasStarted = true
             self.delegate.start()

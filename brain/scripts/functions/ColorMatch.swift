@@ -44,10 +44,6 @@ class ColorMatch: GameBase {
         let removedPanel = self.panels.removeAtIndex(0)
         self.previousName = removedPanel.name
     }
-    
-    override func over() {
-        self.delegate.renderResultView()
-    }
 }
 
 extension ColorMatch {
