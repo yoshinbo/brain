@@ -36,6 +36,7 @@
 		B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C12A681A0F0E6200276AEE /* ResultViewController.swift */; };
 		B8D22D571A177DA4001C7EB7 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D22D561A177DA4001C7EB7 /* InformationView.swift */; };
 		B8D22D591A17879B001C7EB7 /* Information.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D22D581A17879B001C7EB7 /* Information.xib */; };
+		B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
 		B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E56AE01A050B5000024E00 /* Accelerate.framework */; };
@@ -93,6 +94,7 @@
 		B8C12A681A0F0E6200276AEE /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B8D22D561A177DA4001C7EB7 /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		B8D22D581A17879B001C7EB7 /* Information.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Information.xib; sourceTree = "<group>"; };
+		B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B8E56AE01A050B5000024E00 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */,
+				B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
 				B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */,
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
+				B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

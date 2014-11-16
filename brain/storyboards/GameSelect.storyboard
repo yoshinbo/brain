@@ -48,7 +48,7 @@
                                                             </state>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="zJt-3z-yot" firstAttribute="leading" secondItem="zs1-g9-AhK" secondAttribute="leading" id="9Qr-tf-whU"/>
                                                         <constraint firstAttribute="bottom" secondItem="zJt-3z-yot" secondAttribute="bottom" constant="15" id="L36-oT-blR"/>
@@ -92,7 +92,7 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gET-z0-hjo">
                                 <rect key="frame" x="0.0" y="400" width="600" height="200"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="rlc-DR-WeX"/>
                                 </constraints>

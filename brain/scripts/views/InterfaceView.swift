@@ -18,11 +18,13 @@ class InterfaceView: UIView {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.clearColor()
         self.setGesture()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.clearColor()
         self.setGesture()
     }
 

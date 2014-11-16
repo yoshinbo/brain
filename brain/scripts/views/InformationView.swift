@@ -24,7 +24,7 @@ class InformationView: UIView {
         secLabel.text = NSString(format: "%d",sec)
         secLabel.sizeToFit()
         imageView.addSubviewOnCenter(secLabel)
-        self.scaleSmallerThenDismiss(imageView)
+        self.scaleBiggerThenDismiss(imageView)
     }
 
     func addOKImageWithBonusRate(bonusCoef:Int) {
@@ -35,22 +35,48 @@ class InformationView: UIView {
             bonusCoefLabel.sizeToFit()
             imageView.addSubview(bonusCoefLabel)
         }
-        self.scaleSmallerThenDismiss(imageView)
+        self.scaleBiggerSmallerThenDismiss(imageView)
     }
 
     func addNGImage() {
         var imageView = self.addImageviewOnCenterByName("ng_fill")
-        self.scaleSmallerThenDismiss(imageView)
+        self.scaleBiggerSmallerThenDismiss(imageView)
     }
 }
 
 extension InformationView {
-    // スケールが1/2になった後に消えるアニメーション
-    private func scaleSmallerThenDismiss(view: UIView) {
-        UIView.animateWithDuration(0.5, animations: {() -> Void in
-            view.transform = CGAffineTransformMakeScale(0.5, 0.5);
-            }, completion: {(Bool) -> Void in
+    // スケールが1/2から1になった後に消えるアニメーション
+    private func scaleBiggerThenDismiss(view: UIView) {
+        view.transform = CGAffineTransformMakeScale(0.2, 0.2);
+        UIView.animateWithDuration(0.7,
+            animations: {
+                () -> Void in
+                view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            },
+            completion: {
+                (Bool) -> Void in
                 view.removeFromSuperview()
         })
+    }
+
+    // スケールが大きくなった後に小さくなって消えるアニメーション
+    private func scaleBiggerSmallerThenDismiss(view: UIView) {
+        view.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        UIView.animateWithDuration(0.3,
+            animations: {
+                () -> Void in
+                view.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            },
+            completion: {
+                (Bool) -> Void in
+        UIView.animateWithDuration(0.2,
+            animations: {
+                () -> Void in
+                view.transform = CGAffineTransformMakeScale(0.5, 0.5);
+            },
+            completion: {
+                (Bool) -> Void in
+                view.removeFromSuperview()
+        }) })
     }
 }

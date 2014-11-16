@@ -110,10 +110,12 @@ extension SpeedMatchViewController: GameBaseProtocol {
         self.scoreLabel.text = NSString(format: "%d", score)
     }
 
-    func renderResultView() {
+    func renderResultView(result:[String:Int]) {
         self.interfaceView.hidden = true
         var resultViewController = ResultViewController.build()
         resultViewController.backGroundImage = self.view.convertToImage()
+        resultViewController.setResult(result)
+        resultViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.presentViewController(resultViewController, animated: true, completion: nil)
     }
 }

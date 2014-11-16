@@ -47,10 +47,6 @@ class SpeedMatch: GameBase {
     func currentPanelName() -> String {
         return self.panels[0].name
     }
-    
-    override func over() {
-        self.delegate.renderResultView()
-    }
 }
 
 extension SpeedMatch {

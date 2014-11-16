@@ -97,7 +97,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.70006027270000004" blue="0.21942367600000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.69803921568627447" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ERy-b0-u0d" secondAttribute="bottom" constant="10" id="Hh1-ik-pYj"/>
                                     <constraint firstItem="ERy-b0-u0d" firstAttribute="top" secondItem="DK2-T8-8dR" secondAttribute="top" constant="20" id="dfU-5S-B5k"/>
@@ -111,21 +111,20 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04d-ai-aww">
                                         <rect key="frame" x="20" y="10" width="260" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rf6-7f-0Fi">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfB-0F-1p2">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
-                                                <color key="backgroundColor" red="0.89302394699999998" green="0.43667180690000001" blue="0.43060541200000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="FALSE">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.5883020913" green="0.71779312910000004" blue="0.89302394699999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.26274509800000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Rf6-7f-0Fi" secondAttribute="bottom" id="EqB-SG-7pA"/>
-                                            <constraint firstItem="Rf6-7f-0Fi" firstAttribute="leading" secondItem="04d-ai-aww" secondAttribute="leading" id="RzB-C1-0GF"/>
-                                            <constraint firstItem="Rf6-7f-0Fi" firstAttribute="top" secondItem="04d-ai-aww" secondAttribute="top" id="to8-lM-bhE"/>
-                                            <constraint firstAttribute="right" secondItem="Rf6-7f-0Fi" secondAttribute="right" constant="-10" id="xQ1-Ed-qgy"/>
+                                            <constraint firstItem="MfB-0F-1p2" firstAttribute="leading" secondItem="04d-ai-aww" secondAttribute="leading" id="Dwy-8s-xky"/>
+                                            <constraint firstItem="MfB-0F-1p2" firstAttribute="top" secondItem="04d-ai-aww" secondAttribute="top" id="JLa-Jh-y4r"/>
+                                            <constraint firstAttribute="bottom" secondItem="MfB-0F-1p2" secondAttribute="bottom" id="Xdg-AB-hgw"/>
+                                            <constraint firstAttribute="trailing" secondItem="MfB-0F-1p2" secondAttribute="trailing" constant="-10" id="zna-Qo-3Vg"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAE-rE-DwX">
@@ -139,7 +138,7 @@
                                                 </state>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.4859262667" green="0.79208096589999999" blue="0.47866793260000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.60784313729999995" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="0KA-Bx-kug" firstAttribute="top" secondItem="SAE-rE-DwX" secondAttribute="top" id="Ay0-kv-Noe"/>
                                             <constraint firstItem="0KA-Bx-kug" firstAttribute="left" secondItem="SAE-rE-DwX" secondAttribute="left" constant="-10" id="E20-dC-lH2"/>
@@ -156,7 +155,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.17647058823529413" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="SAE-rE-DwX" secondAttribute="bottom" constant="10" id="9Kj-wF-3IW"/>
                                     <constraint firstAttribute="centerX" secondItem="aBd-Oe-a6S" secondAttribute="centerX" id="DoX-6t-SpZ"/>
@@ -164,9 +163,9 @@
                                     <constraint firstAttribute="centerY" secondItem="aBd-Oe-a6S" secondAttribute="centerY" id="bUT-fq-kbf"/>
                                     <constraint firstItem="04d-ai-aww" firstAttribute="leading" secondItem="b6M-Ia-DLz" secondAttribute="leading" constant="20" id="eoI-PX-xZO"/>
                                     <constraint firstItem="SAE-rE-DwX" firstAttribute="top" secondItem="b6M-Ia-DLz" secondAttribute="top" constant="10" id="hdd-ZY-Wb9"/>
+                                    <constraint firstItem="aBd-Oe-a6S" firstAttribute="leading" secondItem="04d-ai-aww" secondAttribute="trailing" constant="15" id="mtx-Hf-Tld"/>
                                     <constraint firstItem="04d-ai-aww" firstAttribute="top" secondItem="b6M-Ia-DLz" secondAttribute="top" constant="10" id="n78-ra-85T"/>
                                     <constraint firstItem="0KA-Bx-kug" firstAttribute="leading" secondItem="aBd-Oe-a6S" secondAttribute="trailing" constant="5" id="pzJ-ry-LCH"/>
-                                    <constraint firstItem="aBd-Oe-a6S" firstAttribute="leading" secondItem="Rf6-7f-0Fi" secondAttribute="trailing" constant="5" id="wF7-FU-ZGQ"/>
                                     <constraint firstAttribute="height" constant="60" id="y7i-Nc-gft"/>
                                     <constraint firstAttribute="trailing" secondItem="SAE-rE-DwX" secondAttribute="trailing" constant="20" id="zTE-0V-snb"/>
                                 </constraints>

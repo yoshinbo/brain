@@ -9,9 +9,15 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    
+
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var bestScoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var expLabel: UILabel!
+    @IBOutlet weak var expGaugeView: UIView!
     var backGroundImage: UIImage?
-    
+    var result: [String: Int]!
+
     class func build() -> ResultViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
         return storyboad.instantiateInitialViewController() as ResultViewController
@@ -22,13 +28,24 @@ class ResultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: ViewUtil.applyBlurWithRadius(self.backGroundImage!))
+
+        var afterExp: Int = self.result["afterExp"]!
+        var afterLevel: Int = self.result["afterLevel"]!
+
+        self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
+        self.levelLabel.text = NSString(format: "Level : %d",afterLevel)
+        self.expLabel.text = NSString(format: "Exp : %d", afterExp)
+    }
+
+    func setResult(result:[String:Int]) {
+        self.result = result
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -39,7 +56,7 @@ class ResultViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
     @IBAction func onClickGameSelect(sender: UIButton) {
         var (navigationController, topViewController) = TopViewController.build()
         self.presentViewController(navigationController, animated: true, completion: {
@@ -47,7 +64,7 @@ class ResultViewController: UIViewController {
             navigationController.pushViewController(gameSelectViewController, animated: true)
         })
     }
-    
+
     @IBAction func onClickTopMenu(sender: UIButton) {
         var (navigationController, topViewController) = TopViewController.build()
         self.presentViewController(navigationController, animated: true, completion: nil)

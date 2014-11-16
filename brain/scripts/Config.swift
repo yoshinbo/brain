@@ -11,7 +11,8 @@ import Foundation
 // for User
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
-let requiredExpBase: Int = 1000 // この値×levelが必要経験値
+let requiredExpBase: Int = 500 // この値×levelが必要経験値
+let expAndRequiredExpFormat: String = "%d/%d"
 
 // for general game setting
 let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] =
@@ -19,13 +20,13 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
     (
         id: 1,
         title: "Speed Match",
-        timeLimitSec: 6,
+        timeLimitSec: 30,
         setUpTimeSec: 3
     ),
     (
         id: 2,
         title: "Color Match",
-        timeLimitSec: 60,
+        timeLimitSec: 30,
         setUpTimeSec: 3
     )
 ]
