@@ -61,6 +61,10 @@ class User {
         return levelUpNum
     }
 
+    func expRatePercentage() -> Int {
+        return Util.calcExpRatePercentage(self.exp, requiredExp: self.requiredExpForNextLevel())
+    }
+
     func requiredExpForNextLevel() -> Int {
         return (self.level + 1) * requiredExpBase
     }

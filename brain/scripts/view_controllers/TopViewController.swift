@@ -14,6 +14,7 @@ class TopViewController: BaseViewController {
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var energyLabel: UILabel!
     @IBOutlet weak var recoveryInfoLabel: UILabel!
+    @IBOutlet weak var expGaugeViewBase: UIView!
 
     var user: User!
 
@@ -34,6 +35,14 @@ class TopViewController: BaseViewController {
         self.expLabel.text = user.expAndRequiredExpWithFormat()
         self.energyLabel.text = user.energyAndMaxEnergyWithFormat()
         self.recoveryInfoLabel.text = NSString(format: "%d", user.energyRecoveryAt)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        var expGaugeView:ExpGaugeView = ExpGaugeView.build()
+        //expGaugeView.setParam(self.user.expRatePercentage())
+        expGaugeView.setParamWithAnimation(40, afterExpRatePercentage: 50, levelUpNum: 2)
+        self.expGaugeViewBase.addSubviewOnCenter(expGaugeView)
     }
 
     override func didReceiveMemoryWarning() {

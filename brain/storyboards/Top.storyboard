@@ -114,7 +114,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recovery at 10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VO-e7-zS1">
-                                                        <rect key="frame" x="5" y="106.5" width="275" height="20.5"/>
+                                                        <rect key="frame" x="5" y="106" width="275" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -164,20 +164,32 @@
                                     <constraint firstAttribute="trailing" secondItem="d0w-nB-cbO" secondAttribute="trailing" constant="5" id="vnS-zE-vLe"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0K-nn-7o8">
+                                <rect key="frame" x="150" y="264" width="300" height="25"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="IQM-Dy-6vY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="nW2-mN-hMI"/>
+                                    <constraint firstAttribute="width" constant="300" id="ykD-Ry-5RQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EVC-lt-l5q" firstAttribute="top" secondItem="zg8-MG-BKU" secondAttribute="bottom" constant="30" id="5BF-UO-3ij"/>
                             <constraint firstItem="EVC-lt-l5q" firstAttribute="left" secondItem="T4Q-Ji-D8L" secondAttribute="left" constant="10" id="Glt-J5-B4h"/>
+                            <constraint firstAttribute="centerX" secondItem="Y0K-nn-7o8" secondAttribute="centerX" id="Ir4-7C-gkC"/>
                             <constraint firstAttribute="right" secondItem="EVC-lt-l5q" secondAttribute="right" constant="10" id="Y26-ON-0Ys"/>
                             <constraint firstItem="QUK-r0-ZfF" firstAttribute="top" secondItem="Hpg-tW-qUE" secondAttribute="bottom" constant="50" id="aNu-gf-9II"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="trailing" secondItem="T4Q-Ji-D8L" secondAttribute="trailingMargin" id="kfo-ui-AeL"/>
+                            <constraint firstItem="Y0K-nn-7o8" firstAttribute="top" secondItem="EVC-lt-l5q" secondAttribute="bottom" constant="20" id="sPS-xW-lnt"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="leading" secondItem="T4Q-Ji-D8L" secondAttribute="leadingMargin" id="xkN-uB-C43"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2sZ-wL-xnS"/>
                     <connections>
                         <outlet property="energyLabel" destination="vVx-Qi-orj" id="B4W-tP-H1g"/>
+                        <outlet property="expGaugeViewBase" destination="Y0K-nn-7o8" id="1AT-NE-xXq"/>
                         <outlet property="expLabel" destination="Ads-9l-Sft" id="e0O-o2-UhT"/>
                         <outlet property="levelLabel" destination="fkC-Vl-xbN" id="qFs-jp-R9t"/>
                         <outlet property="recoveryInfoLabel" destination="0VO-e7-zS1" id="rLU-Rt-Oz6"/>
