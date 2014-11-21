@@ -40,8 +40,7 @@ class TopViewController: BaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         var expGaugeView:ExpGaugeView = ExpGaugeView.build()
-        //expGaugeView.setParam(self.user.expRatePercentage())
-        expGaugeView.setParamWithAnimation(40, afterExpRatePercentage: 50, levelUpNum: 2)
+        expGaugeView.setParam(self.user.expRatePercentage())
         self.expGaugeViewBase.addSubviewOnCenter(expGaugeView)
     }
 

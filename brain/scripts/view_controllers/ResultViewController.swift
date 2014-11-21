@@ -14,7 +14,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var expLabel: UILabel!
-    @IBOutlet weak var expGaugeView: UIView!
+    @IBOutlet weak var expGaugeViewBase: UIView!
     var backGroundImage: UIImage?
     var result: [String: Int]!
 
@@ -35,6 +35,16 @@ class ResultViewController: UIViewController {
         self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
         self.levelLabel.text = NSString(format: "Level : %d",afterLevel)
         self.expLabel.text = NSString(format: "Exp : %d", afterExp)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        var expGaugeView:ExpGaugeView = ExpGaugeView.build()
+        expGaugeView.setParamWithAnimation(
+            self.result["beforeExpRatePercentage"]!,
+            afterExpRatePercentage: self.result["afterExpRatePercent"]!,
+            levelUpNum: self.result["levelUpNum"]!
+        )
+        self.expGaugeViewBase.addSubviewOnCenter(expGaugeView)
     }
 
     func setResult(result:[String:Int]) {

@@ -26,6 +26,7 @@ class ExpGaugeView: UIView {
     }
 
     func setParam(expRatePercentage: Int) {
+        self.originalGaugeWidth = self.gaugeView.bounds.width
         self.gaugeConstraint.constant = self.constantWidth(expRatePercentage)
         self.gaugeView.layoutIfNeeded()
     }

@@ -66,7 +66,7 @@ class GameBase: NSObject {
         result["levelUpNum"] = user.addExp(self.score)
         result["afterExp"] = user.exp
         result["afterLevel"] = user.level
-        result["beforeExpRatePercent"] = user.expRatePercentage()
+        result["afterExpRatePercent"] = user.expRatePercentage()
         self.delegate.renderResultView(result)
     }
 

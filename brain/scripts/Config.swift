@@ -11,7 +11,7 @@ import Foundation
 // for User
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
-let requiredExpBase: Int = 500 // この値×levelが必要経験値
+let requiredExpBase: Int = 100 // この値×levelが必要経験値
 let expAndRequiredExpFormat: String = "%d/%d"
 
 // for general game setting
