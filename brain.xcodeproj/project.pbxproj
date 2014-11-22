@@ -33,6 +33,7 @@
 		B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88C208F1A075334000DC4E7 /* HelpViewController.swift */; };
 		B89105BF1A20226600860A7B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89105BE1A20226600860A7B /* CircleView.swift */; };
 		B89105C11A20341A00860A7B /* RoundedCornersBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89105C01A20341A00860A7B /* RoundedCornersBorderView.swift */; };
+		B89105D61A20872100860A7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89105D81A20872100860A7B /* Localizable.strings */; };
 		B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */; };
 		B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5FE721A0E035600F96DC8 /* Panel.xib */; };
 		B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */; };
@@ -95,6 +96,8 @@
 		B88C208F1A075334000DC4E7 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B89105BE1A20226600860A7B /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		B89105C01A20341A00860A7B /* RoundedCornersBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersBorderView.swift; sourceTree = "<group>"; };
+		B89105D71A20872100860A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B89105D91A20873200860A7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		B8A5FE721A0E035600F96DC8 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
 		B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 				B82F587E1A04D09F005B68C6 /* Main.storyboard */,
 				B82F58831A04D09F005B68C6 /* LaunchScreen.xib */,
 				B82F58781A04D09F005B68C6 /* Supporting Files */,
+				B89105D81A20872100860A7B /* Localizable.strings */,
 			);
 			path = brain;
 			sourceTree = "<group>";
@@ -397,6 +401,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = B82F586C1A04D09F005B68C6;
 			productRefGroup = B82F58761A04D09F005B68C6 /* Products */;
@@ -423,6 +428,7 @@
 				B8C12A671A0EF72B00276AEE /* Result.storyboard in Resources */,
 				B87EC8571A1A38A40038E8C8 /* ExpGauge.xib in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
+				B89105D61A20872100860A7B /* Localizable.strings in Resources */,
 				B88C208E1A0752A9000DC4E7 /* Help.storyboard in Resources */,
 				B82F58851A04D09F005B68C6 /* LaunchScreen.xib in Resources */,
 				B82F58821A04D09F005B68C6 /* Images.xcassets in Resources */,
@@ -538,6 +544,15 @@
 				B82F58841A04D09F005B68C6 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		B89105D81A20872100860A7B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B89105D71A20872100860A7B /* Base */,
+				B89105D91A20873200860A7B /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

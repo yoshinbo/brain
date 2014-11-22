@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  brain
+
+  Created by Yoshikazu Oda on 2014/11/22.
+  Copyright (c) 2014年 yoshinbo. All rights reserved.
+*/
+
+"shareTitleFormat" = "Brain-脳トレ育成RPG:%d点獲得しました。";
+
+"bestScoreFormat" = "BestScore %d";
+"currentLevelFormat" = "LEVEL %d";
+"expToNextLevelFormat" = "次のLEVELまであと%d";

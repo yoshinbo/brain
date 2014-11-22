@@ -34,8 +34,14 @@ class ResultViewController: BaseViewController {
         var afterLevel: Int = self.result["afterLevel"]!
 
         self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
-        self.levelLabel.text = NSString(format: "Level : %d",afterLevel)
-        self.expLabel.text = NSString(format: "Exp : %d", afterExp)
+        self.levelLabel.text = NSString(
+            format: NSLocalizedString("currentLevelFormat", comment: ""),
+            afterLevel
+        )
+        self.expLabel.text = NSString(
+            format: NSLocalizedString("expToNextLevelFormat", comment: ""),
+            afterExp
+        )
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -72,7 +78,11 @@ class ResultViewController: BaseViewController {
     }
     */
     @IBAction func onClickShare(sender: AnyObject) {
-        self.showShareActionSheet("")
+        var title = NSString(
+            format: NSLocalizedString("shareTitleFormat", comment: ""),
+            self.result["score"]!
+        )
+        self.showShareActionSheet(title)
     }
 
     @IBAction func onClickGameSelect(sender: UIButton) {
