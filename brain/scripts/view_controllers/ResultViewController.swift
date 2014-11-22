@@ -15,6 +15,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var expGaugeViewBase: UIView!
+    @IBOutlet weak var circleView: CircleView!
     var backGroundImage: UIImage?
     var result: [String: Int]!
 
@@ -45,6 +46,10 @@ class ResultViewController: UIViewController {
             levelUpNum: self.result["levelUpNum"]!
         )
         self.expGaugeViewBase.addSubviewOnCenter(expGaugeView)
+    }
+
+    override func viewDidLayoutSubviews() {
+        self.circleView.makeCircle()
     }
 
     func setResult(result:[String:Int]) {
