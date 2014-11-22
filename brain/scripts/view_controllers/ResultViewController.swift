@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultViewController: BaseViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var bestScoreLabel: UILabel!
@@ -71,6 +71,9 @@ class ResultViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func onClickShare(sender: AnyObject) {
+        self.showShareActionSheet("")
+    }
 
     @IBAction func onClickGameSelect(sender: UIButton) {
         var (navigationController, topViewController) = TopViewController.build()
