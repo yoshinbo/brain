@@ -30,17 +30,21 @@ class ResultViewController: BaseViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: ViewUtil.applyBlurWithRadius(self.backGroundImage!))
 
-        var afterExp: Int = self.result["afterExp"]!
-        var afterLevel: Int = self.result["afterLevel"]!
-
         self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
+        let bestScoreLabelFormat: String = self.result["isBestScore"]! == 0 ?
+            NSLocalizedString("bestScoreFormat", comment: "") :
+            NSLocalizedString("newBestScoreFormat", comment: "")
+        self.bestScoreLabel.text = NSString(
+            format: bestScoreLabelFormat,
+            self.result["bestScore"]!
+        )
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
-            afterLevel
+            self.result["afterLevel"]!
         )
         self.expLabel.text = NSString(
             format: NSLocalizedString("expToNextLevelFormat", comment: ""),
-            afterExp
+            self.result["afterExp"]!
         )
     }
 
@@ -55,6 +59,7 @@ class ResultViewController: BaseViewController {
     }
 
     override func viewDidLayoutSubviews() {
+        // 再度、真円になるようにリレンダリング
         self.circleView.makeCircle()
     }
 

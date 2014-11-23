@@ -16,11 +16,6 @@ class Util {
         return (rand % 2) == 0
     }
 
-    class func now() -> Double {
-        let date: NSDate = NSDate()
-        return date.timeIntervalSince1970
-    }
-
     class func conevertExpRatePercentageToRate(expRatePercentage: Int) -> Float {
         return Float(expRatePercentage)/100
     }

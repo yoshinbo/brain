@@ -6,9 +6,11 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
-
+"gameTitle" = "brain";
 "shareTitleFormat" = "Brain-Let's build your brain:I got %d!";
 
 "bestScoreFormat" = "BestScore %d";
+"newBestScoreFormat" = "New BestScore %d!!!";
 "currentLevelFormat" = "LEVEL %d";
-"expToNextLevelFormat" = "Need %d to up next LEVEL";
+"expToNextLevelFormat" = "Need %d to next";
+"recoveryAtFormat" = "Recovery at %@";

@@ -12,6 +12,7 @@ class GameSelectViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var gameModel: Games!
+    var user: User!
     
     class func build() -> GameSelectViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "GameSelect", bundle: nil)
@@ -27,6 +28,7 @@ class GameSelectViewController: BaseViewController {
         self.tableView.dataSource = self
         
         self.gameModel = Games()
+        self.user = User()
         
         //self.addBackButton()
         self.navigationItem.title = "Game Select"
@@ -55,7 +57,7 @@ extension GameSelectViewController {
     
     private func aduptCell(cell:GameSelectContentCell, indexPath:NSIndexPath) {
         var game = self.gameModel.getByIndex(indexPath.row)
-        cell.setParams(game)
+        cell.setParams(game, user: self.user)
     }
     
     // タッチした座興からNSIndexPathを返す

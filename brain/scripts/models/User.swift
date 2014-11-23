@@ -13,14 +13,18 @@ class User {
     var level: Int = 1 // initial level
     var exp: Int = 0
     var maxEnergy: Int = 1 // initial max energy for using skill
-    var energyRecoveryAt: Double = Util.now()
+    var energyRecoveryAt: Double = DateUtil.now()
+    var bestScores: [Int: Int] = [
+        1 : 0,
+        2 : 0
+    ]
 
     init() {
         self.loadData()
     }
 
     func currentEnergy() -> Int {
-        var time_to_recovery = max((self.energyRecoveryAt - Util.now()), 0)
+        var time_to_recovery = max((self.energyRecoveryAt - DateUtil.now()), 0)
         var currentEnergy = max((Double(self.maxEnergy) - ceil(time_to_recovery / energyRecoveryTime)),0)
         return Int(currentEnergy)
     }
@@ -30,22 +34,25 @@ class User {
         if (currentEnergy == self.maxEnergy) {
             return 0
         }
-        var energyRecoveryRemainTime = max((self.energyRecoveryAt - Util.now()), 0)
+        var energyRecoveryRemainTime = max((self.energyRecoveryAt - DateUtil.now()), 0)
         return energyRecoveryRemainTime
     }
 
-    func useEnergy(useNum: Int) {
-        if (self.currentEnergy() >= useNum) {
-            var energyRecoveryAt = max(self.energyRecoveryAt, Util.now())
-            self.energyRecoveryAt = energyRecoveryAt + Double(useNum) * energyRecoveryTime
-        } else {
-            // ここには来ない想定
-        }
-        self.updateData()
+    func expRatePercentage() -> Int {
+        return Util.calcExpRatePercentage(self.exp, requiredExp: self.requiredExpForNextLevel())
     }
 
-    func recoverEnergy() {
-        self.energyRecoveryAt = Util.now()
+    func requiredExpForNextLevel() -> Int {
+        return (self.level + 1) * requiredExpBase
+    }
+
+    func remainRequiredExpForNextLevel() -> Int {
+        return self.requiredExpForNextLevel() - self.exp
+    }
+
+
+    // bellow update functions
+    func commit() {
         self.updateData()
     }
 
@@ -57,24 +64,29 @@ class User {
             self.level += 1
             levelUpNum += 1
         }
-        self.updateData()
         return levelUpNum
     }
 
-    func expRatePercentage() -> Int {
-        return Util.calcExpRatePercentage(self.exp, requiredExp: self.requiredExpForNextLevel())
+    func updateBestScoreIfNeed(gameId: Int, score: Int) -> Bool {
+        var isNeed: Bool = false
+        if self.bestScores[gameId]! < score {
+            self.bestScores[gameId] = score
+            isNeed = true
+        }
+        return isNeed
     }
 
-    func requiredExpForNextLevel() -> Int {
-        return (self.level + 1) * requiredExpBase
+    func useEnergy(useNum: Int) {
+        if (self.currentEnergy() >= useNum) {
+            var energyRecoveryAt = max(self.energyRecoveryAt, DateUtil.now())
+            self.energyRecoveryAt = energyRecoveryAt + Double(useNum) * energyRecoveryTime
+        } else {
+            // ここには来ない想定
+        }
     }
 
-    func expAndRequiredExpWithFormat() -> String {
-        return NSString(format: expAndRequiredExpFormat, self.exp, self.requiredExpForNextLevel())
-    }
-
-    func energyAndMaxEnergyWithFormat() -> String {
-        return NSString(format: expAndRequiredExpFormat, self.currentEnergy(), self.maxEnergy)
+    func recoverEnergy() {
+        self.energyRecoveryAt = DateUtil.now()
     }
 }
 
@@ -88,6 +100,9 @@ extension User {
             self.exp              = unwrapData["exp"] as Int
             self.maxEnergy        = unwrapData["maxEnergy"] as Int
             self.energyRecoveryAt = unwrapData["energyRecoveryAt"] as Double
+            if let _bestScores: AnyObject? = unwrapData["bestScores"] {
+                self.bestScores   = unwrapData["bestScores"] as [Int: Int]
+            }
         }
     }
 
@@ -97,7 +112,8 @@ extension User {
             "level"            : self.level,
             "exp"              : self.exp,
             "maxEnergy"        : self.maxEnergy,
-            "energyRecoveryAt" : self.energyRecoveryAt
+            "energyRecoveryAt" : self.energyRecoveryAt,
+            "bestScores"       : self.bestScores
             ], toFile: self.path())
         if success { NSLog("-> update data") }
     }

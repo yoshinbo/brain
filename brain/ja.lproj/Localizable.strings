@@ -6,8 +6,11 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
+"gameTitle" = "brain";
 "shareTitleFormat" = "Brain-脳トレ育成RPG:%d点獲得しました。";
 
 "bestScoreFormat" = "BestScore %d";
+"newBestScoreFormat" = "New BestScore %d!!!";
 "currentLevelFormat" = "LEVEL %d";
 "expToNextLevelFormat" = "次のLEVELまであと%d";
+"recoveryAtFormat" = "%@に全回復";

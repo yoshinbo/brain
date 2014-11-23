@@ -26,13 +26,15 @@ class GameSelectContentCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
 
 extension GameSelectContentCell {
-    func setParams(game: Game) {
+    func setParams(game: Game, user: User) {
         self.game = game
         self.titleLabel.text = game.title
-        self.infoLabel.text = "BestScore \(game.bestScore)"
+        self.infoLabel.text = NSString(
+            format: NSLocalizedString("bestScoreFormat", comment: ""),
+            user.bestScores[game.id]!
+        )
     }
 }

@@ -20,7 +20,6 @@ class TopViewController: BaseViewController {
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var recoveryInfoLabel: UILabel!
     @IBOutlet weak var expGaugeViewBase: UIView!
-    var originalExpGaugeWidth: CGRect?
 
     var user: User!
 
@@ -34,16 +33,28 @@ class TopViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "brain"
+        self.navigationItem.title = NSLocalizedString("gameTitle", comment: "")
 
         self.user = User()
-        self.levelLabel.text = NSString(format: "%d", user.level)
-        self.expLabel.text = user.expAndRequiredExpWithFormat()
-        self.energyLabel.text = user.energyAndMaxEnergyWithFormat()
-        self.recoveryInfoLabel.text = NSString(format: "%d", user.energyRecoveryAt)
 
-        self.originalExpGaugeWidth = self.expGaugeViewBase.bounds
+        // 脳 >>>
+        self.levelLabel.text = NSString(
+            format: NSLocalizedString("currentLevelFormat", comment: ""),
+            user.level
+        )
 
+        // 体力 >>>
+        self.energyLabel.text = "\(user.currentEnergy())/\(user.maxEnergy)"
+        self.recoveryInfoLabel.text = NSString(
+            format: NSLocalizedString("recoveryAtFormat", comment: ""),
+            DateUtil.getHourMinuteString(user.energyRecoveryAt)
+        )
+
+        // 経験 >>>
+        self.expLabel.text = NSString(
+            format: NSLocalizedString("expToNextLevelFormat", comment: ""),
+            user.remainRequiredExpForNextLevel()
+        )
         var expGaugeView:ExpGaugeView = ExpGaugeView.build()
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
@@ -51,6 +62,11 @@ class TopViewController: BaseViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+
+    override func viewDidLayoutSubviews() {
+        // 再度、真円になるようにリレンダリング
+        self.brainImageCircleView.makeCircle()
     }
 
     override func didReceiveMemoryWarning() {

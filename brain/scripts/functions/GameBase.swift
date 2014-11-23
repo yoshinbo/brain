@@ -67,6 +67,9 @@ class GameBase: NSObject {
         result["afterExp"] = user.exp
         result["afterLevel"] = user.level
         result["afterExpRatePercent"] = user.expRatePercentage()
+        result["isBestScore"] = user.updateBestScoreIfNeed(game.id, score: self.score) ? 1 : 0
+        result["bestScore"] = user.bestScores[game.id]
+        user.commit()
         self.delegate.renderResultView(result)
     }
 
