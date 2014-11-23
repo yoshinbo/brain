@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultViewController: BaseViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var expLabel: UILabel!
-    @IBOutlet weak var expGaugeView: UIView!
+    @IBOutlet weak var expGaugeViewBase: UIView!
+    @IBOutlet weak var circleView: CircleView!
     var backGroundImage: UIImage?
     var result: [String: Int]!
 
@@ -33,8 +34,28 @@ class ResultViewController: UIViewController {
         var afterLevel: Int = self.result["afterLevel"]!
 
         self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
-        self.levelLabel.text = NSString(format: "Level : %d",afterLevel)
-        self.expLabel.text = NSString(format: "Exp : %d", afterExp)
+        self.levelLabel.text = NSString(
+            format: NSLocalizedString("currentLevelFormat", comment: ""),
+            afterLevel
+        )
+        self.expLabel.text = NSString(
+            format: NSLocalizedString("expToNextLevelFormat", comment: ""),
+            afterExp
+        )
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        var expGaugeView: ExpGaugeView = ExpGaugeView.build()
+        self.expGaugeViewBase.addSubViewToFix(expGaugeView)
+        expGaugeView.setParamWithAnimation(
+            self.result["beforeExpRatePercentage"]!,
+            afterExpRatePercentage: self.result["afterExpRatePercent"]!,
+            levelUpNum: self.result["levelUpNum"]!
+        )
+    }
+
+    override func viewDidLayoutSubviews() {
+        self.circleView.makeCircle()
     }
 
     func setResult(result:[String:Int]) {
@@ -56,6 +77,13 @@ class ResultViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func onClickShare(sender: AnyObject) {
+        var title = NSString(
+            format: NSLocalizedString("shareTitleFormat", comment: ""),
+            self.result["score"]!
+        )
+        self.showShareActionSheet(title)
+    }
 
     @IBAction func onClickGameSelect(sender: UIButton) {
         var (navigationController, topViewController) = TopViewController.build()

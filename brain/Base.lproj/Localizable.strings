@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  brain
+
+  Created by Yoshikazu Oda on 2014/11/22.
+  Copyright (c) 2014年 yoshinbo. All rights reserved.
+*/
+
+
+"shareTitleFormat" = "Brain-Let's build your brain:I got %d!";
+
+"bestScoreFormat" = "BestScore %d";
+"currentLevelFormat" = "LEVEL %d";
+"expToNextLevelFormat" = "Need %d to up next LEVEL";
