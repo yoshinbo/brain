@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4RD-cl-O9Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4RD-cl-O9Z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UT4-6b-nQ1">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContentCell" rowHeight="130" id="ruR-2e-aWm" customClass="GameSelectContentCell" customModule="brain" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -74,6 +74,7 @@
                                                     </variation>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zs1-g9-AhK" secondAttribute="bottom" constant="5" id="cN7-c6-ftg"/>
                                                 <constraint firstItem="zs1-g9-AhK" firstAttribute="top" secondItem="vE9-5k-Ya1" secondAttribute="topMargin" constant="5" id="sm7-dk-fK4"/>
@@ -81,6 +82,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="zs1-g9-AhK" secondAttribute="trailing" constant="5" id="vrD-Ss-9WZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="helpButton" destination="07P-9H-MlP" id="TzF-mD-TWk"/>
                                             <outlet property="infoLabel" destination="zJt-3z-yot" id="983-1p-XKT"/>
@@ -98,7 +100,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="right" secondItem="gET-z0-hjo" secondAttribute="right" id="6CL-fD-4r5"/>
                             <constraint firstItem="UT4-6b-nQ1" firstAttribute="top" secondItem="zRZ-SS-Bvx" secondAttribute="top" id="9uw-OE-4fk"/>

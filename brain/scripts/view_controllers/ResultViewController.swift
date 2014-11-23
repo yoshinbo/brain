@@ -45,13 +45,13 @@ class ResultViewController: BaseViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        var expGaugeView:ExpGaugeView = ExpGaugeView.build()
+        var expGaugeView: ExpGaugeView = ExpGaugeView.build()
+        self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParamWithAnimation(
             self.result["beforeExpRatePercentage"]!,
             afterExpRatePercentage: self.result["afterExpRatePercent"]!,
             levelUpNum: self.result["levelUpNum"]!
         )
-        self.expGaugeViewBase.addSubviewOnCenter(expGaugeView)
     }
 
     override func viewDidLayoutSubviews() {
