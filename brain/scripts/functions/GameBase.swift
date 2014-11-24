@@ -59,16 +59,14 @@ class GameBase: NSObject {
     func over() {
         var result: [String:Int] = [
             "score": self.score,
-            "beforeExp" : user.exp,
-            "beforeLevel" : user.level,
             "beforeExpRatePercentage" : user.expRatePercentage()
         ]
         result["levelUpNum"] = user.addExp(self.score)
-        result["afterExp"] = user.exp
         result["afterLevel"] = user.level
         result["afterExpRatePercent"] = user.expRatePercentage()
         result["isBestScore"] = user.updateBestScoreIfNeed(game.id, score: self.score) ? 1 : 0
         result["bestScore"] = user.bestScores[game.id]
+        result["remainRequiredExpForNextLevel"] = user.remainRequiredExpForNextLevel()
         user.commit()
         self.delegate.renderResultView(result)
     }

@@ -14,7 +14,36 @@ let storeURL: String = "http://yahoo.co.jp"
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
 let requiredExpBase: Int = 100 // この値×levelが必要経験値
-let expAndRequiredExpFormat: String = "%d/%d"
+
+// for brain
+let brainKinds: [(id: Int, name: String, requiredLevel: Int)] =
+[
+    (
+        id: 1,
+        name: "BrainNo1",
+        requiredLevel: 1
+    ),
+    (
+        id: 2,
+        name: "BrainNo1",
+        requiredLevel: 5
+    ),
+    (
+        id: 3,
+        name: "BrainNo1",
+        requiredLevel: 10
+    ),
+    (
+        id: 4,
+        name: "BrainNo1",
+        requiredLevel: 20
+    ),
+    (
+        id: 5,
+        name: "BrainNo1",
+        requiredLevel: 30
+    )
+]
 
 // for general game setting
 let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] =

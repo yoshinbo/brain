@@ -12,14 +12,12 @@ class Game {
 
     var id: Int
     var title: String
-    var bestScore: Int
     var timeLimitSec: Int
     var setUpTimeSec: Int
 
-    init(id: Int, title: String, bestScore: Int, timeLimitSec: Int, setUpTimeSec: Int) {
+    init(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int) {
         self.id = id
         self.title = title
-        self.bestScore = bestScore
         self.timeLimitSec = timeLimitSec
         self.setUpTimeSec = setUpTimeSec
     }
@@ -43,7 +41,6 @@ class Games: NSObject {
             var game = Game(
                 id: gameKind.id,
                 title: gameKind.title,
-                bestScore: 0,
                 timeLimitSec: gameKind.timeLimitSec,
                 setUpTimeSec: gameKind.setUpTimeSec
             )

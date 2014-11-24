@@ -44,7 +44,7 @@ class ResultViewController: BaseViewController {
         )
         self.expLabel.text = NSString(
             format: NSLocalizedString("expToNextLevelFormat", comment: ""),
-            self.result["afterExp"]!
+            self.result["remainRequiredExpForNextLevel"]!
         )
     }
 
