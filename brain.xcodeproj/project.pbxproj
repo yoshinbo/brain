@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82ACCF91A27638F00EA9AA3 /* Skill.xib */; };
+		B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */; };
 		B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61281A07BDF500BD10E8 /* GameBase.swift */; };
 		B82D612B1A07C41200BD10E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612A1A07C41200BD10E8 /* Util.swift */; };
 		B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */; };
@@ -66,6 +68,8 @@
 /* Begin PBXFileReference section */
 		46F42EA6E252A99E85BAB868 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B82ACCF91A27638F00EA9AA3 /* Skill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Skill.xib; sourceTree = "<group>"; };
+		B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillButtonView.swift; sourceTree = "<group>"; };
 		B82D61281A07BDF500BD10E8 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
 		B82D612A1A07C41200BD10E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatch.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */,
 				B8D22D561A177DA4001C7EB7 /* InformationView.swift */,
 				B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */,
+				B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				B8A5FE721A0E035600F96DC8 /* Panel.xib */,
 				B8D22D581A17879B001C7EB7 /* Information.xib */,
 				B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */,
+				B82ACCF91A27638F00EA9AA3 /* Skill.xib */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				B8D22D591A17879B001C7EB7 /* Information.xib in Resources */,
 				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
 				B8C12A671A0EF72B00276AEE /* Result.storyboard in Resources */,
+				B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */,
 				B87EC8571A1A38A40038E8C8 /* ExpGauge.xib in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
 				B89105D61A20872100860A7B /* Localizable.strings in Resources */,
@@ -499,6 +506,7 @@
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
 				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,
+				B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
 				B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */,
 				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
