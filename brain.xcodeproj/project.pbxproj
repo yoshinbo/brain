@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82ACCF91A27638F00EA9AA3 /* Skill.xib */; };
 		B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */; };
+		B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */; };
 		B82D61291A07BDF500BD10E8 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D61281A07BDF500BD10E8 /* GameBase.swift */; };
 		B82D612B1A07C41200BD10E8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612A1A07C41200BD10E8 /* Util.swift */; };
 		B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */; };
@@ -70,6 +71,7 @@
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B82ACCF91A27638F00EA9AA3 /* Skill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Skill.xib; sourceTree = "<group>"; };
 		B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillButtonView.swift; sourceTree = "<group>"; };
+		B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		B82D61281A07BDF500BD10E8 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
 		B82D612A1A07C41200BD10E8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		B82D612C1A07C69C00BD10E8 /* SpeedMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedMatch.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				B88C20851A063450000DC4E7 /* Games.swift */,
 				B82D61301A07CFD300BD10E8 /* User.swift */,
+				B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
 				B89105BF1A20226600860A7B /* CircleView.swift in Sources */,
 				B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */,
+				B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */,
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
 				B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */,
 			);

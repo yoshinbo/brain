@@ -16,33 +16,79 @@ let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
 let requiredExpBase: Int = 100 // この値×levelが必要経験値
 
 // for brain
-let brainKinds: [(id: Int, name: String, requiredLevel: Int)] =
+let brainKinds: [(id: Int, name: String, desc: String, requiredLevel: Int)] =
 [
     (
         id: 1,
         name: "BrainNo1",
+        desc: "",
         requiredLevel: 1
     ),
     (
         id: 2,
         name: "BrainNo1",
+        desc: "",
         requiredLevel: 5
     ),
     (
         id: 3,
         name: "BrainNo1",
+        desc: "",
         requiredLevel: 10
     ),
     (
         id: 4,
         name: "BrainNo1",
+        desc: "",
         requiredLevel: 20
     ),
     (
         id: 5,
         name: "BrainNo1",
+        desc: "",
         requiredLevel: 30
     )
+]
+
+// for brain
+let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc: String, requiredBrainId: Int)] =
+[
+    (
+        id: 1,
+        name: "TIME PLUS",
+        cost: 2,
+        type: 1,
+        value: 5,
+        desc: "",
+        requiredBrainId: 2
+    ),
+    (
+        id: 2,
+        name: "TIME PLUS+",
+        cost: 3,
+        type: 1,
+        value: 10,
+        desc: "",
+        requiredBrainId: 3
+    ),
+    (
+        id: 3,
+        name: "BONUS PLUS",
+        cost: 5,
+        type: 2,
+        value: 5,
+        desc: "",
+        requiredBrainId: 4
+    ),
+    (
+        id: 4,
+        name: "EXP PLUS",
+        cost: 5,
+        type: 3,
+        value: 2,
+        desc: "",
+        requiredBrainId: 5
+    ),
 ]
 
 // for general game setting

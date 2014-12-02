@@ -18,6 +18,7 @@ class GameSelectViewController: BaseViewController {
     @IBOutlet weak var skillHolder4: UIView!
 
     var gameModel: Games!
+    var skillModel: Skills!
     var user: User!
 
     class func build() -> GameSelectViewController {
@@ -34,6 +35,7 @@ class GameSelectViewController: BaseViewController {
         self.tableView.dataSource = self
 
         self.gameModel = Games()
+        self.skillModel = Skills()
         self.user = User()
 
         //self.addBackButton()
@@ -121,13 +123,17 @@ extension GameSelectViewController {
     }
 
     private func setUpSkillHolder() {
-        var skillTimeUpdateView: SkillButtonView = SkillButtonView.build()
-        skillHolder1.addSubViewToFix(skillTimeUpdateView)
-        var skillBonusUpdateView: SkillButtonView = SkillButtonView.build()
-        skillHolder2.addSubViewToFix(skillBonusUpdateView)
-        var skillExpUpdateView: SkillButtonView = SkillButtonView.build()
-        skillHolder3.addSubViewToFix(skillExpUpdateView)
-        var skillBonusUpdatePlusView: SkillButtonView = SkillButtonView.build()
-        skillHolder4.addSubViewToFix(skillBonusUpdatePlusView)
+        var skillTimePlusView: SkillButtonView = SkillButtonView.build()
+        skillTimePlusView.setParams(self.skillModel.getById(1)!, user: self.user)
+        skillHolder1.addSubViewToFix(skillTimePlusView)
+        var skillTimePlus2View: SkillButtonView = SkillButtonView.build()
+        skillTimePlus2View.setParams(self.skillModel.getById(2)!, user: self.user)
+        skillHolder2.addSubViewToFix(skillTimePlus2View)
+        var skillBonusPlusView: SkillButtonView = SkillButtonView.build()
+        skillBonusPlusView.setParams(self.skillModel.getById(3)!, user: self.user)
+        skillHolder3.addSubViewToFix(skillBonusPlusView)
+        var skillExpPlusView: SkillButtonView = SkillButtonView.build()
+        skillExpPlusView.setParams(self.skillModel.getById(4)!, user: self.user)
+        skillHolder4.addSubViewToFix(skillExpPlusView)
     }
 }
