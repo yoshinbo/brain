@@ -14,7 +14,6 @@ class SkillButtonView: UIView {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     var skill: Skill?
-    var user: User?
     var isSelected: Bool = false
 
     class func build() -> SkillButtonView {
@@ -33,26 +32,31 @@ class SkillButtonView: UIView {
         self.makeCircle()
     }
 
-    func makeCircle() {
-        self.layer.cornerRadius = 8
-        self.clipsToBounds = true
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.darkGrayColor().CGColor
+    func onTap(recognizer: UITapGestureRecognizer) {
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            "notificationOnTapSkillButton",
+            object: nil,
+            userInfo: ["skillId": self.skill!.id]
+        )
     }
 
-    func toggleButton(recognizer: UITapGestureRecognizer) {
-        if self.isSelected {
-            self.isSelected = false
-            self.layer.borderColor = UIColor.orangeColor().CGColor
+    func checkOrToggle(skillId: Int, currentEnergy: Int) {
+        if skillId == self.skill!.id {
+            self.toggleButton()
         } else {
-            self.isSelected = true
-            self.layer.borderColor = UIColor.darkGrayColor().CGColor
+            self.checkCapable(currentEnergy)
         }
     }
 
-    func addRecognizer() {
-        var recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("toggleButton:"))
-        self.addGestureRecognizer(recognizer)
+    func setParams(skill: Skill, energy: Int) {
+        self.skill = skill
+        self.skillNameLabel.text = skill.name
+        self.descriptionLabel.text = skill.desc
+        self.costLabel.text = NSString(
+            format: NSLocalizedString("costFormat", comment: ""),
+            skill.cost
+        )
+        self.checkCapable(energy)
     }
 
     /*
@@ -66,14 +70,39 @@ class SkillButtonView: UIView {
 }
 
 extension SkillButtonView {
-    func setParams(skill: Skill, user: User) {
-        self.user = user
-        self.skill = skill
-        self.skillNameLabel.text = skill.name
-        self.descriptionLabel.text = skill.desc
-        self.costLabel.text = NSString(
-            format: NSLocalizedString("costFormat", comment: ""),
-            skill.cost
-        )
+
+    private func addRecognizer() {
+        var recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))
+        self.addGestureRecognizer(recognizer)
+    }
+
+    private func makeCircle() {
+        self.layer.cornerRadius = 8
+        self.clipsToBounds = true
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.darkGrayColor().CGColor
+    }
+
+    private func toggleButton() {
+        if self.isSelected {
+            self.isSelected = false
+            self.layer.borderColor = UIColor.darkGrayColor().CGColor
+        } else {
+            self.isSelected = true
+            self.layer.borderColor = UIColor.orangeColor().CGColor
+        }
+    }
+
+    private func checkCapable(energy: Int) {
+        if self.isSelected {
+            return
+        }
+        if self.skill!.cost > energy {
+            self.skillNameLabel.textColor = UIColor.darkGrayColor()
+            self.userInteractionEnabled = false
+        } else {
+            self.skillNameLabel.textColor = UIColor.whiteColor()
+            self.userInteractionEnabled = true
+        }
     }
 }

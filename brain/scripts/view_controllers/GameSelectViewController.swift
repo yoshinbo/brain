@@ -20,6 +20,9 @@ class GameSelectViewController: BaseViewController {
     var gameModel: Games!
     var skillModel: Skills!
     var user: User!
+    var skillButtonViews: [SkillButtonView] = []
+    var wasteEnergy: Int = 0
+    var isHandlingNotificationOnTapSkillButton: Bool = false
 
     class func build() -> GameSelectViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "GameSelect", bundle: nil)
@@ -45,11 +48,41 @@ class GameSelectViewController: BaseViewController {
 
         self.updateEnergyLabel()
         self.setUpSkillHolder()
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "handleNotificationOnTapSkillButton:",
+            name: "notificationOnTapSkillButton",
+            object: nil
+        )
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func handleNotificationOnTapSkillButton(notification: NSNotification) {
+        if self.isHandlingNotificationOnTapSkillButton {
+            return
+        }
+        self.isHandlingNotificationOnTapSkillButton = true
+        if let userInfo = notification.userInfo as [String: Int]! {
+            let skillId = userInfo["skillId"]!
+            var targetSkillButtonView: SkillButtonView = self.skillButtonViews.filter({
+                var skillButtonView: SkillButtonView = $0
+                return skillButtonView.skill!.id == skillId
+            })[0]
+            self.wasteOrCancelEnergyProvisionaly(
+                targetSkillButtonView.skill!.cost,
+                isWaste: targetSkillButtonView.isSelected ? false : true
+            )
+            for skillButtonView: SkillButtonView in self.skillButtonViews {
+                skillButtonView.checkOrToggle(skillId, currentEnergy: self.currentEnergy())
+            }
+        }
+        self.updateEnergyLabel()
+        self.isHandlingNotificationOnTapSkillButton = false
     }
 
     /*
@@ -65,7 +98,6 @@ class GameSelectViewController: BaseViewController {
 }
 
 extension GameSelectViewController {
-
     private func aduptCell(cell:GameSelectContentCell, indexPath:NSIndexPath) {
         var game = self.gameModel.getByIndex(indexPath.row)
         cell.setParams(game, user: self.user)
@@ -118,22 +150,39 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension GameSelectViewController {
+    private func currentEnergy() -> Int {
+        return self.user.currentEnergy() - self.wasteEnergy
+    }
+
     private func updateEnergyLabel() {
-        self.energyLabel.text = "\(self.user.currentEnergy())/\(self.user.maxEnergy)"
+        self.energyLabel.text = "\(self.currentEnergy())/\(self.user.maxEnergy)"
+    }
+
+    private func wasteOrCancelEnergyProvisionaly(cost: Int, isWaste: Bool) {
+        if isWaste {
+            self.wasteEnergy += cost
+        }else {
+            self.wasteEnergy -= cost
+        }
     }
 
     private func setUpSkillHolder() {
-        var skillTimePlusView: SkillButtonView = SkillButtonView.build()
-        skillTimePlusView.setParams(self.skillModel.getById(1)!, user: self.user)
-        skillHolder1.addSubViewToFix(skillTimePlusView)
-        var skillTimePlus2View: SkillButtonView = SkillButtonView.build()
-        skillTimePlus2View.setParams(self.skillModel.getById(2)!, user: self.user)
-        skillHolder2.addSubViewToFix(skillTimePlus2View)
-        var skillBonusPlusView: SkillButtonView = SkillButtonView.build()
-        skillBonusPlusView.setParams(self.skillModel.getById(3)!, user: self.user)
-        skillHolder3.addSubViewToFix(skillBonusPlusView)
-        var skillExpPlusView: SkillButtonView = SkillButtonView.build()
-        skillExpPlusView.setParams(self.skillModel.getById(4)!, user: self.user)
-        skillHolder4.addSubViewToFix(skillExpPlusView)
+        for skill in skillKinds {
+            var skillButtonView: SkillButtonView = SkillButtonView.build()
+            skillButtonView.setParams(self.skillModel.getById(skill.id)!, energy: self.currentEnergy())
+            switch skill.id {
+            case 1:
+                skillHolder1.addSubViewToFix(skillButtonView)
+            case 2:
+                skillHolder2.addSubViewToFix(skillButtonView)
+            case 3:
+                skillHolder3.addSubViewToFix(skillButtonView)
+            case 4:
+                skillHolder4.addSubViewToFix(skillButtonView)
+            default:
+                break
+            }
+            self.skillButtonViews.append(skillButtonView)
+        }
     }
 }
