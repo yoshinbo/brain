@@ -55,6 +55,14 @@ class TopViewController: BaseViewController {
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
 
+        NSTimer.scheduledTimerWithTimeInterval(
+            1.0,
+            target: self,
+            selector: Selector("updateEnergyLabelByTimer"),
+            userInfo: nil,
+            repeats: true
+        )
+
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "handleNotificationUseEnergy:",
@@ -75,6 +83,10 @@ class TopViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func updateEnergyLabelByTimer() {
+        self.updateEnergyLabel()
     }
 
     func handleNotificationUseEnergy(notification: NSNotification) {
@@ -103,9 +115,6 @@ extension TopViewController {
 extension TopViewController {
     private func updateEnergyLabel() {
         self.energyLabel.text = "\(self.user.currentEnergy())/\(self.user.maxEnergy)"
-        self.recoveryInfoLabel.text = NSString(
-            format: NSLocalizedString("recoveryAtFormat", comment: ""),
-            DateUtil.getHourMinuteString(self.user.energyRecoveryAt)
-        )
+        self.recoveryInfoLabel.text = DateUtil.getUntilTime(self.user.energyRecoveryAt)
     }
 }

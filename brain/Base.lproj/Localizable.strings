@@ -6,12 +6,12 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
-"gameTitle" = "brain";
-"shareTitleFormat" = "Brain-Let's build your brain:I got %d!";
-
-"bestScoreFormat" = "BestScore %d";
-"costFormat" = "Cost %d";
-"newBestScoreFormat" = "New BestScore %d!!!";
-"currentLevelFormat" = "LEVEL %d";
-"expToNextLevelFormat" = "Need %d to next";
-"recoveryAtFormat" = "Recovery at %@";
+"gameTitle"                 = "brain";
+"shareTitleFormat"          = "Brain-Let's build your brain:I got %d!";
+"bestScoreFormat"           = "BestScore %d";
+"costFormat"                = "Cost %d";
+"newBestScoreFormat"        = "New BestScore %d!!!";
+"currentLevelFormat"        = "LEVEL %d";
+"expToNextLevelFormat"      = "Need %d to next";
+"allRecovery"               = "All Recovery";
+"degitalClockForRecovery"   = "Recovery till %02d:%02d";
