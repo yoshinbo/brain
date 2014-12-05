@@ -27,6 +27,7 @@ class GameBase: NSObject {
 
     var user: User
     var game: Game
+    var skills: [Skill]
     var score: Int = 0
     var timeLimitSec: Int
     var setUpTimeSec: Int
@@ -36,14 +37,20 @@ class GameBase: NSObject {
     var continuousCollectAnsNum: Int = 0 // 連続正解の場合の得点ボーナス用
     var continuousCollectBonusCoef: Int = 1 // 連続正解得点ボーナスの実数値
 
-    init(game: Game) {
+    init(game: Game, skills: [Skill]) {
         self.user = User()
 
         self.game = game
+        self.skills = skills
         self.hasStarted = false
         self.isGameOver = false
 
-        self.timeLimitSec = game.timeLimitSec
+        var additionalTime: Int = self.skills
+            .filter { $0.isTimePlus() }
+            .map { $0.value }
+            .reduce( 0, { $0 + $1 } )
+
+        self.timeLimitSec = game.timeLimitSec + additionalTime
         self.setUpTimeSec = game.setUpTimeSec
     }
 
@@ -59,16 +66,14 @@ class GameBase: NSObject {
     func over() {
         var result: [String:Int] = [
             "score": self.score,
-            "beforeExp" : user.exp,
-            "beforeLevel" : user.level,
             "beforeExpRatePercentage" : user.expRatePercentage()
         ]
-        result["levelUpNum"] = user.addExp(self.score)
-        result["afterExp"] = user.exp
+        result["levelUpNum"] = user.addExp(self.score * self.expBonusCoef())
         result["afterLevel"] = user.level
         result["afterExpRatePercent"] = user.expRatePercentage()
         result["isBestScore"] = user.updateBestScoreIfNeed(game.id, score: self.score) ? 1 : 0
         result["bestScore"] = user.bestScores[game.id]
+        result["remainRequiredExpForNextLevel"] = user.remainRequiredExpForNextLevel()
         user.commit()
         self.delegate.renderResultView(result)
     }
@@ -82,10 +87,14 @@ class GameBase: NSObject {
     }
 
     func collect() {
-        self.continuousCollectBonusCoef =
+        var BonusCoef =
             self.continuousCollectAnsNum >= continuousCollectAnsBonusCoef
             ? self.continuousCollectAnsNum / continuousCollectAnsBonusCoef + 1
             : 1
+        self.continuousCollectBonusCoef = min(
+            BonusCoef,
+            self.maxContinuousCollectBonusCoef()
+        )
         self.addScore(self.continuousCollectBonusCoef)
         self.continuousCollectAnsNum++
     }
@@ -124,5 +133,28 @@ extension GameBase {
             self.over()
         }
         self.delegate.renderTime(self.timeLimitSec)
+    }
+
+    private func additionalTime() -> Int {
+        return self.skills
+            .filter { $0.isTimePlus() }
+            .map { $0.value }
+            .reduce( 0, { $0 + $1 } )
+    }
+
+    private func maxContinuousCollectBonusCoef() -> Int {
+        var bonusPlusValue = self.skills
+            .filter { $0.isBonusPlus() }
+            .map { $0.value }
+            .reduce( 0, { $0 + $1 } )
+        return max(bonusPlusValue, defaultMaxContinuousCollectAnsBonus)
+    }
+
+    private func expBonusCoef() -> Int {
+        var expPlusValue = self.skills
+            .filter { $0.isExpPlus() }
+            .map { $0.value }
+            .reduce( 0, { $0 + $1 } )
+        return max(expPlusValue, 1)
     }
 }

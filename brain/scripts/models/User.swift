@@ -83,6 +83,11 @@ class User {
         } else {
             // ここには来ない想定
         }
+        self.commit()
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            notificationUseEnergy,
+            object: nil
+        )
     }
 
     func recoverEnergy() {
@@ -100,7 +105,7 @@ extension User {
             self.exp              = unwrapData["exp"] as Int
             self.maxEnergy        = unwrapData["maxEnergy"] as Int
             self.energyRecoveryAt = unwrapData["energyRecoveryAt"] as Double
-            if let _bestScores: AnyObject? = unwrapData["bestScores"] {
+            if let _bestScores: AnyObject = unwrapData["bestScores"] {
                 self.bestScores   = unwrapData["bestScores"] as [Int: Int]
             }
         }

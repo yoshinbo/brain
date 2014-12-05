@@ -19,8 +19,8 @@ class ColorMatch: GameBase {
     var panels: [(name: String, color: String)] = []
     var previousName: String = ""
     
-    override init(game: Game) {
-        super.init(game: game)
+    override init(game: Game, skills: [Skill]) {
+        super.init(game: game, skills: skills)
         
         for i in 0..<panelStockNum {
             self.addPanel()

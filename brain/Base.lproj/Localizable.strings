@@ -10,6 +10,7 @@
 "shareTitleFormat" = "Brain-Let's build your brain:I got %d!";
 
 "bestScoreFormat" = "BestScore %d";
+"costFormat" = "Cost %d";
 "newBestScoreFormat" = "New BestScore %d!!!";
 "currentLevelFormat" = "LEVEL %d";
 "expToNextLevelFormat" = "Need %d to next";
