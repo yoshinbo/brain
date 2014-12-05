@@ -23,25 +23,36 @@ class DateUtil {
             NSCalendarUnit.CalendarUnitMinute,
             fromDate: date
         )
-        return "\(calendarComponent.hour):\(calendarComponent.minute)"
+        return NSString(
+            format: NSLocalizedString("degitalClock", comment: ""),
+            calendarComponent.hour, calendarComponent.minute
+        )
     }
 
     class func getUntilTime(unixtTime:Double) -> String {
-        // TODO
         var untilTimeString: String
-        var untilSec = now() - unixtTime
+        var untilSec = unixtTime - now()
         if untilSec <= 0 {
-            untilTimeString = "全回復"
+            untilTimeString = NSLocalizedString("allRecovery", comment: "")
         } else if untilSec < 60 {
-            untilTimeString = "00:\(untilSec)"
+            untilTimeString = NSString(
+                format: NSLocalizedString("degitalClockForRecovery", comment: ""),
+                0, Int(untilSec)
+            )
         } else if untilSec < 60 * 60 {
             var min = untilSec / 60
             var sec = untilSec % 60
-            untilTimeString = "\(min):\(sec)"
+            untilTimeString = NSString(
+                format: NSLocalizedString("degitalClockForRecovery", comment: ""),
+                Int(min), Int(sec)
+            )
         } else {
             var hour = untilSec / 60 * 60
             var min = untilSec % 60 * 60
-            untilTimeString = "\(hour):\(min)"
+            untilTimeString = NSString(
+                format: NSLocalizedString("degitalClockForRecovery", comment: ""),
+                Int(hour), Int(min)
+            )
         }
         return untilTimeString
     }

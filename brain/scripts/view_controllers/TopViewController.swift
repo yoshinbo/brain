@@ -115,9 +115,6 @@ extension TopViewController {
 extension TopViewController {
     private func updateEnergyLabel() {
         self.energyLabel.text = "\(self.user.currentEnergy())/\(self.user.maxEnergy)"
-        self.recoveryInfoLabel.text = NSString(
-            format: NSLocalizedString("recoveryAtFormat", comment: ""),
-            DateUtil.getHourMinuteString(self.user.energyRecoveryAt)
-        )
+        self.recoveryInfoLabel.text = DateUtil.getUntilTime(self.user.energyRecoveryAt)
     }
 }
