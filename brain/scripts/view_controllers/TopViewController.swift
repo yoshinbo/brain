@@ -55,6 +55,14 @@ class TopViewController: BaseViewController {
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
 
+        NSTimer.scheduledTimerWithTimeInterval(
+            1.0,
+            target: self,
+            selector: Selector("updateEnergyLabelByTimer"),
+            userInfo: nil,
+            repeats: true
+        )
+
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "handleNotificationUseEnergy:",
@@ -75,6 +83,10 @@ class TopViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func updateEnergyLabelByTimer() {
+        self.updateEnergyLabel()
     }
 
     func handleNotificationUseEnergy(notification: NSNotification) {

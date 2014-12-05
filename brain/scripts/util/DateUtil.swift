@@ -25,4 +25,24 @@ class DateUtil {
         )
         return "\(calendarComponent.hour):\(calendarComponent.minute)"
     }
+
+    class func getUntilTime(unixtTime:Double) -> String {
+        // TODO
+        var untilTimeString: String
+        var untilSec = now() - unixtTime
+        if untilSec <= 0 {
+            untilTimeString = "全回復"
+        } else if untilSec < 60 {
+            untilTimeString = "00:\(untilSec)"
+        } else if untilSec < 60 * 60 {
+            var min = untilSec / 60
+            var sec = untilSec % 60
+            untilTimeString = "\(min):\(sec)"
+        } else {
+            var hour = untilSec / 60 * 60
+            var min = untilSec % 60 * 60
+            untilTimeString = "\(hour):\(min)"
+        }
+        return untilTimeString
+    }
 }

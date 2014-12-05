@@ -40,6 +40,19 @@ class SkillButtonView: UIView {
         )
     }
 
+    func checkCapable(energy: Int) {
+        if self.isSelected {
+            return
+        }
+        if self.skill!.cost > energy {
+            self.skillNameLabel.textColor = UIColor.darkGrayColor()
+            self.userInteractionEnabled = false
+        } else {
+            self.skillNameLabel.textColor = UIColor.whiteColor()
+            self.userInteractionEnabled = true
+        }
+    }
+
     func checkOrToggle(skillId: Int, currentEnergy: Int) {
         if skillId == self.skill!.id {
             self.toggleButton()
@@ -96,19 +109,6 @@ extension SkillButtonView {
         } else {
             self.isSelected = true
             self.layer.borderColor = UIColor.orangeColor().CGColor
-        }
-    }
-
-    private func checkCapable(energy: Int) {
-        if self.isSelected {
-            return
-        }
-        if self.skill!.cost > energy {
-            self.skillNameLabel.textColor = UIColor.darkGrayColor()
-            self.userInteractionEnabled = false
-        } else {
-            self.skillNameLabel.textColor = UIColor.whiteColor()
-            self.userInteractionEnabled = true
         }
     }
 }

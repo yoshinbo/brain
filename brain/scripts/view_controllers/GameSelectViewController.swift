@@ -94,6 +94,9 @@ class GameSelectViewController: BaseViewController {
     func handleNotificationUseEnergy(notification: NSNotification) {
         self.user = User()
         self.updateEnergyLabel()
+        for skillButtonView: SkillButtonView in self.skillButtonViews {
+            skillButtonView.checkCapable(self.currentEnergy())
+        }
     }
 
     /*
