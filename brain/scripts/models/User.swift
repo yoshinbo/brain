@@ -83,6 +83,11 @@ class User {
         } else {
             // ここには来ない想定
         }
+        self.commit()
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            notificationUseEnergy,
+            object: nil
+        )
     }
 
     func recoverEnergy() {

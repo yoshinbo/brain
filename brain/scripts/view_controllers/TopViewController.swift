@@ -44,11 +44,7 @@ class TopViewController: BaseViewController {
         )
 
         // 体力 >>>
-        self.energyLabel.text = "\(user.currentEnergy())/\(user.maxEnergy)"
-        self.recoveryInfoLabel.text = NSString(
-            format: NSLocalizedString("recoveryAtFormat", comment: ""),
-            DateUtil.getHourMinuteString(user.energyRecoveryAt)
-        )
+        self.updateEnergyLabel()
 
         // 経験 >>>
         self.expLabel.text = NSString(
@@ -58,6 +54,13 @@ class TopViewController: BaseViewController {
         var expGaugeView:ExpGaugeView = ExpGaugeView.build()
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "handleNotificationUseEnergy:",
+            name: notificationUseEnergy,
+            object: nil
+        )
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -74,6 +77,10 @@ class TopViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func handleNotificationUseEnergy(notification: NSNotification) {
+        self.user = User()
+        self.updateEnergyLabel()
+    }
 
     /*
     // MARK: - Navigation
@@ -90,5 +97,15 @@ extension TopViewController {
     @IBAction func moveGameSelect(sender: UIButton) {
         var gameSelectViewController = GameSelectViewController.build()
         self.navigationController?.pushViewController(gameSelectViewController, animated: true)
+    }
+}
+
+extension TopViewController {
+    private func updateEnergyLabel() {
+        self.energyLabel.text = "\(self.user.currentEnergy())/\(self.user.maxEnergy)"
+        self.recoveryInfoLabel.text = NSString(
+            format: NSLocalizedString("recoveryAtFormat", comment: ""),
+            DateUtil.getHourMinuteString(self.user.energyRecoveryAt)
+        )
     }
 }

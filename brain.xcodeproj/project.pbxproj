@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C53D41A3192F700EF5358 /* NotificationName.swift */; };
 		B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82ACCF91A27638F00EA9AA3 /* Skill.xib */; };
 		B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */; };
 		B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		443C53D41A3192F700EF5358 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		46F42EA6E252A99E85BAB868 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B82ACCF91A27638F00EA9AA3 /* Skill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Skill.xib; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				B82F587A1A04D09F005B68C6 /* AppDelegate.swift */,
 				B88C20821A063262000DC4E7 /* Config.swift */,
+				443C53D41A3192F700EF5358 /* NotificationName.swift */,
 				B8A5FE791A0E0E8800F96DC8 /* util */,
 				B8E56AF31A05177300024E00 /* vender */,
 				B8E56AD81A04DC8500024E00 /* extensions */,
@@ -494,6 +497,7 @@
 			files = (
 				B8E56AFD1A0522BF00024E00 /* TopViewController.swift in Sources */,
 				B82F587D1A04D09F005B68C6 /* BaseViewController.swift in Sources */,
+				443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */,
 				B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */,
 				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
 				B82D61391A0DC8D400BD10E8 /* PanelView.swift in Sources */,

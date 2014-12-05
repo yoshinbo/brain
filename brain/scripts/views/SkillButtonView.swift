@@ -34,7 +34,7 @@ class SkillButtonView: UIView {
 
     func onTap(recognizer: UITapGestureRecognizer) {
         NSNotificationCenter.defaultCenter().postNotificationName(
-            "notificationOnTapSkillButton",
+            notificationOnTapSkillButton,
             object: nil,
             userInfo: ["skillId": self.skill!.id]
         )
@@ -46,6 +46,12 @@ class SkillButtonView: UIView {
         } else {
             self.checkCapable(currentEnergy)
         }
+    }
+
+    func clearSelect(currentEnergy: Int) {
+        self.isSelected = false
+        self.layer.borderColor = UIColor.darkGrayColor().CGColor
+        self.checkCapable(currentEnergy)
     }
 
     func setParams(skill: Skill, energy: Int) {

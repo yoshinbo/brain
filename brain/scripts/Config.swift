@@ -50,14 +50,17 @@ let brainKinds: [(id: Int, name: String, desc: String, requiredLevel: Int)] =
     )
 ]
 
-// for brain
+// for skill
+let typeTimePlus = 1
+let typeBonusPlus = 2
+let typeExpPlus = 3
 let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc: String, requiredBrainId: Int)] =
 [
     (
         id: 1,
         name: "TIME PLUS",
         cost: 2,
-        type: 1,
+        type: typeTimePlus,
         value: 5,
         desc: "",
         requiredBrainId: 2
@@ -66,7 +69,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         id: 2,
         name: "TIME PLUS+",
         cost: 3,
-        type: 1,
+        type: typeTimePlus,
         value: 10,
         desc: "",
         requiredBrainId: 3
@@ -75,7 +78,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         id: 3,
         name: "BONUS PLUS",
         cost: 5,
-        type: 2,
+        type: typeBonusPlus,
         value: 5,
         desc: "",
         requiredBrainId: 4
@@ -84,7 +87,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         id: 4,
         name: "EXP PLUS",
         cost: 5,
-        type: 3,
+        type: typeExpPlus,
         value: 2,
         desc: "",
         requiredBrainId: 5
@@ -109,6 +112,7 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
 ]
 
 let continuousCollectAnsBonusCoef: Int = 5 // 連続正解の場合のボーナス係数
+let defaultMaxContinuousCollectAnsBonus: Int = 3 // 連続正解ボーナスの最大倍率
 
 // for Speed Match
 let speedMatchPanels: [(id: Int, name: String)] = [

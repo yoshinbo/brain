@@ -52,7 +52,13 @@ class GameSelectViewController: BaseViewController {
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "handleNotificationOnTapSkillButton:",
-            name: "notificationOnTapSkillButton",
+            name: notificationOnTapSkillButton,
+            object: nil
+        )
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "handleNotificationUseEnergy:",
+            name: notificationUseEnergy,
             object: nil
         )
     }
@@ -83,6 +89,11 @@ class GameSelectViewController: BaseViewController {
         }
         self.updateEnergyLabel()
         self.isHandlingNotificationOnTapSkillButton = false
+    }
+
+    func handleNotificationUseEnergy(notification: NSNotification) {
+        self.user = User()
+        self.updateEnergyLabel()
     }
 
     /*
@@ -127,9 +138,26 @@ extension GameSelectViewController {
 extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     // for UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedSkills = self.selectedSkills()
+
+        // Skill選択リセット
+        for skillButtonView: SkillButtonView in self.skillButtonViews {
+            self.wasteEnergy = 0
+            skillButtonView.clearSelect(self.currentEnergy())
+        }
+        // Energyの消費
+        var costTotal = selectedSkills
+            .map { $0.cost }
+            .reduce(0, { $0 + $1 })
+
+        if costTotal > 0 {
+            self.user.useEnergy(costTotal)
+        }
+
+        // Game画面へ遷移
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
         if cell.game!.isSpeedMatch() {
-            self.moveToInNavigationController(SpeedMatchViewController.build())
+            self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills))
         } else
         if cell.game!.isColorMatch() {
             println("color")
@@ -184,5 +212,11 @@ extension GameSelectViewController {
             }
             self.skillButtonViews.append(skillButtonView)
         }
+    }
+
+    private func selectedSkills() -> [Skill] {
+        return self.skillButtonViews
+        .filter { $0.isSelected }
+        .map { $0.skill! }
     }
 }

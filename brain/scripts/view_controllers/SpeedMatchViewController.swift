@@ -21,10 +21,12 @@ class SpeedMatchViewController: GameBaseViewController {
     let gameId = 1
     var game: SpeedMatch!
     var interfaceView: InterfaceView!
+    var skills: [Skill]!
 
-    class func build() -> SpeedMatchViewController {
+    class func build(skills: [Skill]) -> SpeedMatchViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "SpeedMatch", bundle: nil)
         var viewController = storyboad.instantiateInitialViewController() as SpeedMatchViewController
+        viewController.skills = skills
         return viewController
     }
 
@@ -32,7 +34,7 @@ class SpeedMatchViewController: GameBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.game = SpeedMatch(game: Games().getById(gameId)!)
+        self.game = SpeedMatch(game: Games().getById(gameId)!, skills: self.skills)
         self.game.delegate = self
         self.game.SpeedMatchDelegate = self
     }

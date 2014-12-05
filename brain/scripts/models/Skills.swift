@@ -29,6 +29,18 @@ class Skill {
         self.desc = desc
         self.requiredBrainId = requiredBrainId
     }
+
+    func isTimePlus() -> Bool {
+        return self.type == typeTimePlus
+    }
+
+    func isBonusPlus() -> Bool {
+        return self.type == typeBonusPlus
+    }
+
+    func isExpPlus() -> Bool {
+        return self.type == typeExpPlus
+    }
 }
 
 class Skills: NSObject {
