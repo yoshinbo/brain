@@ -15,3 +15,8 @@
 "expToNextLevelFormat"      = "Need %d to next";
 "allRecovery"               = "All Recovery";
 "degitalClockForRecovery"   = "Recovery till %02d:%02d";
+
+"timePlusDescription"       = "Time limit +5 sec";
+"timePlus+Description"      = "Time limit +10 sec";
+"bonusPlusDescription"      = "Bonus upper limit+";
+"expPlusDescription"        = "Gain exp more 2 times";

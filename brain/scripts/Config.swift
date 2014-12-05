@@ -62,7 +62,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         cost: 2,
         type: typeTimePlus,
         value: 5,
-        desc: "",
+        desc: NSLocalizedString("timePlusDescription", comment: ""),
         requiredBrainId: 2
     ),
     (
@@ -71,7 +71,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         cost: 3,
         type: typeTimePlus,
         value: 10,
-        desc: "",
+        desc: NSLocalizedString("timePlus+Description", comment: ""),
         requiredBrainId: 3
     ),
     (
@@ -80,7 +80,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         cost: 5,
         type: typeBonusPlus,
         value: 5,
-        desc: "",
+        desc: NSLocalizedString("bonusPlusDescription", comment: ""),
         requiredBrainId: 4
     ),
     (
@@ -89,7 +89,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         cost: 5,
         type: typeExpPlus,
         value: 2,
-        desc: "",
+        desc: NSLocalizedString("expPlusDescription", comment: ""),
         requiredBrainId: 5
     ),
 ]

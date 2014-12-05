@@ -15,3 +15,8 @@
 "expToNextLevelFormat"      = "次のLEVELまであと%d";
 "allRecovery"               = "全回復";
 "degitalClockForRecovery"   = "全回復まで%02d:%02d";
+
+"timePlusDescription"       = "制限時間５秒プラス";
+"timePlus+Description"      = "制限時間10秒プラス";
+"bonusPlusDescription"      = "連続正解ボーナス上限アップ";
+"expPlusDescription"        = "獲得経験値２倍";
