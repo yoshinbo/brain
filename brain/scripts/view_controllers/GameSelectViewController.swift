@@ -22,6 +22,7 @@ class GameSelectViewController: BaseViewController {
     var skillModel: Skills!
     var user: User!
     var skillButtonViews: [SkillButtonView] = []
+    var animatingImageViews: [UIImageView] = []
     var wasteEnergy: Int = 0
     var isHandlingNotificationOnTapSkillButton: Bool = false
 
@@ -49,7 +50,10 @@ class GameSelectViewController: BaseViewController {
 
         self.updateEnergyLabel()
         self.setUpSkillHolder()
+    }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "handleNotificationOnTapSkillButton:",
@@ -62,6 +66,15 @@ class GameSelectViewController: BaseViewController {
             name: notificationUseEnergy,
             object: nil
         )
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        GLDTween .removeAllTweens()
+        for imageView: UIImageView in animatingImageViews {
+            imageView.removeFromSuperview()
+        }
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
 
     override func didReceiveMemoryWarning() {
@@ -243,6 +256,7 @@ extension GameSelectViewController {
         self.view.addSubview(heartImageView)
         var originalX = heartImageView.layer.position.x
         var originalY = heartImageView.layer.position.y
+        self.animatingImageViews.append(heartImageView)
         GLDTween.addTween(heartImageView, withParams: [
             "duration"  : 0.5,
             "delay"     : 0.0,
@@ -271,10 +285,7 @@ extension GameSelectViewController {
             "duration"      : 0.5,
             "delay"         : 1.5,
             "easing"        : GLDEasingInSine,
-            "alpha"         : 0.0,
-            "completionBLock" : GLDTweenBlock({
-                heartImageView.removeFromSuperview()
-            })
+            "alpha"         : 0.0
         ])
     }
 }

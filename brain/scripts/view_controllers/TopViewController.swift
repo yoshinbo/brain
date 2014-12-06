@@ -22,6 +22,7 @@ class TopViewController: BaseViewController {
     @IBOutlet weak var expGaugeViewBase: UIView!
 
     var user: User!
+    var timer: NSTimer!
 
     class func build() -> (UINavigationController, TopViewController) {
         var storyboad: UIStoryboard = UIStoryboard(name: "Top", bundle: nil)
@@ -55,7 +56,12 @@ class TopViewController: BaseViewController {
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
 
-        NSTimer.scheduledTimerWithTimeInterval(
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.user = User()
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(
             1.0,
             target: self,
             selector: Selector("updateEnergyLabelByTimer"),
@@ -71,8 +77,11 @@ class TopViewController: BaseViewController {
         )
     }
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.timer.invalidate()
+        self.timer = nil
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
 
     override func viewDidLayoutSubviews() {
