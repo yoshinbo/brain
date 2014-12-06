@@ -8,3 +8,4 @@
 
 #import "UIImage+ImageEffects.h"
 #import "UIImage+ImageEffects.m"
+#import <GLDTween/GLDTween.h>

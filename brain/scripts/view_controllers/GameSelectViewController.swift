@@ -16,6 +16,7 @@ class GameSelectViewController: BaseViewController {
     @IBOutlet weak var skillHolder2: UIView!
     @IBOutlet weak var skillHolder3: UIView!
     @IBOutlet weak var skillHolder4: UIView!
+    @IBOutlet weak var heartImageView: UIImageView!
 
     var gameModel: Games!
     var skillModel: Skills!
@@ -79,6 +80,9 @@ class GameSelectViewController: BaseViewController {
                 var skillButtonView: SkillButtonView = $0
                 return skillButtonView.skill!.id == skillId
             })[0]
+            if !targetSkillButtonView.isSelected {
+                self.animationHeart()
+            }
             self.wasteOrCancelEnergyProvisionaly(
                 targetSkillButtonView.skill!.cost,
                 isWaste: targetSkillButtonView.isSelected ? false : true
@@ -88,6 +92,7 @@ class GameSelectViewController: BaseViewController {
             }
         }
         self.updateEnergyLabel()
+        self.updateHeart(self.currentEnergy() > 0)
         self.isHandlingNotificationOnTapSkillButton = false
     }
 
@@ -221,5 +226,55 @@ extension GameSelectViewController {
         return self.skillButtonViews
         .filter { $0.isSelected }
         .map { $0.skill! }
+    }
+
+    private func updateHeart(isActive: Bool) {
+        if isActive {
+            self.heartImageView.image = UIImage(named: "heart_fill")
+        } else {
+            self.heartImageView.image = UIImage(named: "heart_frame")
+        }
+    }
+
+    private func animationHeart() {
+        var heartImageView: UIImageView = UIImageView(frame: self.heartImageView.bounds)
+        heartImageView.image = UIImage(named: "heart_fill")
+        heartImageView.layer.position = ViewUtil.absFitPoint(self.heartImageView)
+        self.view.addSubview(heartImageView)
+        var originalX = heartImageView.layer.position.x
+        var originalY = heartImageView.layer.position.y
+        GLDTween.addTween(heartImageView, withParams: [
+            "duration"  : 0.5,
+            "delay"     : 0.0,
+            "easing"    : GLDEasingNone,
+            "centerX"   : originalX + 10.0
+        ])
+        GLDTween.addTween(heartImageView, withParams: [
+            "duration"  : 1.0,
+            "delay"     : 0.5,
+            "easing"    : GLDEasingNone,
+            "centerX"   : originalX - 10.0
+        ])
+        GLDTween.addTween(heartImageView, withParams: [
+            "duration"  : 0.5,
+            "delay"     : 1.5,
+            "easing"    : GLDEasingNone,
+            "centerX"   : originalX
+        ])
+        GLDTween.addTween(heartImageView, withParams: [
+            "duration"  : 2.0,
+            "delay"     : 0.0,
+            "easing"    : GLDEasingNone,
+            "centerY"   : originalY - 30
+        ])
+        GLDTween.addTween(heartImageView, withParams: [
+            "duration"      : 0.5,
+            "delay"         : 1.5,
+            "easing"        : GLDEasingInSine,
+            "alpha"         : 0.0,
+            "completionBLock" : GLDTweenBlock({
+                heartImageView.removeFromSuperview()
+            })
+        ])
     }
 }

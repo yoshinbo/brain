@@ -251,6 +251,7 @@
                     </view>
                     <connections>
                         <outlet property="energyLabel" destination="ZBx-d1-amK" id="5qr-n8-9bt"/>
+                        <outlet property="heartImageView" destination="7Be-Xu-U06" id="c6j-DL-RjP"/>
                         <outlet property="skillHolder1" destination="GBi-sA-3cW" id="OOn-aW-J9O"/>
                         <outlet property="skillHolder2" destination="Oxj-fe-KNa" id="tyC-5E-Ue4"/>
                         <outlet property="skillHolder3" destination="ool-pp-R3W" id="U8e-Ml-wtj"/>

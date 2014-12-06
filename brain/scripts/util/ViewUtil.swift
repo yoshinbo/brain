@@ -16,7 +16,7 @@ class ViewUtil {
         var marginY: CGFloat = superView.frame.size.height - height
         return CGRectMake(marginX/2.0, marginY/2.0, width, height)
     }
-    
+
     class func applyBlurWithRadius(image: UIImage) -> UIImage {
         return image.applyBlurWithRadius(
             10,
@@ -24,5 +24,21 @@ class ViewUtil {
             saturationDeltaFactor:1.3,
             maskImage: nil
         )
+    }
+
+    class func absFitPoint(view: UIView) -> CGPoint {
+        var ret: CGPoint = absPoint(view)
+        ret.x += view.frame.width/2
+        ret.y += view.frame.height/2
+        return ret
+    }
+
+    class func absPoint(view: UIView) -> CGPoint {
+        var ret: CGPoint = CGPointMake(view.frame.origin.x, view.frame.origin.y)
+        if view.superview != nil {
+            var addPoint = absPoint(view.superview!)
+            ret = CGPointMake(ret.x + addPoint.x, ret.y + addPoint.y)
+        }
+        return ret
     }
 }
