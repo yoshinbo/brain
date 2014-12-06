@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FR0-Qe-Qm6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FR0-Qe-Qm6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Speed Match View Controller-->
@@ -186,11 +187,23 @@
                                             <constraint firstAttribute="height" constant="128" id="56Z-OG-eI4"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsh-J6-n27">
+                                        <rect key="frame" x="200" y="135" width="200" height="200"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hsh-J6-n27" secondAttribute="height" multiplier="1:1" id="631-id-Ph4"/>
+                                            <constraint firstAttribute="width" constant="200" id="OXw-4I-VS9"/>
+                                            <constraint firstAttribute="height" constant="200" id="OuQ-SN-HLj"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="INW-22-InZ" firstAttribute="top" secondItem="eIS-Fa-vw1" secondAttribute="top" id="2CL-jn-qUm"/>
+                                    <constraint firstAttribute="centerX" secondItem="hsh-J6-n27" secondAttribute="centerX" id="4x3-8W-ukl"/>
                                     <constraint firstAttribute="trailing" secondItem="INW-22-InZ" secondAttribute="trailing" id="8Zz-NS-nTT"/>
+                                    <constraint firstItem="hsh-J6-n27" firstAttribute="top" relation="greaterThanOrEqual" secondItem="INW-22-InZ" secondAttribute="bottom" id="8xJ-Gj-8eN"/>
+                                    <constraint firstAttribute="centerY" secondItem="hsh-J6-n27" secondAttribute="centerY" id="Sir-B7-4ze"/>
                                     <constraint firstItem="INW-22-InZ" firstAttribute="leading" secondItem="eIS-Fa-vw1" secondAttribute="leading" id="XKa-b1-BaR"/>
                                 </constraints>
                             </view>
@@ -212,6 +225,7 @@
                     <connections>
                         <outlet property="informationBaseView" destination="INW-22-InZ" id="JHk-AR-hx2"/>
                         <outlet property="mainView" destination="eIS-Fa-vw1" id="hGI-UX-Kcy"/>
+                        <outlet property="panelBaseView" destination="hsh-J6-n27" id="3ZI-db-F2j"/>
                         <outlet property="scoreLabel" destination="cx4-Yo-U7Y" id="pWT-N4-bcU"/>
                         <outlet property="timeLabel" destination="X9h-LU-RQS" id="VIW-ap-FHp"/>
                     </connections>

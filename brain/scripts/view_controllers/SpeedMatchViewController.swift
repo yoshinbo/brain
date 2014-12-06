@@ -14,6 +14,7 @@ class SpeedMatchViewController: GameBaseViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var mainView: UIView!        // GameのメインView
     @IBOutlet weak var informationBaseView: UIView!
+    @IBOutlet weak var panelBaseView: UIView!
     
     var informationView: InformationView!  // 情報を表示するView(コンボ数など)
 
@@ -37,6 +38,7 @@ class SpeedMatchViewController: GameBaseViewController {
         self.game = SpeedMatch(game: Games().getById(gameId)!, skills: self.skills)
         self.game.delegate = self
         self.game.SpeedMatchDelegate = self
+        self.panelBaseView.hidden = true
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -127,7 +129,9 @@ extension SpeedMatchViewController: SpeedMatchProtocol {
         var panelView = PanelView.build()
         panelView.addImageViewByName(name)
         panelView.tag = self.panelTag
-        self.mainView.addSubviewOnCenter(panelView)
+        panelView.frame = self.panelBaseView.frame
+        panelView.layer.position = self.panelBaseView.layer.position
+        self.mainView.addSubview(panelView)
         self.mainView.bringSubviewToFront(self.interfaceView)
     }
 }
