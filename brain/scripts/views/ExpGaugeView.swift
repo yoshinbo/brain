@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol ExpGaugeProtocol {
+    func levelUp()
+}
+
 class ExpGaugeView: UIView {
+
+    var delegate: ExpGaugeProtocol!
 
     @IBOutlet weak var gaugeView: UIView!
     @IBOutlet weak var gaugeConstraint: NSLayoutConstraint!
@@ -64,6 +70,9 @@ extension ExpGaugeView {
                 self.gaugeView.layoutIfNeeded()
             },
             completion: {(Bool) -> Void in
+                if self.levelUpNum > 0 {
+                    self.delegate.levelUp()
+                }
                 self.beforeExpRatePercentage = 0
                 self.levelUpNum -= 1
                 if self.afterExpRatePercentage != 0 {

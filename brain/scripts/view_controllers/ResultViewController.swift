@@ -40,7 +40,7 @@ class ResultViewController: BaseViewController {
         )
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
-            self.result["afterLevel"]!
+            self.result["beforeLevel"]!
         )
         self.expLabel.text = NSString(
             format: NSLocalizedString("expToNextLevelFormat", comment: ""),
@@ -49,13 +49,7 @@ class ResultViewController: BaseViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        var expGaugeView: ExpGaugeView = ExpGaugeView.build()
-        self.expGaugeViewBase.addSubViewToFix(expGaugeView)
-        expGaugeView.setParamWithAnimation(
-            self.result["beforeExpRatePercentage"]!,
-            afterExpRatePercentage: self.result["afterExpRatePercent"]!,
-            levelUpNum: self.result["levelUpNum"]!
-        )
+        self.startExpGaugeAnimation()
     }
 
     override func viewDidLayoutSubviews() {
@@ -103,3 +97,39 @@ class ResultViewController: BaseViewController {
         self.presentViewController(navigationController, animated: true, completion: nil)
     }
 }
+
+extension ResultViewController: ExpGaugeProtocol {
+    func levelUp() {
+        self.levelLabel.text = NSString(
+            format: NSLocalizedString("currentLevelFormat", comment: ""),
+            self.result["afterLevel"]!
+        )
+        let originalHeight: CGFloat = self.levelLabel.frame.origin.y
+        GLDTween.addTween(self.levelLabel, withParams: [
+            "duration"  : 1.0,
+            "delay"     : 0.0,
+            "easing"    : GLDEasingNone,
+            "y"         : originalHeight - 20,
+        ])
+        GLDTween.addTween(self.levelLabel, withParams: [
+            "duration"  : 0.5,
+            "delay"     : 0.5,
+            "easing"    : GLDEasingOutBounce,
+            "y"   : originalHeight,
+        ])
+    }
+}
+
+extension ResultViewController {
+    private func startExpGaugeAnimation() {
+        var expGaugeView: ExpGaugeView = ExpGaugeView.build()
+        expGaugeView.delegate = self
+        self.expGaugeViewBase.addSubViewToFix(expGaugeView)
+        expGaugeView.setParamWithAnimation(
+            self.result["beforeExpRatePercentage"]!,
+            afterExpRatePercentage: self.result["afterExpRatePercent"]!,
+            levelUpNum: self.result["levelUpNum"]!
+        )
+    }
+}
+

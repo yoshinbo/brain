@@ -66,6 +66,7 @@ class GameBase: NSObject {
     func over() {
         var result: [String:Int] = [
             "score": self.score,
+            "beforeLevel" : user.level,
             "beforeExpRatePercentage" : user.expRatePercentage()
         ]
         result["levelUpNum"] = user.addExp(self.score * self.expBonusCoef())

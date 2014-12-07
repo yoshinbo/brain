@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-ku-a5N">
-                                <rect key="frame" x="10" y="84" width="580" height="496"/>
+                                <rect key="frame" x="10" y="114" width="580" height="466"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" restorationIdentifier="HelpHeader" translatesAutoresizingMaskIntoConstraints="NO" id="RJi-Zs-If2">
                                         <rect key="frame" x="0.0" y="0.0" width="580" height="50"/>
@@ -39,7 +39,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-JZ-uPf">
-                                        <rect key="frame" x="20" y="60" width="540" height="416"/>
+                                        <rect key="frame" x="20" y="60" width="540" height="386"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -82,7 +82,7 @@
                             <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="50" id="fmg-dU-D2B"/>
                             <constraint firstItem="BeE-vi-g37" firstAttribute="top" secondItem="QbF-ku-a5N" secondAttribute="bottom" constant="20" id="q4w-9o-GmI"/>
                             <constraint firstAttribute="right" secondItem="QbF-ku-a5N" secondAttribute="right" constant="10" id="rN5-8n-dZi"/>
-                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="20" id="yXI-xM-Viw"/>
+                            <constraint firstItem="QbF-ku-a5N" firstAttribute="top" secondItem="36j-Iw-8ZX" secondAttribute="bottom" constant="50" id="yXI-xM-Viw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -108,6 +108,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OfJ-Il-mhF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

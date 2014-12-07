@@ -20,7 +20,7 @@ class ViewUtil {
     class func applyBlurWithRadius(image: UIImage) -> UIImage {
         return image.applyBlurWithRadius(
             10,
-            tintColor: UIColor(white: 1.0, alpha: 0.2),
+            tintColor: UIColor(white: 0.11, alpha: 0.73),
             saturationDeltaFactor:1.3,
             maskImage: nil
         )
