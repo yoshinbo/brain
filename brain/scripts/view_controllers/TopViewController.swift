@@ -39,6 +39,7 @@ class TopViewController: BaseViewController {
         self.user = User()
 
         // 脳 >>>
+        self.brainNameLabel.text = user.currentBrain().name
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
             user.level

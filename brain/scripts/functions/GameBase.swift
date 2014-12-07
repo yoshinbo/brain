@@ -69,7 +69,10 @@ class GameBase: NSObject {
             "beforeLevel" : user.level,
             "beforeExpRatePercentage" : user.expRatePercentage()
         ]
-        result["levelUpNum"] = user.addExp(self.score * self.expBonusCoef())
+        let addExpRet = user.addExp(self.score * self.expBonusCoef())
+        result["levelUpNum"] = addExpRet.levelUpNum
+        result["maxEnergyUpNum"] = addExpRet.maxEnergyUpNum
+        result["newBrainId"] = user.updateBrain(self.score)
         result["afterLevel"] = user.level
         result["afterExpRatePercent"] = user.expRatePercentage()
         result["isBestScore"] = user.updateBestScoreIfNeed(game.id, score: self.score) ? 1 : 0

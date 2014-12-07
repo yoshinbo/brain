@@ -13,7 +13,8 @@ let storeURL: String = "http://yahoo.co.jp"
 // for User
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
-let requiredExpBase: Int = 100 // この値×levelが必要経験値
+let requiredExpBase: Int = 50 // この値×levelが必要経験値
+let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
 
 // for brain
 let brainKinds: [(id: Int, name: String, desc: String, requiredLevel: Int)] =
@@ -26,25 +27,25 @@ let brainKinds: [(id: Int, name: String, desc: String, requiredLevel: Int)] =
     ),
     (
         id: 2,
-        name: "BrainNo1",
+        name: "BrainNo2",
         desc: "",
         requiredLevel: 5
     ),
     (
         id: 3,
-        name: "BrainNo1",
+        name: "BrainNo3",
         desc: "",
         requiredLevel: 10
     ),
     (
         id: 4,
-        name: "BrainNo1",
+        name: "BrainNo4",
         desc: "",
         requiredLevel: 20
     ),
     (
         id: 5,
-        name: "BrainNo1",
+        name: "BrainNo5",
         desc: "",
         requiredLevel: 30
     )

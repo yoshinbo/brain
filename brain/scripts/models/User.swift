@@ -13,6 +13,7 @@ class User {
     var level: Int = 1 // initial level
     var exp: Int = 0
     var maxEnergy: Int = 1 // initial max energy for using skill
+    var brainId: Int = 1 // initial brainId
     var energyRecoveryAt: Double = DateUtil.now()
     var bestScores: [Int: Int] = [
         1 : 0,
@@ -21,6 +22,10 @@ class User {
 
     init() {
         self.loadData()
+    }
+
+    func currentBrain() -> (id: Int, name: String, desc: String, requiredLevel: Int) {
+        return brainKinds.filter({ $0.id == self.brainId })[0]
     }
 
     func currentEnergy() -> Int {
@@ -56,15 +61,31 @@ class User {
         self.updateData()
     }
 
-    func addExp(exp: Int) -> Int {
+    func addExp(exp: Int) -> (levelUpNum: Int, maxEnergyUpNum: Int) {
         var levelUpNum = 0
+        var maxEnergyUpNum = 0
         self.exp += exp
         while((self.requiredExpForNextLevel() > 0) && (self.exp >= self.requiredExpForNextLevel())) {
             self.exp = self.exp - self.requiredExpForNextLevel()
             self.level += 1
             levelUpNum += 1
+            if self.level % updateMaxEnergyPerLevel == 0 {
+                self.maxEnergy += 1
+                maxEnergyUpNum += 1
+            }
         }
-        return levelUpNum
+        return (levelUpNum, maxEnergyUpNum)
+    }
+
+    func updateBrain(score: Int) -> Int {
+        var newBrainId = 0
+        let nextBrainId = min(self.brainId+1, brainKinds.count)
+        let nextBrain = brainKinds.filter({ $0.id == nextBrainId})[0]
+        if nextBrainId != self.brainId && self.level >= nextBrain.requiredLevel {
+            self.brainId = nextBrainId
+            newBrainId = nextBrainId
+        }
+        return newBrainId
     }
 
     func updateBestScoreIfNeed(gameId: Int, score: Int) -> Bool {
@@ -101,10 +122,21 @@ extension User {
     private func loadData() {
         let data:AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(self.path())
         if let unwrapData: AnyObject = data {
-            self.level            = unwrapData["level"] as Int
-            self.exp              = unwrapData["exp"] as Int
-            self.maxEnergy        = unwrapData["maxEnergy"] as Int
-            self.energyRecoveryAt = unwrapData["energyRecoveryAt"] as Double
+            if let _level: AnyObject = unwrapData["level"] {
+                self.level = unwrapData["level"] as Int
+            }
+            if let _exp: AnyObject = unwrapData["exp"] {
+                self.exp = unwrapData["exp"] as Int
+            }
+            if let _maxEnergy: AnyObject = unwrapData["maxEnergy"] {
+                self.maxEnergy = unwrapData["maxEnergy"] as Int
+            }
+            if let _brainId: AnyObject = unwrapData["brainId"] {
+                self.brainId = unwrapData["brainId"] as Int
+            }
+            if let _energyRecoveryAt: AnyObject = unwrapData["energyRecoveryAt"] {
+                self.energyRecoveryAt = unwrapData["energyRecoveryAt"] as Double
+            }
             if let _bestScores: AnyObject = unwrapData["bestScores"] {
                 self.bestScores   = unwrapData["bestScores"] as [Int: Int]
             }
@@ -117,6 +149,7 @@ extension User {
             "level"            : self.level,
             "exp"              : self.exp,
             "maxEnergy"        : self.maxEnergy,
+            "brainId"          : self.brainId,
             "energyRecoveryAt" : self.energyRecoveryAt,
             "bestScores"       : self.bestScores
             ], toFile: self.path())
