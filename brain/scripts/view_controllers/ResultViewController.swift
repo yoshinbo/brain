@@ -50,6 +50,12 @@ class ResultViewController: BaseViewController {
 
     override func viewDidAppear(animated: Bool) {
         self.startExpGaugeAnimation()
+
+        // TODO Expのアニメーションが終わってから表示それまでその他のボタンの入力禁止
+        var resultBrainView: ResultBrainView = ResultBrainView.build()
+        self.view.addSubViewToFix(resultBrainView)
+        resultBrainView.setParam(User())
+        resultBrainView.setBlurBackground(self.view)
     }
 
     override func viewDidLayoutSubviews() {

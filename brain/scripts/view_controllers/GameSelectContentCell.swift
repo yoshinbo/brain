@@ -32,9 +32,10 @@ extension GameSelectContentCell {
     func setParams(game: Game, user: User) {
         self.game = game
         self.titleLabel.text = game.title
+        let bestScore: Int = (user.bestScores[game.id] != nil) ? user.bestScores[game.id]! : 0
         self.infoLabel.text = NSString(
             format: NSLocalizedString("bestScoreFormat", comment: ""),
-            user.bestScores[game.id]!
+            bestScore
         )
     }
 }

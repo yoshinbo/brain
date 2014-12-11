@@ -24,7 +24,7 @@ class User {
         self.loadData()
     }
 
-    func currentBrain() -> (id: Int, name: String, desc: String, requiredLevel: Int) {
+    func currentBrain() -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds.filter({ $0.id == self.brainId })[0]
     }
 
@@ -77,11 +77,15 @@ class User {
         return (levelUpNum, maxEnergyUpNum)
     }
 
-    func updateBrain(score: Int) -> Int {
+    func updateBrain(gameId: Int) -> Int {
         var newBrainId = 0
         let nextBrainId = min(self.brainId+1, brainKinds.count)
         let nextBrain = brainKinds.filter({ $0.id == nextBrainId})[0]
-        if nextBrainId != self.brainId && self.level >= nextBrain.requiredLevel {
+        if     nextBrainId != self.brainId
+            && self.level >= nextBrain.requiredLevel
+            && nextBrain.requiredGameId == gameId
+            && nextBrain.requiredScore >= self.bestScores[gameId]
+        {
             self.brainId = nextBrainId
             newBrainId = nextBrainId
         }

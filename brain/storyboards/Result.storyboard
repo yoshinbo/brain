@@ -260,6 +260,8 @@
                             <constraint firstItem="9fW-5Y-Epm" firstAttribute="top" secondItem="WoJ-bv-9iF" secondAttribute="bottom" id="rjM-um-Qiy"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bestScoreLabel" destination="NZl-d3-1qe" id="O9e-IJ-JF6"/>
                         <outlet property="circleView" destination="E78-hJ-ncM" id="H9C-en-JXs"/>
