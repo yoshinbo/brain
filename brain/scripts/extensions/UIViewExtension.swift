@@ -10,6 +10,11 @@ import UIKit
 
 extension UIView {
 
+    func setBlurBackground(parentView: UIView) {
+        var image:UIImage = parentView.convertToImage()
+        self.backgroundColor = UIColor(patternImage: ViewUtil.applyBlurWithRadius(image))
+    }
+
     func convertToImage() -> UIImage {
         UIGraphicsBeginImageContext(self.bounds.size)
         self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)

@@ -13,40 +13,56 @@ let storeURL: String = "http://yahoo.co.jp"
 // for User
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
-let requiredExpBase: Int = 100 // この値×levelが必要経験値
+let requiredExpBase: Int = 50 // この値×levelが必要経験値
+let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
 
 // for brain
-let brainKinds: [(id: Int, name: String, desc: String, requiredLevel: Int)] =
+let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int)] =
 [
     (
         id: 1,
         name: "BrainNo1",
-        desc: "",
-        requiredLevel: 1
+        desc: NSLocalizedString("brain1Description", comment: ""),
+        levelUpComment: NSLocalizedString("brain2LevelUpComment", comment: ""),
+        requiredLevel: 1,
+        requiredGameId: 1,
+        requiredScore: 50
     ),
     (
         id: 2,
-        name: "BrainNo1",
-        desc: "",
-        requiredLevel: 5
+        name: "BrainNo2",
+        desc: NSLocalizedString("brain2Description", comment: ""),
+        levelUpComment: NSLocalizedString("brain2LevelUpComment", comment: ""),
+        requiredLevel: 5,
+        requiredGameId: 2,
+        requiredScore: 50
     ),
     (
         id: 3,
-        name: "BrainNo1",
-        desc: "",
-        requiredLevel: 10
+        name: "BrainNo3",
+        desc: NSLocalizedString("brain3Description", comment: ""),
+        levelUpComment: NSLocalizedString("brain3LevelUpComment", comment: ""),
+        requiredLevel: 10,
+        requiredGameId: 3,
+        requiredScore: 50
     ),
     (
         id: 4,
-        name: "BrainNo1",
-        desc: "",
-        requiredLevel: 20
+        name: "BrainNo4",
+        desc: NSLocalizedString("brain4Description", comment: ""),
+        levelUpComment: NSLocalizedString("brain4LevelUpComment", comment: ""),
+        requiredLevel: 20,
+        requiredGameId: 2,
+        requiredScore: 90
     ),
     (
         id: 5,
-        name: "BrainNo1",
-        desc: "",
-        requiredLevel: 30
+        name: "BrainNo5",
+        desc: NSLocalizedString("brain5Description", comment: ""),
+        levelUpComment: NSLocalizedString("brain5LevelUpComment", comment: ""),
+        requiredLevel: 30,
+        requiredGameId: 3,
+        requiredScore: 120
     )
 ]
 
@@ -106,6 +122,12 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] 
     (
         id: 2,
         title: "Color Match",
+        timeLimitSec: 30,
+        setUpTimeSec: 3
+    ),
+    (
+        id: 3,
+        title: "Calc Compare",
         timeLimitSec: 30,
         setUpTimeSec: 3
     )

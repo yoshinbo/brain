@@ -151,6 +151,9 @@ extension GameSelectViewController {
         } else
         if cell.game!.isColorMatch() {
             println("color")
+        } else
+        if cell.game!.isCalcCompare() {
+            println("calc")
         }
 
     }
@@ -182,6 +185,9 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
         } else
         if cell.game!.isColorMatch() {
             println("color")
+        } else
+        if cell.game!.isCalcCompare() {
+                println("calc")
         }
     }
 

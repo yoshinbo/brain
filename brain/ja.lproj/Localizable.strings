@@ -20,3 +20,13 @@
 "timePlus+Description"      = "制限時間10秒プラス";
 "bonusPlusDescription"      = "連続正解ボーナス上限アップ";
 "expPlusDescription"        = "獲得経験値２倍";
+
+"brain1Description"         = "とてもレベルの低い脳";
+"brain2Description"         = "レベルの低い脳";
+"brain3Description"         = "普通の低い脳";
+"brain4Description"         = "レベルの高い脳";
+"brain5Description"         = "とてもレベルの高い脳";
+"brain2LevelUpComment"      = "Brain2にレベルアップ!!\n「TIME PLUS」\nが使えるようになりました";
+"brain3LevelUpComment"      = "Brain3にレベルアップ!!\n「TIME PLUS+」\nが使えるようになりました";
+"brain4LevelUpComment"      = "Brain4にレベルアップ!!\n「BONUS PLUS」\nが使えるようになりました";
+"brain5LevelUpComment"      = "Brain5にレベルアップ!!\n「EXP PLUS」\nが使えるようになりました";

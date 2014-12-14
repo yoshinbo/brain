@@ -29,6 +29,10 @@ class Game {
     func isColorMatch() -> Bool {
         return self.id == 2
     }
+
+    func isCalcCompare() -> Bool {
+        return self.id == 3
+    }
 }
 
 class Games: NSObject {

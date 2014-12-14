@@ -24,6 +24,8 @@
 		B82F58821A04D09F005B68C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82F58811A04D09F005B68C6 /* Images.xcassets */; };
 		B82F58851A04D09F005B68C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82F58831A04D09F005B68C6 /* LaunchScreen.xib */; };
 		B82F58911A04D09F005B68C6 /* brainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F58901A04D09F005B68C6 /* brainTests.swift */; };
+		B84F14801A3888FE0094B5F1 /* ResultBrain.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */; };
+		B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F14811A3890B90094B5F1 /* ResultBrainView.swift */; };
 		B87EC8571A1A38A40038E8C8 /* ExpGauge.xib in Resources */ = {isa = PBXBuildFile; fileRef = B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */; };
 		B87EC8591A1A39960038E8C8 /* ExpGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */; };
 		B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */; };
@@ -91,6 +93,8 @@
 		B82F588A1A04D09F005B68C6 /* brainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F588F1A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F58901A04D09F005B68C6 /* brainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brainTests.swift; sourceTree = "<group>"; };
+		B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultBrain.xib; sourceTree = "<group>"; };
+		B84F14811A3890B90094B5F1 /* ResultBrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBrainView.swift; sourceTree = "<group>"; };
 		B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpGauge.xib; sourceTree = "<group>"; };
 		B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpGaugeView.swift; sourceTree = "<group>"; };
 		B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameSelect.storyboard; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				B8D22D561A177DA4001C7EB7 /* InformationView.swift */,
 				B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */,
 				B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */,
+				B84F14811A3890B90094B5F1 /* ResultBrainView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				B8D22D581A17879B001C7EB7 /* Information.xib */,
 				B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */,
 				B82ACCF91A27638F00EA9AA3 /* Skill.xib */,
+				B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B88C20881A073054000DC4E7 /* SpeedMatch.storyboard in Resources */,
+				B84F14801A3888FE0094B5F1 /* ResultBrain.xib in Resources */,
 				B82D613B1A0DCAA500BD10E8 /* Common.storyboard in Resources */,
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
 				B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */,
@@ -523,6 +530,7 @@
 				B88C208A1A073085000DC4E7 /* SpeedMatchViewController.swift in Sources */,
 				B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */,
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
+				B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */,
 				B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

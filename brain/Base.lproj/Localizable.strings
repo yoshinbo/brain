@@ -20,3 +20,13 @@
 "timePlus+Description"      = "Time limit +10 sec";
 "bonusPlusDescription"      = "Bonus upper limit+";
 "expPlusDescription"        = "Gain exp more 2 times";
+
+"brain1Description"         = "Very Poor Brain";
+"brain2Description"         = "Still Poor Brain";
+"brain3Description"         = "OK Brain";
+"brain4Description"         = "Good Brain";
+"brain5Description"         = "Genius Brain";
+"brain2LevelUpComment"      = "You got Brain2!!\n'TIME PLUS'\ncan be userd for now.";
+"brain3LevelUpComment"      = "You got Brain3!!\n'TIME PLUS'\ncan be userd for now.";
+"brain4LevelUpComment"      = "You got Brain4!!\n'TIME PLUS'\ncan be userd for now.";
+"brain5LevelUpComment"      = "You got Brain5!!\n'TIME PLUS'\ncan be userd for now.";
