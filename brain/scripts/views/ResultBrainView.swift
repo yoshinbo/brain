@@ -22,6 +22,12 @@ class ResultBrainView: UIView {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addRecognizer()
+        self.alpha = 0
+        UIView.animateWithDuration(0.5,
+            animations: {() -> Void in
+                self.alpha = 1.0
+            }, completion: nil
+        )
     }
 
     func onTap(recognizer: UITapGestureRecognizer) {

@@ -50,12 +50,6 @@ class ResultViewController: BaseViewController {
 
     override func viewDidAppear(animated: Bool) {
         self.startExpGaugeAnimation()
-
-        // TODO Expのアニメーションが終わってから表示それまでその他のボタンの入力禁止
-        var resultBrainView: ResultBrainView = ResultBrainView.build()
-        self.view.addSubViewToFix(resultBrainView)
-        resultBrainView.setParam(User())
-        resultBrainView.setBlurBackground(self.view)
     }
 
     override func viewDidLayoutSubviews() {
@@ -128,14 +122,33 @@ extension ResultViewController: ExpGaugeProtocol {
 
 extension ResultViewController {
     private func startExpGaugeAnimation() {
+        // Brainがレベルアップした時はポップアップを見せたいのでその他のボタンの入力禁止
+        if self.hasBrainUpdated() {
+            self.view.userInteractionEnabled = false
+        }
         var expGaugeView: ExpGaugeView = ExpGaugeView.build()
         expGaugeView.delegate = self
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParamWithAnimation(
             self.result["beforeExpRatePercentage"]!,
             afterExpRatePercentage: self.result["afterExpRatePercent"]!,
-            levelUpNum: self.result["levelUpNum"]!
+            levelUpNum: self.result["levelUpNum"]!,
+            condition: self.conditionAfterExpGaugeAnimation
         )
+    }
+
+    private func conditionAfterExpGaugeAnimation() {
+        if self.hasBrainUpdated() {
+            var resultBrainView: ResultBrainView = ResultBrainView.build()
+            self.view.addSubViewToFix(resultBrainView)
+            resultBrainView.setParam(User())
+            resultBrainView.setBlurBackground(self.view)
+            self.view.userInteractionEnabled = true
+        }
+    }
+
+    private func hasBrainUpdated() -> Bool {
+        return self.result["newBrainId"] != 0
     }
 }
 

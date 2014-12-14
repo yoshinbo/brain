@@ -37,12 +37,12 @@ class ExpGaugeView: UIView {
         self.gaugeView.layoutIfNeeded()
     }
 
-    func setParamWithAnimation(beforeExpRatePercentage: Int, afterExpRatePercentage: Int, levelUpNum: Int) {
+    func setParamWithAnimation(beforeExpRatePercentage: Int, afterExpRatePercentage: Int, levelUpNum: Int, condition: () -> Void) {
         self.originalGaugeWidth = self.gaugeView.bounds.width
         self.beforeExpRatePercentage = beforeExpRatePercentage
         self.afterExpRatePercentage = afterExpRatePercentage
         self.levelUpNum = levelUpNum
-        self.animation()
+        self.animation(condition)
     }
 
     /*
@@ -56,7 +56,7 @@ class ExpGaugeView: UIView {
 }
 
 extension ExpGaugeView {
-    private func animation() {
+    private func animation(condition: () -> Void) {
         self.gaugeConstraint.constant = self.constantWidth(self.beforeExpRatePercentage)
         self.gaugeView.layoutIfNeeded()
         if levelUpNum > 0 {
@@ -76,11 +76,14 @@ extension ExpGaugeView {
                 self.beforeExpRatePercentage = 0
                 self.levelUpNum -= 1
                 if self.afterExpRatePercentage != 0 {
-                    self.animation()
+                    self.animation(condition)
+                } else {
+                    condition()
                 }
             }
         )
     }
+
     private func constantWidth(expRatePercentage: Int) -> CGFloat {
         var rate = Util.conevertExpRatePercentageToRate(expRatePercentage)
         return CGFloat(Int(Float(self.originalGaugeWidth) * (1 - rate)))
