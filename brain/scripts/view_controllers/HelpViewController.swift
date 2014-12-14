@@ -23,6 +23,7 @@ class HelpViewController: ModalBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Help"
         self.titleLabel.text = self.gameTitle
         self.setBlurBackground()
     }

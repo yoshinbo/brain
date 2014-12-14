@@ -20,6 +20,7 @@ class TopViewController: BaseViewController {
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var recoveryInfoLabel: UILabel!
     @IBOutlet weak var expGaugeViewBase: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
 
     var user: User!
     var timer: NSTimer!
@@ -113,6 +114,15 @@ class TopViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    @IBAction func onClickRanking(sender: UIButton) {
+        println("ranking...")
+    }
+
+    @IBAction func onClickBook(sender: UIButton) {
+        var (navigationController, viewController) = BookViewController.build()
+        self.moveTo(navigationController)
+    }
 }
 
 extension TopViewController {

@@ -121,6 +121,16 @@ class User {
 }
 
 extension User {
+    class func getBrainById(brainId: Int) -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+        return brainKinds.filter({ $0.id == brainId })[0]
+    }
+
+    class func getBrainByIndex(index: Int) -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+        return brainKinds[index]
+    }
+}
+
+extension User {
 
     // NSKeyedArchiverからデータロード
     private func loadData() {
