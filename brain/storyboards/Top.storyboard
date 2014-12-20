@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGg-eX-52Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGg-eX-52Y">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -320,26 +320,6 @@
                                     <constraint firstAttribute="centerX" secondItem="dot-tb-Hmg" secondAttribute="centerX" id="wLd-bz-Lfv"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEg-wa-gqL" customClass="RoundedCornersBorderView" customModule="brain" customModuleProvider="target">
-                                <rect key="frame" x="158" y="334" width="283.5" height="51"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhI-D2-rIJ">
-                                        <rect key="frame" x="0.0" y="5" width="283.5" height="41"/>
-                                        <string key="text">Next Brain Level
-You need to got 150pt with the game</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="vhI-D2-rIJ" firstAttribute="leading" secondItem="wEg-wa-gqL" secondAttribute="leading" id="8hD-vx-6wM"/>
-                                    <constraint firstAttribute="bottom" secondItem="vhI-D2-rIJ" secondAttribute="bottom" constant="5" id="9hh-Me-Q62"/>
-                                    <constraint firstItem="vhI-D2-rIJ" firstAttribute="top" secondItem="wEg-wa-gqL" secondAttribute="top" constant="5" id="UdV-Zo-uv4"/>
-                                    <constraint firstAttribute="trailing" secondItem="vhI-D2-rIJ" secondAttribute="trailing" id="leR-ap-or8"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -349,11 +329,9 @@ You need to got 150pt with the game</string>
                             <constraint firstItem="QUK-r0-ZfF" firstAttribute="top" secondItem="Hpg-tW-qUE" secondAttribute="bottom" constant="50" id="aNu-gf-9II"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="leading" secondItem="kaG-LZ-IJ7" secondAttribute="leading" id="d5U-9L-5m8"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="leading" secondItem="T4Q-Ji-D8L" secondAttribute="leading" id="dMA-IM-uub"/>
-                            <constraint firstItem="wEg-wa-gqL" firstAttribute="top" secondItem="yxU-0T-Vcb" secondAttribute="bottom" constant="-30" id="eV2-fg-3lx"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="trailing" secondItem="T4Q-Ji-D8L" secondAttribute="trailingMargin" id="kfo-ui-AeL"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="height" secondItem="T4Q-Ji-D8L" secondAttribute="height" multiplier="0.5" id="nDJ-Cg-Yse"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="top" secondItem="zg8-MG-BKU" secondAttribute="bottom" id="qgk-So-Wdq"/>
-                            <constraint firstAttribute="centerX" secondItem="wEg-wa-gqL" secondAttribute="centerX" id="v65-Ey-Ulk"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="top" secondItem="kaG-LZ-IJ7" secondAttribute="bottom" constant="10" id="v67-hg-RKV"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="leading" secondItem="T4Q-Ji-D8L" secondAttribute="leadingMargin" id="xkN-uB-C43"/>
                         </constraints>
@@ -366,7 +344,6 @@ You need to got 150pt with the game</string>
                         <outlet property="energyLabel" destination="5Vt-7A-Hm9" id="Usz-pH-rW9"/>
                         <outlet property="expGaugeViewBase" destination="Y0K-nn-7o8" id="1AT-NE-xXq"/>
                         <outlet property="expLabel" destination="Ads-9l-Sft" id="e0O-o2-UhT"/>
-                        <outlet property="infoLabel" destination="vhI-D2-rIJ" id="OcK-yp-CWG"/>
                         <outlet property="levelLabel" destination="hVK-g4-YKF" id="2IO-mX-prj"/>
                         <outlet property="recoveryInfoLabel" destination="0VO-e7-zS1" id="rLU-Rt-Oz6"/>
                     </connections>

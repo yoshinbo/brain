@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C53D41A3192F700EF5358 /* NotificationName.swift */; };
+		B81BFEF51A45172700433B0B /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81BFEF41A45172700433B0B /* RoundedCornersView.swift */; };
 		B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82ACCF91A27638F00EA9AA3 /* Skill.xib */; };
 		B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */; };
 		B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */; };
@@ -76,6 +77,7 @@
 		443C53D41A3192F700EF5358 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		46F42EA6E252A99E85BAB868 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B81BFEF41A45172700433B0B /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		B82ACCF91A27638F00EA9AA3 /* Skill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Skill.xib; sourceTree = "<group>"; };
 		B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillButtonView.swift; sourceTree = "<group>"; };
 		B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				B89105BE1A20226600860A7B /* CircleView.swift */,
 				B89105C01A20341A00860A7B /* RoundedCornersBorderView.swift */,
+				B81BFEF41A45172700433B0B /* RoundedCornersView.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */,
 				B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */,
 				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
+				B81BFEF51A45172700433B0B /* RoundedCornersView.swift in Sources */,
 				B82D61391A0DC8D400BD10E8 /* PanelView.swift in Sources */,
 				B88C20861A063450000DC4E7 /* Games.swift in Sources */,
 				B87EC8591A1A39960038E8C8 /* ExpGaugeView.swift in Sources */,

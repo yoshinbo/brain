@@ -30,7 +30,12 @@ class BookViewContentCell: UITableViewCell {
         var brain = User.getBrainById(brainId)
         self.nameLabel.text = brain.name
         self.descriptionLabel.text = brain.desc
-        self.requiredConditionLabel.text = "\(brain.requiredLevel)"
+        self.requiredConditionLabel.text = NSString(
+            format: NSLocalizedString("brainOpenCondition", comment: ""),
+            brain.requiredLevel,
+            Games().getById(brain.requiredGameId)!.title,
+            brain.requiredScore
+        )
     }
 
     func viewDidLayoutSubviews() {
