@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C53D41A3192F700EF5358 /* NotificationName.swift */; };
+		B81BFEF51A45172700433B0B /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81BFEF41A45172700433B0B /* RoundedCornersView.swift */; };
 		B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82ACCF91A27638F00EA9AA3 /* Skill.xib */; };
 		B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */; };
 		B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */; };
@@ -47,6 +48,9 @@
 		B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C12A681A0F0E6200276AEE /* ResultViewController.swift */; };
 		B8D22D571A177DA4001C7EB7 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D22D561A177DA4001C7EB7 /* InformationView.swift */; };
 		B8D22D591A17879B001C7EB7 /* Information.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D22D581A17879B001C7EB7 /* Information.xib */; };
+		B8DB63D91A3D35E900834757 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DB63D81A3D35E900834757 /* Book.storyboard */; };
+		B8DB63DB1A3DA16C00834757 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB63DA1A3DA16C00834757 /* BookViewController.swift */; };
+		B8DB63DD1A3DB32300834757 /* BookViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB63DC1A3DB32200834757 /* BookViewContentCell.swift */; };
 		B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
@@ -73,6 +77,7 @@
 		443C53D41A3192F700EF5358 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		46F42EA6E252A99E85BAB868 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B81BFEF41A45172700433B0B /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		B82ACCF91A27638F00EA9AA3 /* Skill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Skill.xib; sourceTree = "<group>"; };
 		B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillButtonView.swift; sourceTree = "<group>"; };
 		B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
@@ -117,6 +122,9 @@
 		B8C12A681A0F0E6200276AEE /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B8D22D561A177DA4001C7EB7 /* InformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		B8D22D581A17879B001C7EB7 /* Information.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Information.xib; sourceTree = "<group>"; };
+		B8DB63D81A3D35E900834757 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
+		B8DB63DA1A3DA16C00834757 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		B8DB63DC1A3DB32200834757 /* BookViewContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewContentCell.swift; sourceTree = "<group>"; };
 		B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -269,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E56AFE1A0522E800024E00 /* Top.storyboard */,
+				B8DB63D81A3D35E900834757 /* Book.storyboard */,
 				B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */,
 				B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */,
 				B88C208D1A0752A9000DC4E7 /* Help.storyboard */,
@@ -293,6 +302,8 @@
 				B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */,
 				B8C12A681A0F0E6200276AEE /* ResultViewController.swift */,
 				B88C208F1A075334000DC4E7 /* HelpViewController.swift */,
+				B8DB63DA1A3DA16C00834757 /* BookViewController.swift */,
+				B8DB63DC1A3DB32200834757 /* BookViewContentCell.swift */,
 			);
 			path = view_controllers;
 			sourceTree = "<group>";
@@ -312,6 +323,7 @@
 			children = (
 				B89105BE1A20226600860A7B /* CircleView.swift */,
 				B89105C01A20341A00860A7B /* RoundedCornersBorderView.swift */,
+				B81BFEF41A45172700433B0B /* RoundedCornersView.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -438,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B88C20881A073054000DC4E7 /* SpeedMatch.storyboard in Resources */,
+				B8DB63D91A3D35E900834757 /* Book.storyboard in Resources */,
 				B84F14801A3888FE0094B5F1 /* ResultBrain.xib in Resources */,
 				B82D613B1A0DCAA500BD10E8 /* Common.storyboard in Resources */,
 				B82F58801A04D09F005B68C6 /* Main.storyboard in Resources */,
@@ -507,6 +520,7 @@
 				443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */,
 				B8C12A691A0F0E6200276AEE /* ResultViewController.swift in Sources */,
 				B88C20831A063262000DC4E7 /* Config.swift in Sources */,
+				B81BFEF51A45172700433B0B /* RoundedCornersView.swift in Sources */,
 				B82D61391A0DC8D400BD10E8 /* PanelView.swift in Sources */,
 				B88C20861A063450000DC4E7 /* Games.swift in Sources */,
 				B87EC8591A1A39960038E8C8 /* ExpGaugeView.swift in Sources */,
@@ -516,12 +530,14 @@
 				B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */,
 				B82D61311A07CFD300BD10E8 /* User.swift in Sources */,
 				B82D612F1A07CCEF00BD10E8 /* ColorMatch.swift in Sources */,
+				B8DB63DB1A3DA16C00834757 /* BookViewController.swift in Sources */,
 				B89105C11A20341A00860A7B /* RoundedCornersBorderView.swift in Sources */,
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
 				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,
 				B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
+				B8DB63DD1A3DB32300834757 /* BookViewContentCell.swift in Sources */,
 				B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */,
 				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,

@@ -20,6 +20,8 @@ class TopViewController: BaseViewController {
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var recoveryInfoLabel: UILabel!
     @IBOutlet weak var expGaugeViewBase: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var recoveryButtonBase: RoundedCornersBorderView!
 
     var user: User!
     var timer: NSTimer!
@@ -113,6 +115,19 @@ class TopViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+    @IBAction func onClickRecovery(sender: UIButton) {
+        self.user.recoverEnergy()
+    }
+
+    @IBAction func onClickRanking(sender: UIButton) {
+        println("ranking...")
+    }
+
+    @IBAction func onClickBook(sender: UIButton) {
+        var (navigationController, viewController) = BookViewController.build()
+        self.moveTo(navigationController)
+    }
 }
 
 extension TopViewController {
@@ -126,5 +141,22 @@ extension TopViewController {
     private func updateEnergyLabel() {
         self.energyLabel.text = "\(self.user.currentEnergy())/\(self.user.maxEnergy)"
         self.recoveryInfoLabel.text = DateUtil.getUntilTime(self.user.energyRecoveryAt)
+        if self.user.isFullEnergy() && self.recoveryButtonBase.userInteractionEnabled {
+            self.recoveryButtonBase.userInteractionEnabled = false
+            GLDTween.addTween(self.recoveryButtonBase, withParams: [
+                "duration"      : 0.2,
+                "delay"         : 0.0,
+                "easing"        : GLDEasingInSine,
+                "alpha"         : 0.0
+            ])
+        } else if !self.user.isFullEnergy() && !self.recoveryButtonBase.userInteractionEnabled {
+            self.recoveryButtonBase.userInteractionEnabled = true
+            GLDTween.addTween(self.recoveryButtonBase, withParams: [
+                "duration"      : 0.2,
+                "delay"         : 0.0,
+                "easing"        : GLDEasingInSine,
+                "alpha"         : 1.0
+            ])
+        }
     }
 }
