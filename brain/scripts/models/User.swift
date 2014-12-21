@@ -117,6 +117,12 @@ class User {
 
     func recoverEnergy() {
         self.energyRecoveryAt = DateUtil.now()
+        self.commit()
+    }
+
+    func isFullEnergy() -> Bool {
+        var untilSec = self.energyRecoveryAt - DateUtil.now()
+        return untilSec <= 0
     }
 }
 
