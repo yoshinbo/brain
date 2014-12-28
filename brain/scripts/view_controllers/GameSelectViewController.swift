@@ -184,7 +184,7 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
             self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills))
         } else
         if cell.game!.isColorMatch() {
-            println("color")
+            self.moveToInNavigationController(ColorMatchViewController.build(selectedSkills))
         } else
         if cell.game!.isCalcCompare() {
                 println("calc")
