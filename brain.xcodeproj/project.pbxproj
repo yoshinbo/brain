@@ -41,6 +41,8 @@
 		B89105BF1A20226600860A7B /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89105BE1A20226600860A7B /* CircleView.swift */; };
 		B89105C11A20341A00860A7B /* RoundedCornersBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89105C01A20341A00860A7B /* RoundedCornersBorderView.swift */; };
 		B89105D61A20872100860A7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89105D81A20872100860A7B /* Localizable.strings */; };
+		B8A025611A469BC400368635 /* ColorMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A025601A469BC300368635 /* ColorMatch.storyboard */; };
+		B8A025631A469C4400368635 /* ColorMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A025621A469C4400368635 /* ColorMatchViewController.swift */; };
 		B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */; };
 		B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5FE721A0E035600F96DC8 /* Panel.xib */; };
 		B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */; };
@@ -51,6 +53,7 @@
 		B8DB63D91A3D35E900834757 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DB63D81A3D35E900834757 /* Book.storyboard */; };
 		B8DB63DB1A3DA16C00834757 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB63DA1A3DA16C00834757 /* BookViewController.swift */; };
 		B8DB63DD1A3DB32300834757 /* BookViewContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DB63DC1A3DB32200834757 /* BookViewContentCell.swift */; };
+		B8DCD63A1A50018600B941D3 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DCD6391A50018600B941D3 /* Style.swift */; };
 		B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */; };
 		B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */; };
 		B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */; };
@@ -115,6 +118,8 @@
 		B89105C01A20341A00860A7B /* RoundedCornersBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersBorderView.swift; sourceTree = "<group>"; };
 		B89105D71A20872100860A7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B89105D91A20873200860A7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B8A025601A469BC300368635 /* ColorMatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorMatch.storyboard; sourceTree = "<group>"; };
+		B8A025621A469C4400368635 /* ColorMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMatchViewController.swift; sourceTree = "<group>"; };
 		B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		B8A5FE721A0E035600F96DC8 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
 		B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
@@ -125,6 +130,7 @@
 		B8DB63D81A3D35E900834757 /* Book.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		B8DB63DA1A3DA16C00834757 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		B8DB63DC1A3DB32200834757 /* BookViewContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewContentCell.swift; sourceTree = "<group>"; };
+		B8DCD6391A50018600B941D3 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		B8DD55BA1A188F5F0060A6C2 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -261,6 +267,7 @@
 			children = (
 				B82F587A1A04D09F005B68C6 /* AppDelegate.swift */,
 				B88C20821A063262000DC4E7 /* Config.swift */,
+				B8DCD6391A50018600B941D3 /* Style.swift */,
 				443C53D41A3192F700EF5358 /* NotificationName.swift */,
 				B8A5FE791A0E0E8800F96DC8 /* util */,
 				B8E56AF31A05177300024E00 /* vender */,
@@ -280,6 +287,7 @@
 				B8DB63D81A3D35E900834757 /* Book.storyboard */,
 				B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */,
 				B88C20871A073054000DC4E7 /* SpeedMatch.storyboard */,
+				B8A025601A469BC300368635 /* ColorMatch.storyboard */,
 				B88C208D1A0752A9000DC4E7 /* Help.storyboard */,
 				B82D613A1A0DCAA500BD10E8 /* Common.storyboard */,
 				B8C12A661A0EF72B00276AEE /* Result.storyboard */,
@@ -300,6 +308,7 @@
 				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
 				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
 				B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */,
+				B8A025621A469C4400368635 /* ColorMatchViewController.swift */,
 				B8C12A681A0F0E6200276AEE /* ResultViewController.swift */,
 				B88C208F1A075334000DC4E7 /* HelpViewController.swift */,
 				B8DB63DA1A3DA16C00834757 /* BookViewController.swift */,
@@ -458,6 +467,7 @@
 				B8D22D591A17879B001C7EB7 /* Information.xib in Resources */,
 				B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */,
 				B8C12A671A0EF72B00276AEE /* Result.storyboard in Resources */,
+				B8A025611A469BC400368635 /* ColorMatch.storyboard in Resources */,
 				B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */,
 				B87EC8571A1A38A40038E8C8 /* ExpGauge.xib in Resources */,
 				B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */,
@@ -534,11 +544,13 @@
 				B89105C11A20341A00860A7B /* RoundedCornersBorderView.swift in Sources */,
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
+				B8DCD63A1A50018600B941D3 /* Style.swift in Sources */,
 				B82D612D1A07C69C00BD10E8 /* SpeedMatch.swift in Sources */,
 				B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */,
 				B82F587B1A04D09F005B68C6 /* AppDelegate.swift in Sources */,
 				B8DB63DD1A3DB32300834757 /* BookViewContentCell.swift in Sources */,
 				B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */,
+				B8A025631A469C4400368635 /* ColorMatchViewController.swift in Sources */,
 				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
