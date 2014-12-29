@@ -9,13 +9,21 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, AdColonyDelegate {
 
     var window: UIWindow?
     var tracker: GAITracker?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        // AdColony
+        AdColony.configureWithAppID(
+            "appca317c8cca724ab9ae",
+            zoneIDs: ["vz466b9493eb11438fa2"],
+            delegate: self,
+            logging: true
+        )
 
         // Google Analtytics Settings
         GAI.sharedInstance().trackUncaughtExceptions = true;
@@ -63,3 +71,19 @@ extension AppDelegate {
     }
 }
 
+extension AppDelegate {
+    func onAdColonyV4VCReward(success: Bool, currencyName: String!, currencyAmount amount: Int32, inZone zoneID: String!) {
+        println("AdColony zone \(zoneID) reward \(success) \(amount) \(currencyName)")
+        if success {
+            User().recoverEnergy()
+        } else {
+            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                let build = GAIDictionaryBuilder.createAppView().set(
+                    "brain.failedPlayAdVideo",
+                    forKey: kGAIScreenName
+                    ).build()
+                appDelegate.tracker?.send(build)
+            }
+        }
+    }
+}
