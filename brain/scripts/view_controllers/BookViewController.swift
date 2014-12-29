@@ -28,16 +28,21 @@ class BookViewController: ModalBaseViewController {
         self.navigationItem.title = "Book"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.GALog(nil)
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        for cell in self.tableView.visibleCells() {
-//            cell.viewDidLayoutSubviews()
-//        }
+        //        for cell in self.tableView.visibleCells() {
+        //            cell.viewDidLayoutSubviews()
+        //        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     /*

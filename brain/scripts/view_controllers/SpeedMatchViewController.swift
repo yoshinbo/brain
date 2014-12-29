@@ -15,7 +15,7 @@ class SpeedMatchViewController: GameBaseViewController {
     @IBOutlet weak var mainView: UIView!        // GameのメインView
     @IBOutlet weak var informationBaseView: UIView!
     @IBOutlet weak var panelBaseView: UIView!
-    
+
     var informationView: InformationView!  // 情報を表示するView(コンボ数など)
 
     let panelTag = 100
@@ -41,10 +41,16 @@ class SpeedMatchViewController: GameBaseViewController {
         self.panelBaseView.hidden = true
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.GALog(nil)
+    }
+
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.informationView = InformationView.build()
         self.informationBaseView.addSubviewOnCenter(informationView)
-        
+
         self.setInterfaceView()
         self.interfaceView.delegate = self
         self.interfaceView.hidden = true

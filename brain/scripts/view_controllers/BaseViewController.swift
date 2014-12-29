@@ -33,6 +33,17 @@ class BaseViewController: UIViewController {
             presentationController?.sourceView = self.view
         }
     }
+
+    func GALog(name: String?) {
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            let screenName = (name != nil) ? name : reflect(self).summary
+            let build = GAIDictionaryBuilder.createAppView().set(
+                screenName,
+                forKey: kGAIScreenName
+            ).build()
+            appDelegate.tracker?.send(build)
+        }
+    }
 }
 
 class ModalBaseViewController: BaseViewController {

@@ -43,6 +43,11 @@
 		B89105D61A20872100860A7B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B89105D81A20872100860A7B /* Localizable.strings */; };
 		B8A025611A469BC400368635 /* ColorMatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A025601A469BC300368635 /* ColorMatch.storyboard */; };
 		B8A025631A469C4400368635 /* ColorMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A025621A469C4400368635 /* ColorMatchViewController.swift */; };
+		B8A47D871A517F43001B0EAE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A47D861A517F43001B0EAE /* AdSupport.framework */; };
+		B8A47D891A517F66001B0EAE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A47D881A517F66001B0EAE /* SystemConfiguration.framework */; };
+		B8A47D8B1A517F71001B0EAE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A47D8A1A517F71001B0EAE /* CoreData.framework */; };
+		B8A47D8D1A517F7F001B0EAE /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A47D8C1A517F7F001B0EAE /* libsqlite3.0.dylib */; };
+		B8A47D8F1A517F8B001B0EAE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A47D8E1A517F8B001B0EAE /* libz.dylib */; };
 		B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */; };
 		B8A5FE731A0E035600F96DC8 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8A5FE721A0E035600F96DC8 /* Panel.xib */; };
 		B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */; };
@@ -120,6 +125,11 @@
 		B89105D91A20873200860A7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B8A025601A469BC300368635 /* ColorMatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorMatch.storyboard; sourceTree = "<group>"; };
 		B8A025621A469C4400368635 /* ColorMatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMatchViewController.swift; sourceTree = "<group>"; };
+		B8A47D861A517F43001B0EAE /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		B8A47D881A517F66001B0EAE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B8A47D8A1A517F71001B0EAE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B8A47D8C1A517F7F001B0EAE /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		B8A47D8E1A517F8B001B0EAE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B8A5FE701A0DE80700F96DC8 /* InterfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
 		B8A5FE721A0E035600F96DC8 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
 		B8A5FE7A1A0E0EB800F96DC8 /* ViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
@@ -150,6 +160,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A47D8F1A517F8B001B0EAE /* libz.dylib in Frameworks */,
+				B8A47D8D1A517F7F001B0EAE /* libsqlite3.0.dylib in Frameworks */,
+				B8A47D8B1A517F71001B0EAE /* CoreData.framework in Frameworks */,
+				B8A47D891A517F66001B0EAE /* SystemConfiguration.framework in Frameworks */,
+				B8A47D871A517F43001B0EAE /* AdSupport.framework in Frameworks */,
 				B8E56AE51A050B6500024E00 /* CoreGraphics.framework in Frameworks */,
 				B8E56AE31A050B5900024E00 /* UIKit.framework in Frameworks */,
 				B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */,
@@ -170,6 +185,11 @@
 		8C06567C88023E4FFF772A6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8A47D8E1A517F8B001B0EAE /* libz.dylib */,
+				B8A47D8C1A517F7F001B0EAE /* libsqlite3.0.dylib */,
+				B8A47D8A1A517F71001B0EAE /* CoreData.framework */,
+				B8A47D881A517F66001B0EAE /* SystemConfiguration.framework */,
+				B8A47D861A517F43001B0EAE /* AdSupport.framework */,
 				B8E56AE41A050B6500024E00 /* CoreGraphics.framework */,
 				B8E56AE21A050B5900024E00 /* UIKit.framework */,
 				B8E56AE01A050B5000024E00 /* Accelerate.framework */,
