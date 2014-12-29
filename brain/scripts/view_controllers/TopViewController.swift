@@ -119,7 +119,12 @@ class TopViewController: BaseViewController {
     */
 
     @IBAction func onClickRecovery(sender: UIButton) {
-        self.user.recoverEnergy()
+        AdColony.playVideoAdForZone(
+            "vz466b9493eb11438fa2",
+            withDelegate: nil,
+            withV4VCPrePopup: false,
+            andV4VCPostPopup: false
+        )
     }
 
     @IBAction func onClickRanking(sender: UIButton) {
