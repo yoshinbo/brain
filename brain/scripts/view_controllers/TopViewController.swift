@@ -78,6 +78,8 @@ class TopViewController: BaseViewController {
             name: notificationUseEnergy,
             object: nil
         )
+
+        self.GALog(nil)
     }
 
     override func viewDidDisappear(animated: Bool) {

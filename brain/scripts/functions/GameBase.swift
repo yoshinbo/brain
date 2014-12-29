@@ -77,6 +77,7 @@ class GameBase: NSObject {
         result["isBestScore"] = user.updateBestScoreIfNeed(game.id, score: self.score) ? 1 : 0
         result["bestScore"] = user.bestScores[game.id]
         result["newBrainId"] = user.updateBrain(game.id)
+        result["gameId"] = game.id
         result["remainRequiredExpForNextLevel"] = user.remainRequiredExpForNextLevel()
         user.commit()
         self.delegate.renderResultView(result)

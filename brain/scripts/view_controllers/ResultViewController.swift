@@ -48,11 +48,19 @@ class ResultViewController: BaseViewController {
         )
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var gameId = self.result["gameId"]!
+        self.GALog("brain.ResultViewController.\(gameId)")
+    }
+
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.startExpGaugeAnimation()
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         // 再度、真円になるようにリレンダリング
         self.circleView.makeCircle()
     }

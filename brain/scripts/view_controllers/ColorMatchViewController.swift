@@ -40,7 +40,13 @@ class ColorMatchViewController: GameBaseViewController {
         self.panelBaseView.hidden = true
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.GALog(nil)
+    }
+
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.informationView = InformationView.build()
         self.informationBaseView.addSubviewOnCenter(informationView)
 
