@@ -23,4 +23,21 @@ class Util {
     class func calcExpRatePercentage(exp: Int, requiredExp: Int) -> Int {
         return Int(Float(exp)/Float(requiredExp)*100)
     }
+
+    class func randomWithWeight(randomPicks: [String: Int]) -> String {
+        var result = ""
+        var totalWeight = 0
+        for weight in randomPicks.values {
+            totalWeight += weight
+        }
+        var randomValue: Int = Int(arc4random_uniform(UInt32(totalWeight))) + 1
+        for key in randomPicks.keys {
+            randomValue -= randomPicks[key]!
+            if 0 >= randomValue {
+                result = key
+                break
+            }
+        }
+        return result
+    }
 }

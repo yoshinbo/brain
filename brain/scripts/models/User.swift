@@ -17,7 +17,8 @@ class User {
     var energyRecoveryAt: Double = DateUtil.now()
     var bestScores: [Int: Int] = [
         1 : 0,
-        2 : 0
+        2 : 0,
+        3 : 0
     ]
 
     init() {
@@ -94,7 +95,7 @@ class User {
 
     func updateBestScoreIfNeed(gameId: Int, score: Int) -> Bool {
         var isNeed: Bool = false
-        if self.bestScores[gameId]! < score {
+        if self.bestScores[gameId] == nil || self.bestScores[gameId]! < score {
             self.bestScores[gameId] = score
             isNeed = true
         }
