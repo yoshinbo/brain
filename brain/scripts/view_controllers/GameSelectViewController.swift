@@ -189,7 +189,7 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
             self.moveToInNavigationController(ColorMatchViewController.build(selectedSkills))
         } else
         if cell.game!.isCalcCompare() {
-                println("calc")
+            self.moveToInNavigationController(CalcCompareViewController.build(selectedSkills))
         }
     }
 

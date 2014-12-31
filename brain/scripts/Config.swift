@@ -137,7 +137,8 @@ let continuousCollectAnsBonusCoef: Int = 5 // 連続正解の場合のボーナ�
 let defaultMaxContinuousCollectAnsBonus: Int = 3 // 連続正解ボーナスの最大倍率
 
 // for Speed Match
-let speedMatchPanels: [(id: Int, name: String)] = [
+let speedMatchPanels: [(id: Int, name: String)] =
+[
     (
         id: 1,
         name: "panel1"
@@ -155,4 +156,68 @@ let speedMatchPanels: [(id: Int, name: String)] = [
 // for Color Match
 let colorMatchColors: [String] = [
     "Red", "Blue", "Green", "Yellow"
+]
+
+// for Calc Compare
+let calcCompareDifficulity: Dictionary<Int, Int> =
+[
+    1: 0,
+    2: 1,
+    3: 1,
+    4: 2,
+    5: 2
+]
+
+let formulaOperationSeed: [[String: Int]] =
+[
+    [
+        "+": 50,
+        "-": 50,
+        "*": 0,
+        "/": 0
+    ],
+    [
+        "+": 30,
+        "-": 30,
+        "*": 15,
+        "/": 15
+    ],
+    [
+        "+": 25,
+        "-": 25,
+        "*": 25,
+        "/": 25
+    ]
+]
+
+let addSubFormulaSeed: [(leftSideRandSeed: Int, rightSideRandSeed: Int)] =
+[
+    (
+        leftSideRandSeed: 10,
+        rightSideRandSeed: 10
+    ),
+    (
+        leftSideRandSeed: 25,
+        rightSideRandSeed: 25
+    ),
+    (
+        leftSideRandSeed: 50,
+        rightSideRandSeed: 50
+    )
+]
+
+let multiDivFormulaSeed: [(leftSideRandSeed: Int, rightSideRandSeed: Int)] =
+[
+    (
+        leftSideRandSeed: 10,
+        rightSideRandSeed: 5
+    ),
+    (
+        leftSideRandSeed: 10,
+        rightSideRandSeed: 10
+    ),
+    (
+        leftSideRandSeed: 10,
+        rightSideRandSeed: 10
+    )
 ]
