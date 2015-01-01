@@ -186,7 +186,7 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="1" green="0.69803921568627447" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="centerY" secondItem="sn4-SY-lGM" secondAttribute="centerY" id="aaW-im-RSd"/>
                                                             <constraint firstItem="sn4-SY-lGM" firstAttribute="leading" secondItem="4SX-pE-VLx" secondAttribute="leading" id="ljz-FU-Ofr"/>
