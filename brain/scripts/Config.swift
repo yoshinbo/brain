@@ -111,25 +111,28 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
 ]
 
 // for general game setting
-let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int)] =
+let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int, leaderboardId: String)] =
 [
     (
         id: 1,
         title: "Speed Match",
         timeLimitSec: 30,
-        setUpTimeSec: 3
+        setUpTimeSec: 3,
+        leaderboardId: "brain.spead_match.score"
     ),
     (
         id: 2,
         title: "Color Match",
         timeLimitSec: 30,
-        setUpTimeSec: 3
+        setUpTimeSec: 3,
+        leaderboardId: "brain.spead_match.score"
     ),
     (
         id: 3,
         title: "Calc Compare",
         timeLimitSec: 30,
-        setUpTimeSec: 3
+        setUpTimeSec: 3,
+        leaderboardId: "brain.spead_match.score"
     )
 ]
 

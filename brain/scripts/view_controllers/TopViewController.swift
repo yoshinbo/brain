@@ -59,6 +59,7 @@ class TopViewController: BaseViewController {
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
 
+        self.updateGameCenter()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -128,7 +129,7 @@ class TopViewController: BaseViewController {
     }
 
     @IBAction func onClickRanking(sender: UIButton) {
-        println("ranking...")
+        self.showLeaderboard()
     }
 
     @IBAction func onClickBook(sender: UIButton) {
@@ -165,5 +166,55 @@ extension TopViewController {
                 "alpha"         : 1.0
             ])
         }
+    }
+}
+
+extension TopViewController: GKGameCenterControllerDelegate {
+
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    private func showLeaderboard() {
+        var gameCenterViewController = GKGameCenterViewController()
+        gameCenterViewController.gameCenterDelegate = self
+        gameCenterViewController.viewState = GKGameCenterViewControllerState.Leaderboards
+        gameCenterViewController.leaderboardIdentifier = "brain.spead_match.score"
+        self.presentViewController(gameCenterViewController, animated: true, completion: nil)
+    }
+
+    private func updateGameCenter() {
+        var localPlayer = GKLocalPlayer()
+        localPlayer.authenticateHandler = {
+            (viewController, error) -> Void in
+            if ((viewController) != nil) { // ログイン確認処理：失敗-ログイン画面を表示
+                self.presentViewController(viewController, animated: true, completion: nil)
+            }else{
+                if (error == nil){
+                    for game in gameKinds {
+                        let bestScore: Int = (self.user.bestScores[game.id] != nil) ? self.user.bestScores[game.id]! : 0
+                        if bestScore > 10 {
+                            self.reportScores(bestScore, leaderboardid: game.leaderboardId)
+                        }
+                    }
+                }else{
+                    // ログイン認証失敗 なにもしない
+                }
+            }
+        }
+    }
+
+    private func reportScores(value:Int, leaderboardid:String){
+        var score:GKScore = GKScore();
+        score.value = Int64(value);
+        score.leaderboardIdentifier = leaderboardid;
+        var scoreArr:[GKScore] = [score];
+        GKScore.reportScores(scoreArr, withCompletionHandler:{(error:NSError!) -> Void in
+            if( (error != nil)){
+                println("Sucess to reposrt \(leaderboardid)")
+            }else{
+                println("Faild to reposrt \(leaderboardid)")
+            }
+        });
     }
 }

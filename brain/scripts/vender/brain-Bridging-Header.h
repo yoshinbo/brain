@@ -8,6 +8,8 @@
 
 #import "UIImage+ImageEffects.h"
 #import "UIImage+ImageEffects.m"
+#import <GameKit/GameKit.h>
+
 #import <GLDTween/GLDTween.h>
 
 #import <AdColony/AdColony.h>
