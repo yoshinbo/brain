@@ -8,7 +8,11 @@
 
 import Foundation
 
+// TODO
 let storeURL: String = "http://yahoo.co.jp"
+
+// for AD
+let adMobUnitID: String = "ca-app-pub-4352710131585096/5315105560"
 
 // for User
 let realStockNum: Int = 10

@@ -27,6 +27,8 @@
 		B82F58911A04D09F005B68C6 /* brainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F58901A04D09F005B68C6 /* brainTests.swift */; };
 		B84F14801A3888FE0094B5F1 /* ResultBrain.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */; };
 		B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F14811A3890B90094B5F1 /* ResultBrainView.swift */; };
+		B8788F6E1A567C07007181FB /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */; };
+		B8788F701A567D92007181FB /* AdBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788F6F1A567D92007181FB /* AdBaseViewController.swift */; };
 		B87EC8571A1A38A40038E8C8 /* ExpGauge.xib in Resources */ = {isa = PBXBuildFile; fileRef = B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */; };
 		B87EC8591A1A39960038E8C8 /* ExpGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */; };
 		B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */; };
@@ -123,6 +125,8 @@
 		B82F58901A04D09F005B68C6 /* brainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brainTests.swift; sourceTree = "<group>"; };
 		B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultBrain.xib; sourceTree = "<group>"; };
 		B84F14811A3890B90094B5F1 /* ResultBrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBrainView.swift; sourceTree = "<group>"; };
+		B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
+		B8788F6F1A567D92007181FB /* AdBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBaseViewController.swift; sourceTree = "<group>"; };
 		B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpGauge.xib; sourceTree = "<group>"; };
 		B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpGaugeView.swift; sourceTree = "<group>"; };
 		B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameSelect.storyboard; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8788F6E1A567C07007181FB /* libGoogleAdMobAds.a in Frameworks */,
 				B8A47DA91A51939C001B0EAE /* StoreKit.framework in Frameworks */,
 				B8A47DA31A518E80001B0EAE /* Social.framework in Frameworks */,
 				B8A47DA11A518E76001B0EAE /* QuartzCore.framework in Frameworks */,
@@ -227,6 +232,7 @@
 		8C06567C88023E4FFF772A6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */,
 				B8A47DA81A51939C001B0EAE /* StoreKit.framework */,
 				B8A47DA61A518F34001B0EAE /* AdColony.framework */,
 				B8A47DA21A518E80001B0EAE /* Social.framework */,
@@ -380,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				B82F587C1A04D09F005B68C6 /* BaseViewController.swift */,
+				B8788F6F1A567D92007181FB /* AdBaseViewController.swift */,
 				B8E56AFC1A0522BF00024E00 /* TopViewController.swift */,
 				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
 				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
@@ -631,6 +638,7 @@
 				B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */,
 				B8A025631A469C4400368635 /* ColorMatchViewController.swift in Sources */,
 				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
+				B8788F701A567D92007181FB /* AdBaseViewController.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
 				B89105BF1A20226600860A7B /* CircleView.swift in Sources */,
@@ -782,6 +790,10 @@
 				);
 				INFOPLIST_FILE = brain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"GoogleAnalyticsServices\"",
@@ -823,6 +835,10 @@
 				);
 				INFOPLIST_FILE = brain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"GoogleAnalyticsServices\"",

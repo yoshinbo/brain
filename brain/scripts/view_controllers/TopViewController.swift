@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopViewController: BaseViewController {
+class TopViewController: AdBaseViewController {
 
 //    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var brainNameLabel: UILabel!
@@ -58,7 +58,6 @@ class TopViewController: BaseViewController {
         var expGaugeView:ExpGaugeView = ExpGaugeView.build()
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
-
     }
 
     override func viewWillAppear(animated: Bool) {
