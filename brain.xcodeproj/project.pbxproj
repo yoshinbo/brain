@@ -29,6 +29,9 @@
 		B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F14811A3890B90094B5F1 /* ResultBrainView.swift */; };
 		B8788F6E1A567C07007181FB /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */; };
 		B8788F701A567D92007181FB /* AdBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788F6F1A567D92007181FB /* AdBaseViewController.swift */; };
+		B8788F831A56939D007181FB /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F7D1A56939D007181FB /* libNendAd.a */; };
+		B8788F851A5693B1007181FB /* libAdapterNend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F841A5693B1007181FB /* libAdapterNend.a */; };
+		B8788F871A56949E007181FB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F861A56949E007181FB /* ImageIO.framework */; };
 		B87EC8571A1A38A40038E8C8 /* ExpGauge.xib in Resources */ = {isa = PBXBuildFile; fileRef = B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */; };
 		B87EC8591A1A39960038E8C8 /* ExpGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */; };
 		B88C207B1A05D3CE000DC4E7 /* GameSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */; };
@@ -127,6 +130,14 @@
 		B84F14811A3890B90094B5F1 /* ResultBrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBrainView.swift; sourceTree = "<group>"; };
 		B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		B8788F6F1A567D92007181FB /* AdBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBaseViewController.swift; sourceTree = "<group>"; };
+		B8788F7D1A56939D007181FB /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
+		B8788F7E1A56939D007181FB /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
+		B8788F7F1A56939D007181FB /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
+		B8788F801A56939D007181FB /* NADIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconView.h; sourceTree = "<group>"; };
+		B8788F811A56939D007181FB /* NADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADInterstitial.h; sourceTree = "<group>"; };
+		B8788F821A56939D007181FB /* NADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADView.h; sourceTree = "<group>"; };
+		B8788F841A5693B1007181FB /* libAdapterNend.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterNend.a; sourceTree = "<group>"; };
+		B8788F861A56949E007181FB /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B87EC8561A1A38A40038E8C8 /* ExpGauge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpGauge.xib; sourceTree = "<group>"; };
 		B87EC8581A1A39960038E8C8 /* ExpGaugeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpGaugeView.swift; sourceTree = "<group>"; };
 		B88C207A1A05D3CE000DC4E7 /* GameSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameSelect.storyboard; sourceTree = "<group>"; };
@@ -194,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8788F871A56949E007181FB /* ImageIO.framework in Frameworks */,
 				B8788F6E1A567C07007181FB /* libGoogleAdMobAds.a in Frameworks */,
 				B8A47DA91A51939C001B0EAE /* StoreKit.framework in Frameworks */,
 				B8A47DA31A518E80001B0EAE /* Social.framework in Frameworks */,
@@ -202,6 +214,7 @@
 				B8A47D9D1A518E5C001B0EAE /* MediaPlayer.framework in Frameworks */,
 				B8A47D9B1A518E4E001B0EAE /* EventKitUI.framework in Frameworks */,
 				B8A47D991A518E45001B0EAE /* EventKit.framework in Frameworks */,
+				B8788F831A56939D007181FB /* libNendAd.a in Frameworks */,
 				B8A47D971A518E3A001B0EAE /* CoreTelephony.framework in Frameworks */,
 				B8A47D951A518E29001B0EAE /* CoreMedia.framework in Frameworks */,
 				B8E56AE51A050B6500024E00 /* CoreGraphics.framework in Frameworks */,
@@ -213,6 +226,7 @@
 				B8A47D891A517F66001B0EAE /* SystemConfiguration.framework in Frameworks */,
 				B8A47D871A517F43001B0EAE /* AdSupport.framework in Frameworks */,
 				B8E56AE31A050B5900024E00 /* UIKit.framework in Frameworks */,
+				B8788F851A5693B1007181FB /* libAdapterNend.a in Frameworks */,
 				B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */,
 				F7A781A448062BA80F699AA1 /* libPods.a in Frameworks */,
 				B8A47DA71A518F34001B0EAE /* AdColony.framework in Frameworks */,
@@ -232,6 +246,7 @@
 		8C06567C88023E4FFF772A6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8788F861A56949E007181FB /* ImageIO.framework */,
 				B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */,
 				B8A47DA81A51939C001B0EAE /* StoreKit.framework */,
 				B8A47DA61A518F34001B0EAE /* AdColony.framework */,
@@ -401,6 +416,20 @@
 			path = view_controllers;
 			sourceTree = "<group>";
 		};
+		B8788F7C1A56939D007181FB /* NendAd */ = {
+			isa = PBXGroup;
+			children = (
+				B8788F841A5693B1007181FB /* libAdapterNend.a */,
+				B8788F7D1A56939D007181FB /* libNendAd.a */,
+				B8788F7E1A56939D007181FB /* NADIconArrayView.h */,
+				B8788F7F1A56939D007181FB /* NADIconLoader.h */,
+				B8788F801A56939D007181FB /* NADIconView.h */,
+				B8788F811A56939D007181FB /* NADInterstitial.h */,
+				B8788F821A56939D007181FB /* NADView.h */,
+			);
+			path = NendAd;
+			sourceTree = "<group>";
+		};
 		B88C20841A063410000DC4E7 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +474,7 @@
 				B8E56AF61A05185C00024E00 /* UIImage+ImageEffects.h */,
 				B8E56AF71A05185C00024E00 /* UIImage+ImageEffects.m */,
 				B8E56AF91A0518CC00024E00 /* brain-Bridging-Header.h */,
+				B8788F7C1A56939D007181FB /* NendAd */,
 			);
 			path = vender;
 			sourceTree = "<group>";
@@ -793,6 +823,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2",
+					"$(PROJECT_DIR)/brain/scripts/vender/NendAd",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -838,6 +869,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2",
+					"$(PROJECT_DIR)/brain/scripts/vender/NendAd",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

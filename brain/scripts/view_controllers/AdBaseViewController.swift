@@ -11,6 +11,8 @@ import UIKit
 class AdBaseViewController: BaseViewController {
 
     var adBannerView: GADBannerView!
+    var adIconViews: [NADIconView] = []
+    var adIconLoader: NADIconLoader!
     var isAdbannerVisible: Bool = false
 
     override func viewDidLoad() {
@@ -18,7 +20,7 @@ class AdBaseViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         adBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        adBannerView.adUnitID = adMobUnitID
+        adBannerView.adUnitID = adMobUnitId
         adBannerView.rootViewController = self
         adBannerView.delegate = self
         adBannerView.frame = CGRectMake(
@@ -29,6 +31,33 @@ class AdBaseViewController: BaseViewController {
         )
         adBannerView.loadRequest(GADRequest())
         self.view.addSubview(adBannerView)
+
+        // Nend Icon Ad
+        var adIconNum = 4
+        var icon_width = 75
+        var icon_height = 75;
+        var margin = Int(self.view.bounds.width) / adIconNum - icon_width
+        var offset = margin / 2
+
+        adIconLoader = NADIconLoader()
+        adIconLoader.isOutputLog = true
+
+        for (var i = 0; i < adIconNum ; i++) {
+            var iconFrame = CGRect(
+                x: offset + (icon_width + margin) * i,
+                y: Int(self.view.bounds.height) - icon_height + margin,
+                width: icon_width,
+                height: icon_height
+            )
+            var iconView = NADIconView(frame: iconFrame)
+            self.view.addSubview(iconView)
+            adIconLoader.addIconView(iconView)
+            adIconViews.append(iconView)
+        }
+
+        adIconLoader.setNendID(nendApiKey, spotID: nendSpotId)
+        adIconLoader.delegate = self
+        adIconLoader.load()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +66,14 @@ class AdBaseViewController: BaseViewController {
         adBannerView.removeFromSuperview()
         adBannerView.delegate = nil
         adBannerView = nil
+
+        for iconView in adIconViews {
+            adIconLoader.removeIconView(iconView)
+            iconView.removeFromSuperview()
+        }
+        adIconViews.removeAll(keepCapacity: false)
+        adIconLoader.delegate = nil
+        adIconLoader = nil
     }
 }
 
@@ -46,5 +83,11 @@ extension AdBaseViewController: GADBannerViewDelegate {
         if isAdbannerVisible == false {
             isAdbannerVisible = true
         }
+    }
+}
+
+extension AdBaseViewController: NADIconLoaderDelegate {
+    func nadIconLoaderDidFinishLoad(iconLoader: NADIconLoader!) {
+        println("success")
     }
 }

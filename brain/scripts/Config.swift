@@ -12,7 +12,11 @@ import Foundation
 let storeURL: String = "http://yahoo.co.jp"
 
 // for AD
-let adMobUnitID: String = "ca-app-pub-4352710131585096/5315105560"
+let adMobUnitId: String = "ca-app-pub-4352710131585096/5315105560"
+//let nendApiKey: String = "6f16afa152cb712531f230a25a8b54c280a890ad"
+//let nendSpotId: String = "292491"
+let nendApiKey: String = "2349edefe7c2742dfb9f434de23bc3c7ca55ad22"
+let nendSpotId: String = "101281"
 
 // for User
 let realStockNum: Int = 10
