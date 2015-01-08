@@ -31,4 +31,6 @@
 "brain4LevelUpComment"      = "Brain4にレベルアップ!!\n「BONUS PLUS」\nが使えるようになりました";
 "brain5LevelUpComment"      = "Brain5にレベルアップ!!\n「EXP PLUS」\nが使えるようになりました";
 
-"brainOpenCondition"        = "開放条件: Level%d 以上\n「%@」で%dpt以上獲得";
+"brainOpenCondition1"       = "開放条件: %@獲得済み";
+"brainOpenCondition2"       = "Level%d 以上";
+"brainOpenCondition3"       = "「%@」で%dpt以上獲得";

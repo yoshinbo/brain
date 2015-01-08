@@ -31,4 +31,6 @@
 "brain4LevelUpComment"      = "You got Brain4!!\n'TIME PLUS'\ncan be userd for now.";
 "brain5LevelUpComment"      = "You got Brain5!!\n'TIME PLUS'\ncan be userd for now.";
 
-"brainOpenCondition"        = "Open Condition: More %d Level\n\"%@\" More %dpt";
+"brainOpenCondition1"       = "Open Condition: require %@";
+"brainOpenCondition2"       = "More %d Level";
+"brainOpenCondition3"       = "\"%@\" More %dpt";
