@@ -11,6 +11,7 @@ import UIKit
 class BookViewController: ModalBaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var user: User!
 
     class func build() -> (UINavigationController, BookViewController) {
         var storyboad: UIStoryboard = UIStoryboard(name: "Book", bundle: nil)
@@ -24,6 +25,7 @@ class BookViewController: ModalBaseViewController {
         // Do any additional setup after loading the view.
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.user = User()
 
         self.navigationItem.title = "Book"
     }
@@ -68,15 +70,15 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as BookViewContentCell
-        self.aduptCell(cell, indexPath: indexPath)
-        return cell
-    }
-}
-
-extension BookViewController {
-    private func aduptCell(cell:BookViewContentCell, indexPath:NSIndexPath) {
         var brain = User.getBrainByIndex(indexPath.row)
-        cell.setParams(brain.id)
+        if self.user.currentBrain().id >= brain.id {
+            var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as BookViewContentCell
+            cell.setParams(brain.id)
+            return cell
+        } else {
+            var cell = tableView.dequeueReusableCellWithIdentifier("LockContentCell", forIndexPath: indexPath) as BookViewLockContentCell
+            cell.setParams(brain.id)
+            return cell
+        }
     }
 }

@@ -13,7 +13,6 @@ class BookViewContentCell: UITableViewCell {
     @IBOutlet weak var brainImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var requiredConditionLabel: UILabel!
     @IBOutlet weak var brainBaseView: CircleView!
 
     override func awakeFromNib() {
@@ -30,12 +29,6 @@ class BookViewContentCell: UITableViewCell {
         var brain = User.getBrainById(brainId)
         self.nameLabel.text = brain.name
         self.descriptionLabel.text = brain.desc
-        self.requiredConditionLabel.text = NSString(
-            format: NSLocalizedString("brainOpenCondition", comment: ""),
-            brain.requiredLevel,
-            Games().getById(brain.requiredGameId)!.title,
-            brain.requiredScore
-        )
     }
 
     func viewDidLayoutSubviews() {
