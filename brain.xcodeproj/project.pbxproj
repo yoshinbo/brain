@@ -28,7 +28,6 @@
 		B84F14801A3888FE0094B5F1 /* ResultBrain.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */; };
 		B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F14811A3890B90094B5F1 /* ResultBrainView.swift */; };
 		B8788F6E1A567C07007181FB /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */; };
-		B8788F701A567D92007181FB /* AdBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788F6F1A567D92007181FB /* AdBaseViewController.swift */; };
 		B8788F831A56939D007181FB /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F7D1A56939D007181FB /* libNendAd.a */; };
 		B8788F851A5693B1007181FB /* libAdapterNend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F841A5693B1007181FB /* libAdapterNend.a */; };
 		B8788F871A56949E007181FB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F861A56949E007181FB /* ImageIO.framework */; };
@@ -130,7 +129,6 @@
 		B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultBrain.xib; sourceTree = "<group>"; };
 		B84F14811A3890B90094B5F1 /* ResultBrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBrainView.swift; sourceTree = "<group>"; };
 		B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
-		B8788F6F1A567D92007181FB /* AdBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdBaseViewController.swift; sourceTree = "<group>"; };
 		B8788F7D1A56939D007181FB /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
 		B8788F7E1A56939D007181FB /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
 		B8788F7F1A56939D007181FB /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				B82F587C1A04D09F005B68C6 /* BaseViewController.swift */,
-				B8788F6F1A567D92007181FB /* AdBaseViewController.swift */,
 				B8E56AFC1A0522BF00024E00 /* TopViewController.swift */,
 				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
 				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
@@ -672,7 +669,6 @@
 				B8A5FE7B1A0E0EB800F96DC8 /* ViewUtil.swift in Sources */,
 				B8A025631A469C4400368635 /* ColorMatchViewController.swift in Sources */,
 				B8A5FE711A0DE80700F96DC8 /* InterfaceView.swift in Sources */,
-				B8788F701A567D92007181FB /* AdBaseViewController.swift in Sources */,
 				B8E56ADF1A04FAE300024E00 /* UIViewExtension.swift in Sources */,
 				B82D612B1A07C41200BD10E8 /* Util.swift in Sources */,
 				B89105BF1A20226600860A7B /* CircleView.swift in Sources */,
