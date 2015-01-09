@@ -202,7 +202,7 @@ extension TopViewController: GKGameCenterControllerDelegate {
         var gameCenterViewController = GKGameCenterViewController()
         gameCenterViewController.gameCenterDelegate = self
         gameCenterViewController.viewState = GKGameCenterViewControllerState.Leaderboards
-        gameCenterViewController.leaderboardIdentifier = "brain.spead_match.score"
+        //gameCenterViewController.leaderboardIdentifier = "brain.spead_match.score"
         self.presentViewController(gameCenterViewController, animated: true, completion: nil)
     }
 
