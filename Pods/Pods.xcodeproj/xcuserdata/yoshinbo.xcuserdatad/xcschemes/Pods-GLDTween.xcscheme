@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83A85906B05DFB21A64AA561"
+               BlueprintIdentifier = "0D6458172B469AE2E0658A8E"
                BuildableName = "libPods-GLDTween.a"
                BlueprintName = "Pods-GLDTween"
                ReferencedContainer = "container:Pods.xcodeproj">
