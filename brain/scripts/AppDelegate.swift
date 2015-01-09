@@ -11,30 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, AdColonyDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow!
     var tracker: GAITracker?
+    var adBannerView: GADBannerView!
+    var isAdMobBannerVisible: Bool = false
+    var adIconViews: [NADIconView] = []
+    var adIconLoader: NADIconLoader!
+    var isNendBannerVisible: Bool = false
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
-        // AdColony
-        AdColony.configureWithAppID(
-            "appca317c8cca724ab9ae",
-            zoneIDs: ["vz466b9493eb11438fa2"],
-            delegate: self,
-            logging: true
-        )
-
-        // Google Analtytics Settings
-        GAI.sharedInstance().trackUncaughtExceptions = true;
-        GAI.sharedInstance().dispatchInterval = 20
-        GAI.sharedInstance().logger.logLevel = .Verbose
-        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            appDelegate.tracker = GAI.sharedInstance().trackerWithTrackingId("UA-58054351-1")
-        }
-
         var (navigationController, topViewController) = TopViewController.build()
         self.showViewController(navigationController)
+
+        self.initTracker()
+        self.initAdColony()
+        self.initAdMob(topViewController)
+        self.initNendIcon()
+
         return true
     }
 
@@ -60,7 +54,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdColonyDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func applicationDidReceiveMemoryWarning(application: UIApplication) {
+        // Dispose of any resources that can be recreated.
+        adBannerView.removeFromSuperview()
+        adBannerView.delegate = nil
+        adBannerView = nil
+        for iconView in adIconViews {
+            adIconLoader.removeIconView(iconView)
+            iconView.removeFromSuperview()
+        }
+        adIconViews.removeAll(keepCapacity: false)
+        adIconLoader.delegate = nil
+        adIconLoader = nil
 
+        isAdMobBannerVisible = false
+        isNendBannerVisible = false
+    }
 }
 
 extension AppDelegate {
@@ -69,9 +78,39 @@ extension AppDelegate {
         self.window!.rootViewController = viewController;
         self.window!.makeKeyAndVisible()
     }
-}
 
-extension AppDelegate {
+    // for Google Analtytics
+    func initTracker() {
+        GAI.sharedInstance().trackUncaughtExceptions = true;
+        GAI.sharedInstance().dispatchInterval = 20
+        GAI.sharedInstance().logger.logLevel = .Verbose
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            appDelegate.tracker = GAI.sharedInstance().trackerWithTrackingId(gaTrackingId)
+        }
+    }
+
+    // for Footer AD
+    func setAdForViewController(viewController: UIViewController) {
+        adBannerView.rootViewController = viewController
+        if isNendBannerVisible {
+            for iconView in adIconViews {
+               viewController.view.addSubview(iconView)
+            }
+        } else if isAdMobBannerVisible {
+             viewController.view.addSubview(adBannerView)
+        }
+    }
+
+    // for AdColony
+    func initAdColony() {
+        AdColony.configureWithAppID(
+            adColonyAppId,
+            zoneIDs: [adColonyZoneId],
+            delegate: self,
+            logging: true
+        )
+    }
+
     func onAdColonyV4VCReward(success: Bool, currencyName: String!, currencyAmount amount: Int32, inZone zoneID: String!) {
         println("AdColony zone \(zoneID) reward \(success) \(amount) \(currencyName)")
         if success {
@@ -85,5 +124,83 @@ extension AppDelegate {
                 appDelegate.tracker?.send(build)
             }
         }
+    }
+}
+
+extension AppDelegate: GADBannerViewDelegate {
+
+    func initAdMob(viewController: UIViewController) {
+        isAdMobBannerVisible = false
+        adBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        adBannerView.adUnitID = adMobUnitId
+        adBannerView.rootViewController = viewController
+        adBannerView.delegate = self
+        adBannerView.frame = CGRectMake(
+            (self.window.bounds.size.width - adBannerView.bounds.size.width) / 2,
+            self.window.bounds.size.height - adBannerView.bounds.size.height,
+            adBannerView.bounds.size.width,
+            adBannerView.bounds.size.height
+        )
+        adBannerView.loadRequest(GADRequest())
+    }
+
+    func adViewDidReceiveAd(adView: GADBannerView){
+        if isAdMobBannerVisible == false {
+            isAdMobBannerVisible = true
+            println("AdMobBanner is OK")
+            if isNendBannerVisible == false {
+                NSNotificationCenter.defaultCenter().postNotificationName(
+                    notificationLoadAdMobBanner,
+                    object: nil
+                )
+            }
+        }
+    }
+
+    func adView(adView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError){
+        println("AdMobBanner is NG")
+    }
+}
+
+extension AppDelegate: NADIconLoaderDelegate {
+
+    func initNendIcon() {
+        isNendBannerVisible = false
+        var icon_width = Int(adBannerView.bounds.size.height)
+        var icon_height = Int(adBannerView.bounds.size.height)
+        var adIconNum = min(Int(self.window.bounds.width) / icon_width, 5)
+        var margin = Int(self.window.bounds.width) / adIconNum - icon_width
+        var offset = margin / 2
+
+        adIconLoader = NADIconLoader()
+        adIconLoader.isOutputLog = true
+
+        for (var i = 0; i < adIconNum ; i++) {
+            var iconFrame = CGRect(
+                x: offset + (icon_width + margin) * i,
+                y: Int(self.window.bounds.height) - icon_height,
+                width: icon_width,
+                height: icon_height
+            )
+            var iconView = NADIconView(frame: iconFrame)
+            adIconLoader.addIconView(iconView)
+            adIconViews.append(iconView)
+        }
+
+        adIconLoader.setNendID(nendApiKey, spotID: nendSpotId)
+        adIconLoader.delegate = self
+        adIconLoader.load()
+    }
+
+    func nadIconLoaderDidFinishLoad(iconLoader: NADIconLoader!) {
+        if isNendBannerVisible == false {
+            isNendBannerVisible = true
+            println("NendBanner is OK")
+        }
+    }
+
+    func nadIconLoaderDidFailToReceiveAd(iconLoader: NADIconLoader!, nadIconView: AnyObject!) {
+        isNendBannerVisible = false
+        println("NendBanner is NG")
     }
 }

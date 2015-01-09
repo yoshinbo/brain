@@ -60,6 +60,9 @@ class TopViewController: BaseViewController {
         expGaugeView.setParam(self.user.expRatePercentage())
 
         self.updateGameCenter()
+
+        // AD
+        self.setAD()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -77,6 +80,13 @@ class TopViewController: BaseViewController {
             self,
             selector: "handleNotificationUseEnergy:",
             name: notificationUseEnergy,
+            object: nil
+        )
+
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "handleNotificationLoadAdMobBanner:",
+            name: notificationLoadAdMobBanner,
             object: nil
         )
 
@@ -107,6 +117,10 @@ class TopViewController: BaseViewController {
     func handleNotificationUseEnergy(notification: NSNotification) {
         self.user = User()
         self.updateEnergyLabel()
+    }
+
+    func handleNotificationLoadAdMobBanner(notification: NSNotification) {
+        self.setAD()
     }
 
     /*
@@ -165,6 +179,15 @@ extension TopViewController {
                 "easing"        : GLDEasingInSine,
                 "alpha"         : 1.0
             ])
+        }
+    }
+
+    private func setAD() {
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            appDelegate.setAdForViewController(self)
+            var isAdMobBannerVisible = appDelegate.isAdMobBannerVisible ? 1 : 0
+            var isNendBannerVisible = appDelegate.isNendBannerVisible ? 1 : 0
+            println("----> isAdMobBannerVisible:\(isAdMobBannerVisible), isNendBannerVisible:\(isNendBannerVisible)")
         }
     }
 }

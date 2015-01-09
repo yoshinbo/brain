@@ -1,15 +1,18 @@
 PODS:
   - GLDTween (0.0.2)
+  - Google-Mobile-Ads-SDK (6.12.2)
   - GoogleAnalytics-iOS-SDK (3.10):
     - GoogleAnalytics-iOS-SDK/Core
   - GoogleAnalytics-iOS-SDK/Core (3.10)
 
 DEPENDENCIES:
   - GLDTween (~> 0.0.1)
+  - Google-Mobile-Ads-SDK (~> 6.12)
   - GoogleAnalytics-iOS-SDK (~> 3.10)
 
 SPEC CHECKSUMS:
   GLDTween: ceade24ab34571b346486cd49f9e4a10c9e059b3
+  Google-Mobile-Ads-SDK: 9761186eb5dc5e1493e71dcce2b525159f763d42
   GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
 
 COCOAPODS: 0.34.4
