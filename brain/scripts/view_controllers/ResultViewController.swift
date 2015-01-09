@@ -46,6 +46,9 @@ class ResultViewController: BaseViewController {
             format: NSLocalizedString("expToNextLevelFormat", comment: ""),
             self.result["remainRequiredExpForNextLevel"]!
         )
+
+        // AD
+        self.setAD()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -157,6 +160,12 @@ extension ResultViewController {
 
     private func hasBrainUpdated() -> Bool {
         return self.result["newBrainId"] != 0
+    }
+
+    private func setAD() {
+        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            appDelegate.setAdForViewController(self)
+        }
     }
 }
 

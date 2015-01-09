@@ -8,10 +8,16 @@
 
 #import "UIImage+ImageEffects.h"
 #import "UIImage+ImageEffects.m"
+
+#import "NADView.h"             // バナー広告用ヘッダー
+#import "NADIconLoader.h"       // アイコン広告用ヘッダー
+#import "NADIconArrayView.h"    // アイコン広告用ヘッダー（xibファイルで生成する場合）
+
 #import <GLDTween/GLDTween.h>
 
 #import <AdColony/AdColony.h>
 
+#import <Google-Mobile-Ads-SDK/GADBannerView.h>
 #import <GoogleAnalytics-iOS-SDK/GAI.h>
 #import <GoogleAnalytics-iOS-SDK/GAIFields.h>
 #import <GoogleAnalytics-iOS-SDK/GAILogger.h>

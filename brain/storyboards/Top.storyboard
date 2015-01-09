@@ -229,7 +229,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpg-tW-qUE">
-                                <rect key="frame" x="16" y="510" width="568" height="40"/>
+                                <rect key="frame" x="16" y="500" width="568" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ww2-Tl-Ovq">
                                         <rect key="frame" x="0.0" y="5" width="568" height="30"/>
@@ -251,7 +251,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kaG-LZ-IJ7">
-                                <rect key="frame" x="16" y="460" width="568" height="40"/>
+                                <rect key="frame" x="16" y="450" width="568" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dot-tb-Hmg">
                                         <rect key="frame" x="283" y="0.0" width="1" height="40"/>
@@ -321,7 +321,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Av4-5U-fgU" customClass="RoundedCornersBorderView" customModule="brain" customModuleProvider="target">
-                                <rect key="frame" x="158" y="410" width="284" height="40"/>
+                                <rect key="frame" x="158" y="400" width="284" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QM-63-5zk">
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="40"/>
@@ -350,7 +350,7 @@
                             <constraint firstItem="kaG-LZ-IJ7" firstAttribute="height" secondItem="Hpg-tW-qUE" secondAttribute="height" id="Mso-uO-CTu"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="trailing" secondItem="kaG-LZ-IJ7" secondAttribute="trailing" id="W8h-Yq-yy1"/>
                             <constraint firstAttribute="right" secondItem="yxU-0T-Vcb" secondAttribute="right" id="Ybb-Mo-VYf"/>
-                            <constraint firstItem="QUK-r0-ZfF" firstAttribute="top" secondItem="Hpg-tW-qUE" secondAttribute="bottom" constant="50" id="aNu-gf-9II"/>
+                            <constraint firstItem="QUK-r0-ZfF" firstAttribute="top" secondItem="Hpg-tW-qUE" secondAttribute="bottom" constant="60" id="aNu-gf-9II"/>
                             <constraint firstAttribute="centerX" secondItem="Av4-5U-fgU" secondAttribute="centerX" id="ara-3U-VSR"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="leading" secondItem="kaG-LZ-IJ7" secondAttribute="leading" id="d5U-9L-5m8"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="leading" secondItem="T4Q-Ji-D8L" secondAttribute="leading" id="dMA-IM-uub"/>
