@@ -85,7 +85,7 @@ class User {
         if     nextBrainId != self.brainId
             && self.level >= nextBrain.requiredLevel
             && nextBrain.requiredGameId == gameId
-            && nextBrain.requiredScore >= self.bestScores[gameId]
+            && self.bestScores[gameId] >= nextBrain.requiredScore
         {
             self.brainId = nextBrainId
             newBrainId = nextBrainId

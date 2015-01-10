@@ -33,4 +33,4 @@
 
 "brainOpenCondition1"       = "開放条件: %@獲得済み";
 "brainOpenCondition2"       = "Level%d 以上";
-"brainOpenCondition3"       = "「%@」で%dpt以上獲得";
+"brainOpenCondition3"       = "%@で%dpt以上獲得";

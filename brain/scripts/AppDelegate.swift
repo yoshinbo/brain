@@ -14,10 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdColonyDelegate {
     var window: UIWindow!
     var tracker: GAITracker?
     var adBannerView: GADBannerView!
-    var isAdMobBannerVisible: Bool = false
+
     var adIconViews: [NADIconView] = []
     var adIconLoader: NADIconLoader!
+    var isAdMobBannerVisible: Bool = false
     var isNendBannerVisible: Bool = false
+    var isAdMobBannerAdded: Bool = false
+    var isNendBannerAdded: Bool = false
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -56,19 +59,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AdColonyDelegate {
 
     func applicationDidReceiveMemoryWarning(application: UIApplication) {
         // Dispose of any resources that can be recreated.
-        adBannerView.removeFromSuperview()
-        adBannerView.delegate = nil
-        adBannerView = nil
-        for iconView in adIconViews {
-            adIconLoader.removeIconView(iconView)
-            iconView.removeFromSuperview()
-        }
-        adIconViews.removeAll(keepCapacity: false)
-        adIconLoader.delegate = nil
-        adIconLoader = nil
-
-        isAdMobBannerVisible = false
-        isNendBannerVisible = false
+//        if (adBannerView != nil) {
+//            adBannerView.removeFromSuperview()
+//            adBannerView.delegate = nil
+//            adBannerView = nil
+//        }
+//
+//        if (adIconLoader != nil) {
+//            for iconView in adIconViews {
+//                adIconLoader.removeIconView(iconView)
+//                iconView.removeFromSuperview()
+//            }
+//            adIconViews.removeAll(keepCapacity: false)
+//            adIconLoader.delegate = nil
+//            adIconLoader = nil
+//        }
     }
 }
 
@@ -77,6 +82,12 @@ extension AppDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = viewController;
         self.window!.makeKeyAndVisible()
+    }
+
+    func isJapaneseLang() -> Bool {
+        var languages: [AnyObject] = NSLocale.preferredLanguages()
+        var currentLanguage = languages[0] as String
+        return currentLanguage == "ja"
     }
 
     // for Google Analtytics
@@ -91,13 +102,14 @@ extension AppDelegate {
 
     // for Footer AD
     func setAdForViewController(viewController: UIViewController) {
-        adBannerView.rootViewController = viewController
-        if isNendBannerVisible {
+        if isNendBannerVisible && isJapaneseLang() {
             for iconView in adIconViews {
-               viewController.view.addSubview(iconView)
+                viewController.view.addSubview(iconView)
+                isNendBannerAdded = true
             }
         } else if isAdMobBannerVisible {
-             viewController.view.addSubview(adBannerView)
+            viewController.view.addSubview(adBannerView)
+            isAdMobBannerAdded = true
         }
     }
 
@@ -147,13 +159,11 @@ extension AppDelegate: GADBannerViewDelegate {
     func adViewDidReceiveAd(adView: GADBannerView){
         if isAdMobBannerVisible == false {
             isAdMobBannerVisible = true
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                notificationLoadedAd,
+                object: nil
+            )
             println("AdMobBanner is OK")
-            if isNendBannerVisible == false {
-                NSNotificationCenter.defaultCenter().postNotificationName(
-                    notificationLoadAdMobBanner,
-                    object: nil
-                )
-            }
         }
     }
 
@@ -195,6 +205,10 @@ extension AppDelegate: NADIconLoaderDelegate {
     func nadIconLoaderDidFinishLoad(iconLoader: NADIconLoader!) {
         if isNendBannerVisible == false {
             isNendBannerVisible = true
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                notificationLoadedAd,
+                object: nil
+            )
             println("NendBanner is OK")
         }
     }

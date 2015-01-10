@@ -20,6 +20,11 @@ class BookViewContentCell: UITableViewCell {
         // Initialization code
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.brainBaseView.makeCircle()
+    }
+
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
@@ -29,9 +34,5 @@ class BookViewContentCell: UITableViewCell {
         var brain = User.getBrainById(brainId)
         self.nameLabel.text = brain.name
         self.descriptionLabel.text = brain.desc
-    }
-
-    func viewDidLayoutSubviews() {
-        self.brainBaseView.makeCircle()
     }
 }

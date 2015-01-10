@@ -33,4 +33,4 @@
 
 "brainOpenCondition1"       = "Open Condition: require %@";
 "brainOpenCondition2"       = "More %d Level";
-"brainOpenCondition3"       = "\"%@\" More %dpt";
+"brainOpenCondition3"       = "\"%@\"\nMore %dpt";

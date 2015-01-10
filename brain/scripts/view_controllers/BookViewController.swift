@@ -37,9 +37,9 @@ class BookViewController: ModalBaseViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //        for cell in self.tableView.visibleCells() {
-        //            cell.viewDidLayoutSubviews()
-        //        }
+        // for cell in self.tableView.visibleCells() {
+        //     cell.viewDidLayoutSubviews()
+        // }
     }
 
     override func didReceiveMemoryWarning() {

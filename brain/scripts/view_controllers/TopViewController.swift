@@ -59,14 +59,14 @@ class TopViewController: BaseViewController {
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
 
-        self.updateGameCenter()
-
         // AD
         self.setAD()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.updateGameCenter()
+
         self.user = User()
         self.timer = NSTimer.scheduledTimerWithTimeInterval(
             1.0,
@@ -85,8 +85,8 @@ class TopViewController: BaseViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "handleNotificationLoadAdMobBanner:",
-            name: notificationLoadAdMobBanner,
+            selector: "handlenotificationLoadedAd:",
+            name: notificationLoadedAd,
             object: nil
         )
 
@@ -119,7 +119,7 @@ class TopViewController: BaseViewController {
         self.updateEnergyLabel()
     }
 
-    func handleNotificationLoadAdMobBanner(notification: NSNotification) {
+    func handlenotificationLoadedAd(notification: NSNotification) {
         self.setAD()
     }
 
@@ -135,7 +135,7 @@ class TopViewController: BaseViewController {
 
     @IBAction func onClickRecovery(sender: UIButton) {
         AdColony.playVideoAdForZone(
-            "vz466b9493eb11438fa2",
+            adColonyZoneId,
             withDelegate: nil,
             withV4VCPrePopup: false,
             andV4VCPostPopup: false

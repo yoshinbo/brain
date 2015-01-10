@@ -15,10 +15,11 @@ let storeURL: String = "http://yahoo.co.jp"
 let adColonyAppId: String = "appca317c8cca724ab9ae"
 let adColonyZoneId: String = "vz466b9493eb11438fa2"
 let adMobUnitId: String = "ca-app-pub-4352710131585096/5315105560"
-//let nendApiKey: String = "6f16afa152cb712531f230a25a8b54c280a890ad"
-//let nendSpotId: String = "292491"
-let nendApiKey: String = "2349edefe7c2742dfb9f434de23bc3c7ca55ad22"
-let nendSpotId: String = "101281"
+let nendApiKey: String = "6f16afa152cb712531f230a25a8b54c280a890ad"
+let nendSpotId: String = "292491"
+// for Test
+//let nendApiKey: String = "2349edefe7c2742dfb9f434de23bc3c7ca55ad22"
+//let nendSpotId: String = "101281"
 
 // for Traking
 let gaTrackingId: String = "UA-58054351-1"
@@ -26,7 +27,7 @@ let gaTrackingId: String = "UA-58054351-1"
 // for User
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
-let requiredExpBase: Int = 50 // この値×levelが必要経験値
+let requiredExpBase: Int = 20 // この値×levelが必要経験値
 let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
 
 // for brain
@@ -66,7 +67,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain4LevelUpComment", comment: ""),
         requiredLevel: 20,
         requiredGameId: 2,
-        requiredScore: 90
+        requiredScore: 80
     ),
     (
         id: 5,
@@ -75,7 +76,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain5LevelUpComment", comment: ""),
         requiredLevel: 30,
         requiredGameId: 3,
-        requiredScore: 120
+        requiredScore: 80
     )
 ]
 
@@ -138,14 +139,14 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int, l
         title: "Color Match",
         timeLimitSec: 30,
         setUpTimeSec: 3,
-        leaderboardId: "brain.spead_match.score"
+        leaderboardId: "brain.color_match.score"
     ),
     (
         id: 3,
         title: "Calc Compare",
         timeLimitSec: 30,
         setUpTimeSec: 3,
-        leaderboardId: "brain.spead_match.score"
+        leaderboardId: "brain.calc_compare.score"
     )
 ]
 

@@ -10,4 +10,4 @@ import Foundation
 
 let notificationUseEnergy = "notificationUseEnergy" // エナジーが使われた時（ラベル更新など)
 let notificationOnTapSkillButton = "notificationOnTapSkillButton" // Skillボタンが押された時
-let notificationLoadAdMobBanner = "notificationLoadAdMobBanner" // AdMobのバナーが読み込み終わった時
+let notificationLoadedAd = "notificationLoadedAd" // 広告が読み込み終わった時

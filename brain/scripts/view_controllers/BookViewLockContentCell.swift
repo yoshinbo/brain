@@ -11,6 +11,7 @@ import UIKit
 class BookViewLockContentCell: UITableViewCell {
 
     @IBOutlet weak var brainImageView: UIImageView!
+    @IBOutlet weak var brainImageBaseView: CircleView!
     @IBOutlet weak var condition1ImageView: UIImageView!
     @IBOutlet weak var condition2ImageView: UIImageView!
     @IBOutlet weak var condition3ImageView: UIImageView!
@@ -27,6 +28,11 @@ class BookViewLockContentCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.brainImageBaseView.makeCircle()
     }
 
     func setParams(brainId : Int) {
