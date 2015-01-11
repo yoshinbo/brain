@@ -30,7 +30,12 @@ extension UIView {
 
     func addImageviewOnCenterByName(name: String) -> UIImageView {
         var image: UIImage = UIImage(named: name)!
-        var imageView = UIImageView(frame: self.bounds)
+        var imageView = UIImageView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: self.bounds.width*0.60,
+            height: self.bounds.height*0.60
+        ))
         imageView.image = image
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         self.addSubviewOnCenter(imageView)

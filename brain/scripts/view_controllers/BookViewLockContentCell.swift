@@ -71,6 +71,6 @@ class BookViewLockContentCell: UITableViewCell {
 
 extension BookViewLockContentCell {
     private func conditionImageByBool(isOk: Bool) -> UIImage {
-        return UIImage(named: isOk ? "ok_fill" : "ok_frame")!
+        return UIImage(named: isOk ? "ok_frame" : "ok_deactive")!
     }
 }

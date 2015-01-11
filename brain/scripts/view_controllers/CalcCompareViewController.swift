@@ -137,9 +137,9 @@ extension CalcCompareViewController: CalcCompareProtocol {
 
         var panelLabel: UILabel = UILabel(frame: CGRectZero)
         panelLabel.text = formula
-        panelLabel.font = UIFont(name: "ArialMT", size: 25)
+        panelLabel.font = UIFont.boldSystemFontOfSize(40)
         panelLabel.sizeToFit()
-        panelLabel.textColor = textColor
+        panelLabel.textColor = orangeColor
         panelView.addSubviewOnCenter(panelLabel)
 
         self.mainView.addSubview(panelView)
