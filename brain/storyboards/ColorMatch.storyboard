@@ -115,7 +115,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpl-hi-KPM">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
                                                 <color key="backgroundColor" red="0.89302394699999998" green="0.43667180690000001" blue="0.43060541200000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="FALSE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="NO">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -136,7 +137,8 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdT-qM-tKU">
                                                 <rect key="frame" x="-10" y="0.0" width="270" height="40"/>
-                                                <state key="normal" title="TRUE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="YES">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -196,14 +198,24 @@
                                             <constraint firstAttribute="height" constant="200" id="bpo-qW-3Yi"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCn-Wj-Tus">
+                                        <rect key="frame" x="0.0" y="335" width="600" height="135"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="dJo-bd-gwm" firstAttribute="top" secondItem="obu-IH-9p6" secondAttribute="top" id="0IP-xv-KZK"/>
                                     <constraint firstAttribute="centerY" secondItem="XC0-yI-Wnl" secondAttribute="centerY" id="7in-7Y-zAX"/>
+                                    <constraint firstAttribute="bottom" secondItem="GCn-Wj-Tus" secondAttribute="bottom" id="CbL-bj-98i"/>
                                     <constraint firstAttribute="trailing" secondItem="dJo-bd-gwm" secondAttribute="trailing" id="HUP-7w-raq"/>
                                     <constraint firstItem="dJo-bd-gwm" firstAttribute="leading" secondItem="obu-IH-9p6" secondAttribute="leading" id="VdF-Be-eep"/>
+                                    <constraint firstAttribute="trailing" secondItem="GCn-Wj-Tus" secondAttribute="trailing" id="XdE-MF-rar"/>
+                                    <constraint firstItem="GCn-Wj-Tus" firstAttribute="leading" secondItem="obu-IH-9p6" secondAttribute="leading" id="cKz-S5-owM"/>
                                     <constraint firstAttribute="centerX" secondItem="XC0-yI-Wnl" secondAttribute="centerX" id="qJE-5T-gNX"/>
+                                    <constraint firstItem="GCn-Wj-Tus" firstAttribute="top" secondItem="XC0-yI-Wnl" secondAttribute="bottom" id="uvd-nF-3RT"/>
                                     <constraint firstItem="XC0-yI-Wnl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dJo-bd-gwm" secondAttribute="bottom" id="viA-4K-7I1"/>
                                 </constraints>
                             </view>
@@ -223,6 +235,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="helpLabel" destination="GCn-Wj-Tus" id="jrv-65-94s"/>
                         <outlet property="informationBaseView" destination="dJo-bd-gwm" id="0OU-ZA-PqK"/>
                         <outlet property="mainView" destination="obu-IH-9p6" id="bVe-2M-gB2"/>
                         <outlet property="panelBaseView" destination="XC0-yI-Wnl" id="WDz-wn-lqj"/>

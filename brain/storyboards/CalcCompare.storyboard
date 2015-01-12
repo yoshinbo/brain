@@ -115,7 +115,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ug-xY-bQs">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
                                                 <color key="backgroundColor" red="0.89302394699999998" green="0.43667180690000001" blue="0.43060541200000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="FALSE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="NO">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -136,7 +137,8 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvO-jj-Z4E">
                                                 <rect key="frame" x="-10" y="0.0" width="270" height="40"/>
-                                                <state key="normal" title="TRUE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="YES">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -196,15 +198,25 @@
                                             <constraint firstAttribute="width" secondItem="ONa-dc-uur" secondAttribute="height" multiplier="1:1" id="o7c-RB-RW9"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvI-GV-3pc">
+                                        <rect key="frame" x="0.0" y="335" width="600" height="135"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="P7L-qf-HIt" secondAttribute="trailing" id="8s4-YV-ByV"/>
                                     <constraint firstItem="P7L-qf-HIt" firstAttribute="top" secondItem="Eoq-od-Hgs" secondAttribute="top" id="CF4-8G-mw9"/>
                                     <constraint firstItem="P7L-qf-HIt" firstAttribute="leading" secondItem="Eoq-od-Hgs" secondAttribute="leading" id="G9s-Gi-2gQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="EvI-GV-3pc" secondAttribute="bottom" id="Gwl-cz-eqd"/>
                                     <constraint firstAttribute="centerY" secondItem="ONa-dc-uur" secondAttribute="centerY" id="QdC-pN-pel"/>
+                                    <constraint firstItem="EvI-GV-3pc" firstAttribute="leading" secondItem="Eoq-od-Hgs" secondAttribute="leading" id="ZdY-6K-8Ad"/>
+                                    <constraint firstItem="EvI-GV-3pc" firstAttribute="top" secondItem="ONa-dc-uur" secondAttribute="bottom" id="gca-PZ-Sbz"/>
                                     <constraint firstItem="ONa-dc-uur" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P7L-qf-HIt" secondAttribute="bottom" id="h6h-SK-AFl"/>
                                     <constraint firstAttribute="centerX" secondItem="ONa-dc-uur" secondAttribute="centerX" id="oIl-pn-L66"/>
+                                    <constraint firstAttribute="trailing" secondItem="EvI-GV-3pc" secondAttribute="trailing" id="zYT-UK-1Hf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -223,6 +235,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="helpLabel" destination="EvI-GV-3pc" id="kdG-WW-ma2"/>
                         <outlet property="informationBaseView" destination="P7L-qf-HIt" id="o4l-ao-IuT"/>
                         <outlet property="mainView" destination="Eoq-od-Hgs" id="krG-Er-lpc"/>
                         <outlet property="panelBaseView" destination="ONa-dc-uur" id="4OV-Gc-O1r"/>

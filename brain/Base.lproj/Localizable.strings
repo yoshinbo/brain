@@ -12,7 +12,7 @@
 "costFormat"                = "Cost %d";
 "newBestScoreFormat"        = "New BestScore %d!!!";
 "currentLevelFormat"        = "LEVEL %d";
-"expToNextLevelFormat"      = "Need %d to next";
+"expToNextLevelFormat"      = "More %d to next";
 "allRecovery"               = "All Recovery";
 "degitalClockForRecovery"   = "Recovery till %02d:%02d";
 
@@ -31,6 +31,17 @@
 "brain4LevelUpComment"      = "You got Brain4!!\n'TIME PLUS'\ncan be userd for now.";
 "brain5LevelUpComment"      = "You got Brain5!!\n'TIME PLUS'\ncan be userd for now.";
 
-"brainOpenCondition1"       = "Open Condition: require %@";
-"brainOpenCondition2"       = "More %d Level";
-"brainOpenCondition3"       = "\"%@\"\nMore %dpt";
+"brainOpenCondition1"       = "Require %@";
+"brainOpenCondition2"       = "Require %d Level";
+"brainOpenCondition3"       = "\"%@\"\n Require %dpt";
+
+"brain1Help" = "1.A symbol will appear on a card. Remember the symbol.\n\n2.Compare each new symbol to the previous symbol by your memory.\n\n3.Tap the YES or NO botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
+"brain2Help" = "1.A symbol will appear on a card. Remember the word.\n\n2.Compare the color of new card to the word to previous card by your memory.\n\n3.Tap the YES or NO  botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
+"brain3Help" = "1.A symbol will appear on a card. Remember the answer of calculation.\n\n2.Compare the new answer to the previous answer by your memory.\n\n3.Tap the YES botton if the new answer was greater than or equal the previous one.\n\n※Right and left swipe are also avalable to answer";
+
+"brain1SubHelp1" = "Remember the symbol.";
+"brain1SubHelp2" = "Does this symbol match the previous symbol?";
+"brain2SubHelp1" = "Remember the word.";
+"brain2SubHelp2" = "Does this color match the previous word?";
+"brain3SubHelp1" = "Remember the answer of calculation.";
+"brain3SubHelp2" = "Is this answer greater than or equal the previous one?";

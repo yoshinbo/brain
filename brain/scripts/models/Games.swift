@@ -12,12 +12,14 @@ class Game {
 
     var id: Int
     var title: String
+    var helpDesc: String
     var timeLimitSec: Int
     var setUpTimeSec: Int
 
-    init(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int) {
+    init(id: Int, title: String, helpDesc: String, timeLimitSec: Int, setUpTimeSec: Int) {
         self.id = id
         self.title = title
+        self.helpDesc = helpDesc
         self.timeLimitSec = timeLimitSec
         self.setUpTimeSec = setUpTimeSec
     }
@@ -45,6 +47,7 @@ class Games: NSObject {
             var game = Game(
                 id: gameKind.id,
                 title: gameKind.title,
+                helpDesc: gameKind.help,
                 timeLimitSec: gameKind.timeLimitSec,
                 setUpTimeSec: gameKind.setUpTimeSec
             )

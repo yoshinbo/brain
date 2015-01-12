@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FR0-Qe-Qm6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FR0-Qe-Qm6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -115,7 +115,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awu-MU-JeW">
                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
                                                 <color key="backgroundColor" red="0.89302394699999998" green="0.4366718069015556" blue="0.43060541196446911" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="FALSE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="NO">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -136,7 +137,8 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLw-3N-KBI">
                                                 <rect key="frame" x="-10" y="0.0" width="270" height="40"/>
-                                                <state key="normal" title="TRUE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <state key="normal" title="YES">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -196,15 +198,25 @@
                                             <constraint firstAttribute="height" constant="200" id="OuQ-SN-HLj"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORf-Dc-SOw">
+                                        <rect key="frame" x="0.0" y="335" width="600" height="135"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ORf-Dc-SOw" secondAttribute="bottom" id="24B-tF-KvC"/>
                                     <constraint firstItem="INW-22-InZ" firstAttribute="top" secondItem="eIS-Fa-vw1" secondAttribute="top" id="2CL-jn-qUm"/>
                                     <constraint firstAttribute="centerX" secondItem="hsh-J6-n27" secondAttribute="centerX" id="4x3-8W-ukl"/>
                                     <constraint firstAttribute="trailing" secondItem="INW-22-InZ" secondAttribute="trailing" id="8Zz-NS-nTT"/>
                                     <constraint firstItem="hsh-J6-n27" firstAttribute="top" relation="greaterThanOrEqual" secondItem="INW-22-InZ" secondAttribute="bottom" id="8xJ-Gj-8eN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ORf-Dc-SOw" secondAttribute="trailing" id="LUl-og-pkW"/>
+                                    <constraint firstItem="ORf-Dc-SOw" firstAttribute="top" secondItem="hsh-J6-n27" secondAttribute="bottom" id="NbQ-01-5aF"/>
                                     <constraint firstAttribute="centerY" secondItem="hsh-J6-n27" secondAttribute="centerY" id="Sir-B7-4ze"/>
                                     <constraint firstItem="INW-22-InZ" firstAttribute="leading" secondItem="eIS-Fa-vw1" secondAttribute="leading" id="XKa-b1-BaR"/>
+                                    <constraint firstItem="ORf-Dc-SOw" firstAttribute="leading" secondItem="eIS-Fa-vw1" secondAttribute="leading" id="e48-HB-pV5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -223,6 +235,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="helpLabel" destination="ORf-Dc-SOw" id="XtL-V5-Rs9"/>
                         <outlet property="informationBaseView" destination="INW-22-InZ" id="JHk-AR-hx2"/>
                         <outlet property="mainView" destination="eIS-Fa-vw1" id="hGI-UX-Kcy"/>
                         <outlet property="panelBaseView" destination="hsh-J6-n27" id="3ZI-db-F2j"/>

@@ -11,7 +11,9 @@ import UIKit
 class HelpViewController: ModalBaseViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var helpLabel: UILabel!
     var gameTitle: String = ""
+    var gameHelp: String = ""
 
     class func build() -> (UINavigationController, HelpViewController) {
         var storyboad: UIStoryboard = UIStoryboard(name: "Help", bundle: nil)
@@ -25,6 +27,7 @@ class HelpViewController: ModalBaseViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Help"
         self.titleLabel.text = self.gameTitle
+        self.helpLabel.text = self.gameHelp
         self.setBlurBackground()
     }
 
