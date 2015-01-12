@@ -67,7 +67,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain4LevelUpComment", comment: ""),
         requiredLevel: 20,
         requiredGameId: 2,
-        requiredScore: 80
+        requiredScore: 70
     ),
     (
         id: 5,
@@ -125,11 +125,12 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
 ]
 
 // for general game setting
-let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int, leaderboardId: String)] =
+let gameKinds: [(id: Int, title: String, help: String, timeLimitSec: Int, setUpTimeSec: Int, leaderboardId: String)] =
 [
     (
         id: 1,
         title: "Speed Match",
+        help: NSLocalizedString("brain1Help", comment: ""),
         timeLimitSec: 30,
         setUpTimeSec: 3,
         leaderboardId: "brain.spead_match.score"
@@ -137,6 +138,7 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int, l
     (
         id: 2,
         title: "Color Match",
+        help: NSLocalizedString("brain2Help", comment: ""),
         timeLimitSec: 30,
         setUpTimeSec: 3,
         leaderboardId: "brain.color_match.score"
@@ -144,6 +146,7 @@ let gameKinds: [(id: Int, title: String, timeLimitSec: Int, setUpTimeSec: Int, l
     (
         id: 3,
         title: "Calc Compare",
+        help: NSLocalizedString("brain3Help", comment: ""),
         timeLimitSec: 30,
         setUpTimeSec: 3,
         leaderboardId: "brain.calc_compare.score"

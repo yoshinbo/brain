@@ -15,6 +15,7 @@ class CalcCompareViewController: GameBaseViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var informationBaseView: UIView!
     @IBOutlet weak var panelBaseView: UIView!
+    @IBOutlet weak var helpLabel: UILabel!
 
     var informationView: InformationView!  // 情報を表示するView(コンボ数など)
     let panelTag = 100
@@ -38,6 +39,7 @@ class CalcCompareViewController: GameBaseViewController {
         self.game.delegate = self
         self.game.matchDelegate = self
         self.panelBaseView.hidden = true
+        self.helpLabel.text = NSLocalizedString("brain\(gameId)SubHelp1", comment: "")
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -102,6 +104,22 @@ extension CalcCompareViewController {
 extension CalcCompareViewController: GameBaseProtocol {
     func start() {
         self.judge("")
+        var subHelp2 = NSLocalizedString("brain\(gameId)SubHelp2", comment: "")
+        GLDTween.addTween(self.helpLabel, withParams: [
+            "duration"      : 0.1,
+            "delay"         : 0.0,
+            "easing"        : GLDEasingInSine,
+            "alpha"         : 0.0,
+            "completionBLock" : GLDTweenBlock({
+                self.helpLabel.text = subHelp2
+            })
+        ])
+        GLDTween.addTween(self.helpLabel, withParams: [
+            "duration"      : 0.4,
+            "delay"         : 0.4,
+            "easing"        : GLDEasingInSine,
+            "alpha"         : 1.0
+        ])
     }
 
     func renderTime(sec: Int) {
