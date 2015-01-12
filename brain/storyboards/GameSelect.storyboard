@@ -44,13 +44,17 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07P-9H-MlP">
-                                                            <rect key="frame" x="534" y="19" width="30" height="34"/>
-                                                            <state key="normal" title="?">
+                                                            <rect key="frame" x="534" y="23" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="I7M-D9-Onc"/>
+                                                                <constraint firstAttribute="height" constant="30" id="v3a-mI-c05"/>
+                                                            </constraints>
+                                                            <state key="normal" image="help">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.20000000000000001" green="0.17254901960784313" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="zJt-3z-yot" firstAttribute="leading" secondItem="zs1-g9-AhK" secondAttribute="leading" id="9Qr-tf-whU"/>
                                                         <constraint firstAttribute="bottom" secondItem="zJt-3z-yot" secondAttribute="bottom" constant="15" id="L36-oT-blR"/>
@@ -108,7 +112,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_fill" translatesAutoresizingMaskIntoConstraints="NO" id="7Be-Xu-U06">
-                                                <rect key="frame" x="264" y="0.0" width="25" height="25"/>
+                                                <rect key="frame" x="270" y="3" width="19" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="7Be-Xu-U06" secondAttribute="height" multiplier="1:1" id="MMU-sI-yOZ"/>
                                                 </constraints>
@@ -125,7 +129,7 @@
                                             <constraint firstItem="2hj-OS-wRJ" firstAttribute="top" secondItem="xW5-yR-0R5" secondAttribute="top" id="2em-62-hCN"/>
                                             <constraint firstAttribute="bottom" secondItem="ZBx-d1-amK" secondAttribute="bottom" id="HdP-YE-GH0"/>
                                             <constraint firstItem="ZBx-d1-amK" firstAttribute="top" secondItem="xW5-yR-0R5" secondAttribute="top" id="KpE-9e-xjq"/>
-                                            <constraint firstItem="7Be-Xu-U06" firstAttribute="top" secondItem="xW5-yR-0R5" secondAttribute="top" id="NVm-dF-29X"/>
+                                            <constraint firstItem="7Be-Xu-U06" firstAttribute="top" secondItem="xW5-yR-0R5" secondAttribute="top" constant="3" id="NVm-dF-29X"/>
                                             <constraint firstItem="ZBx-d1-amK" firstAttribute="leading" secondItem="2hj-OS-wRJ" secondAttribute="trailing" constant="10" id="Wb3-db-3OL"/>
                                             <constraint firstAttribute="height" constant="25" id="bJe-Cu-vD4"/>
                                             <constraint firstAttribute="centerY" secondItem="2hj-OS-wRJ" secondAttribute="centerY" id="cIS-sp-BVh"/>
@@ -133,7 +137,7 @@
                                             <constraint firstAttribute="bottom" secondItem="2hj-OS-wRJ" secondAttribute="bottom" id="hgt-l2-dCn"/>
                                             <constraint firstAttribute="centerX" secondItem="2hj-OS-wRJ" secondAttribute="centerX" id="kkI-X7-Tux"/>
                                             <constraint firstAttribute="trailing" secondItem="ZBx-d1-amK" secondAttribute="trailing" id="oSi-RS-edj"/>
-                                            <constraint firstAttribute="bottom" secondItem="7Be-Xu-U06" secondAttribute="bottom" id="ySZ-VR-UyY"/>
+                                            <constraint firstAttribute="bottom" secondItem="7Be-Xu-U06" secondAttribute="bottom" constant="3" id="ySZ-VR-UyY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCd-3c-2YX">
@@ -265,6 +269,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart_fill" width="64" height="64"/>
+        <image name="heart_fill" width="435" height="411"/>
+        <image name="help" width="420" height="420"/>
     </resources>
 </document>

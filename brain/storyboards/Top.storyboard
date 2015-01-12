@@ -28,7 +28,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0w-nB-cbO">
                                                 <rect key="frame" x="5" y="5" width="550" height="245"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NMi-Tm-y2g">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMi-Tm-y2g">
                                                         <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" id="hxe-av-BOR"/>
@@ -60,7 +60,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.20000000000000001" green="0.17254901960784313" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="dJu-Pk-0Nx" secondAttribute="trailing" id="5hd-4J-yZh"/>
                                                                     <constraint firstItem="dJu-Pk-0Nx" firstAttribute="top" secondItem="omB-KC-EEf" secondAttribute="top" constant="10" id="H3U-y6-vl2"/>
@@ -105,7 +105,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart_fill" translatesAutoresizingMaskIntoConstraints="NO" id="Egg-8O-2Wo">
-                                                                                <rect key="frame" x="102" y="0.0" width="25" height="25"/>
+                                                                                <rect key="frame" x="108" y="3" width="19" height="19"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="Egg-8O-2Wo" secondAttribute="height" multiplier="1:1" id="RFa-ZA-F80"/>
                                                                                 </constraints>
@@ -124,10 +124,10 @@
                                                                             <constraint firstAttribute="bottom" secondItem="5Vt-7A-Hm9" secondAttribute="bottom" id="NHF-v6-vWZ"/>
                                                                             <constraint firstAttribute="centerX" secondItem="MVF-Ql-HuU" secondAttribute="centerX" id="T0k-le-5A1"/>
                                                                             <constraint firstItem="5Vt-7A-Hm9" firstAttribute="top" secondItem="6Gd-EG-gI7" secondAttribute="top" id="Yts-So-U4M"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="Egg-8O-2Wo" secondAttribute="bottom" id="bMr-Kp-tOa"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Egg-8O-2Wo" secondAttribute="bottom" constant="3" id="bMr-Kp-tOa"/>
                                                                             <constraint firstItem="5Vt-7A-Hm9" firstAttribute="leading" secondItem="MVF-Ql-HuU" secondAttribute="trailing" constant="10" id="lXx-pK-xGc"/>
                                                                             <constraint firstAttribute="trailing" secondItem="5Vt-7A-Hm9" secondAttribute="trailing" id="uyl-PL-BQw"/>
-                                                                            <constraint firstItem="Egg-8O-2Wo" firstAttribute="top" secondItem="6Gd-EG-gI7" secondAttribute="top" id="vGI-s3-yhS"/>
+                                                                            <constraint firstItem="Egg-8O-2Wo" firstAttribute="top" secondItem="6Gd-EG-gI7" secondAttribute="top" constant="3" id="vGI-s3-yhS"/>
                                                                             <constraint firstItem="MVF-Ql-HuU" firstAttribute="top" secondItem="6Gd-EG-gI7" secondAttribute="top" id="zLu-XS-V8O"/>
                                                                             <constraint firstAttribute="height" constant="25" id="zhs-R9-vRL"/>
                                                                             <constraint firstItem="MVF-Ql-HuU" firstAttribute="leading" secondItem="Egg-8O-2Wo" secondAttribute="trailing" constant="10" id="zo5-Zq-vqM"/>
@@ -220,7 +220,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.69803921568627447" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="EVC-lt-l5q" secondAttribute="bottom" priority="600" constant="20" id="UNC-Sa-YRx"/>
                                     <constraint firstItem="EVC-lt-l5q" firstAttribute="top" secondItem="yxU-0T-Vcb" secondAttribute="top" priority="500" constant="25" id="bee-HB-Tm3"/>
@@ -344,7 +344,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.69803921568627447" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="width" secondItem="Av4-5U-fgU" secondAttribute="width" multiplier="2:1" id="Jku-Dy-byS"/>
                             <constraint firstItem="kaG-LZ-IJ7" firstAttribute="height" secondItem="Hpg-tW-qUE" secondAttribute="height" id="Mso-uO-CTu"/>
@@ -402,6 +402,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart_fill" width="64" height="64"/>
+        <image name="heart_fill" width="435" height="411"/>
     </resources>
 </document>

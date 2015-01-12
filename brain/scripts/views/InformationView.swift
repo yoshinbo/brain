@@ -19,21 +19,16 @@ class InformationView: UIView {
     }
 
     func addReadySecImage(sec:Int) {
-        var imageView = self.addImageviewOnCenterByName("circle")
-        let secLabel: UILabel = UILabel(frame:CGRectZero)
-        secLabel.text = NSString(format: "%d",sec)
-        secLabel.sizeToFit()
-        imageView.addSubviewOnCenter(secLabel)
+        var imageView = self.addImageviewOnCenterByName("count_\(sec)")
         self.scaleBiggerThenDismiss(imageView)
     }
 
     func addOKImageWithBonusRate(bonusCoef:Int) {
-        var imageView = self.addImageviewOnCenterByName("ok_fill")
+        var imageView: UIView!
         if (bonusCoef > 1) {
-            let bonusCoefLabel: UILabel = UILabel(frame:CGRectZero)
-            bonusCoefLabel.text = NSString(format: "x%d",bonusCoef)
-            bonusCoefLabel.sizeToFit()
-            imageView.addSubview(bonusCoefLabel)
+            imageView = self.addImageviewOnCenterByName("ok_\(bonusCoef)")
+        } else {
+            imageView = self.addImageviewOnCenterByName("ok_fill")
         }
         self.scaleBiggerSmallerThenDismiss(imageView)
     }

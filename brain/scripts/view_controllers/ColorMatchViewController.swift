@@ -149,7 +149,7 @@ extension ColorMatchViewController: ColorMatchProtocol {
 
         var panelLabel: UILabel = UILabel(frame: CGRectZero)
         panelLabel.text = name
-        panelLabel.font = UIFont(name: "ArialMT", size: 25)
+        panelLabel.font = UIFont.boldSystemFontOfSize(40)
         panelLabel.sizeToFit()
         panelLabel.textColor = textColor
         panelView.addSubviewOnCenter(panelLabel)

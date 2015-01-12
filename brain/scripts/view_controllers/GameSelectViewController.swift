@@ -265,33 +265,35 @@ extension GameSelectViewController {
         var originalX = heartImageView.layer.position.x
         var originalY = heartImageView.layer.position.y
         self.animatingImageViews.append(heartImageView)
+
+        var animationBaseDuration = 0.2
         GLDTween.addTween(heartImageView, withParams: [
-            "duration"  : 0.5,
+            "duration"  : animationBaseDuration,
             "delay"     : 0.0,
             "easing"    : GLDEasingNone,
             "centerX"   : originalX + 10.0
         ])
         GLDTween.addTween(heartImageView, withParams: [
-            "duration"  : 1.0,
-            "delay"     : 0.5,
+            "duration"  : animationBaseDuration*2,
+            "delay"     : animationBaseDuration,
             "easing"    : GLDEasingNone,
             "centerX"   : originalX - 10.0
         ])
         GLDTween.addTween(heartImageView, withParams: [
-            "duration"  : 0.5,
-            "delay"     : 1.5,
+            "duration"  : animationBaseDuration,
+            "delay"     : animationBaseDuration*3,
             "easing"    : GLDEasingNone,
             "centerX"   : originalX
         ])
         GLDTween.addTween(heartImageView, withParams: [
-            "duration"  : 2.0,
+            "duration"  : animationBaseDuration*4,
             "delay"     : 0.0,
             "easing"    : GLDEasingNone,
             "centerY"   : originalY - 30
         ])
         GLDTween.addTween(heartImageView, withParams: [
-            "duration"      : 0.5,
-            "delay"         : 1.5,
+            "duration"      : animationBaseDuration*3,
+            "delay"         : animationBaseDuration,
             "easing"        : GLDEasingInSine,
             "alpha"         : 0.0
         ])
