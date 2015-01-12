@@ -28,6 +28,7 @@ class GameBase: NSObject {
     var user: User
     var game: Game
     var skills: [Skill]
+    var isExpBonus: Bool
     var score: Int = 0
     var timeLimitSec: Int
     var setUpTimeSec: Int
@@ -37,11 +38,12 @@ class GameBase: NSObject {
     var continuousCollectAnsNum: Int = 0 // 連続正解の場合の得点ボーナス用
     var continuousCollectBonusCoef: Int = 1 // 連続正解得点ボーナスの実数値
 
-    init(game: Game, skills: [Skill]) {
+    init(game: Game, skills: [Skill], isExpBonus: Bool) {
         self.user = User()
 
         self.game = game
         self.skills = skills
+        self.isExpBonus = isExpBonus
         self.hasStarted = false
         self.isGameOver = false
 
@@ -160,6 +162,10 @@ extension GameBase {
             .filter { $0.isExpPlus() }
             .map { $0.value }
             .reduce( 0, { $0 + $1 } )
-        return max(expPlusValue, 1)
+        var expBonusCoef = max(expPlusValue, 1)
+        if self.isExpBonus {
+            expBonusCoef *= 2
+        }
+        return expBonusCoef
     }
 }

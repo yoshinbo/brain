@@ -23,11 +23,13 @@ class ColorMatchViewController: GameBaseViewController {
     var game: ColorMatch!
     var interfaceView: InterfaceView!
     var skills: [Skill]!
+    var isExpBonus: Bool!
 
-    class func build(skills: [Skill]) -> ColorMatchViewController {
+    class func build(skills: [Skill], isExpBonus: Bool) -> ColorMatchViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "ColorMatch", bundle: nil)
         var viewController = storyboad.instantiateInitialViewController() as ColorMatchViewController
         viewController.skills = skills
+        viewController.isExpBonus = isExpBonus
         return viewController
     }
 
@@ -35,7 +37,10 @@ class ColorMatchViewController: GameBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.game = ColorMatch(game: Games().getById(gameId)!, skills: self.skills)
+        self.game = ColorMatch(
+            game: Games().getById(gameId)!,
+            skills: self.skills,
+            isExpBonus: self.isExpBonus)
         self.game.delegate = self
         self.game.matchDelegate = self
         self.panelBaseView.hidden = true

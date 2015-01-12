@@ -175,13 +175,13 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
         // Game画面へ遷移
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
         if cell.game!.isSpeedMatch() {
-            self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills))
+            self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
         } else
         if cell.game!.isColorMatch() {
-            self.moveToInNavigationController(ColorMatchViewController.build(selectedSkills))
+            self.moveToInNavigationController(ColorMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
         } else
         if cell.game!.isCalcCompare() {
-            self.moveToInNavigationController(CalcCompareViewController.build(selectedSkills))
+            self.moveToInNavigationController(CalcCompareViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
         }
     }
 

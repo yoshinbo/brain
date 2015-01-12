@@ -19,8 +19,8 @@ class SpeedMatch: GameBase {
     var panels: [(id: Int, name: String)] = []
     var previousId: Int = 0
     
-    override init(game: Game, skills: [Skill]) {
-        super.init(game: game, skills: skills)
+    override init(game: Game, skills: [Skill], isExpBonus: Bool) {
+        super.init(game: game, skills: skills, isExpBonus: isExpBonus)
         
         for i in 0..<panelStockNum {
             self.addPanel()

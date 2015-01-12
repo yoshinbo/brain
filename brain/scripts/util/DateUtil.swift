@@ -15,6 +15,13 @@ class DateUtil {
         return date.timeIntervalSince1970
     }
 
+    class func day() -> Int {
+        let calendar = NSCalendar.currentCalendar()
+        let unitFlags: NSCalendarUnit = .CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay
+        let dateComponents = calendar.components(unitFlags, fromDate: NSDate())
+        return dateComponents.day
+    }
+
     class func getHourMinuteString(unixTime:Double) -> String {
         let date: NSDate = NSDate(timeIntervalSince1970: unixTime)
         let calendar: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!

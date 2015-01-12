@@ -23,11 +23,13 @@ class CalcCompareViewController: GameBaseViewController {
     var game: CalcCompare!
     var interfaceView: InterfaceView!
     var skills: [Skill]!
+    var isExpBonus: Bool!
 
-    class func build(skills: [Skill]) -> CalcCompareViewController {
+    class func build(skills: [Skill], isExpBonus: Bool) -> CalcCompareViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "CalcCompare", bundle: nil)
         var viewController = storyboad.instantiateInitialViewController() as CalcCompareViewController
         viewController.skills = skills
+        viewController.isExpBonus = isExpBonus
         return viewController
     }
 
@@ -35,7 +37,11 @@ class CalcCompareViewController: GameBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.game = CalcCompare(game: Games().getById(gameId)!, skills: self.skills)
+        self.game = CalcCompare(
+            game: Games().getById(gameId)!,
+            skills: self.skills,
+            isExpBonus: self.isExpBonus
+        )
         self.game.delegate = self
         self.game.matchDelegate = self
         self.panelBaseView.hidden = true

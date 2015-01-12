@@ -19,8 +19,8 @@ class CalcCompare: GameBase {
     var panels: [(formula: String, ans: Int)] = []
     var previousAns: Int = 0
 
-    override init(game: Game, skills: [Skill]) {
-        super.init(game: game, skills: skills)
+    override init(game: Game, skills: [Skill], isExpBonus: Bool) {
+        super.init(game: game, skills: skills, isExpBonus: isExpBonus)
 
         for i in 0..<2 {
             self.addPanel()

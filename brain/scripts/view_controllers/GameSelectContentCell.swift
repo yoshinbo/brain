@@ -14,8 +14,11 @@ class GameSelectContentCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var expBonusImage: UIImageView!
+
     var game: Game?
-    
+    var isExpBonus: Bool = false
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,5 +40,11 @@ extension GameSelectContentCell {
             format: NSLocalizedString("bestScoreFormat", comment: ""),
             bestScore
         )
+        if game.isExpBonus() {
+            self.expBonusImage.hidden = false
+        } else {
+            self.expBonusImage.hidden = true
+        }
+        self.isExpBonus = !self.expBonusImage.hidden
     }
 }

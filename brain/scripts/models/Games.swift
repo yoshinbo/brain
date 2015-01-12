@@ -35,6 +35,11 @@ class Game {
     func isCalcCompare() -> Bool {
         return self.id == 3
     }
+
+    func isExpBonus() -> Bool {
+        var rest = DateUtil.day() % gameKinds.count
+        return self.id == rest + 1
+    }
 }
 
 class Games: NSObject {
