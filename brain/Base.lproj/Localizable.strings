@@ -33,7 +33,7 @@
 
 "brainOpenCondition1"       = "Require %@";
 "brainOpenCondition2"       = "Require %d Level";
-"brainOpenCondition3"       = "\"%@\"\n Require %dpt";
+"brainOpenCondition3"       = "\"%@\" Require %dpt";
 
 "brain1Help" = "1.A symbol will appear on a card. Remember the symbol.\n\n2.Compare each new symbol to the previous symbol by your memory.\n\n3.Tap the YES or NO botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
 "brain2Help" = "1.A symbol will appear on a card. Remember the word.\n\n2.Compare the color of new card to the word to previous card by your memory.\n\n3.Tap the YES or NO  botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
