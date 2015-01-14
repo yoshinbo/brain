@@ -119,6 +119,12 @@ class GameSelectViewController: BaseViewController {
         }
     }
 
+    @IBAction func onClickSkillHelp(sender: UIButton) {
+        var (navigationController, viewController) = HelpViewController.build()
+        viewController.gameTitle = NSLocalizedString("skillHelpTitle", comment: "")
+        viewController.gameHelp = NSLocalizedString("skillHelpDescription", comment: "")
+        self.moveTo(navigationController)
+    }
     /*
     // MARK: - Navigation
 
@@ -218,7 +224,7 @@ extension GameSelectViewController {
     private func setUpSkillHolder() {
         for skill in skillKinds {
             var skillButtonView: SkillButtonView = SkillButtonView.build()
-            skillButtonView.setParams(self.skillModel.getById(skill.id)!, energy: self.currentEnergy())
+            skillButtonView.setParams(user, skill: self.skillModel.getById(skill.id)!, energy: self.currentEnergy())
             switch skill.id {
             case 1:
                 skillHolder1.addSubViewToFix(skillButtonView)

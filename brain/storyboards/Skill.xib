@@ -17,12 +17,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPF-CS-1bM">
-                    <rect key="frame" x="0.0" y="63.5" width="243" height="18"/>
+                    <rect key="frame" x="0.0" y="63" width="243" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このスキルはほげほげする能力を発揮するものです。" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wh-i4-eSm">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このスキルはほげほげする能力を発揮するものです。" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Wh-i4-eSm">
                     <rect key="frame" x="0.0" y="31" width="243" height="33.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,9 +35,11 @@
                 <constraint firstItem="UPF-CS-1bM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C0E-H7-fv4"/>
                 <constraint firstItem="GOP-Ps-H7s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="DiW-kM-O5k"/>
                 <constraint firstAttribute="trailing" secondItem="UPF-CS-1bM" secondAttribute="trailing" id="Hrj-o6-M7t"/>
+                <constraint firstAttribute="bottom" secondItem="5Wh-i4-eSm" secondAttribute="bottom" priority="500" id="UR4-wV-Em7"/>
                 <constraint firstAttribute="bottom" secondItem="UPF-CS-1bM" secondAttribute="bottom" constant="3" id="efb-RB-Gl0"/>
                 <constraint firstItem="5Wh-i4-eSm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pVK-mz-3BD"/>
                 <constraint firstItem="5Wh-i4-eSm" firstAttribute="top" secondItem="GOP-Ps-H7s" secondAttribute="bottom" constant="5" id="rMK-1O-bk8"/>
+                <constraint firstItem="UPF-CS-1bM" firstAttribute="top" secondItem="5Wh-i4-eSm" secondAttribute="bottom" priority="500" id="vRc-Of-1Qw"/>
                 <constraint firstItem="GOP-Ps-H7s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vTt-UI-SgY"/>
                 <constraint firstAttribute="trailing" secondItem="GOP-Ps-H7s" secondAttribute="trailing" id="yio-Gu-AVA"/>
             </constraints>
@@ -46,6 +48,11 @@
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="UR4-wV-Em7"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="costLabel" destination="UPF-CS-1bM" id="Clc-66-Fqh"/>
                 <outlet property="descriptionLabel" destination="5Wh-i4-eSm" id="oQR-x7-YE0"/>

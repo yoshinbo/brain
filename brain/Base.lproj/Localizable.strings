@@ -31,9 +31,13 @@
 "brain4LevelUpComment"      = "You got Brain4!!\n'TIME PLUS'\ncan be userd for now.";
 "brain5LevelUpComment"      = "You got Brain5!!\n'TIME PLUS'\ncan be userd for now.";
 
+"brainOpenCondition"        = "Require %@";
 "brainOpenCondition1"       = "Require %@";
 "brainOpenCondition2"       = "Require %d Level";
 "brainOpenCondition3"       = "\"%@\" Require %dpt";
+
+"skillHelpTitle"            = "About Skills";
+"skillHelpDescription"      = "* TIME PLUS: Time limit will be extended by five seconds\n\n* BONUS PLUS: Continuous score bonus is usually 3 times the upper limit will rise up to five times\n\n* TIME PLUS +: Time limit will be extended 10 seconds\n\n* EXP PLUS: You will receive twice the normal EXP\n\nUsing the skills you consume ENERGY. ENERGY will recover after a few minutes.The skills can be used more than at the same time if ENERGY is enough.ENEGY is incremented by 1 each time rise 5LEVEL.\n\nBe a lot to raise the level to use multiple skills is the secret of the score up.\n";
 
 "brain1Help" = "1.A symbol will appear on a card. Remember the symbol.\n\n2.Compare each new symbol to the previous symbol by your memory.\n\n3.Tap the YES or NO botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
 "brain2Help" = "1.A symbol will appear on a card. Remember the word.\n\n2.Compare the color of new card to the word to previous card by your memory.\n\n3.Tap the YES or NO  botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";

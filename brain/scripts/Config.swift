@@ -48,8 +48,8 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         desc: NSLocalizedString("brain2Description", comment: ""),
         levelUpComment: NSLocalizedString("brain2LevelUpComment", comment: ""),
         requiredLevel: 5,
-        requiredGameId: 2,
-        requiredScore: 50
+        requiredGameId: 1,
+        requiredScore: 70
     ),
     (
         id: 3,
@@ -57,8 +57,8 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         desc: NSLocalizedString("brain3Description", comment: ""),
         levelUpComment: NSLocalizedString("brain3LevelUpComment", comment: ""),
         requiredLevel: 10,
-        requiredGameId: 3,
-        requiredScore: 50
+        requiredGameId: 2,
+        requiredScore: 70
     ),
     (
         id: 4,
@@ -67,7 +67,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain4LevelUpComment", comment: ""),
         requiredLevel: 20,
         requiredGameId: 2,
-        requiredScore: 70
+        requiredScore: 90
     ),
     (
         id: 5,
@@ -76,7 +76,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain5LevelUpComment", comment: ""),
         requiredLevel: 30,
         requiredGameId: 3,
-        requiredScore: 80
+        requiredScore: 90
     )
 ]
 
@@ -97,20 +97,20 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
     ),
     (
         id: 2,
-        name: "TIME PLUS+",
+        name: "BONUS PLUS",
         cost: 3,
-        type: typeTimePlus,
-        value: 10,
-        desc: NSLocalizedString("timePlus+Description", comment: ""),
+        type: typeBonusPlus,
+        value: 5,
+        desc: NSLocalizedString("bonusPlusDescription", comment: ""),
         requiredBrainId: 3
     ),
     (
         id: 3,
-        name: "BONUS PLUS",
+        name: "TIME PLUS+",
         cost: 5,
-        type: typeBonusPlus,
-        value: 5,
-        desc: NSLocalizedString("bonusPlusDescription", comment: ""),
+        type: typeTimePlus,
+        value: 10,
+        desc: NSLocalizedString("timePlus+Description", comment: ""),
         requiredBrainId: 4
     ),
     (
@@ -121,7 +121,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         value: 2,
         desc: NSLocalizedString("expPlusDescription", comment: ""),
         requiredBrainId: 5
-    ),
+    )
 ]
 
 // for general game setting
@@ -153,7 +153,7 @@ let gameKinds: [(id: Int, title: String, help: String, timeLimitSec: Int, setUpT
     )
 ]
 
-let continuousCollectAnsBonusCoef: Int = 5 // 連続正解の場合のボーナス係数
+let continuousCollectAnsBonusCoef: Int = 3 // 連続正解の場合のボーナス係数
 let defaultMaxContinuousCollectAnsBonus: Int = 3 // 連続正解ボーナスの最大倍率
 
 // for Speed Match
