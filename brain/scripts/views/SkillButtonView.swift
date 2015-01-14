@@ -13,6 +13,7 @@ class SkillButtonView: UIView {
     @IBOutlet weak var skillNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
+    var user: User?
     var skill: Skill?
     var isSelected: Bool = false
 
@@ -44,12 +45,12 @@ class SkillButtonView: UIView {
         if self.isSelected {
             return
         }
-        if self.skill!.cost > energy {
-            self.skillNameLabel.textColor = UIColor.darkGrayColor()
-            self.userInteractionEnabled = false
-        } else {
+        if energy >= self.skill!.cost && self.skill!.isAvailableByUser(self.user!) {
             self.skillNameLabel.textColor = UIColor.whiteColor()
             self.userInteractionEnabled = true
+        } else {
+            self.skillNameLabel.textColor = UIColor.darkGrayColor()
+            self.userInteractionEnabled = false
         }
     }
 
@@ -67,14 +68,19 @@ class SkillButtonView: UIView {
         self.checkCapable(currentEnergy)
     }
 
-    func setParams(skill: Skill, energy: Int) {
+    func setParams(user: User, skill: Skill, energy: Int) {
+        self.user = user
         self.skill = skill
         self.skillNameLabel.text = skill.name
-        self.descriptionLabel.text = skill.desc
+        self.descriptionLabel.text = self.getDescriptionLableText()
         self.costLabel.text = NSString(
             format: NSLocalizedString("costFormat", comment: ""),
             skill.cost
         )
+        if !skill.isAvailableByUser(user) {
+            self.descriptionLabel.textColor = UIColor.darkGrayColor()
+            self.costLabel.textColor = UIColor.darkGrayColor()
+        }
         self.checkCapable(energy)
     }
 
@@ -89,6 +95,14 @@ class SkillButtonView: UIView {
 }
 
 extension SkillButtonView {
+    private func getDescriptionLableText() -> String {
+        return self.skill!.isAvailableByUser(self.user!)
+            ? self.skill!.desc
+            : NSString(
+                format: NSLocalizedString("brainOpenCondition", comment: ""),
+                User.getBrainById(self.skill!.requiredBrainId).name
+            )
+    }
 
     private func addRecognizer() {
         var recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))

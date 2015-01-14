@@ -31,9 +31,13 @@
 "brain4LevelUpComment"      = "Brain4にレベルアップ!!\n「BONUS PLUS」\nが使えるようになりました";
 "brain5LevelUpComment"      = "Brain5にレベルアップ!!\n「EXP PLUS」\nが使えるようになりました";
 
-"brainOpenCondition1"       = "開放条件: %@獲得済み";
+"brainOpenCondition"        = "%@獲得で開放";
+"brainOpenCondition1"       = "%@獲得済み";
 "brainOpenCondition2"       = "Level%d 以上";
 "brainOpenCondition3"       = "%@で%dpt以上獲得";
+
+"skillHelpTitle"            = "スキルの使い方";
+"skillHelpDescription"      = "* TIME PLUS: 制限時間が5秒延長されます\n\n* BONUS PLUS: 連続得点ボーナスが通常３倍のところ、５倍まで上限があがります\n\n* TIME PLUS+: 制限時間が10秒延長されます\n\n* EXP PLUS: 経験値が通常の２倍もらえます\n\nスキルを使うとENERGYを消費します。ENERGYは時間がたつと回復します。またスキルはENERGYが十分にあれば複数同時に使用可能です。ENEGYは5LEVELあがる毎に1ずつ増えていきます。\n\nたくさんレベルをあげて複数のスキルを使うことがスコアアップの秘訣です。\n";
 
 "brain1Help" = "1.図形の描かれたカードを覚えます\n\n2.記憶を頼りに新しく現れたカードと前回出てきたカードを比較してください\n\n3.もし同じなら画面したのTRUEボタンを、異なっていたらFALSEボタンをおしてください\n\n※右スワイプはTRUE、左スワイプはFALSEに対応しています";
 "brain2Help" = "1.カードに書かれている文字を覚えます\n\n2.記憶を頼りに新しく現れたカードの\"色\"と前回出てきたカードの\"文字\"を比較してください\n\n3.もし同じなら画面したのTRUEボタンを、異なっていたらFALSEボタンをおしてください\n\n※右スワイプはTRUE、左スワイプはFALSEに対応しています";

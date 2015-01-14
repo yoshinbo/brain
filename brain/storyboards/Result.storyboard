@@ -51,7 +51,7 @@
                                                     <constraint firstItem="aEa-lv-vbS" firstAttribute="leading" secondItem="E78-hJ-ncM" secondAttribute="leading" id="saQ-VR-egS"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BestScore 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZl-d3-1qe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BestScore 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NZl-d3-1qe">
                                                 <rect key="frame" x="0.0" y="305" width="440" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="iOW-du-Tx0"/>

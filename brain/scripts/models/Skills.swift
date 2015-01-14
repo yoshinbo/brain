@@ -30,6 +30,10 @@ class Skill {
         self.requiredBrainId = requiredBrainId
     }
 
+    func isAvailableByUser(user: User) -> Bool {
+        return user.brainId >= self.requiredBrainId
+    }
+
     func isTimePlus() -> Bool {
         return self.type == typeTimePlus
     }
