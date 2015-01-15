@@ -34,5 +34,6 @@ class BookViewContentCell: UITableViewCell {
         var brain = User.getBrainById(brainId)
         self.nameLabel.text = brain.name
         self.descriptionLabel.text = brain.desc
+        self.brainImageView.image = UIImage(named: "brain\(brain.id)")
     }
 }
