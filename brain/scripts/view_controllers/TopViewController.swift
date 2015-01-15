@@ -13,7 +13,6 @@ class TopViewController: BaseViewController {
 //    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var brainNameLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var brainImageView: UIImageView!
     @IBOutlet weak var brainImageCircleView: CircleView!
     @IBOutlet weak var energyImageView: UIImageView!
     @IBOutlet weak var energyLabel: UILabel!
@@ -46,6 +45,11 @@ class TopViewController: BaseViewController {
             format: NSLocalizedString("currentLevelFormat", comment: ""),
             user.level
         )
+
+        var brainImageView = UIImageView(image: UIImage(named: "brain\(user.currentBrain().id)"))
+        brainImageView.frame = brainImageCircleView.frame
+        brainImageView.contentMode = UIViewContentMode.ScaleToFill
+        self.brainImageCircleView.addSubviewOnCenter(brainImageView)
 
         // 体力 >>>
         self.updateEnergyLabel()
