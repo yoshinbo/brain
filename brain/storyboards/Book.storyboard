@@ -161,8 +161,8 @@
                                                                                 <constraint firstAttribute="width" secondItem="a1r-vZ-oHF" secondAttribute="height" multiplier="1:1" id="oCU-Rn-8lx"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OGF-K5-6dG">
-                                                                            <rect key="frame" x="36" y="0.0" width="383.5" height="37.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OGF-K5-6dG">
+                                                                            <rect key="frame" x="37" y="0.0" width="383.5" height="37.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -188,8 +188,8 @@
                                                                                 <constraint firstAttribute="width" secondItem="vtY-iM-c01" secondAttribute="height" multiplier="1:1" id="PUl-eV-vgW"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8s9-Mm-mYv">
-                                                                            <rect key="frame" x="36" y="0.0" width="383.5" height="37.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8s9-Mm-mYv">
+                                                                            <rect key="frame" x="37" y="0.0" width="383.5" height="37.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -215,8 +215,8 @@
                                                                                 <constraint firstAttribute="width" secondItem="kCW-YO-aGg" secondAttribute="height" multiplier="1:1" id="fRK-Ek-sot"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="07X-UF-q5C">
-                                                                            <rect key="frame" x="36" y="0.0" width="383.5" height="37.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="07X-UF-q5C">
+                                                                            <rect key="frame" x="37" y="0.0" width="383.5" height="37.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>

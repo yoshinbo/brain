@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -42,18 +42,9 @@ Description</string>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVV-zn-eBF" customClass="CircleView" customModule="brain" customModuleProvider="target">
                             <rect key="frame" x="65" y="50" width="409" height="409"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qJJ-U7-9WW">
-                                    <rect key="frame" x="0.0" y="0.0" width="409" height="409"/>
-                                </imageView>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="aVV-zn-eBF" secondAttribute="height" multiplier="1:1" id="9Nc-uh-Rfb"/>
-                                <constraint firstItem="qJJ-U7-9WW" firstAttribute="top" secondItem="aVV-zn-eBF" secondAttribute="top" id="IIr-wd-Xnl"/>
-                                <constraint firstItem="qJJ-U7-9WW" firstAttribute="leading" secondItem="aVV-zn-eBF" secondAttribute="leading" id="ete-mk-yiJ"/>
-                                <constraint firstAttribute="trailing" secondItem="qJJ-U7-9WW" secondAttribute="trailing" id="gKa-Ph-zfz"/>
-                                <constraint firstAttribute="bottom" secondItem="qJJ-U7-9WW" secondAttribute="bottom" id="r5g-uG-wHE"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -85,7 +76,6 @@ Description</string>
             <connections>
                 <outlet property="brainBaseView" destination="aVV-zn-eBF" id="H92-Oe-81L"/>
                 <outlet property="brainDescriptionLabel" destination="oLx-nJ-h5E" id="gnP-gG-kdE"/>
-                <outlet property="brainImageView" destination="qJJ-U7-9WW" id="Jwb-oe-JyY"/>
                 <outlet property="brainNameLabel" destination="eLq-G8-kfN" id="M16-Hi-M6n"/>
             </connections>
         </view>

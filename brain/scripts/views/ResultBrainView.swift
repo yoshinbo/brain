@@ -12,7 +12,6 @@ class ResultBrainView: UIView {
 
     @IBOutlet weak var brainNameLabel: UILabel!
     @IBOutlet weak var brainDescriptionLabel: UILabel!
-    @IBOutlet weak var brainImageView: UIImageView!
     @IBOutlet weak var brainBaseView: CircleView!
 
     class func build() -> ResultBrainView {
@@ -39,6 +38,11 @@ class ResultBrainView: UIView {
         brainDescriptionLabel.text = user.currentBrain().levelUpComment
         self.layoutIfNeeded()
         self.brainBaseView.makeCircle()
+
+        var brainImageView = UIImageView(image: UIImage(named: "brain\(user.currentBrain().id)"))
+        brainImageView.frame = brainBaseView.frame
+        brainImageView.contentMode = UIViewContentMode.ScaleToFill
+        self.brainBaseView.addSubviewOnCenter(brainImageView)
     }
 
     /*
