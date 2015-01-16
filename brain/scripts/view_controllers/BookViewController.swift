@@ -23,11 +23,10 @@ class BookViewController: ModalBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = NSLocalizedString("bookButton", comment: "")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.user = User()
-
-        self.navigationItem.title = "Book"
     }
 
     override func viewWillAppear(animated: Bool) {

@@ -368,6 +368,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2sZ-wL-xnS"/>
                     <connections>
+                        <outlet property="adToRecoverButton" destination="0QM-63-5zk" id="Van-Sq-Z5f"/>
+                        <outlet property="bookButton" destination="BWZ-cA-dg6" id="rLi-wX-OyV"/>
                         <outlet property="brainImageCircleView" destination="NQQ-15-1Bp" id="PIi-H9-nSn"/>
                         <outlet property="brainNameLabel" destination="dJu-Pk-0Nx" id="eEI-Ya-ZZ0"/>
                         <outlet property="energyImageView" destination="Egg-8O-2Wo" id="ONu-tp-e5I"/>
@@ -375,8 +377,10 @@
                         <outlet property="expGaugeViewBase" destination="Y0K-nn-7o8" id="1AT-NE-xXq"/>
                         <outlet property="expLabel" destination="Ads-9l-Sft" id="e0O-o2-UhT"/>
                         <outlet property="levelLabel" destination="hVK-g4-YKF" id="2IO-mX-prj"/>
+                        <outlet property="rankingButton" destination="JzZ-ne-kaV" id="dLI-sK-6QJ"/>
                         <outlet property="recoveryButtonBase" destination="Av4-5U-fgU" id="Fet-tE-6SY"/>
                         <outlet property="recoveryInfoLabel" destination="0VO-e7-zS1" id="rLU-Rt-Oz6"/>
+                        <outlet property="selectButton" destination="Ww2-Tl-Ovq" id="eAO-yU-LYe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nra-vd-2Qd" userLabel="First Responder" sceneMemberID="firstResponder"/>

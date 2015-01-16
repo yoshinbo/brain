@@ -21,6 +21,10 @@ class TopViewController: BaseViewController {
     @IBOutlet weak var expGaugeViewBase: UIView!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var recoveryButtonBase: RoundedCornersBorderView!
+    @IBOutlet weak var adToRecoverButton: UIButton!
+    @IBOutlet weak var rankingButton: UIButton!
+    @IBOutlet weak var bookButton: UIButton!
+    @IBOutlet weak var selectButton: UIButton!
 
     var user: User!
     var timer: NSTimer!
@@ -36,6 +40,10 @@ class TopViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = NSLocalizedString("gameTitle", comment: "")
+        self.rankingButton.setTitle(NSLocalizedString("rankingButton", comment: ""), forState: UIControlState.Normal)
+        self.bookButton.setTitle(NSLocalizedString("bookButton", comment: ""), forState: UIControlState.Normal)
+        self.selectButton.setTitle(NSLocalizedString("selectButton", comment: ""), forState: UIControlState.Normal)
+        self.adToRecoverButton.setTitle(NSLocalizedString("adToRecoverButton", comment: ""), forState: UIControlState.Normal)
 
         self.user = User()
 

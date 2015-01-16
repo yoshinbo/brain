@@ -6,15 +6,22 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
-"gameTitle"                 = "brain";
-"shareTitleFormat"          = "Brain-Let's build your brain:I got %d!";
-"bestScoreFormat"           = "BestScore %d";
+"gameTitle"                 = "The Brains";
+"shareTitleFormat"          = "The Brains: Let's brush up your brain:I got %d!";
+"bestScoreFormat"           = "Best Score %d";
 "costFormat"                = "Cost %d";
-"newBestScoreFormat"        = "New BestScore %d!!!";
+"newBestScoreFormat"        = "New Best Score %d!!!";
 "currentLevelFormat"        = "LEVEL %d";
 "expToNextLevelFormat"      = "More %d to next";
 "allRecovery"               = "All Recovery";
 "degitalClockForRecovery"   = "Recovery till %02d:%02d";
+
+"rankingButton"             = "Ranking";
+"bookButton"                = "Book";
+"selectButton"              = "Game Select";
+"adToRecoverButton"         = "AD to Recover";
+"shareButton"               = "Share";
+"topMenuButton"             = "Top Menu";
 
 "timePlusDescription"       = "Time limit +5 sec";
 "timePlus+Description"      = "Time limit +10 sec";

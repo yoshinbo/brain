@@ -16,6 +16,9 @@ class ResultViewController: BaseViewController {
     @IBOutlet weak var expLabel: UILabel!
     @IBOutlet weak var expGaugeViewBase: UIView!
     @IBOutlet weak var circleView: CircleView!
+    @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var topMenuButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     var backGroundImage: UIImage?
     var result: [String: Int]!
 
@@ -29,6 +32,9 @@ class ResultViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: ViewUtil.applyBlurWithRadius(self.backGroundImage!))
+        self.shareButton.setTitle(NSLocalizedString("shareButton", comment: ""), forState: UIControlState.Normal)
+        self.topMenuButton.setTitle(NSLocalizedString("topMenuButton", comment: ""), forState: UIControlState.Normal)
+        self.selectButton.setTitle(NSLocalizedString("selectButton", comment: ""), forState: UIControlState.Normal)
 
         self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
         let bestScoreLabelFormat: String = self.result["isBestScore"]! == 0 ?

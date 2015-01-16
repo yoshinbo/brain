@@ -35,6 +35,7 @@ class GameSelectViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationItem.title = NSLocalizedString("selectButton", comment: "")
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -42,11 +43,6 @@ class GameSelectViewController: BaseViewController {
         self.gameModel = Games()
         self.skillModel = Skills()
         self.user = User()
-
-        //self.addBackButton()
-        self.navigationItem.title = "Game Select"
-        // For removing misterious space on table view header
-        //self.automaticallyAdjustsScrollViewInsets = false
 
         self.updateEnergyLabel()
         self.setUpSkillHolder()

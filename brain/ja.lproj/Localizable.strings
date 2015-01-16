@@ -6,15 +6,22 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
-"gameTitle"                 = "brain";
-"shareTitleFormat"          = "Brain-脳トレ育成RPG:%d点獲得しました。";
-"bestScoreFormat"           = "BestScore %d";
-"costFormat"                = "Cost %d";
-"newBestScoreFormat"        = "New BestScore %d!!!";
+"gameTitle"                 = "The Brains";
+"shareTitleFormat"          = "The Brains 育成脳トレアプリ:%d点獲得しました。";
+"bestScoreFormat"           = "Best Score %d";
+"costFormat"                = "コスト %d";
+"newBestScoreFormat"        = "New Best Score %d!!!";
 "currentLevelFormat"        = "LEVEL %d";
 "expToNextLevelFormat"      = "次のLEVELまであと%d";
 "allRecovery"               = "全回復";
 "degitalClockForRecovery"   = "全回復まで%02d:%02d";
+
+"rankingButton"             = "ランキング";
+"bookButton"                = "図鑑";
+"selectButton"              = "ゲームセレクト";
+"adToRecoverButton"         = "AD to 全回復";
+"shareButton"               = "シェアする";
+"topMenuButton"             = "トップメニュー";
 
 "timePlusDescription"       = "制限時間５秒プラス";
 "timePlus+Description"      = "制限時間10秒プラス";
@@ -33,7 +40,7 @@
 
 "brainOpenCondition"        = "%@獲得で開放";
 "brainOpenCondition1"       = "%@獲得済み";
-"brainOpenCondition2"       = "Level%d 以上";
+"brainOpenCondition2"       = "LEVEL%d 以上";
 "brainOpenCondition3"       = "%@で%dpt以上獲得";
 
 "skillHelpTitle"            = "スキルの使い方";
@@ -44,8 +51,8 @@
 "brain3Help" = "1.カードに書かれた計算の答えを覚えます\n\n2.記憶を頼りに新しく現れたカードの答えと前回出てきたカードの答えを比較してください\n\n3.もし前回のカードの答えより大きい数字か同じ答えならTRUEボタンを、小さい数字ならFALSEボタンをおしてください\n\n※右スワイプはTRUE、左スワイプはFALSEに対応しています";
 
 "brain1SubHelp1" = "図形を覚えてください";
-"brain1SubHelp2" = "前の図形と同じですか？";
+"brain1SubHelp2" = "直前の図形と同じですか？";
 "brain2SubHelp1" = "文字を覚えてください";
-"brain2SubHelp2" = "前の文字と同じ色ですか？";
+"brain2SubHelp2" = "直前の文字と同じ色ですか？";
 "brain3SubHelp1" = "計算の答えを覚えてください";
-"brain3SubHelp2" = "前の答えより大きいか等しいですか？";
+"brain3SubHelp2" = "直前の答えより大きいか等しいですか？";
