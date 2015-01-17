@@ -99,6 +99,60 @@
                                             <outlet property="titleLabel" destination="CXQ-tV-x80" id="i8y-8n-idA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="130" id="opQ-nW-mXx" customClass="GameSelectContentCell" customModule="brain" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="opQ-nW-mXx" id="GgQ-TG-F5p">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3q-wW-gM8">
+                                                    <rect key="frame" x="13" y="13" width="574" height="103.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="swp-A3-Riv">
+                                                            <rect key="frame" x="5" y="15" width="564" height="53"/>
+                                                            <string key="text">良い評価を頂ければ開発者の励みになります。
+ゲームがもっと増えるかもしれません。</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップして評価する" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d71-ZG-YcL">
+                                                            <rect key="frame" x="5" y="73" width="564" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.99607843139999996" green="0.26274509800000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.81176470590000005" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="d71-ZG-YcL" firstAttribute="top" secondItem="swp-A3-Riv" secondAttribute="bottom" constant="5" id="5gF-ni-wXv"/>
+                                                        <constraint firstItem="swp-A3-Riv" firstAttribute="leading" secondItem="N3q-wW-gM8" secondAttribute="leading" constant="5" id="Rn2-7H-y70"/>
+                                                        <constraint firstItem="swp-A3-Riv" firstAttribute="top" secondItem="N3q-wW-gM8" secondAttribute="top" constant="15" id="ZIA-c2-0Wz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="d71-ZG-YcL" secondAttribute="bottom" constant="10" id="neh-vS-BgS"/>
+                                                        <constraint firstItem="d71-ZG-YcL" firstAttribute="leading" secondItem="N3q-wW-gM8" secondAttribute="leading" constant="5" id="t7h-gg-GX9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="swp-A3-Riv" secondAttribute="trailing" constant="5" id="vW1-zg-ZTF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="d71-ZG-YcL" secondAttribute="trailing" constant="5" id="vcB-cx-6rE"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="N3q-wW-gM8" secondAttribute="bottom" constant="5" id="57e-aZ-Ip4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="N3q-wW-gM8" secondAttribute="trailing" constant="5" id="FU7-tx-bsM"/>
+                                                <constraint firstItem="N3q-wW-gM8" firstAttribute="top" secondItem="GgQ-TG-F5p" secondAttribute="topMargin" constant="5" id="MHU-Hv-rfT"/>
+                                                <constraint firstItem="N3q-wW-gM8" firstAttribute="leading" secondItem="GgQ-TG-F5p" secondAttribute="leadingMargin" constant="5" id="YHj-kv-LPL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="swp-A3-Riv" id="A9M-lH-jMH"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>

@@ -8,8 +8,7 @@
 
 import Foundation
 
-// TODO
-let storeURL: String = "http://yahoo.co.jp"
+let storeURL: String = "https://itunes.apple.com/us/app/the-brains/id955054182"
 
 // for AD
 let adColonyAppId: String = "appca317c8cca724ab9ae"

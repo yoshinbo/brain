@@ -20,7 +20,7 @@
 "bookButton"                = "図鑑";
 "selectButton"              = "ゲームセレクト";
 "adToRecoverButton"         = "AD to 全回復";
-"shareButton"               = "シェアする";
+"shareButton"               = "友達に教える";
 "topMenuButton"             = "トップメニュー";
 
 "timePlusDescription"       = "制限時間５秒プラス";
