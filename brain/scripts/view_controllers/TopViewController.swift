@@ -232,6 +232,9 @@ extension TopViewController: GKGameCenterControllerDelegate {
                             self.reportScores(bestScore, leaderboardid: game.leaderboardId)
                         }
                     }
+                    if self.user.level > 3 {
+                        self.reportScores(self.user.level, leaderboardid: levelLeaderboardId)
+                    }
                 }else{
                     // ログイン認証失敗 なにもしない
                 }

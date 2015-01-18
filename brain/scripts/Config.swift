@@ -29,6 +29,7 @@ let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
 let requiredExpBase: Int = 20 // この値×levelが必要経験値
 let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
+let levelLeaderboardId: String = "brain.level" // レベルに関するリーダーズボードID
 
 // for brain
 let brainKinds: [(id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int)] =
