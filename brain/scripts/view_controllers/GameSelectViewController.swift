@@ -35,6 +35,7 @@ class GameSelectViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationItem.title = NSLocalizedString("selectButton", comment: "")
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -42,11 +43,6 @@ class GameSelectViewController: BaseViewController {
         self.gameModel = Games()
         self.skillModel = Skills()
         self.user = User()
-
-        //self.addBackButton()
-        self.navigationItem.title = "Game Select"
-        // For removing misterious space on table view header
-        //self.automaticallyAdjustsScrollViewInsets = false
 
         self.updateEnergyLabel()
         self.setUpSkillHolder()
@@ -162,41 +158,50 @@ extension GameSelectViewController {
 extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     // for UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var selectedSkills = self.selectedSkills()
+        if self.gameModel.totalGameNum() == indexPath.row {
+            UIApplication.sharedApplication().openURL(NSURL(string: storeURL)!)
+        } else {
+            var selectedSkills = self.selectedSkills()
 
-        // Skill選択リセット
-        for skillButtonView: SkillButtonView in self.skillButtonViews {
-            self.wasteEnergy = 0
-            skillButtonView.clearSelect(self.currentEnergy())
-        }
-        // Energyの消費
-        var costTotal = selectedSkills
-            .map { $0.cost }
-            .reduce(0, { $0 + $1 })
+            // Skill選択リセット
+            for skillButtonView: SkillButtonView in self.skillButtonViews {
+                self.wasteEnergy = 0
+                skillButtonView.clearSelect(self.currentEnergy())
+            }
+            // Energyの消費
+            var costTotal = selectedSkills
+                .map { $0.cost }
+                .reduce(0, { $0 + $1 })
 
-        if costTotal > 0 {
-            self.user.useEnergy(costTotal)
-        }
+            if costTotal > 0 {
+                self.user.useEnergy(costTotal)
+            }
 
-        // Game画面へ遷移
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
-        if cell.game!.isSpeedMatch() {
-            self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
-        } else
-        if cell.game!.isColorMatch() {
-            self.moveToInNavigationController(ColorMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
-        } else
-        if cell.game!.isCalcCompare() {
-            self.moveToInNavigationController(CalcCompareViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
+            // Game画面へ遷移
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
+            if cell.game!.isSpeedMatch() {
+                self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
+            } else
+            if cell.game!.isColorMatch() {
+                self.moveToInNavigationController(ColorMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
+            } else
+            if cell.game!.isCalcCompare() {
+                self.moveToInNavigationController(CalcCompareViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
+            }
         }
     }
 
     // for UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.gameModel.totalGameNum()
+        return self.gameModel.totalGameNum() + 1
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if self.gameModel.totalGameNum() == indexPath.row {
+            var cell = tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as GameSelectMessageCell
+            cell.setParams()
+            return cell
+        }
         var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as GameSelectContentCell
         self.aduptCell(cell, indexPath: indexPath)
         cell.helpButton.addTarget(self, action: "onClickHelpButton:event:", forControlEvents: UIControlEvents.TouchUpInside)

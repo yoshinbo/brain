@@ -25,7 +25,7 @@ class User {
         self.loadData()
     }
 
-    func currentBrain() -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+    func currentBrain() -> (id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds.filter({ $0.id == self.brainId })[0]
     }
 
@@ -78,14 +78,13 @@ class User {
         return (levelUpNum, maxEnergyUpNum)
     }
 
-    func updateBrain(gameId: Int) -> Int {
+    func updateBrain() -> Int {
         var newBrainId = 0
         let nextBrainId = min(self.brainId+1, brainKinds.count)
         let nextBrain = brainKinds.filter({ $0.id == nextBrainId})[0]
         if     nextBrainId != self.brainId
             && self.level >= nextBrain.requiredLevel
-            && nextBrain.requiredGameId == gameId
-            && self.bestScores[gameId] >= nextBrain.requiredScore
+            && self.bestScores[nextBrain.requiredGameId] >= nextBrain.requiredScore
         {
             self.brainId = nextBrainId
             newBrainId = nextBrainId
@@ -128,11 +127,11 @@ class User {
 }
 
 extension User {
-    class func getBrainById(brainId: Int) -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+    class func getBrainById(brainId: Int) -> (id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds.filter({ $0.id == brainId })[0]
     }
 
-    class func getBrainByIndex(index: Int) -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+    class func getBrainByIndex(index: Int) -> (id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds[index]
     }
 }

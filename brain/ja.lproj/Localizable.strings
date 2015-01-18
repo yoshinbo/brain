@@ -6,34 +6,55 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
-"gameTitle"                 = "brain";
-"shareTitleFormat"          = "Brain-脳トレ育成RPG:%d点獲得しました。";
-"bestScoreFormat"           = "BestScore %d";
-"costFormat"                = "Cost %d";
-"newBestScoreFormat"        = "New BestScore %d!!!";
+"gameTitle"                 = "The Brains";
+"shareTitleFormat"          = "The Brains 育成脳トレアプリ:%d点獲得しました。";
+"bestScoreFormat"           = "Best Score %d";
+"costFormat"                = "コスト %d";
+"newBestScoreFormat"        = "New Best Score %d!!!";
 "currentLevelFormat"        = "LEVEL %d";
 "expToNextLevelFormat"      = "次のLEVELまであと%d";
 "allRecovery"               = "全回復";
 "degitalClockForRecovery"   = "全回復まで%02d:%02d";
+
+"rankingButton"             = "ランキング";
+"bookButton"                = "図鑑";
+"selectButton"              = "ゲームセレクト";
+"adToRecoverButton"         = "AD to 全回復";
+"shareButton"               = "友達に教える";
+"topMenuButton"             = "トップメニュー";
+
+"messageCellTitle"          = "良い評価を頂ければ開発者の励みになります。\nゲームがもっと増えるかもしれません。";
+"messageCellSubTitle"       = "タップして応援する";
 
 "timePlusDescription"       = "制限時間５秒プラス";
 "timePlus+Description"      = "制限時間10秒プラス";
 "bonusPlusDescription"      = "連続正解ボーナス上限アップ";
 "expPlusDescription"        = "獲得経験値２倍";
 
-"brain1Description"         = "とてもレベルの低い脳";
-"brain2Description"         = "レベルの低い脳\n時間を少しだけ\n伸ばすことができる。";
-"brain3Description"         = "普通の低い脳\n時間を司る脳。";
-"brain4Description"         = "レベルの高い脳\nボーナスの上限を\n押し上げる力を持つ。";
-"brain5Description"         = "とてもレベルの高い脳\n経験値を\n押し上げる力を持つ。";
+
+"brain1Name"                = "サルの脳";
+"brain2Name"                = "ゴリラの脳";
+"brain3Name"                = "ヒヒの脳";
+"brain4Name"                = "人間の脳";
+"brain5Name"                = "SpaceRangerの脳";
+"brain1Unnamed"             = "第1の脳";
+"brain2Unnamed"             = "第2の脳";
+"brain3Unnamed"             = "第3の脳";
+"brain4Unnamed"             = "第4の脳";
+"brain5Unnamed"             = "第5の脳";
+"brain1Description"         = "なにもできないかわいい脳みそ。\nまずはSpeedMatchで脳に刺激を与えましょう。";
+"brain2Description"         = "時間を少しだけ伸ばすことができる少し賢い脳みそ。\n『TIME PLUS』のスキルを使ってみましょう。";
+"brain3Description"         = "連続得点ボーナスで得点を伸ばすことができる賢い脳みそ。\n『BOUNS PLUS』を使って得点を伸ばしましょう。";
+"brain4Description"         = "時間を沢山伸ばすことができる人間の脳みそ。\nスキルを使い分けてランキング上位を目指しましょう";
+"brain5Description"         = "沢山経験値を稼ぐことができる最上級の脳みそ。\n反射神経も鍛えたい人はタップ!!";
 "brain2LevelUpComment"      = "Brain2にレベルアップ!!\n「TIME PLUS」\nが使えるようになりました";
 "brain3LevelUpComment"      = "Brain3にレベルアップ!!\n「TIME PLUS+」\nが使えるようになりました";
 "brain4LevelUpComment"      = "Brain4にレベルアップ!!\n「BONUS PLUS」\nが使えるようになりました";
 "brain5LevelUpComment"      = "Brain5にレベルアップ!!\n「EXP PLUS」\nが使えるようになりました";
 
-"brainOpenCondition"        = "%@獲得で開放";
-"brainOpenCondition1"       = "%@獲得済み";
-"brainOpenCondition2"       = "Level%d 以上";
+"brainOpenCondition"        = "『%@』獲得で開放";
+"brainOpenCondition1"       = "『%@』獲得済み";
+"brainOpenCondition2"       = "LEVEL%d 以上";
 "brainOpenCondition3"       = "%@で%dpt以上獲得";
 
 "skillHelpTitle"            = "スキルの使い方";
@@ -44,8 +65,8 @@
 "brain3Help" = "1.カードに書かれた計算の答えを覚えます\n\n2.記憶を頼りに新しく現れたカードの答えと前回出てきたカードの答えを比較してください\n\n3.もし前回のカードの答えより大きい数字か同じ答えならTRUEボタンを、小さい数字ならFALSEボタンをおしてください\n\n※右スワイプはTRUE、左スワイプはFALSEに対応しています";
 
 "brain1SubHelp1" = "図形を覚えてください";
-"brain1SubHelp2" = "前の図形と同じですか？";
+"brain1SubHelp2" = "直前の図形と同じですか？";
 "brain2SubHelp1" = "文字を覚えてください";
-"brain2SubHelp2" = "前の文字と同じ色ですか？";
+"brain2SubHelp2" = "直前の文字と同じ色ですか？";
 "brain3SubHelp1" = "計算の答えを覚えてください";
-"brain3SubHelp2" = "前の答えより大きいか等しいですか？";
+"brain3SubHelp2" = "直前の答えより大きいか等しいですか？";

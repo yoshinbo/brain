@@ -8,8 +8,8 @@
 
 import Foundation
 
-// TODO
-let storeURL: String = "http://yahoo.co.jp"
+let storeURL: String = "https://itunes.apple.com/us/app/the-brains/id955054182"
+let spaceRangerStoreURL: String = "https://itunes.apple.com/us/app/space-ranger-bouncing-astronaut/id894369150"
 
 // for AD
 let adColonyAppId: String = "appca317c8cca724ab9ae"
@@ -29,13 +29,15 @@ let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
 let requiredExpBase: Int = 20 // この値×levelが必要経験値
 let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
+let levelLeaderboardId: String = "brain.level" // レベルに関するリーダーズボードID
 
 // for brain
-let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int)] =
+let brainKinds: [(id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int)] =
 [
     (
         id: 1,
-        name: "BrainNo1",
+        name: NSLocalizedString("brain1Name", comment: ""),
+        unnamed: NSLocalizedString("brain1Unnamed", comment: ""),
         desc: NSLocalizedString("brain1Description", comment: ""),
         levelUpComment: NSLocalizedString("brain2LevelUpComment", comment: ""),
         requiredLevel: 1,
@@ -44,25 +46,28 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
     ),
     (
         id: 2,
-        name: "BrainNo2",
+        name: NSLocalizedString("brain2Name", comment: ""),
+        unnamed: NSLocalizedString("brain2Unnamed", comment: ""),
         desc: NSLocalizedString("brain2Description", comment: ""),
         levelUpComment: NSLocalizedString("brain2LevelUpComment", comment: ""),
         requiredLevel: 5,
         requiredGameId: 1,
-        requiredScore: 70
+        requiredScore: 60
     ),
     (
         id: 3,
-        name: "BrainNo3",
+        name: NSLocalizedString("brain3Name", comment: ""),
+        unnamed: NSLocalizedString("brain3Unnamed", comment: ""),
         desc: NSLocalizedString("brain3Description", comment: ""),
         levelUpComment: NSLocalizedString("brain3LevelUpComment", comment: ""),
         requiredLevel: 10,
         requiredGameId: 2,
-        requiredScore: 70
+        requiredScore: 60
     ),
     (
         id: 4,
-        name: "BrainNo4",
+        name: NSLocalizedString("brain4Name", comment: ""),
+        unnamed: NSLocalizedString("brain4Unnamed", comment: ""),
         desc: NSLocalizedString("brain4Description", comment: ""),
         levelUpComment: NSLocalizedString("brain4LevelUpComment", comment: ""),
         requiredLevel: 20,
@@ -71,7 +76,8 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
     ),
     (
         id: 5,
-        name: "BrainNo5",
+        name: NSLocalizedString("brain5Name", comment: ""),
+        unnamed: NSLocalizedString("brain5Unnamed", comment: ""),
         desc: NSLocalizedString("brain5Description", comment: ""),
         levelUpComment: NSLocalizedString("brain5LevelUpComment", comment: ""),
         requiredLevel: 30,

@@ -23,11 +23,10 @@ class BookViewController: ModalBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = NSLocalizedString("bookButton", comment: "")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.user = User()
-
-        self.navigationItem.title = "Book"
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -62,6 +61,10 @@ class BookViewController: ModalBaseViewController {
 extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     // for UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var brain = User.getBrainByIndex(indexPath.row)
+        if 4 == indexPath.row && self.user.currentBrain().id >= brain.id {
+            UIApplication.sharedApplication().openURL(NSURL(string: spaceRangerStoreURL)!)
+        }
     }
 
     // for UITableViewDataSource

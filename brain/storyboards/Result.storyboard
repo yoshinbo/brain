@@ -258,6 +258,9 @@
                         <outlet property="expLabel" destination="7tM-6Q-LQp" id="GVH-CC-ltn"/>
                         <outlet property="levelLabel" destination="yf3-nY-F4Q" id="dun-AN-cLj"/>
                         <outlet property="scoreLabel" destination="aEa-lv-vbS" id="i8F-Qk-ycE"/>
+                        <outlet property="selectButton" destination="Qs3-Ji-A6y" id="GuX-eV-Yi8"/>
+                        <outlet property="shareButton" destination="2D7-ub-PG7" id="lQu-MG-7MH"/>
+                        <outlet property="topMenuButton" destination="Op1-l5-psP" id="K1W-0n-Xrc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gO6-8K-e2v" userLabel="First Responder" sceneMemberID="firstResponder"/>

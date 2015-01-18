@@ -100,7 +100,7 @@ extension SkillButtonView {
             ? self.skill!.desc
             : NSString(
                 format: NSLocalizedString("brainOpenCondition", comment: ""),
-                User.getBrainById(self.skill!.requiredBrainId).name
+                User.getBrainById(self.skill!.requiredBrainId).unnamed
             )
     }
 

@@ -25,6 +25,7 @@
 		B82F58821A04D09F005B68C6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82F58811A04D09F005B68C6 /* Images.xcassets */; };
 		B82F58851A04D09F005B68C6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82F58831A04D09F005B68C6 /* LaunchScreen.xib */; };
 		B82F58911A04D09F005B68C6 /* brainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82F58901A04D09F005B68C6 /* brainTests.swift */; };
+		B8313EB11A6C065100C247DA /* GameSelectMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8313EB01A6C065100C247DA /* GameSelectMessageCell.swift */; };
 		B84F14801A3888FE0094B5F1 /* ResultBrain.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */; };
 		B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F14811A3890B90094B5F1 /* ResultBrainView.swift */; };
 		B8788F6E1A567C07007181FB /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */; };
@@ -127,6 +128,7 @@
 		B82F588A1A04D09F005B68C6 /* brainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = brainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82F588F1A04D09F005B68C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82F58901A04D09F005B68C6 /* brainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brainTests.swift; sourceTree = "<group>"; };
+		B8313EB01A6C065100C247DA /* GameSelectMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSelectMessageCell.swift; sourceTree = "<group>"; };
 		B84F147F1A3888FE0094B5F1 /* ResultBrain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultBrain.xib; sourceTree = "<group>"; };
 		B84F14811A3890B90094B5F1 /* ResultBrainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBrainView.swift; sourceTree = "<group>"; };
 		B8788F6D1A567C07007181FB /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-6.12.2/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				B8E56AFC1A0522BF00024E00 /* TopViewController.swift */,
 				B88C20801A0623AC000DC4E7 /* GameSelectViewController.swift */,
 				B88C207E1A05D4C3000DC4E7 /* GameSelectContentCell.swift */,
+				B8313EB01A6C065100C247DA /* GameSelectMessageCell.swift */,
 				B88C20891A073085000DC4E7 /* SpeedMatchViewController.swift */,
 				B8A025621A469C4400368635 /* ColorMatchViewController.swift */,
 				B8D5E5911A53E7F0004F6EC8 /* CalcCompareViewController.swift */,
@@ -663,6 +666,7 @@
 				B8BF08671A5EC45F004CDC05 /* BookViewLockContentCell.swift in Sources */,
 				B8DB63DB1A3DA16C00834757 /* BookViewController.swift in Sources */,
 				B89105C11A20341A00860A7B /* RoundedCornersBorderView.swift in Sources */,
+				B8313EB11A6C065100C247DA /* GameSelectMessageCell.swift in Sources */,
 				B88C207F1A05D4C3000DC4E7 /* GameSelectContentCell.swift in Sources */,
 				B88C20901A075334000DC4E7 /* HelpViewController.swift in Sources */,
 				B8DCD63A1A50018600B941D3 /* Style.swift in Sources */,
@@ -823,6 +827,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = brain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -869,6 +874,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = brain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

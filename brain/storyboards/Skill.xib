@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
@@ -22,8 +23,8 @@
                     <color key="textColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このスキルはほげほげする能力を発揮するものです。" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Wh-i4-eSm">
-                    <rect key="frame" x="0.0" y="31" width="243" height="33.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="このスキルはほげほげする能力を発揮するものです。" textAlignment="center" lineBreakMode="wordWrap" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Wh-i4-eSm">
+                    <rect key="frame" x="2" y="28" width="239" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -31,14 +32,14 @@
             </subviews>
             <color key="backgroundColor" red="0.20392156859999999" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="5Wh-i4-eSm" secondAttribute="trailing" id="1ea-WG-Wag"/>
+                <constraint firstAttribute="trailing" secondItem="5Wh-i4-eSm" secondAttribute="trailing" constant="2" id="1ea-WG-Wag"/>
                 <constraint firstItem="UPF-CS-1bM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C0E-H7-fv4"/>
                 <constraint firstItem="GOP-Ps-H7s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="DiW-kM-O5k"/>
                 <constraint firstAttribute="trailing" secondItem="UPF-CS-1bM" secondAttribute="trailing" id="Hrj-o6-M7t"/>
                 <constraint firstAttribute="bottom" secondItem="5Wh-i4-eSm" secondAttribute="bottom" priority="500" id="UR4-wV-Em7"/>
                 <constraint firstAttribute="bottom" secondItem="UPF-CS-1bM" secondAttribute="bottom" constant="3" id="efb-RB-Gl0"/>
-                <constraint firstItem="5Wh-i4-eSm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pVK-mz-3BD"/>
-                <constraint firstItem="5Wh-i4-eSm" firstAttribute="top" secondItem="GOP-Ps-H7s" secondAttribute="bottom" constant="5" id="rMK-1O-bk8"/>
+                <constraint firstItem="5Wh-i4-eSm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="pVK-mz-3BD"/>
+                <constraint firstItem="5Wh-i4-eSm" firstAttribute="top" secondItem="GOP-Ps-H7s" secondAttribute="bottom" constant="2" id="rMK-1O-bk8"/>
                 <constraint firstItem="UPF-CS-1bM" firstAttribute="top" secondItem="5Wh-i4-eSm" secondAttribute="bottom" priority="500" id="vRc-Of-1Qw"/>
                 <constraint firstItem="GOP-Ps-H7s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vTt-UI-SgY"/>
                 <constraint firstAttribute="trailing" secondItem="GOP-Ps-H7s" secondAttribute="trailing" id="yio-Gu-AVA"/>

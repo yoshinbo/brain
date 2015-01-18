@@ -6,33 +6,53 @@
   Copyright (c) 2014年 yoshinbo. All rights reserved.
 */
 
-"gameTitle"                 = "brain";
-"shareTitleFormat"          = "Brain-Let's build your brain:I got %d!";
-"bestScoreFormat"           = "BestScore %d";
+"gameTitle"                 = "The Brains";
+"shareTitleFormat"          = "The Brains: Let's brush up your brain:I got %d!";
+"bestScoreFormat"           = "Best Score %d";
 "costFormat"                = "Cost %d";
-"newBestScoreFormat"        = "New BestScore %d!!!";
+"newBestScoreFormat"        = "New Best Score %d!!!";
 "currentLevelFormat"        = "LEVEL %d";
 "expToNextLevelFormat"      = "More %d to next";
 "allRecovery"               = "All Recovery";
 "degitalClockForRecovery"   = "Recovery till %02d:%02d";
+
+"rankingButton"             = "Ranking";
+"bookButton"                = "Book";
+"selectButton"              = "Game Select";
+"adToRecoverButton"         = "AD to Recover";
+"shareButton"               = "Share";
+"topMenuButton"             = "Top Menu";
+
+"messageCellTitle"          = "If you gave a good review, will be able to encourage the developer and might be games increases";
+"messageCellSubTitle"       = "Tap to review!";
 
 "timePlusDescription"       = "Time limit +5 sec";
 "timePlus+Description"      = "Time limit +10 sec";
 "bonusPlusDescription"      = "Bonus upper limit+";
 "expPlusDescription"        = "Gain exp more 2 times";
 
-"brain1Description"         = "Very Poor Brain";
-"brain2Description"         = "Still Poor Brain";
-"brain3Description"         = "OK Brain";
-"brain4Description"         = "Good Brain";
-"brain5Description"         = "Genius Brain";
+"brain1Name"                = "Monkey's";
+"brain2Name"                = "Gorilla's";
+"brain3Name"                = "baboon's";
+"brain4Name"                = "Human's";
+"brain5Name"                = "SpaceRanger's";
+"brain1Unnamed"             = "1st Brain";
+"brain2Unnamed"             = "2nd Brain";
+"brain3Unnamed"             = "3rd Brain";
+"brain4Unnamed"             = "4th Brain";
+"brain5Unnamed"             = "5th Brain";
+"brain1Description"         = "Cute brains that can not do anything.\nLet's start SpeedMatch at first to train your brain.";
+"brain2Description"         = "It is possible to slightly extend the time.\nLet's use the skills of \"TIME PLUS\".";
+"brain3Description"         = "It is possible to extend the score in a continuous score bonus.\nLet's extend the score by using the \"BOUNS PLUS\".";
+"brain4Description"         = "It is possible to extend the time a lot.\nLet's aim to ranking by selectively using skills";
+"brain5Description"         = "It is possible to earn a lot EXP.\nTap to train your reflexes!";
 "brain2LevelUpComment"      = "You got Brain2!!\n'TIME PLUS'\ncan be userd for now.";
 "brain3LevelUpComment"      = "You got Brain3!!\n'TIME PLUS'\ncan be userd for now.";
 "brain4LevelUpComment"      = "You got Brain4!!\n'TIME PLUS'\ncan be userd for now.";
 "brain5LevelUpComment"      = "You got Brain5!!\n'TIME PLUS'\ncan be userd for now.";
 
-"brainOpenCondition"        = "Require %@";
-"brainOpenCondition1"       = "Require %@";
+"brainOpenCondition"        = "Require \"%@\"";
+"brainOpenCondition1"       = "Require \"%@\"";
 "brainOpenCondition2"       = "Require %d Level";
 "brainOpenCondition3"       = "\"%@\" Require %dpt";
 
