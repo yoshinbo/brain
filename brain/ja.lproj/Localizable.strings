@@ -28,18 +28,29 @@
 "bonusPlusDescription"      = "連続正解ボーナス上限アップ";
 "expPlusDescription"        = "獲得経験値２倍";
 
-"brain1Description"         = "とてもレベルの低い脳";
-"brain2Description"         = "レベルの低い脳\n時間を少しだけ\n伸ばすことができる。";
-"brain3Description"         = "普通の低い脳\n時間を司る脳。";
-"brain4Description"         = "レベルの高い脳\nボーナスの上限を\n押し上げる力を持つ。";
-"brain5Description"         = "とてもレベルの高い脳\n経験値を\n押し上げる力を持つ。";
+
+"brain1Name"                = "猿の脳";
+"brain2Name"                = "ゴリラの脳";
+"brain3Name"                = "ヒヒの脳";
+"brain4Name"                = "人間の脳";
+"brain5Name"                = "SpaceRangerの脳";
+"brain1Unnamed"             = "第1の脳";
+"brain2Unnamed"             = "第2の脳";
+"brain3Unnamed"             = "第3の脳";
+"brain4Unnamed"             = "第4の脳";
+"brain5Unnamed"             = "第5の脳";
+"brain1Description"         = "なにもできないかわいい脳みそ。\nまずはSpeedMatchで脳に刺激を与えましょう。";
+"brain2Description"         = "時間を少しだけ伸ばすことができる少し賢い脳みそ。\n『TIME PLUS』のスキルを使ってみましょう。";
+"brain3Description"         = "連続得点ボーナスで得点を伸ばすことができる賢い脳みそ。\n『BOUNS PLUS』を使って得点を伸ばしましょう。";
+"brain4Description"         = "時間を沢山伸ばすことができる人間の脳みそ。\nスキルを使い分けてランキング上位を目指しましょう";
+"brain5Description"         = "沢山経験値を稼ぐことができる最上級の脳みそ。\n反射神経も鍛えたい人はタップ!!";
 "brain2LevelUpComment"      = "Brain2にレベルアップ!!\n「TIME PLUS」\nが使えるようになりました";
 "brain3LevelUpComment"      = "Brain3にレベルアップ!!\n「TIME PLUS+」\nが使えるようになりました";
 "brain4LevelUpComment"      = "Brain4にレベルアップ!!\n「BONUS PLUS」\nが使えるようになりました";
 "brain5LevelUpComment"      = "Brain5にレベルアップ!!\n「EXP PLUS」\nが使えるようになりました";
 
-"brainOpenCondition"        = "%@獲得で開放";
-"brainOpenCondition1"       = "%@獲得済み";
+"brainOpenCondition"        = "『%@』獲得で開放";
+"brainOpenCondition1"       = "『%@』獲得済み";
 "brainOpenCondition2"       = "LEVEL%d 以上";
 "brainOpenCondition3"       = "%@で%dpt以上獲得";
 

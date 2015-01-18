@@ -10,6 +10,7 @@ import UIKit
 
 class BookViewLockContentCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var brainImageView: UIImageView!
     @IBOutlet weak var brainImageBaseView: CircleView!
     @IBOutlet weak var condition1ImageView: UIImageView!
@@ -40,13 +41,16 @@ class BookViewLockContentCell: UITableViewCell {
         let user = User()
         let games = Games()
 
-        // condition1
         var currentBrain = user.currentBrain()
         var previousBrainId = brainId - 1
+
+        nameLabel.text = brain.unnamed
+
+        // condition1
         self.condition1ImageView.image = conditionImageByBool(currentBrain.id >= previousBrainId)
         self.condition1Label.text = NSString(
             format: NSLocalizedString("brainOpenCondition1", comment: ""),
-            User.getBrainById(previousBrainId).name
+            User.getBrainById(previousBrainId).unnamed
         )
 
         // condition2

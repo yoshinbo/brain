@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eGg-eX-52Y">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -40,8 +41,8 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omB-KC-EEf">
                                                                 <rect key="frame" x="0.0" y="38" width="275" height="169.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAIN NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJu-Pk-0Nx">
-                                                                        <rect key="frame" x="0.0" y="10" width="275" height="20.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRAIN NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dJu-Pk-0Nx">
+                                                                        <rect key="frame" x="20" y="10" width="235" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -53,7 +54,7 @@
                                                                             <constraint firstAttribute="width" secondItem="NQQ-15-1Bp" secondAttribute="height" multiplier="1:1" id="meV-sK-FTg"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVK-g4-YKF">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hVK-g4-YKF">
                                                                         <rect key="frame" x="0.0" y="139" width="275" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -62,14 +63,14 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.17254901960784313" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="dJu-Pk-0Nx" secondAttribute="trailing" id="5hd-4J-yZh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="dJu-Pk-0Nx" secondAttribute="trailing" constant="20" id="5hd-4J-yZh"/>
                                                                     <constraint firstItem="dJu-Pk-0Nx" firstAttribute="top" secondItem="omB-KC-EEf" secondAttribute="top" constant="10" id="H3U-y6-vl2"/>
                                                                     <constraint firstItem="hVK-g4-YKF" firstAttribute="top" secondItem="NQQ-15-1Bp" secondAttribute="bottom" constant="5" id="RUI-Rz-tel"/>
                                                                     <constraint firstAttribute="trailing" secondItem="hVK-g4-YKF" secondAttribute="trailing" id="SxM-jF-K39"/>
                                                                     <constraint firstItem="NQQ-15-1Bp" firstAttribute="top" secondItem="dJu-Pk-0Nx" secondAttribute="bottom" constant="5" id="Wta-nd-jwr"/>
                                                                     <constraint firstAttribute="bottom" secondItem="hVK-g4-YKF" secondAttribute="bottom" constant="10" id="Zh1-ho-pot"/>
                                                                     <constraint firstItem="hVK-g4-YKF" firstAttribute="leading" secondItem="omB-KC-EEf" secondAttribute="leading" id="aFG-1b-Wel"/>
-                                                                    <constraint firstItem="dJu-Pk-0Nx" firstAttribute="leading" secondItem="omB-KC-EEf" secondAttribute="leading" id="pZS-5b-tOR"/>
+                                                                    <constraint firstItem="dJu-Pk-0Nx" firstAttribute="leading" secondItem="omB-KC-EEf" secondAttribute="leading" constant="20" id="pZS-5b-tOR"/>
                                                                     <constraint firstAttribute="centerX" secondItem="NQQ-15-1Bp" secondAttribute="centerX" id="xeK-kP-9XC"/>
                                                                 </constraints>
                                                             </view>

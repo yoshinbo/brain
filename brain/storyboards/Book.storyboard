@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R4l-AB-yqR">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -47,8 +48,8 @@
                                                                 <view contentMode="scaleToFill" verticalHuggingPriority="247" translatesAutoresizingMaskIntoConstraints="NO" id="I2E-5K-Xxo" customClass="RoundedCornersBorderView" customModule="brain" customModuleProvider="target">
                                                                     <rect key="frame" x="5" y="5" width="415.5" height="107.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="246" text="Brainの説明" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL5-p3-D8j">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="415.5" height="107.5"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="246" text="Brainの説明" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qL5-p3-D8j">
+                                                                            <rect key="frame" x="10" y="10" width="395.5" height="87.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -56,10 +57,10 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.91764705879999997" green="0.8862745098" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="qL5-p3-D8j" secondAttribute="trailing" id="67o-2F-4cj"/>
-                                                                        <constraint firstItem="qL5-p3-D8j" firstAttribute="leading" secondItem="I2E-5K-Xxo" secondAttribute="leading" id="nLn-un-YPL"/>
-                                                                        <constraint firstItem="qL5-p3-D8j" firstAttribute="top" secondItem="I2E-5K-Xxo" secondAttribute="top" priority="500" id="oNm-5x-9Dh"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="qL5-p3-D8j" secondAttribute="bottom" priority="500" id="uQy-VZ-h0d"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="qL5-p3-D8j" secondAttribute="trailing" constant="10" id="67o-2F-4cj"/>
+                                                                        <constraint firstItem="qL5-p3-D8j" firstAttribute="leading" secondItem="I2E-5K-Xxo" secondAttribute="leading" constant="10" id="nLn-un-YPL"/>
+                                                                        <constraint firstItem="qL5-p3-D8j" firstAttribute="top" secondItem="I2E-5K-Xxo" secondAttribute="top" constant="10" id="oNm-5x-9Dh"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="qL5-p3-D8j" secondAttribute="bottom" constant="10" id="uQy-VZ-h0d"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -78,7 +79,7 @@
                                                                     <rect key="frame" x="10" y="-5" width="133" height="133"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cER-sU-jU7">
-                                                                            <rect key="frame" x="0.0" y="0.5" width="133" height="133"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,7 +147,7 @@
                                                                 <constraint firstAttribute="height" constant="24" id="lm5-ja-rcp"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                            <color key="textColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0y-TN-Ci8">
@@ -256,7 +257,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45w-Sw-51Q" customClass="CircleView" customModule="brain" customModuleProvider="target">
                                                                     <rect key="frame" x="10" y="-5" width="133" height="133"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EYj-Qc-9jk">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="EYj-Qc-9jk">
                                                                             <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
                                                                         </imageView>
                                                                     </subviews>
@@ -312,6 +313,7 @@
                                             <outlet property="condition2Label" destination="07X-UF-q5C" id="0nU-0n-AOK"/>
                                             <outlet property="condition3ImageView" destination="vtY-iM-c01" id="oXd-8M-Rw0"/>
                                             <outlet property="condition3Label" destination="8s9-Mm-mYv" id="2Rx-5g-ISv"/>
+                                            <outlet property="nameLabel" destination="FFv-o3-L0K" id="tpp-wd-l7v"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -359,6 +361,7 @@
     </scenes>
     <resources>
         <image name="ok_frame" width="426" height="426"/>
+        <image name="unnamed" width="420" height="422"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

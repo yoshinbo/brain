@@ -25,7 +25,7 @@ class User {
         self.loadData()
     }
 
-    func currentBrain() -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+    func currentBrain() -> (id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds.filter({ $0.id == self.brainId })[0]
     }
 
@@ -127,11 +127,11 @@ class User {
 }
 
 extension User {
-    class func getBrainById(brainId: Int) -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+    class func getBrainById(brainId: Int) -> (id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds.filter({ $0.id == brainId })[0]
     }
 
-    class func getBrainByIndex(index: Int) -> (id: Int, name: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
+    class func getBrainByIndex(index: Int) -> (id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int) {
         return brainKinds[index]
     }
 }
