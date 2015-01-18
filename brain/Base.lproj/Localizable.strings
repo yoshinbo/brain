@@ -23,6 +23,9 @@
 "shareButton"               = "Share";
 "topMenuButton"             = "Top Menu";
 
+"messageCellTitle"          = "If you gave a good review, will be able to encourage the developer and might be games increases";
+"messageCellSubTitle"       = "Tap to review!";
+
 "timePlusDescription"       = "Time limit +5 sec";
 "timePlus+Description"      = "Time limit +10 sec";
 "bonusPlusDescription"      = "Bonus upper limit+";

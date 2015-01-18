@@ -198,7 +198,8 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if self.gameModel.totalGameNum() == indexPath.row {
-            var cell = tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as UITableViewCell
+            var cell = tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as GameSelectMessageCell
+            cell.setParams()
             return cell
         }
         var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as GameSelectContentCell

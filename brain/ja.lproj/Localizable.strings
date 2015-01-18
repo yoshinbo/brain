@@ -23,6 +23,9 @@
 "shareButton"               = "友達に教える";
 "topMenuButton"             = "トップメニュー";
 
+"messageCellTitle"          = "良い評価を頂ければ開発者の励みになります。\nゲームがもっと増えるかもしれません。";
+"messageCellSubTitle"       = "タップして応援する";
+
 "timePlusDescription"       = "制限時間５秒プラス";
 "timePlus+Description"      = "制限時間10秒プラス";
 "bonusPlusDescription"      = "連続正解ボーナス上限アップ";
