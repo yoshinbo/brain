@@ -29,6 +29,11 @@ class ResultBrainView: UIView {
         )
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.brainBaseView.makeCircle()
+    }
+
     func onTap(recognizer: UITapGestureRecognizer) {
         self.removeFromSuperview()
     }

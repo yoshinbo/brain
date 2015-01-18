@@ -78,7 +78,7 @@ class GameBase: NSObject {
         result["afterExpRatePercent"] = user.expRatePercentage()
         result["isBestScore"] = user.updateBestScoreIfNeed(game.id, score: self.score) ? 1 : 0
         result["bestScore"] = user.bestScores[game.id]
-        result["newBrainId"] = user.updateBrain(game.id)
+        result["newBrainId"] = user.updateBrain()
         result["gameId"] = game.id
         result["remainRequiredExpForNextLevel"] = user.remainRequiredExpForNextLevel()
         user.commit()

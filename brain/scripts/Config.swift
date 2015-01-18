@@ -48,7 +48,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain2LevelUpComment", comment: ""),
         requiredLevel: 5,
         requiredGameId: 1,
-        requiredScore: 70
+        requiredScore: 60
     ),
     (
         id: 3,
@@ -57,7 +57,7 @@ let brainKinds: [(id: Int, name: String, desc: String, levelUpComment: String, r
         levelUpComment: NSLocalizedString("brain3LevelUpComment", comment: ""),
         requiredLevel: 10,
         requiredGameId: 2,
-        requiredScore: 70
+        requiredScore: 60
     ),
     (
         id: 4,

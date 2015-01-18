@@ -78,14 +78,13 @@ class User {
         return (levelUpNum, maxEnergyUpNum)
     }
 
-    func updateBrain(gameId: Int) -> Int {
+    func updateBrain() -> Int {
         var newBrainId = 0
         let nextBrainId = min(self.brainId+1, brainKinds.count)
         let nextBrain = brainKinds.filter({ $0.id == nextBrainId})[0]
         if     nextBrainId != self.brainId
             && self.level >= nextBrain.requiredLevel
-            && nextBrain.requiredGameId == gameId
-            && self.bestScores[gameId] >= nextBrain.requiredScore
+            && self.bestScores[nextBrain.requiredGameId] >= nextBrain.requiredScore
         {
             self.brainId = nextBrainId
             newBrainId = nextBrainId
