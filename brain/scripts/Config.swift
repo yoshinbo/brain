@@ -28,6 +28,7 @@ let gaTrackingId: String = "UA-58054351-1"
 let realStockNum: Int = 10
 let energyRecoveryTime: Double = 60 * 3 // 3分で1回復
 let requiredExpBase: Int = 20 // この値×levelが必要経験値
+let maxRequiredExp: Int = 300 // この値が必要経験値の上限
 let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
 let levelLeaderboardId: String = "brain.level" // レベルに関するリーダーズボードID
 
