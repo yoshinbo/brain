@@ -325,11 +325,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Av4-5U-fgU" customClass="RoundedCornersBorderView" customModule="brain" customModuleProvider="target">
-                                <rect key="frame" x="158" y="391" width="284" height="43"/>
+                                <rect key="frame" x="200" y="391" width="200" height="43"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QM-63-5zk">
-                                        <rect key="frame" x="0.0" y="0.0" width="284" height="43"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QM-63-5zk">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="43"/>
                                         <state key="normal" title="Ad to Recover">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -341,16 +340,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.69803921570000005" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="6yG-MK-z7b"/>
                                     <constraint firstAttribute="bottom" secondItem="0QM-63-5zk" secondAttribute="bottom" id="EfY-Ni-F8g"/>
                                     <constraint firstAttribute="trailing" secondItem="0QM-63-5zk" secondAttribute="trailing" id="ROQ-ea-gZs"/>
                                     <constraint firstItem="0QM-63-5zk" firstAttribute="leading" secondItem="Av4-5U-fgU" secondAttribute="leading" id="Vgs-a5-uV1"/>
+                                    <constraint firstAttribute="width" constant="200" id="fga-Yg-0h8"/>
                                     <constraint firstItem="0QM-63-5zk" firstAttribute="top" secondItem="Av4-5U-fgU" secondAttribute="top" id="htJ-e3-DQP"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.69803921568627447" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Hpg-tW-qUE" firstAttribute="width" secondItem="Av4-5U-fgU" secondAttribute="width" multiplier="2:1" id="Jku-Dy-byS"/>
                             <constraint firstItem="kaG-LZ-IJ7" firstAttribute="height" secondItem="Hpg-tW-qUE" secondAttribute="height" id="Mso-uO-CTu"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="trailing" secondItem="kaG-LZ-IJ7" secondAttribute="trailing" id="W8h-Yq-yy1"/>
                             <constraint firstAttribute="right" secondItem="yxU-0T-Vcb" secondAttribute="right" id="Ybb-Mo-VYf"/>
@@ -359,7 +359,6 @@
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="leading" secondItem="kaG-LZ-IJ7" secondAttribute="leading" id="d5U-9L-5m8"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="leading" secondItem="T4Q-Ji-D8L" secondAttribute="leading" id="dMA-IM-uub"/>
                             <constraint firstItem="Hpg-tW-qUE" firstAttribute="trailing" secondItem="T4Q-Ji-D8L" secondAttribute="trailingMargin" id="kfo-ui-AeL"/>
-                            <constraint firstItem="Av4-5U-fgU" firstAttribute="height" secondItem="Hpg-tW-qUE" secondAttribute="height" id="mlC-sV-1CE"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="height" secondItem="T4Q-Ji-D8L" secondAttribute="height" multiplier="0.5" id="nDJ-Cg-Yse"/>
                             <constraint firstItem="kaG-LZ-IJ7" firstAttribute="top" secondItem="Av4-5U-fgU" secondAttribute="bottom" constant="10" id="pQI-VS-Fn8"/>
                             <constraint firstItem="yxU-0T-Vcb" firstAttribute="top" secondItem="zg8-MG-BKU" secondAttribute="bottom" id="qgk-So-Wdq"/>

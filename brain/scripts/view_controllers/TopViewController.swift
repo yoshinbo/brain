@@ -45,6 +45,16 @@ class TopViewController: BaseViewController {
         self.selectButton.setTitle(NSLocalizedString("selectButton", comment: ""), forState: UIControlState.Normal)
         self.adToRecoverButton.setTitle(NSLocalizedString("adToRecoverButton", comment: ""), forState: UIControlState.Normal)
 
+        var imageHeight = self.adToRecoverButton.frame.height - 10
+        var tmpMovieImage = UIImage(named: "movie")
+        UIGraphicsBeginImageContext(CGSize(width: imageHeight, height: imageHeight))
+        tmpMovieImage?.drawInRect(CGRect(x: 0, y: 0, width: imageHeight, height: imageHeight))
+        var movieImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.adToRecoverButton.setImage(movieImage, forState: UIControlState.Normal)
+        self.adToRecoverButton.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
+        self.adToRecoverButton.imageEdgeInsets = UIEdgeInsetsMake(0,-20,0,0);
+
         self.user = User()
 
         // 脳 >>>
