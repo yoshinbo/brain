@@ -92,6 +92,7 @@ class GameSelectViewController: BaseViewController {
                 return skillButtonView.skill!.id == skillId
             })[0]
             if !targetSkillButtonView.isSelected {
+                sound.playBySoundName("skill")
                 self.animationHeart()
             }
             self.wasteOrCancelEnergyProvisionaly(
@@ -116,6 +117,7 @@ class GameSelectViewController: BaseViewController {
     }
 
     @IBAction func onClickSkillHelp(sender: UIButton) {
+        sound.playBySoundName("press")
         var (navigationController, viewController) = HelpViewController.build()
         viewController.gameTitle = NSLocalizedString("skillHelpTitle", comment: "")
         viewController.gameHelp = NSLocalizedString("skillHelpDescription", comment: "")
@@ -146,6 +148,7 @@ extension GameSelectViewController {
     }
 
     func onClickHelpButton(sender: UIButton, event: UIEvent) {
+        sound.playBySoundName("press")
         var indexPath = self.indexPathForControlEvent(event)
         var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
         var (navigationController, viewController) = HelpViewController.build()
@@ -159,6 +162,7 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
     // for UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if self.gameModel.totalGameNum() == indexPath.row {
+            sound.playBySoundName("press")
             UIApplication.sharedApplication().openURL(NSURL(string: storeURL)!)
         } else {
             var selectedSkills = self.selectedSkills()

@@ -37,6 +37,7 @@ class GameBase: NSObject {
 
     var continuousCollectAnsNum: Int = 0 // 連続正解の場合の得点ボーナス用
     var continuousCollectBonusCoef: Int = 1 // 連続正解得点ボーナスの実数値
+    var timer: NSTimer?
 
     init(game: Game, skills: [Skill], isExpBonus: Bool) {
         self.user = User()
@@ -57,7 +58,7 @@ class GameBase: NSObject {
     }
 
     func start() {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
+        startTimer()
         self.delegate.renderTime(
             self.setUpTimeSec > 0
             ? self.setUpTimeSec
@@ -109,6 +110,16 @@ class GameBase: NSObject {
     func incollect() {
         self.continuousCollectAnsNum = 0
         self.continuousCollectBonusCoef = 1
+    }
+
+    func startTimer() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "update", userInfo: nil, repeats: true)
+    }
+
+    func stopTimer() {
+        if let _timer = self.timer {
+            if _timer.valid == true { _timer.invalidate() }
+        }
     }
 }
 

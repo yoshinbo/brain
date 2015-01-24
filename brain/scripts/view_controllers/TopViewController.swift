@@ -165,10 +165,12 @@ class TopViewController: BaseViewController {
     }
 
     @IBAction func onClickRanking(sender: UIButton) {
+        sound.playBySoundName("press")
         self.showLeaderboard()
     }
 
     @IBAction func onClickBook(sender: UIButton) {
+        sound.playBySoundName("press")
         var (navigationController, viewController) = BookViewController.build()
         self.moveTo(navigationController)
     }
@@ -176,6 +178,7 @@ class TopViewController: BaseViewController {
 
 extension TopViewController {
     @IBAction func moveGameSelect(sender: UIButton) {
+        sound.playBySoundName("press")
         var gameSelectViewController = GameSelectViewController.build()
         self.navigationController?.pushViewController(gameSelectViewController, animated: true)
     }

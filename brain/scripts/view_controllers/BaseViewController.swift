@@ -10,6 +10,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var sound = Sound.sharedInstance
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,8 +61,10 @@ class ModalBaseViewController: BaseViewController {
 class GameBaseViewController: BaseViewController {
     func renderAnswerEffect(informationView: InformationView, isCollect: Bool, bonusCoef: Int) {
         if isCollect {
+            sound.playBySoundName("ok")
             informationView.addOKImageWithBonusRate(bonusCoef)
         } else {
+            sound.playBySoundName("ng")
             informationView.addNGImage()
         }
     }

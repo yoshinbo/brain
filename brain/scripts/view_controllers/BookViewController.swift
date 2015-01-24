@@ -63,6 +63,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var brain = User.getBrainByIndex(indexPath.row)
         if 4 == indexPath.row && self.user.currentBrain().id >= brain.id {
+            sound.playBySoundName("press")
             UIApplication.sharedApplication().openURL(NSURL(string: spaceRangerStoreURL)!)
         }
     }

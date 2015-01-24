@@ -32,6 +32,18 @@ let maxRequiredExp: Int = 300 // この値が必要経験値の上限
 let updateMaxEnergyPerLevel: Int = 5 // この値レベル毎にMaxEnergy更新
 let levelLeaderboardId: String = "brain.level" // レベルに関するリーダーズボードID
 
+// for sound
+var soundList: [String] = [
+    "press",
+    "ok",
+    "ng",
+    "countdown",
+    "start",
+    "skill",
+    "levelup",
+    "newbrain"
+]
+
 // for brain
 let brainKinds: [(id: Int, name: String, unnamed: String, desc: String, levelUpComment: String, requiredLevel: Int, requiredGameId: Int, requiredScore: Int)] =
 [
