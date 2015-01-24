@@ -24,6 +24,7 @@ class CalcCompareViewController: GameBaseViewController {
     var interfaceView: InterfaceView!
     var skills: [Skill]!
     var isExpBonus: Bool!
+    var hasPlayStartSound: Bool = false
 
     class func build(skills: [Skill], isExpBonus: Bool) -> CalcCompareViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "CalcCompare", bundle: nil)
@@ -63,6 +64,11 @@ class CalcCompareViewController: GameBaseViewController {
         self.interfaceView.hidden = true
 
         self.matchGameStart()
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.game.stopTimer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,8 +138,12 @@ extension CalcCompareViewController: GameBaseProtocol {
         self.timeLabel.text = NSString(format: "%d", sec)
         if !self.game.hasStarted {
             if 0 < sec && sec <= 3 {
+                sound.playBySoundName("countdown")
                 self.informationView.addReadySecImage(sec)
             }
+        } else if !hasPlayStartSound {
+            hasPlayStartSound = true
+            sound.playBySoundName("start")
         }
     }
 

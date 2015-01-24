@@ -94,6 +94,7 @@ class ResultViewController: BaseViewController {
     }
     */
     @IBAction func onClickShare(sender: AnyObject) {
+        sound.playBySoundName("press")
         var title = NSString(
             format: NSLocalizedString("shareTitleFormat", comment: ""),
             self.result["score"]!
@@ -102,6 +103,7 @@ class ResultViewController: BaseViewController {
     }
 
     @IBAction func onClickGameSelect(sender: UIButton) {
+        sound.playBySoundName("press")
         var (navigationController, topViewController) = TopViewController.build()
         self.presentViewController(navigationController, animated: true, completion: {
             var gameSelectViewController = GameSelectViewController.build()
@@ -110,6 +112,7 @@ class ResultViewController: BaseViewController {
     }
 
     @IBAction func onClickTopMenu(sender: UIButton) {
+        sound.playBySoundName("press")
         var (navigationController, topViewController) = TopViewController.build()
         self.presentViewController(navigationController, animated: true, completion: nil)
     }
@@ -117,6 +120,7 @@ class ResultViewController: BaseViewController {
 
 extension ResultViewController: ExpGaugeProtocol {
     func levelUp() {
+        sound.playBySoundName("levelup")
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
             self.result["afterLevel"]!
@@ -156,6 +160,7 @@ extension ResultViewController {
 
     private func conditionAfterExpGaugeAnimation() {
         if self.hasBrainUpdated() {
+            sound.playBySoundName("newbrain")
             var resultBrainView: ResultBrainView = ResultBrainView.build()
             self.view.addSubViewToFix(resultBrainView)
             resultBrainView.setParam(User())
