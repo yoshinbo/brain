@@ -49,7 +49,7 @@ class User {
     }
 
     func requiredExpForNextLevel() -> Int {
-        return (self.level + 1) * requiredExpBase
+        return min((self.level + 1) * requiredExpBase, maxRequiredExp)
     }
 
     func remainRequiredExpForNextLevel() -> Int {
