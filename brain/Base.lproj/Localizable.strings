@@ -33,7 +33,7 @@
 
 "brain1Name"                = "Monkey's";
 "brain2Name"                = "Gorilla's";
-"brain3Name"                = "baboon's";
+"brain3Name"                = "Mandrill's";
 "brain4Name"                = "Human's";
 "brain5Name"                = "SpaceRanger's";
 "brain1Unnamed"             = "1st Brain";
@@ -44,7 +44,7 @@
 "brain1Description"         = "Cute brains that can not do anything.\nLet's start SpeedMatch at first to train your brain.";
 "brain2Description"         = "It is possible to slightly extend the time.\nLet's use the skills of \"TIME PLUS\".";
 "brain3Description"         = "It is possible to extend the score in a continuous score bonus.\nLet's extend the score by using the \"BOUNS PLUS\".";
-"brain4Description"         = "It is possible to extend the time a lot.\nLet's aim to ranking by selectively using skills";
+"brain4Description"         = "It is possible to extend the time a lot.\nLet's aim to ranking by selectively using skills.";
 "brain5Description"         = "It is possible to earn a lot EXP.\nTap to train your reflexes!";
 "brain2LevelUpComment"      = "You got Brain2!!\n'TIME PLUS'\ncan be userd for now.";
 "brain3LevelUpComment"      = "You got Brain3!!\n'TIME PLUS'\ncan be userd for now.";
@@ -59,9 +59,9 @@
 "skillHelpTitle"            = "About Skills";
 "skillHelpDescription"      = "* TIME PLUS: Time limit will be extended by five seconds\n\n* BONUS PLUS: Continuous score bonus is usually 3 times the upper limit will rise up to five times\n\n* TIME PLUS +: Time limit will be extended 10 seconds\n\n* EXP PLUS: You will receive twice the normal EXP\n\nUsing the skills you consume ENERGY. ENERGY will recover after a few minutes.The skills can be used more than at the same time if ENERGY is enough.ENEGY is incremented by 1 each time rise 5LEVEL.\n\nBe a lot to raise the level to use multiple skills is the secret of the score up.\n";
 
-"brain1Help" = "1.A symbol will appear on a card. Remember the symbol.\n\n2.Compare each new symbol to the previous symbol by your memory.\n\n3.Tap the YES or NO botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
-"brain2Help" = "1.A symbol will appear on a card. Remember the word.\n\n2.Compare the color of new card to the word to previous card by your memory.\n\n3.Tap the YES or NO  botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer";
-"brain3Help" = "1.A symbol will appear on a card. Remember the answer of calculation.\n\n2.Compare the new answer to the previous answer by your memory.\n\n3.Tap the YES botton if the new answer was greater than or equal the previous one.\n\n※Right and left swipe are also avalable to answer";
+"brain1Help" = "1.A symbol will appear on a card. Remember the symbol.\n\n2.Compare each new symbol to the previous symbol by your memory.\n\n3.Tap the YES or NO botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer.";
+"brain2Help" = "1.A symbol will appear on a card. Remember the word.\n\n2.Compare the color of new card to the word to previous card by your memory.\n\n3.Tap the YES or NO  botton to in indicate whether they match.\n\n※Right and left swipe are also avalable to answer.";
+"brain3Help" = "1.A symbol will appear on a card. Remember the answer of calculation.\n\n2.Compare the new answer to the previous answer by your memory.\n\n3.Tap the YES botton if the new answer was greater than or equal the previous one.\n\n※Right and left swipe are also avalable to answer.";
 
 "brain1SubHelp1" = "Remember the symbol.";
 "brain1SubHelp2" = "Does this symbol match the previous symbol?";
