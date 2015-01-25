@@ -23,7 +23,7 @@
 "shareButton"               = "友達に教える";
 "topMenuButton"             = "トップメニュー";
 
-"messageCellTitle"          = "良い評価を頂ければ開発者の励みになります。\nゲームがもっと増えるかもしれません。";
+"messageCellTitle"          = "良い評価をいただけると開発者の励みになります。\nゲームがもっと増えるかもしれません。";
 "messageCellSubTitle"       = "タップして応援する";
 
 "timePlusDescription"       = "制限時間５秒プラス";
