@@ -58,6 +58,7 @@ class CalcCompareViewController: GameBaseViewController {
         super.viewDidAppear(animated)
         self.informationView = InformationView.build()
         self.informationBaseView.addSubviewOnCenter(informationView)
+        self.informationView.delegate = self
 
         self.setInterfaceView()
         self.interfaceView.delegate = self
@@ -218,5 +219,13 @@ extension CalcCompareViewController: InterfaceProtocal {
             panelView.animationDownPlay(self.mainView, condition: animationAfterCondition)
             break
         }
+    }
+}
+
+extension CalcCompareViewController: InformationProtocol {
+    func setBackgroundAlpha(degree: Int) {
+        var alphaCoef:CGFloat = maxBackgroundColorAlpha / CGFloat(maxContinuousCollectAnsBonus)
+        var alpha = alphaCoef * CGFloat(degree)
+        self.mainView.backgroundColor = orangeColor.colorWithAlphaComponent(alpha)
     }
 }

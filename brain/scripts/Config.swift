@@ -119,7 +119,7 @@ let skillKinds: [(id: Int, name: String, cost: Int, type: Int, value: Int, desc:
         name: "BONUS PLUS",
         cost: 3,
         type: typeBonusPlus,
-        value: 5,
+        value: maxContinuousCollectAnsBonus,
         desc: NSLocalizedString("bonusPlusDescription", comment: ""),
         requiredBrainId: 3
     ),
@@ -174,6 +174,8 @@ let gameKinds: [(id: Int, title: String, help: String, timeLimitSec: Int, setUpT
 
 let continuousCollectAnsBonusCoef: Int = 3 // 連続正解の場合のボーナス係数
 let defaultMaxContinuousCollectAnsBonus: Int = 3 // 連続正解ボーナスの最大倍率
+let maxContinuousCollectAnsBonus: Int = 5 // スキル使用時連続正解ボーナスの最大倍率
+let maxBackgroundColorAlpha: CGFloat = 0.5 // 連続回答ボーナス時の背景色の最大alpha値
 
 // for Speed Match
 let speedMatchPanels: [(id: Int, name: String)] =
