@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol InformationProtocol {
+    func setBackgroundAlpha(degree: Int)
+}
+
 class InformationView: UIView {
+
+    var delegate: InformationProtocol!
 
     class func build() -> InformationView {
         return NSBundle.mainBundle().loadNibNamed("Information", owner: nil, options: nil)[0] as InformationView
@@ -31,11 +37,13 @@ class InformationView: UIView {
             imageView = self.addImageviewOnCenterByName("ok_fill")
         }
         self.scaleBiggerSmallerThenDismiss(imageView)
+        self.delegate.setBackgroundAlpha(bonusCoef-1)
     }
 
     func addNGImage() {
         var imageView = self.addImageviewOnCenterByName("ng_fill")
         self.scaleBiggerSmallerThenDismiss(imageView)
+        self.delegate.setBackgroundAlpha(0)
     }
 }
 
