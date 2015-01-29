@@ -48,6 +48,7 @@ class ResultBrainView: UIView {
         brainImageView.frame = brainBaseView.frame
         brainImageView.contentMode = UIViewContentMode.ScaleToFill
         self.brainBaseView.addSubviewOnCenter(brainImageView)
+        self.layoutIfNeeded()
     }
 
     /*

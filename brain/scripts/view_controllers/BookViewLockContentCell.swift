@@ -69,6 +69,7 @@ class BookViewLockContentCell: UITableViewCell {
             games.getById(requiredGameId)!.title,
             brain.requiredScore
         )
+        self.layoutIfNeeded()
     }
 
 }
