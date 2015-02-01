@@ -70,6 +70,7 @@ class BookViewLockContentCell: UITableViewCell {
             brain.requiredScore
         )
         self.layoutIfNeeded()
+        self.brainImageBaseView.makeCircle()
     }
 
 }

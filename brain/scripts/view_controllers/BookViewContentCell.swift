@@ -36,5 +36,6 @@ class BookViewContentCell: UITableViewCell {
         self.descriptionLabel.text = brain.desc
         self.brainImageView.image = UIImage(named: "brain\(brain.id)")
         self.layoutIfNeeded()
+        self.brainBaseView.makeCircle()
     }
 }
