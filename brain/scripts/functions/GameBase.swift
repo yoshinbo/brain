@@ -48,10 +48,17 @@ class GameBase: NSObject {
         self.hasStarted = false
         self.isGameOver = false
 
-        var additionalTime: Int = self.skills
-            .filter { $0.isTimePlus() }
-            .map { $0.value }
-            .reduce( 0, { $0 + $1 } )
+        var additionalTime = 0
+        for skill in skills {
+            if skill.isTimePlus() {
+                additionalTime += skill.value
+            }
+        }
+// NOTE: - This code is not work properly on release build so I use upon code instead.
+//        var additionalTime = self.skills
+//            .filter { $0.isTimePlus() }
+//            .map { $0.value }
+//            .reduce( 0, { $0 + $1 } )
 
         self.timeLimitSec = game.timeLimitSec + additionalTime
         self.setUpTimeSec = game.setUpTimeSec
@@ -151,13 +158,6 @@ extension GameBase {
             self.over()
         }
         self.delegate.renderTime(self.timeLimitSec)
-    }
-
-    private func additionalTime() -> Int {
-        return self.skills
-            .filter { $0.isTimePlus() }
-            .map { $0.value }
-            .reduce( 0, { $0 + $1 } )
     }
 
     private func maxContinuousCollectBonusCoef() -> Int {
