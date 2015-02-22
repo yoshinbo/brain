@@ -899,7 +899,7 @@
 					"\"UIKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "245302a2-8d11-4692-babe-10976962f04d";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "brain/scripts/vender/brain-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -947,7 +947,7 @@
 					"\"UIKit\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d4d66c74-1859-4bc4-87dc-2f6eaa1a18c5";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "brain/scripts/vender/brain-Bridging-Header.h";
 			};
 			name = Release;
