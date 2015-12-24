@@ -1,0 +1,6 @@
+framework module GLDTween {
+  umbrella header "GLDTween-umbrella.h"
+
+  export *
+  module * { export * }
+}

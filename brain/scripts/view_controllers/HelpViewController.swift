@@ -16,9 +16,9 @@ class HelpViewController: ModalBaseViewController {
     var gameHelp: String = ""
 
     class func build() -> (UINavigationController, HelpViewController) {
-        var storyboad: UIStoryboard = UIStoryboard(name: "Help", bundle: nil)
-        var navigationController = storyboad.instantiateViewControllerWithIdentifier("HelpViewController") as UINavigationController
-        return (navigationController, navigationController.topViewController as HelpViewController)
+        let storyboad: UIStoryboard = UIStoryboard(name: "Help", bundle: nil)
+        let navigationController = storyboad.instantiateViewControllerWithIdentifier("HelpViewController") as! UINavigationController
+        return (navigationController, navigationController.topViewController as! HelpViewController)
     }
 
     override func viewDidLoad() {

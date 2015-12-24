@@ -23,8 +23,8 @@ final class Sound {
     private init() {
         for soundName in soundList {
             var soundID: SystemSoundID = 0
-            var path = NSBundle.mainBundle().URLForResource(soundName, withExtension: "mp3")
-            AudioServicesCreateSystemSoundID(path, &soundID)
+            let path = NSBundle.mainBundle().URLForResource(soundName, withExtension: "mp3")
+            AudioServicesCreateSystemSoundID(path!, &soundID)
             audioPlayerHash[soundName] = soundID
         }
     }

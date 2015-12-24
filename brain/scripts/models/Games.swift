@@ -37,7 +37,7 @@ class Game {
     }
 
     func isExpBonus() -> Bool {
-        var rest = DateUtil.day() % gameKinds.count
+        let rest = DateUtil.day() % gameKinds.count
         return self.id == rest + 1
     }
 }
@@ -49,7 +49,7 @@ class Games: NSObject {
     override init() {
         super.init()
         for gameKind in gameKinds {
-            var game = Game(
+            let game = Game(
                 id: gameKind.id,
                 title: gameKind.title,
                 helpDesc: gameKind.help,

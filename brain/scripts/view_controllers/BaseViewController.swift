@@ -31,20 +31,25 @@ class BaseViewController: UIViewController {
         self.presentViewController(actionSheet, animated: true, completion: nil)
         // for ios
         if actionSheet.respondsToSelector("popoverPresentationController") {
-            let presentationController = actionSheet.popoverPresentationController
-            presentationController?.sourceView = self.view
+            if #available(iOS 8.0, *) {
+                let presentationController = actionSheet.popoverPresentationController
+                presentationController?.sourceView = self.view
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 
     func GALog(name: String?) {
-        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-            let screenName = (name != nil) ? name : reflect(self).summary
-            let build = GAIDictionaryBuilder.createAppView().set(
-                screenName,
-                forKey: kGAIScreenName
-            ).build()
-            appDelegate.tracker?.send(build)
-        }
+        // TODO: - 対応
+        //if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+        //    let screenName = (name != nil) ? name : reflect(self).summary
+        //    let build = GAIDictionaryBuilder.createAppView().set(
+        //        screenName,
+        //        forKey: kGAIScreenName
+        //    ).build()
+        //    appDelegate.tracker?.send(build)
+        //}
     }
 }
 
@@ -52,7 +57,7 @@ class ModalBaseViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let navigationController = self.navigationController {
+        if let _ = self.navigationController {
             self.addCloseButton()
         }
     }

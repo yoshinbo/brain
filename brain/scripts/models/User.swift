@@ -30,17 +30,17 @@ class User {
     }
 
     func currentEnergy() -> Int {
-        var time_to_recovery = max((self.energyRecoveryAt - DateUtil.now()), 0)
-        var currentEnergy = max((Double(self.maxEnergy) - ceil(time_to_recovery / energyRecoveryTime)),0)
+        let time_to_recovery = max((self.energyRecoveryAt - DateUtil.now()), 0)
+        let currentEnergy = max((Double(self.maxEnergy) - ceil(time_to_recovery / energyRecoveryTime)),0)
         return Int(currentEnergy)
     }
 
     func energyRecoveryRemainTime() -> Double {
-        var currentEnergy = self.currentEnergy()
+        let currentEnergy = self.currentEnergy()
         if (currentEnergy == self.maxEnergy) {
             return 0
         }
-        var energyRecoveryRemainTime = max((self.energyRecoveryAt - DateUtil.now()), 0)
+        let energyRecoveryRemainTime = max((self.energyRecoveryAt - DateUtil.now()), 0)
         return energyRecoveryRemainTime
     }
 
@@ -103,7 +103,7 @@ class User {
 
     func useEnergy(useNum: Int) {
         if (self.currentEnergy() >= useNum) {
-            var energyRecoveryAt = max(self.energyRecoveryAt, DateUtil.now())
+            let energyRecoveryAt = max(self.energyRecoveryAt, DateUtil.now())
             self.energyRecoveryAt = energyRecoveryAt + Double(useNum) * energyRecoveryTime
         } else {
             // ここには来ない想定
@@ -121,7 +121,7 @@ class User {
     }
 
     func isFullEnergy() -> Bool {
-        var untilSec = self.energyRecoveryAt - DateUtil.now()
+        let untilSec = self.energyRecoveryAt - DateUtil.now()
         return untilSec <= 0
     }
 }
@@ -141,24 +141,24 @@ extension User {
     // NSKeyedArchiverからデータロード
     private func loadData() {
         let data:AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(self.path())
-        if let unwrapData: AnyObject = data {
-            if let _level: AnyObject = unwrapData["level"] {
-                self.level = unwrapData["level"] as Int
+        if let unwrapData = data as? Dictionary<String, AnyObject> {
+            if let level = unwrapData["level"] as? Int {
+                self.level = level
             }
-            if let _exp: AnyObject = unwrapData["exp"] {
-                self.exp = unwrapData["exp"] as Int
+            if let exp = unwrapData["exp"] as? Int {
+                self.exp = exp
             }
-            if let _maxEnergy: AnyObject = unwrapData["maxEnergy"] {
-                self.maxEnergy = unwrapData["maxEnergy"] as Int
+            if let maxEnergy = unwrapData["maxEnergy"] as? Int {
+                self.maxEnergy = maxEnergy
             }
-            if let _brainId: AnyObject = unwrapData["brainId"] {
-                self.brainId = unwrapData["brainId"] as Int
+            if let brainId = unwrapData["brainId"] as? Int {
+                self.brainId = brainId
             }
-            if let _energyRecoveryAt: AnyObject = unwrapData["energyRecoveryAt"] {
-                self.energyRecoveryAt = unwrapData["energyRecoveryAt"] as Double
+            if let energyRecoveryAt = unwrapData["energyRecoveryAt"] as? Double {
+                self.energyRecoveryAt = energyRecoveryAt
             }
-            if let _bestScores: AnyObject = unwrapData["bestScores"] {
-                self.bestScores   = unwrapData["bestScores"] as [Int: Int]
+            if let bestScores = unwrapData["bestScores"] as? [Int: Int] {
+                self.bestScores = bestScores
             }
         }
     }

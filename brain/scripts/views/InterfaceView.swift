@@ -16,7 +16,7 @@ class InterfaceView: UIView {
 
     var delegate: InterfaceProtocal!
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.clearColor()
         self.setGesture()
@@ -30,11 +30,11 @@ class InterfaceView: UIView {
 
     private func setGesture() {
         // Swipe Gesture
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.addGestureRecognizer(swipeRight)
 
-        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         self.addGestureRecognizer(swipeLeft)
     }

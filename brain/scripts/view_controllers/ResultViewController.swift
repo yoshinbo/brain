@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GLDTween
 
 class ResultViewController: BaseViewController {
 
@@ -23,8 +24,8 @@ class ResultViewController: BaseViewController {
     var result: [String: Int]!
 
     class func build() -> ResultViewController {
-        var storyboad: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
-        return storyboad.instantiateInitialViewController() as ResultViewController
+        let storyboad: UIStoryboard = UIStoryboard(name: "Result", bundle: nil)
+        return storyboad.instantiateInitialViewController() as! ResultViewController
     }
 
     override func viewDidLoad() {
@@ -36,22 +37,22 @@ class ResultViewController: BaseViewController {
         self.topMenuButton.setTitle(NSLocalizedString("topMenuButton", comment: ""), forState: UIControlState.Normal)
         self.selectButton.setTitle(NSLocalizedString("selectButton", comment: ""), forState: UIControlState.Normal)
 
-        self.scoreLabel.text = NSString(format: "%d", self.result["score"]!)
+        self.scoreLabel.text = NSString(format: "%d", self.result["score"]!) as String
         let bestScoreLabelFormat: String = self.result["isBestScore"]! == 0 ?
             NSLocalizedString("bestScoreFormat", comment: "") :
             NSLocalizedString("newBestScoreFormat", comment: "")
         self.bestScoreLabel.text = NSString(
             format: bestScoreLabelFormat,
             self.result["bestScore"]!
-        )
+        ) as String
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
             self.result["beforeLevel"]!
-        )
+        ) as String
         self.expLabel.text = NSString(
             format: NSLocalizedString("expToNextLevelFormat", comment: ""),
             self.result["remainRequiredExpForNextLevel"]!
-        )
+        ) as String
 
         // AD
         self.setAD()
@@ -59,7 +60,7 @@ class ResultViewController: BaseViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        var gameId = self.result["gameId"]!
+        let gameId = self.result["gameId"]!
         self.GALog("brain.ResultViewController.\(gameId)")
     }
 
@@ -74,7 +75,7 @@ class ResultViewController: BaseViewController {
         self.circleView.makeCircle()
     }
 
-    func setResult(result:[String:Int]) {
+    func setGameResult(result:[String:Int]) {
         self.result = result
     }
 
@@ -95,25 +96,25 @@ class ResultViewController: BaseViewController {
     */
     @IBAction func onClickShare(sender: AnyObject) {
         sound.playBySoundName("press")
-        var title = NSString(
+        let title = NSString(
             format: NSLocalizedString("shareTitleFormat", comment: ""),
             self.result["score"]!
         )
-        self.showShareActionSheet(title)
+        self.showShareActionSheet(title as String)
     }
 
     @IBAction func onClickGameSelect(sender: UIButton) {
         sound.playBySoundName("press")
-        var (navigationController, topViewController) = TopViewController.build()
+        let (navigationController, _) = TopViewController.build()
         self.presentViewController(navigationController, animated: true, completion: {
-            var gameSelectViewController = GameSelectViewController.build()
+            let gameSelectViewController = GameSelectViewController.build()
             navigationController.pushViewController(gameSelectViewController, animated: true)
         })
     }
 
     @IBAction func onClickTopMenu(sender: UIButton) {
         sound.playBySoundName("press")
-        var (navigationController, topViewController) = TopViewController.build()
+        let (navigationController, _) = TopViewController.build()
         self.presentViewController(navigationController, animated: true, completion: nil)
     }
 }
@@ -124,7 +125,7 @@ extension ResultViewController: ExpGaugeProtocol {
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
             self.result["afterLevel"]!
-        )
+        ) as String
         let originalHeight: CGFloat = self.levelLabel.frame.origin.y
         GLDTween.addTween(self.levelLabel, withParams: [
             "duration"  : 1.0,
@@ -147,7 +148,7 @@ extension ResultViewController {
         if self.hasBrainUpdated() {
             self.view.userInteractionEnabled = false
         }
-        var expGaugeView: ExpGaugeView = ExpGaugeView.build()
+        let expGaugeView: ExpGaugeView = ExpGaugeView.build()
         expGaugeView.delegate = self
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParamWithAnimation(
@@ -161,7 +162,7 @@ extension ResultViewController {
     private func conditionAfterExpGaugeAnimation() {
         if self.hasBrainUpdated() {
             sound.playBySoundName("newbrain")
-            var resultBrainView: ResultBrainView = ResultBrainView.build()
+            let resultBrainView: ResultBrainView = ResultBrainView.build()
             self.view.addSubViewToFix(resultBrainView)
             resultBrainView.setParam(User())
             resultBrainView.setBlurBackground(self.view)

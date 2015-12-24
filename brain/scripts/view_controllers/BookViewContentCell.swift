@@ -31,7 +31,7 @@ class BookViewContentCell: UITableViewCell {
     }
 
     func setParams(brainId : Int) {
-        var brain = User.getBrainById(brainId)
+        let brain = User.getBrainById(brainId)
         self.nameLabel.text = brain.name
         self.descriptionLabel.text = brain.desc
         self.brainImageView.image = UIImage(named: "brain\(brain.id)")

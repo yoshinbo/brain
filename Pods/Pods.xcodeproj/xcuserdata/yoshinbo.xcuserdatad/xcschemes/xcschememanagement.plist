@@ -4,17 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-GLDTween.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Google-Mobile-Ads-SDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-GoogleAnalytics-iOS-SDK.xcscheme</key>
+		<key>GLDTween.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>08A7BF95CC161E6AC2C7B45B</key>
+		<key>AEDBABD6FC2C9F0EE550AC137DBD53FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0D6458172B469AE2E0658A8E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E9E09AFD08BCCFD35076FD9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BCF6F341E3838BB9A9A21E78</key>
+		<key>CA0513042D3AC6E34330247920B3DE34</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -57,9 +57,9 @@ extension CalcCompare {
     }
 
     private func addPanel() {
-        var difficulityIndex = calcCompareDifficulity[self.continuousCollectBonusCoef]!
+        let difficulityIndex = calcCompareDifficulity[self.continuousCollectBonusCoef]!
         var operationSeed = formulaOperationSeed[difficulityIndex]
-        var operation = Util.randomWithWeight(formulaOperationSeed[difficulityIndex])
+        let operation = Util.randomWithWeight(formulaOperationSeed[difficulityIndex])
 
         switch operation {
         case "+":
@@ -78,17 +78,17 @@ extension CalcCompare {
     }
 
     private func dumpPanels() {
-        println("dump panels of calc compare --->");
+        print("dump panels of calc compare --->");
         for panel in self.panels {
-            println("formula:\(panel.formula), ans:\(panel.ans)");
+            print("formula:\(panel.formula), ans:\(panel.ans)");
         }
     }
 
     private func additionPanel(difficulityIndex: Int) {
-        var seed = addSubFormulaSeed[difficulityIndex]
-        var leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
-        var rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
-        var formulaString = "\(leftSideValue) + \(rightSideValue)"
+        let seed = addSubFormulaSeed[difficulityIndex]
+        let leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
+        let rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
+        let formulaString = "\(leftSideValue) + \(rightSideValue)"
         self.panels.append([(
             formula: formulaString,
             ans: leftSideValue + rightSideValue
@@ -96,9 +96,9 @@ extension CalcCompare {
     }
 
     private func subtractionPanel(difficulityIndex: Int) {
-        var seed = addSubFormulaSeed[difficulityIndex]
-        var leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
-        var rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
+        let seed = addSubFormulaSeed[difficulityIndex]
+        let leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
+        let rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
         var formulaString = "\(leftSideValue) - \(rightSideValue)"
         var ans = leftSideValue - rightSideValue
         if leftSideValue < rightSideValue {
@@ -112,10 +112,10 @@ extension CalcCompare {
     }
 
     private func multiplicationPanel(difficulityIndex: Int) {
-        var seed = multiDivFormulaSeed[difficulityIndex]
-        var leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
-        var rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
-        var formulaString = "\(leftSideValue) × \(rightSideValue)"
+        let seed = multiDivFormulaSeed[difficulityIndex]
+        let leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
+        let rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
+        let formulaString = "\(leftSideValue) × \(rightSideValue)"
         self.panels.append([(
             formula: formulaString,
             ans: leftSideValue * rightSideValue
@@ -123,11 +123,11 @@ extension CalcCompare {
     }
 
     private func divisionPanel(difficulityIndex: Int) {
-        var seed = multiDivFormulaSeed[difficulityIndex]
-        var leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
-        var rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
-        var newLeftSideValue = leftSideValue * rightSideValue
-        var formulaString = "\(newLeftSideValue) ÷ \(rightSideValue)"
+        let seed = multiDivFormulaSeed[difficulityIndex]
+        let leftSideValue = Int(arc4random_uniform(UInt32(seed.leftSideRandSeed))) + 1
+        let rightSideValue = Int(arc4random_uniform(UInt32(seed.rightSideRandSeed))) + 1
+        let newLeftSideValue = leftSideValue * rightSideValue
+        let formulaString = "\(newLeftSideValue) ÷ \(rightSideValue)"
         self.panels.append([(
             formula: formulaString,
             ans: leftSideValue

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GLDTween
 
 class TopViewController: BaseViewController {
 
@@ -30,9 +31,9 @@ class TopViewController: BaseViewController {
     var timer: NSTimer!
 
     class func build() -> (UINavigationController, TopViewController) {
-        var storyboad: UIStoryboard = UIStoryboard(name: "Top", bundle: nil)
-        var navigationController = storyboad.instantiateViewControllerWithIdentifier("TopViewController") as UINavigationController
-        return (navigationController, navigationController.topViewController as TopViewController)
+        let storyboad: UIStoryboard = UIStoryboard(name: "Top", bundle: nil)
+        let navigationController = storyboad.instantiateViewControllerWithIdentifier("TopViewController") as! UINavigationController
+        return (navigationController, navigationController.topViewController as! TopViewController)
     }
 
     override func viewDidLoad() {
@@ -45,11 +46,11 @@ class TopViewController: BaseViewController {
         self.selectButton.setTitle(NSLocalizedString("selectButton", comment: ""), forState: UIControlState.Normal)
         self.adToRecoverButton.setTitle(NSLocalizedString("adToRecoverButton", comment: ""), forState: UIControlState.Normal)
 
-        var imageHeight = self.adToRecoverButton.frame.height - 10
-        var tmpMovieImage = UIImage(named: "movie")
+        let imageHeight = self.adToRecoverButton.frame.height - 10
+        let tmpMovieImage = UIImage(named: "movie")
         UIGraphicsBeginImageContext(CGSize(width: imageHeight, height: imageHeight))
         tmpMovieImage?.drawInRect(CGRect(x: 0, y: 0, width: imageHeight, height: imageHeight))
-        var movieImage = UIGraphicsGetImageFromCurrentImageContext()
+        let movieImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         self.adToRecoverButton.setImage(movieImage, forState: UIControlState.Normal)
         self.adToRecoverButton.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
@@ -62,9 +63,9 @@ class TopViewController: BaseViewController {
         self.levelLabel.text = NSString(
             format: NSLocalizedString("currentLevelFormat", comment: ""),
             user.level
-        )
+        ) as String
 
-        var brainImageView = UIImageView(image: UIImage(named: "brain\(user.currentBrain().id)"))
+        let brainImageView = UIImageView(image: UIImage(named: "brain\(user.currentBrain().id)"))
         brainImageView.frame = brainImageCircleView.frame
         brainImageView.contentMode = UIViewContentMode.ScaleToFill
         self.brainImageCircleView.addSubviewOnCenter(brainImageView)
@@ -76,8 +77,8 @@ class TopViewController: BaseViewController {
         self.expLabel.text = NSString(
             format: NSLocalizedString("expToNextLevelFormat", comment: ""),
             user.remainRequiredExpForNextLevel()
-        )
-        var expGaugeView:ExpGaugeView = ExpGaugeView.build()
+        ) as String
+        let expGaugeView:ExpGaugeView = ExpGaugeView.build()
         self.expGaugeViewBase.addSubViewToFix(expGaugeView)
         expGaugeView.setParam(self.user.expRatePercentage())
 
@@ -171,7 +172,7 @@ class TopViewController: BaseViewController {
 
     @IBAction func onClickBook(sender: UIButton) {
         sound.playBySoundName("press")
-        var (navigationController, viewController) = BookViewController.build()
+        let (navigationController, _) = BookViewController.build()
         self.moveTo(navigationController)
     }
 }
@@ -179,7 +180,7 @@ class TopViewController: BaseViewController {
 extension TopViewController {
     @IBAction func moveGameSelect(sender: UIButton) {
         sound.playBySoundName("press")
-        var gameSelectViewController = GameSelectViewController.build()
+        let gameSelectViewController = GameSelectViewController.build()
         self.navigationController?.pushViewController(gameSelectViewController, animated: true)
     }
 }
@@ -210,21 +211,21 @@ extension TopViewController {
     private func setAD() {
         if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
             appDelegate.setAdForViewController(self)
-            var isAdMobBannerVisible = appDelegate.isAdMobBannerVisible ? 1 : 0
-            var isNendBannerVisible = appDelegate.isNendBannerVisible ? 1 : 0
-            println("----> isAdMobBannerVisible:\(isAdMobBannerVisible), isNendBannerVisible:\(isNendBannerVisible)")
+            let isAdMobBannerVisible = appDelegate.isAdMobBannerVisible ? 1 : 0
+            let isNendBannerVisible = appDelegate.isNendBannerVisible ? 1 : 0
+            print("----> isAdMobBannerVisible:\(isAdMobBannerVisible), isNendBannerVisible:\(isNendBannerVisible)")
         }
     }
 }
 
 extension TopViewController: GKGameCenterControllerDelegate {
 
-    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
 
     private func showLeaderboard() {
-        var gameCenterViewController = GKGameCenterViewController()
+        let gameCenterViewController = GKGameCenterViewController()
         gameCenterViewController.gameCenterDelegate = self
         gameCenterViewController.viewState = GKGameCenterViewControllerState.Leaderboards
         //gameCenterViewController.leaderboardIdentifier = "brain.spead_match.score"
@@ -232,11 +233,11 @@ extension TopViewController: GKGameCenterControllerDelegate {
     }
 
     private func updateGameCenter() {
-        var localPlayer = GKLocalPlayer()
+        let localPlayer = GKLocalPlayer()
         localPlayer.authenticateHandler = {
             (viewController, error) -> Void in
             if ((viewController) != nil) { // ログイン確認処理：失敗-ログイン画面を表示
-                self.presentViewController(viewController, animated: true, completion: nil)
+                self.presentViewController(viewController!, animated: true, completion: nil)
             }else{
                 if (error == nil){
                     for game in gameKinds {
@@ -256,15 +257,15 @@ extension TopViewController: GKGameCenterControllerDelegate {
     }
 
     private func reportScores(value:Int, leaderboardid:String){
-        var score:GKScore = GKScore();
+        let score:GKScore = GKScore();
         score.value = Int64(value);
         score.leaderboardIdentifier = leaderboardid;
-        var scoreArr:[GKScore] = [score];
-        GKScore.reportScores(scoreArr, withCompletionHandler:{(error:NSError!) -> Void in
+        let scoreArr:[GKScore] = [score];
+        GKScore.reportScores(scoreArr, withCompletionHandler:{(error:NSError?) -> Void in
             if( (error != nil)){
-                println("Sucess to reposrt \(leaderboardid)")
+                print("Sucess to reposrt \(leaderboardid)")
             }else{
-                println("Faild to reposrt \(leaderboardid)")
+                print("Faild to reposrt \(leaderboardid)")
             }
         });
     }

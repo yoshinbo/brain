@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GLDTween
 
 class SpeedMatchViewController: GameBaseViewController {
 
@@ -29,7 +30,7 @@ class SpeedMatchViewController: GameBaseViewController {
 
     class func build(skills: [Skill], isExpBonus: Bool) -> SpeedMatchViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "SpeedMatch", bundle: nil)
-        var viewController = storyboad.instantiateInitialViewController() as SpeedMatchViewController
+        var viewController = storyboad.instantiateInitialViewController() as! SpeedMatchViewController
         viewController.skills = skills
         viewController.isExpBonus = isExpBonus
         return viewController
@@ -118,7 +119,7 @@ extension SpeedMatchViewController {
 extension SpeedMatchViewController: GameBaseProtocol {
     func start() {
         self.judge("")
-        var subHelp2 = NSLocalizedString("brain\(gameId)SubHelp2", comment: "")
+        let subHelp2 = NSLocalizedString("brain\(gameId)SubHelp2", comment: "")
         GLDTween.addTween(self.helpLabel, withParams: [
             "duration"      : 0.1,
             "delay"         : 0.0,
@@ -137,7 +138,7 @@ extension SpeedMatchViewController: GameBaseProtocol {
     }
 
     func renderTime(sec: Int) {
-        self.timeLabel.text = NSString(format: "%d", sec)
+        self.timeLabel.text = NSString(format: "%d", sec) as String
         if !self.game.hasStarted {
             if 0 < sec && sec <= 3 {
                 sound.playBySoundName("countdown")
@@ -151,14 +152,14 @@ extension SpeedMatchViewController: GameBaseProtocol {
 
     func renderScore(score: Int)
     {
-        self.scoreLabel.text = NSString(format: "%d", score)
+        self.scoreLabel.text = NSString(format: "%d", score) as String
     }
 
     func renderResultView(result:[String:Int]) {
         self.interfaceView.hidden = true
-        var resultViewController = ResultViewController.build()
+        let resultViewController = ResultViewController.build()
         resultViewController.backGroundImage = self.view.convertToImage()
-        resultViewController.setResult(result)
+        resultViewController.setGameResult(result)
         resultViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.presentViewController(resultViewController, animated: true, completion: nil)
     }
@@ -166,7 +167,7 @@ extension SpeedMatchViewController: GameBaseProtocol {
 
 extension SpeedMatchViewController: SpeedMatchProtocol {
     func renderPanel(name: String) {
-        var panelView = PanelView.build()
+        let panelView = PanelView.build()
         panelView.addImageViewByName(name)
         panelView.tag = self.panelTag
         panelView.frame = self.panelBaseView.frame
@@ -182,7 +183,7 @@ extension SpeedMatchViewController: InterfaceProtocal {
         // 判定とアニメーション中は入力禁止
         self.interfaceView.hidden = true
 
-        var panelView = self.mainView.viewWithTag(self.panelTag) as PanelView
+        var panelView = self.mainView.viewWithTag(self.panelTag) as! PanelView
         if (direction == "right" || direction == "left") {
             let isCollect = self.game.isCollectAnswer(directionToAns[direction]!)
             isCollect
@@ -218,8 +219,8 @@ extension SpeedMatchViewController: InterfaceProtocal {
 
 extension SpeedMatchViewController: InformationProtocol {
     func setBackgroundAlpha(degree: Int) {
-        var alphaCoef:CGFloat = maxBackgroundColorAlpha / CGFloat(maxContinuousCollectAnsBonus)
-        var alpha = alphaCoef * CGFloat(degree)
+        let alphaCoef:CGFloat = maxBackgroundColorAlpha / CGFloat(maxContinuousCollectAnsBonus)
+        let alpha = alphaCoef * CGFloat(degree)
         self.mainView.backgroundColor = orangeColor.colorWithAlphaComponent(alpha)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GLDTween
 
 class GameSelectViewController: BaseViewController {
 
@@ -27,8 +28,8 @@ class GameSelectViewController: BaseViewController {
     var isHandlingNotificationOnTapSkillButton: Bool = false
 
     class func build() -> GameSelectViewController {
-        var storyboad: UIStoryboard = UIStoryboard(name: "GameSelect", bundle: nil)
-        var viewController = storyboad.instantiateInitialViewController() as GameSelectViewController
+        let storyboad: UIStoryboard = UIStoryboard(name: "GameSelect", bundle: nil)
+        let viewController = storyboad.instantiateInitialViewController() as! GameSelectViewController
         return viewController
     }
 
@@ -85,10 +86,10 @@ class GameSelectViewController: BaseViewController {
             return
         }
         self.isHandlingNotificationOnTapSkillButton = true
-        if let userInfo = notification.userInfo as [String: Int]! {
+        if let userInfo = notification.userInfo as! [String: Int]! {
             let skillId = userInfo["skillId"]!
-            var targetSkillButtonView: SkillButtonView = self.skillButtonViews.filter({
-                var skillButtonView: SkillButtonView = $0
+            let targetSkillButtonView: SkillButtonView = self.skillButtonViews.filter({
+                let skillButtonView: SkillButtonView = $0
                 return skillButtonView.skill!.id == skillId
             })[0]
             if !targetSkillButtonView.isSelected {
@@ -118,7 +119,7 @@ class GameSelectViewController: BaseViewController {
 
     @IBAction func onClickSkillHelp(sender: UIButton) {
         sound.playBySoundName("press")
-        var (navigationController, viewController) = HelpViewController.build()
+        let (navigationController, viewController) = HelpViewController.build()
         viewController.gameTitle = NSLocalizedString("skillHelpTitle", comment: "")
         viewController.gameHelp = NSLocalizedString("skillHelpDescription", comment: "")
         self.moveTo(navigationController)
@@ -137,21 +138,23 @@ class GameSelectViewController: BaseViewController {
 
 extension GameSelectViewController {
     private func aduptCell(cell:GameSelectContentCell, indexPath:NSIndexPath) {
-        var game = self.gameModel.getByIndex(indexPath.row)
+        let game = self.gameModel.getByIndex(indexPath.row)
         cell.setParams(game, user: self.user)
     }
 
     // タッチした座興からNSIndexPathを返す
     private func indexPathForControlEvent(event: UIEvent) -> NSIndexPath {
-        var point = event.allTouches()?.anyObject()?.locationInView(self.tableView)
-        return self.tableView.indexPathForRowAtPoint(point!)!
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = self.tableView.indexPathForRowAtPoint(point)
+        return indexPath!
     }
 
     func onClickHelpButton(sender: UIButton, event: UIEvent) {
         sound.playBySoundName("press")
-        var indexPath = self.indexPathForControlEvent(event)
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
-        var (navigationController, viewController) = HelpViewController.build()
+        let indexPath = self.indexPathForControlEvent(event)
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! GameSelectContentCell
+        let (navigationController, viewController) = HelpViewController.build()
         viewController.gameTitle = cell.game!.title
         viewController.gameHelp = cell.game!.helpDesc
         self.moveTo(navigationController)
@@ -165,7 +168,7 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
             sound.playBySoundName("press")
             UIApplication.sharedApplication().openURL(NSURL(string: storeURL)!)
         } else {
-            var selectedSkills = self.selectedSkills()
+            let selectedSkills = self.selectedSkills()
 
             // Skill選択リセット
             for skillButtonView: SkillButtonView in self.skillButtonViews {
@@ -173,16 +176,16 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
                 skillButtonView.clearSelect(self.currentEnergy())
             }
             // Energyの消費
-            var costTotal = selectedSkills
+            let costTotal = selectedSkills
                 .map { $0.cost }
-                .reduce(0, { $0 + $1 })
+                .reduce(0, combine: { $0 + $1 })
 
             if costTotal > 0 {
                 self.user.useEnergy(costTotal)
             }
 
             // Game画面へ遷移
-            var cell = tableView.cellForRowAtIndexPath(indexPath) as GameSelectContentCell
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! GameSelectContentCell
             if cell.game!.isSpeedMatch() {
                 self.moveToInNavigationController(SpeedMatchViewController.build(selectedSkills, isExpBonus: cell.isExpBonus))
             } else
@@ -202,11 +205,11 @@ extension GameSelectViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if self.gameModel.totalGameNum() == indexPath.row {
-            var cell = tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as GameSelectMessageCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("MessageCell", forIndexPath: indexPath) as! GameSelectMessageCell
             cell.setParams()
             return cell
         }
-        var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as GameSelectContentCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as! GameSelectContentCell
         self.aduptCell(cell, indexPath: indexPath)
         cell.helpButton.addTarget(self, action: "onClickHelpButton:event:", forControlEvents: UIControlEvents.TouchUpInside)
         return cell
@@ -232,7 +235,7 @@ extension GameSelectViewController {
 
     private func setUpSkillHolder() {
         for skill in skillKinds {
-            var skillButtonView: SkillButtonView = SkillButtonView.build()
+            let skillButtonView: SkillButtonView = SkillButtonView.build()
             skillButtonView.setParams(user, skill: self.skillModel.getById(skill.id)!, energy: self.currentEnergy())
             switch skill.id {
             case 1:
@@ -265,15 +268,15 @@ extension GameSelectViewController {
     }
 
     private func animationHeart() {
-        var heartImageView: UIImageView = UIImageView(frame: self.heartImageView.bounds)
+        let heartImageView: UIImageView = UIImageView(frame: self.heartImageView.bounds)
         heartImageView.image = UIImage(named: "heart_fill")
         heartImageView.layer.position = ViewUtil.absFitPoint(self.heartImageView)
         self.view.addSubview(heartImageView)
-        var originalX = heartImageView.layer.position.x
-        var originalY = heartImageView.layer.position.y
+        let originalX = heartImageView.layer.position.x
+        let originalY = heartImageView.layer.position.y
         self.animatingImageViews.append(heartImageView)
 
-        var animationBaseDuration = 0.2
+        let animationBaseDuration = 0.2
         GLDTween.addTween(heartImageView, withParams: [
             "duration"  : animationBaseDuration,
             "delay"     : 0.0,

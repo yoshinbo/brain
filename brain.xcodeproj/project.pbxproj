@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E91CDCF38F7E9321C81276A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85625ED95D7E8AAF591AFAB3 /* Pods.framework */; };
 		443C53D51A3192F700EF5358 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C53D41A3192F700EF5358 /* NotificationName.swift */; };
 		B81BFEF51A45172700433B0B /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81BFEF41A45172700433B0B /* RoundedCornersView.swift */; };
+		B82137C61C2C1F6600320E0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82137C51C2C1F6600320E0C /* String+Extension.swift */; };
 		B82ACCFA1A27638F00EA9AA3 /* Skill.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82ACCF91A27638F00EA9AA3 /* Skill.xib */; };
 		B82ACCFC1A276B2500EA9AA3 /* SkillButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */; };
 		B82ACCFE1A2E7A7E00EA9AA3 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */; };
@@ -99,7 +101,6 @@
 		B8E56AF81A05185C00024E00 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E56AF71A05185C00024E00 /* UIImage+ImageEffects.m */; };
 		B8E56AFD1A0522BF00024E00 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E56AFC1A0522BF00024E00 /* TopViewController.swift */; };
 		B8E56AFF1A0522E800024E00 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E56AFE1A0522E800024E00 /* Top.storyboard */; };
-		F7A781A448062BA80F699AA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F42EA6E252A99E85BAB868 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,9 +115,10 @@
 
 /* Begin PBXFileReference section */
 		443C53D41A3192F700EF5358 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
-		46F42EA6E252A99E85BAB868 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C7FE1D7267804137EE7D342 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		85625ED95D7E8AAF591AFAB3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81BFEF41A45172700433B0B /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		B82137C51C2C1F6600320E0C /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B82ACCF91A27638F00EA9AA3 /* Skill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Skill.xib; sourceTree = "<group>"; };
 		B82ACCFB1A276B2500EA9AA3 /* SkillButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillButtonView.swift; sourceTree = "<group>"; };
 		B82ACCFD1A2E7A7E00EA9AA3 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
@@ -251,8 +253,8 @@
 				B8E56AE31A050B5900024E00 /* UIKit.framework in Frameworks */,
 				B8788F851A5693B1007181FB /* libAdapterNend.a in Frameworks */,
 				B8E56AE11A050B5000024E00 /* Accelerate.framework in Frameworks */,
-				F7A781A448062BA80F699AA1 /* libPods.a in Frameworks */,
 				B8A47DA71A518F34001B0EAE /* AdColony.framework in Frameworks */,
+				0E91CDCF38F7E9321C81276A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +294,7 @@
 				B8E56AE41A050B6500024E00 /* CoreGraphics.framework */,
 				B8E56AE21A050B5900024E00 /* UIKit.framework */,
 				B8E56AE01A050B5000024E00 /* Accelerate.framework */,
-				46F42EA6E252A99E85BAB868 /* libPods.a */,
+				85625ED95D7E8AAF591AFAB3 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -506,6 +508,7 @@
 			children = (
 				B8E56ADC1A04F6F700024E00 /* UIViewControllerExtension.swift */,
 				B8E56ADE1A04FAE300024E00 /* UIViewExtension.swift */,
+				B82137C51C2C1F6600320E0C /* String+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				B82F58721A04D09F005B68C6 /* Frameworks */,
 				B82F58731A04D09F005B68C6 /* Resources */,
 				2ABBF05672A78207F93D0D8E /* Copy Pods Resources */,
+				BB90AC661476FC8219469D27 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -576,6 +580,8 @@
 		B82F586D1A04D09F005B68C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = yoshinbo;
 				TargetAttributes = {
@@ -668,6 +674,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BB90AC661476FC8219469D27 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D8EDFF70177BD31EB5885B1D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -730,6 +751,7 @@
 				B8E56ADD1A04F6F700024E00 /* UIViewControllerExtension.swift in Sources */,
 				B84F14821A3890B90094B5F1 /* ResultBrainView.swift in Sources */,
 				B8DD55BB1A188F5F0060A6C2 /* DateUtil.swift in Sources */,
+				B82137C61C2C1F6600320E0C /* String+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +919,7 @@
 					"\"SystemConfiguration\"",
 					"-framework",
 					"\"UIKit\"",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -945,6 +968,7 @@
 					"\"SystemConfiguration\"",
 					"-framework",
 					"\"UIKit\"",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

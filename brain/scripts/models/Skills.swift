@@ -54,7 +54,7 @@ class Skills: NSObject {
     override init() {
         super.init()
         for skillKind in skillKinds {
-            var skill = Skill(
+            let skill = Skill(
                 id: skillKind.id,
                 name: skillKind.name,
                 cost: skillKind.cost,

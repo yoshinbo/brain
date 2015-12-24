@@ -24,10 +24,10 @@ class ExpGaugeView: UIView {
     var levelUpNum: Int = 0
 
     class func build() -> ExpGaugeView {
-        return NSBundle.mainBundle().loadNibNamed("ExpGauge", owner: nil, options: nil)[0] as ExpGaugeView
+        return NSBundle.mainBundle().loadNibNamed("ExpGauge", owner: nil, options: nil)[0] as! ExpGaugeView
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -85,7 +85,7 @@ extension ExpGaugeView {
     }
 
     private func constantWidth(expRatePercentage: Int) -> CGFloat {
-        var rate = Util.conevertExpRatePercentageToRate(expRatePercentage)
+        let rate = Util.conevertExpRatePercentageToRate(expRatePercentage)
         return CGFloat(Int(Float(self.originalGaugeWidth) * (1 - rate)))
     }
 }

@@ -51,14 +51,14 @@ class BookViewLockContentCell: UITableViewCell {
         self.condition1Label.text = NSString(
             format: NSLocalizedString("brainOpenCondition1", comment: ""),
             User.getBrainById(previousBrainId).unnamed
-        )
+        ) as String
 
         // condition2
         self.condition2ImageView.image = conditionImageByBool(user.level >= brain.requiredLevel)
         self.condition2Label.text = NSString(
             format: NSLocalizedString("brainOpenCondition2", comment: ""),
             brain.requiredLevel
-        )
+        ) as String
 
         // condition3
         let requiredGameId = brain.requiredGameId
@@ -68,7 +68,7 @@ class BookViewLockContentCell: UITableViewCell {
             format: NSLocalizedString("brainOpenCondition3", comment: ""),
             games.getById(requiredGameId)!.title,
             brain.requiredScore
-        )
+        ) as String
         self.layoutIfNeeded()
         self.brainImageBaseView.makeCircle()
     }

@@ -11,14 +11,14 @@ import UIKit
 extension UIView {
 
     func setBlurBackground(parentView: UIView) {
-        var image:UIImage = parentView.convertToImage()
+        let image:UIImage = parentView.convertToImage()
         self.backgroundColor = UIColor(patternImage: ViewUtil.applyBlurWithRadius(image))
     }
 
     func convertToImage() -> UIImage {
         UIGraphicsBeginImageContext(self.bounds.size)
         self.drawViewHierarchyInRect(self.bounds, afterScreenUpdates: true)
-        var image = UIGraphicsGetImageFromCurrentImageContext()
+        let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
     }
@@ -29,8 +29,8 @@ extension UIView {
     }
 
     func addImageviewOnCenterByName(name: String) -> UIImageView {
-        var image: UIImage = UIImage(named: name)!
-        var imageView = UIImageView(frame: CGRect(
+        let image: UIImage = UIImage(named: name)!
+        let imageView = UIImageView(frame: CGRect(
             x: 0,
             y: 0,
             width: self.bounds.width*0.60,
@@ -44,8 +44,8 @@ extension UIView {
 
     func addSubViewToFix(childView:UIView) {
         self.addSubview(childView)
-        childView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        var layoutTop = NSLayoutConstraint(
+        childView.translatesAutoresizingMaskIntoConstraints = false
+        let layoutTop = NSLayoutConstraint(
             item: childView,
             attribute: NSLayoutAttribute.Top,
             relatedBy: NSLayoutRelation.Equal,
@@ -54,7 +54,7 @@ extension UIView {
             multiplier: 1.0,
             constant: 0.0
         )
-        var layoutBottom = NSLayoutConstraint(
+        let layoutBottom = NSLayoutConstraint(
             item: childView,
             attribute: NSLayoutAttribute.Bottom,
             relatedBy: NSLayoutRelation.Equal,
@@ -63,7 +63,7 @@ extension UIView {
             multiplier: 1.0,
             constant: 0.0
         )
-        var layoutLeft = NSLayoutConstraint(
+        let layoutLeft = NSLayoutConstraint(
             item: childView,
             attribute: NSLayoutAttribute.Left,
             relatedBy: NSLayoutRelation.Equal,
@@ -72,7 +72,7 @@ extension UIView {
             multiplier: 1.0,
             constant: 0.0
         )
-        var layoutRight = NSLayoutConstraint(
+        let layoutRight = NSLayoutConstraint(
             item: childView,
             attribute: NSLayoutAttribute.Right,
             relatedBy: NSLayoutRelation.Equal,
@@ -81,7 +81,7 @@ extension UIView {
             multiplier: 1.0,
             constant: 0.0
         )
-        var layoutConstraints: [NSLayoutConstraint] = [
+        let layoutConstraints: [NSLayoutConstraint] = [
             layoutTop, layoutBottom, layoutLeft, layoutRight
         ]
         self.addConstraints(layoutConstraints)

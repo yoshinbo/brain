@@ -86,7 +86,7 @@ extension AppDelegate {
 
     func isJapaneseLang() -> Bool {
         var languages: [AnyObject] = NSLocale.preferredLanguages()
-        var currentLanguage = languages[0] as String
+        var currentLanguage = languages[0] as! String
         return currentLanguage == "ja"
     }
 
@@ -124,7 +124,7 @@ extension AppDelegate {
     }
 
     func onAdColonyV4VCReward(success: Bool, currencyName: String!, currencyAmount amount: Int32, inZone zoneID: String!) {
-        println("AdColony zone \(zoneID) reward \(success) \(amount) \(currencyName)")
+        print("AdColony zone \(zoneID) reward \(success) \(amount) \(currencyName)")
         if success {
             User().recoverEnergy()
         } else {
@@ -133,7 +133,7 @@ extension AppDelegate {
                     "brain.failedPlayAdVideo",
                     forKey: kGAIScreenName
                     ).build()
-                appDelegate.tracker?.send(build)
+                //appDelegate.tracker?.send(build)
             }
         }
     }
@@ -163,12 +163,12 @@ extension AppDelegate: GADBannerViewDelegate {
                 notificationLoadedAd,
                 object: nil
             )
-            println("AdMobBanner is OK")
+            print("AdMobBanner is OK")
         }
     }
 
     func adView(adView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError){
-        println("AdMobBanner is NG")
+        print("AdMobBanner is NG")
     }
 }
 
@@ -176,23 +176,23 @@ extension AppDelegate: NADIconLoaderDelegate {
 
     func initNendIcon() {
         isNendBannerVisible = false
-        var icon_width = Int(adBannerView.bounds.size.height)
-        var icon_height = Int(adBannerView.bounds.size.height)
-        var adIconNum = min(Int(self.window.bounds.width) / icon_width, 5)
-        var margin = Int(self.window.bounds.width) / adIconNum - icon_width
-        var offset = margin / 2
+        let icon_width = Int(adBannerView.bounds.size.height)
+        let icon_height = Int(adBannerView.bounds.size.height)
+        let adIconNum = min(Int(self.window.bounds.width) / icon_width, 5)
+        let margin = Int(self.window.bounds.width) / adIconNum - icon_width
+        let offset = margin / 2
 
         adIconLoader = NADIconLoader()
         adIconLoader.isOutputLog = true
 
         for (var i = 0; i < adIconNum ; i++) {
-            var iconFrame = CGRect(
+            let iconFrame = CGRect(
                 x: offset + (icon_width + margin) * i,
                 y: Int(self.window.bounds.height) - icon_height,
                 width: icon_width,
                 height: icon_height
             )
-            var iconView = NADIconView(frame: iconFrame)
+            let iconView = NADIconView(frame: iconFrame)
             adIconLoader.addIconView(iconView)
             adIconViews.append(iconView)
         }
@@ -209,12 +209,13 @@ extension AppDelegate: NADIconLoaderDelegate {
                 notificationLoadedAd,
                 object: nil
             )
-            println("NendBanner is OK")
+            print("NendBanner is OK")
         }
     }
 
-    func nadIconLoaderDidFailToReceiveAd(iconLoader: NADIconLoader!, nadIconView: AnyObject!) {
-        isNendBannerVisible = false
-        println("NendBanner is NG")
-    }
+    // TODO: -
+//    func nadIconLoaderDidFailToReceiveAd(iconLoader: NADIconLoader!, nadIconView: AnyObject!) {
+//        isNendBannerVisible = false
+//        print("NendBanner is NG")
+//    }
 }

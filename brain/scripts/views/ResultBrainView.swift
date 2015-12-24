@@ -15,10 +15,10 @@ class ResultBrainView: UIView {
     @IBOutlet weak var brainBaseView: CircleView!
 
     class func build() -> ResultBrainView {
-        return NSBundle.mainBundle().loadNibNamed("ResultBrain", owner: nil, options: nil)[0] as ResultBrainView
+        return NSBundle.mainBundle().loadNibNamed("ResultBrain", owner: nil, options: nil)[0] as! ResultBrainView
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addRecognizer()
         self.alpha = 0
@@ -44,7 +44,7 @@ class ResultBrainView: UIView {
         self.layoutIfNeeded()
         self.brainBaseView.makeCircle()
 
-        var brainImageView = UIImageView(image: UIImage(named: "brain\(user.currentBrain().id)"))
+        let brainImageView = UIImageView(image: UIImage(named: "brain\(user.currentBrain().id)"))
         brainImageView.frame = brainBaseView.frame
         brainImageView.contentMode = UIViewContentMode.ScaleToFill
         self.brainBaseView.addSubviewOnCenter(brainImageView)
@@ -63,7 +63,7 @@ class ResultBrainView: UIView {
 
 extension ResultBrainView {
     private func addRecognizer() {
-        var recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))
+        let recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))
         self.addGestureRecognizer(recognizer)
     }
 }

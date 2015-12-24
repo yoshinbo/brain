@@ -11,10 +11,10 @@ import UIKit
 class PanelView: UIView {
 
     class func build() -> PanelView {
-        return NSBundle.mainBundle().loadNibNamed("Panel", owner: nil, options: nil)[0] as PanelView
+        return NSBundle.mainBundle().loadNibNamed("Panel", owner: nil, options: nil)[0] as! PanelView
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 

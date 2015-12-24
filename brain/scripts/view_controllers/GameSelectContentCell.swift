@@ -39,7 +39,7 @@ extension GameSelectContentCell {
         self.infoLabel.text = NSString(
             format: NSLocalizedString("bestScoreFormat", comment: ""),
             bestScore
-        )
+        ) as String
         if game.isExpBonus() {
             self.expBonusImage.hidden = false
         } else {

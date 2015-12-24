@@ -102,7 +102,7 @@ class GameBase: NSObject {
     }
 
     func collect() {
-        var BonusCoef =
+        let BonusCoef =
             self.continuousCollectAnsNum >= continuousCollectAnsBonusCoef
             ? self.continuousCollectAnsNum / continuousCollectAnsBonusCoef + 1
             : 1
@@ -161,18 +161,18 @@ extension GameBase {
     }
 
     private func maxContinuousCollectBonusCoef() -> Int {
-        var bonusPlusValue = self.skills
+        let bonusPlusValue = self.skills
             .filter { $0.isBonusPlus() }
             .map { $0.value }
-            .reduce( 0, { $0 + $1 } )
+            .reduce( 0, combine: { $0 + $1 } )
         return max(bonusPlusValue, defaultMaxContinuousCollectAnsBonus)
     }
 
     private func expBonusCoef() -> Int {
-        var expPlusValue = self.skills
+        let expPlusValue = self.skills
             .filter { $0.isExpPlus() }
             .map { $0.value }
-            .reduce( 0, { $0 + $1 } )
+            .reduce( 0, combine: { $0 + $1 } )
         var expBonusCoef = max(expPlusValue, 1)
         if self.isExpBonus {
             expBonusCoef *= 2

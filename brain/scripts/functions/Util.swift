@@ -12,7 +12,7 @@ class Util {
 
     // 1/2の確率でBool値を返す
     class func oneTwo() -> Bool {
-        var rand: Int = Int(arc4random_uniform(10))
+        let rand: Int = Int(arc4random_uniform(10))
         return (rand % 2) == 0
     }
 

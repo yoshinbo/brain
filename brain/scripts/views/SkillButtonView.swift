@@ -18,10 +18,10 @@ class SkillButtonView: UIView {
     var isSelected: Bool = false
 
     class func build() -> SkillButtonView {
-        return NSBundle.mainBundle().loadNibNamed("Skill", owner: nil, options: nil)[0] as SkillButtonView
+        return NSBundle.mainBundle().loadNibNamed("Skill", owner: nil, options: nil)[0] as! SkillButtonView
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addRecognizer()
         self.makeCircle()
@@ -76,7 +76,7 @@ class SkillButtonView: UIView {
         self.costLabel.text = NSString(
             format: NSLocalizedString("costFormat", comment: ""),
             skill.cost
-        )
+        ) as String
         if !skill.isAvailableByUser(user) {
             self.descriptionLabel.textColor = UIColor.darkGrayColor()
             self.costLabel.textColor = UIColor.darkGrayColor()
@@ -101,11 +101,11 @@ extension SkillButtonView {
             : NSString(
                 format: NSLocalizedString("brainOpenCondition", comment: ""),
                 User.getBrainById(self.skill!.requiredBrainId).unnamed
-            )
+            ) as String
     }
 
     private func addRecognizer() {
-        var recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))
+        let recognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))
         self.addGestureRecognizer(recognizer)
     }
 

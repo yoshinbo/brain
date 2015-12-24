@@ -22,7 +22,7 @@ class SpeedMatch: GameBase {
     override init(game: Game, skills: [Skill], isExpBonus: Bool) {
         super.init(game: game, skills: skills, isExpBonus: isExpBonus)
         
-        for i in 0..<panelStockNum {
+        for _ in 0..<panelStockNum {
             self.addPanel()
         }
         self.previousId = self.currentPanelId()
@@ -67,7 +67,7 @@ extension SpeedMatch {
     }
     
     private func addPanel() {
-        var panels = speedMatchPanels
+        _ = speedMatchPanels
         let isOneTwo: Bool = Util.oneTwo()
         if (self.panels.count > 0 && isOneTwo) {
             self.panels.append([(
@@ -87,7 +87,7 @@ extension SpeedMatch {
                 panels.append(tmpPanel)
             }
         }
-        var randomIndex: Int = Int(arc4random_uniform(UInt32(panels.count)))
+        let randomIndex: Int = Int(arc4random_uniform(UInt32(panels.count)))
         self.panels.append([(
             id: panels[randomIndex].id,
             name: panels[randomIndex].name
@@ -96,9 +96,9 @@ extension SpeedMatch {
     }
 
     private func dumpPanels() {
-        println("dump panels of speed match --->");
+        print("dump panels of speed match --->");
         for panel in self.panels {
-            println("id:\(panel.id), name:\(panel.name)");
+            print("id:\(panel.id), name:\(panel.name)");
         }
     }
 }

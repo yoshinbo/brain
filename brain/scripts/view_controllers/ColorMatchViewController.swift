@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GLDTween
 
 class ColorMatchViewController: GameBaseViewController {
 
@@ -28,7 +29,7 @@ class ColorMatchViewController: GameBaseViewController {
 
     class func build(skills: [Skill], isExpBonus: Bool) -> ColorMatchViewController {
         var storyboad: UIStoryboard = UIStoryboard(name: "ColorMatch", bundle: nil)
-        var viewController = storyboad.instantiateInitialViewController() as ColorMatchViewController
+        var viewController = storyboad.instantiateInitialViewController() as! ColorMatchViewController
         viewController.skills = skills
         viewController.isExpBonus = isExpBonus
         return viewController
@@ -116,7 +117,7 @@ extension ColorMatchViewController {
 extension ColorMatchViewController: GameBaseProtocol {
     func start() {
         self.judge("")
-        var subHelp2 = NSLocalizedString("brain\(gameId)SubHelp2", comment: "")
+        let subHelp2 = NSLocalizedString("brain\(gameId)SubHelp2", comment: "")
         GLDTween.addTween(self.helpLabel, withParams: [
             "duration"      : 0.1,
             "delay"         : 0.0,
@@ -135,7 +136,7 @@ extension ColorMatchViewController: GameBaseProtocol {
     }
 
     func renderTime(sec: Int) {
-        self.timeLabel.text = NSString(format: "%d", sec)
+        self.timeLabel.text = NSString(format: "%d", sec) as String
         if !self.game.hasStarted {
             if 0 < sec && sec <= 3 {
                 sound.playBySoundName("countdown")
@@ -149,14 +150,14 @@ extension ColorMatchViewController: GameBaseProtocol {
 
     func renderScore(score: Int)
     {
-        self.scoreLabel.text = NSString(format: "%d", score)
+        self.scoreLabel.text = NSString(format: "%d", score) as String
     }
 
     func renderResultView(result:[String:Int]) {
         self.interfaceView.hidden = true
-        var resultViewController = ResultViewController.build()
+        let resultViewController = ResultViewController.build()
         resultViewController.backGroundImage = self.view.convertToImage()
-        resultViewController.setResult(result)
+        resultViewController.setGameResult(result)
         resultViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
         self.presentViewController(resultViewController, animated: true, completion: nil)
     }
@@ -164,7 +165,7 @@ extension ColorMatchViewController: GameBaseProtocol {
 
 extension ColorMatchViewController: ColorMatchProtocol {
     func renderPanel(name: String, color: String) {
-        var panelView = PanelView.build()
+        let panelView = PanelView.build()
         panelView.tag = self.panelTag
         panelView.frame = self.panelBaseView.frame
         panelView.layer.position = self.panelBaseView.layer.position
@@ -181,7 +182,7 @@ extension ColorMatchViewController: ColorMatchProtocol {
             break
         }
 
-        var panelLabel: UILabel = UILabel(frame: CGRectZero)
+        let panelLabel: UILabel = UILabel(frame: CGRectZero)
         panelLabel.text = name
         panelLabel.font = UIFont.boldSystemFontOfSize(40)
         panelLabel.sizeToFit()
@@ -199,7 +200,7 @@ extension ColorMatchViewController: InterfaceProtocal {
         // 判定とアニメーション中は入力禁止
         self.interfaceView.hidden = true
 
-        var panelView = self.mainView.viewWithTag(self.panelTag) as PanelView
+        var panelView = self.mainView.viewWithTag(self.panelTag) as! PanelView
         if (direction == "right" || direction == "left") {
             let isCollect = self.game.isCollectAnswer(directionToAns[direction]!)
             isCollect
@@ -235,8 +236,8 @@ extension ColorMatchViewController: InterfaceProtocal {
 
 extension ColorMatchViewController: InformationProtocol {
     func setBackgroundAlpha(degree: Int) {
-        var alphaCoef:CGFloat = maxBackgroundColorAlpha / CGFloat(maxContinuousCollectAnsBonus)
-        var alpha = alphaCoef * CGFloat(degree)
+        let alphaCoef:CGFloat = maxBackgroundColorAlpha / CGFloat(maxContinuousCollectAnsBonus)
+        let alpha = alphaCoef * CGFloat(degree)
         self.mainView.backgroundColor = orangeColor.colorWithAlphaComponent(alpha)
     }
 }

@@ -14,9 +14,9 @@ class BookViewController: ModalBaseViewController {
     var user: User!
 
     class func build() -> (UINavigationController, BookViewController) {
-        var storyboad: UIStoryboard = UIStoryboard(name: "Book", bundle: nil)
-        var navigationController = storyboad.instantiateInitialViewController() as UINavigationController
-        return (navigationController, navigationController.topViewController as BookViewController)
+        let storyboad: UIStoryboard = UIStoryboard(name: "Book", bundle: nil)
+        let navigationController = storyboad.instantiateInitialViewController() as! UINavigationController
+        return (navigationController, navigationController.topViewController as! BookViewController)
     }
 
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ class BookViewController: ModalBaseViewController {
 extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     // for UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var brain = User.getBrainByIndex(indexPath.row)
+        let brain = User.getBrainByIndex(indexPath.row)
         if 4 == indexPath.row && self.user.currentBrain().id >= brain.id {
             sound.playBySoundName("press")
             UIApplication.sharedApplication().openURL(NSURL(string: spaceRangerStoreURL)!)
@@ -74,13 +74,13 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var brain = User.getBrainByIndex(indexPath.row)
+        let brain = User.getBrainByIndex(indexPath.row)
         if self.user.currentBrain().id >= brain.id {
-            var cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as BookViewContentCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("ContentCell", forIndexPath: indexPath) as! BookViewContentCell
             cell.setParams(brain.id)
             return cell
         } else {
-            var cell = tableView.dequeueReusableCellWithIdentifier("LockContentCell", forIndexPath: indexPath) as BookViewLockContentCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("LockContentCell", forIndexPath: indexPath) as! BookViewLockContentCell
             cell.setParams(brain.id)
             return cell
         }

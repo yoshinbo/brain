@@ -17,15 +17,15 @@ class InformationView: UIView {
     var delegate: InformationProtocol!
 
     class func build() -> InformationView {
-        return NSBundle.mainBundle().loadNibNamed("Information", owner: nil, options: nil)[0] as InformationView
+        return NSBundle.mainBundle().loadNibNamed("Information", owner: nil, options: nil)[0] as! InformationView
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
     func addReadySecImage(sec:Int) {
-        var imageView = self.addImageviewOnCenterByName("count_\(sec)")
+        let imageView = self.addImageviewOnCenterByName("count_\(sec)")
         self.scaleBiggerThenDismiss(imageView)
     }
 
@@ -41,7 +41,7 @@ class InformationView: UIView {
     }
 
     func addNGImage() {
-        var imageView = self.addImageviewOnCenterByName("ng_fill")
+        let imageView = self.addImageviewOnCenterByName("ng_fill")
         self.scaleBiggerSmallerThenDismiss(imageView)
         self.delegate.setBackgroundAlpha(0)
     }

@@ -10,10 +10,10 @@ import Foundation
 
 class ViewUtil {
     class func centerFrameInUIView(view: UIView, superView: UIView) -> CGRect {
-        var width: CGFloat = view.frame.size.width
-        var height: CGFloat = view.frame.size.height
-        var marginX: CGFloat = superView.frame.size.width - width
-        var marginY: CGFloat = superView.frame.size.height - height
+        let width: CGFloat = view.frame.size.width
+        let height: CGFloat = view.frame.size.height
+        let marginX: CGFloat = superView.frame.size.width - width
+        let marginY: CGFloat = superView.frame.size.height - height
         return CGRectMake(marginX/2.0, marginY/2.0, width, height)
     }
 
@@ -36,7 +36,7 @@ class ViewUtil {
     class func absPoint(view: UIView) -> CGPoint {
         var ret: CGPoint = CGPointMake(view.frame.origin.x, view.frame.origin.y)
         if view.superview != nil {
-            var addPoint = absPoint(view.superview!)
+            let addPoint = absPoint(view.superview!)
             ret = CGPointMake(ret.x + addPoint.x, ret.y + addPoint.y)
         }
         return ret
